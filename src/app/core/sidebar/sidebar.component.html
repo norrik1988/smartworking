@@ -1,7 +1,99 @@
-<mat-toolbar>
-    <a href="dashboard">dashboard</a>
-    <a href="login">&nbsp;login</a>
-    <a href="settings">&nbsp;settings</a>
-    <a href="projects">&nbsp;projects</a>
-    <a href="users">&nbsp;users</a>
+<!-- <mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    Responsive side navigation
 </mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8" opened>
+        <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+
+        <h4 class="name">John Smith</h4>
+        <p class="designation">Software Engineer</p>
+
+        <button mat-button class="menu-button" routerLink="/dashboard">
+            <mat-icon>dashboard</mat-icon>
+            <span>Dashboard</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/profilo">
+            <mat-icon>person</mat-icon>
+            <span>Utenti</span>
+        </button>
+
+        <button mat-button class="menu-button" routerLink="/projects">
+            <mat-icon>class</mat-icon>
+            <span>Progetti</span>
+        </button>
+
+        <button mat-button class="menu-button" routerLink="/profile">
+            <mat-icon>manage_accounts</mat-icon>
+            <span>Profilo</span>
+        </button>
+
+
+        
+        <button mat-button class="menu-button" routerLink="/settings">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    Responsive side navigation
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img class=" mat-elevation-z8 logo"
+            src="https://www.amoreaquattrozampe.it/wp-content/uploads/2020/06/struzzo.jpg" />
+
+        <h4 class="name">Vincenzo Granato</h4>
+        <p class="designation">Software Engineer</p>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/dashboard" routerLinkActive="active">
+            <mat-icon>dashboard</mat-icon>
+            <span>Dashboard</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/users" routerLinkActive="active">
+            <mat-icon>person</mat-icon>
+            <span>Utenti</span>
+        </button>
+        <br>
+        <button mat-button class="menu-button" routerLink="/projects" routerLinkActive="active">
+            <mat-icon>class</mat-icon>
+            <span>Progetti</span>
+        </button>
+
+        <button mat-button class="menu-button" routerLink="/profile" routerLinkActive="active">
+            <mat-icon>manage_accounts</mat-icon>
+            <span>Profilo</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/settings" routerLinkActive="active">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

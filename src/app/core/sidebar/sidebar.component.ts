@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  opened = false;
 }

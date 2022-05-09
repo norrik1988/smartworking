@@ -8,23 +8,23 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
+    loadChildren: () => import('./features/components/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: 'profile',
-    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
+    loadChildren: () => import('./features/components/profile/profile.module').then(m => m.ProfileModule)
   },
   {
     path: 'projects',
-    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
+    loadChildren: () => import('./features/components/projects/projects.module').then(m => m.ProjectsModule)
   },
   {
     path: 'settings',
-    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
+    loadChildren: () => import('./features/components/settings/settings.module').then(m => m.SettingsModule)
   },
   {
     path: 'users',
-    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
+    loadChildren: () => import('./features/components/users/users.module').then(m => m.UsersModule)
   },
 ];
 

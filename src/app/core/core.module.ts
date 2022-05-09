@@ -1,4 +1,6 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { MaterialModule } from "../material/material.module";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 
 const components = [
@@ -7,8 +9,11 @@ const components = [
 
 @NgModule({
     declarations: [...components],
-    imports: [],
-    exports: []
+    imports: [
+        CommonModule,
+        MaterialModule
+    ],
+    exports: [...components]
 })
 export class CoreModule {
 

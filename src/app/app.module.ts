@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
-import { CoreModule } from '@angular/flex-layout';
+import { CoreModule } from './core/core.module';
 import { FeaturesModule } from './features/features.module';
 import { SharedModule } from './shared/shared.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -21,7 +22,8 @@ import { SharedModule } from './shared/shared.module';
     MaterialModule,
     CoreModule,
     FeaturesModule,
-    SharedModule
+    SharedModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

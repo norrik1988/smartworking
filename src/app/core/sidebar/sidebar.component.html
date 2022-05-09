@@ -45,20 +45,19 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container> -->
+<!-- 
+<mat-toolbar class="mat-elevation-z8" fxLayout="row">
 
-<mat-toolbar class="mat-elevation-z8">
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <button mat-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
         <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
         <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+        <img class="logo" src="assets\images\sidebar\image-sidebar.png">
     </button>
-    Responsive side navigation
+
 </mat-toolbar>
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-        <img class=" logo" src="assets\images\sidebar\image-sidebar.png" />
-
-        <mat-divider></mat-divider>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8" opened>
 
         <button mat-button class="menu-button" routerLink="/dashboard" routerLinkActive="active">
             <mat-icon>dashboard</mat-icon>
@@ -82,11 +81,17 @@
             <span>Profilo</span>
         </button>
 
-        <mat-divider></mat-divider>
 
         <button mat-button class="menu-button" routerLink="/settings" routerLinkActive="active">
             <mat-icon>settings</mat-icon>
             <span>Settings</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/login/sign-in" routerLinkActive="active">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
         </button>
 
     </mat-sidenav>
@@ -95,4 +100,62 @@
             <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+
+        <div id="fadeshow1">
+            <picture>
+                <img class="logo" src="assets/images/sidebar/image-sidebar.png" alt="logo_synclab">
+            </picture>
+        </div>
+
+        <div class="layout">
+            <button mat-button class="menu-button" routerLink="/dashboard" routerLinkActive="active">
+                <mat-icon>dashboard</mat-icon>
+                <span>Dashboard</span>
+            </button>
+        </div>
+
+        <div class="layout">
+
+            <button mat-button class="menu-button" routerLink="/users" routerLinkActive="active">
+                <mat-icon>person</mat-icon>
+                <span>Utenti</span>
+            </button>
+        </div>
+        <div class="layout">
+            <button mat-button class="menu-button" routerLink="/projects" routerLinkActive="active">
+                <mat-icon>class</mat-icon>
+                <span>Progetti</span>
+            </button>
+        </div>
+
+        <div class="layout">
+            <button mat-button class="menu-button" routerLink="/profile" routerLinkActive="active">
+                <mat-icon>manage_accounts</mat-icon>
+                <span>Profilo</span>
+            </button>
+        </div>
+
+        <div class="layout">
+            <button mat-button class="menu-button" routerLink="/settings" routerLinkActive="active">
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+            </button>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="layout ">
+            <button mat-button class="menu-button " routerLink="/login/sign-in">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

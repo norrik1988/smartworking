@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { MaterialModule } from "src/app/material/material.module";
 import { UsersComponent } from "./users.component";
 
 @NgModule({
@@ -11,7 +12,8 @@ import { UsersComponent } from "./users.component";
         CommonModule,
         RouterModule.forChild([
             { path: '', component: UsersComponent }
-        ])
+        ]),
+        MaterialModule
     ],
     exports: []
 })

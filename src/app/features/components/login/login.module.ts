@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { MaterialModule } from "src/app/material/material.module";
 import { SharedModule } from "src/app/shared/shared.module";
 import { ForgotPswComponent } from "./components/forgot-psw/forgot-psw.component";
 import { SignInComponent } from "./components/sign-in/sign-in.component";
@@ -26,7 +27,8 @@ const components = [
                     { path: 'sign-in', component: SignInComponent },
                 ]
             }
-        ])
+        ]),
+        MaterialModule
     ],
 })
 

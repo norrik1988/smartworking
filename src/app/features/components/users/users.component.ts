@@ -12,4 +12,7 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  abc: string[] = ['mario', 'luca', 'lucia']
+
+
 }

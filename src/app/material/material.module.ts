@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 
+import { MatCardModule } from '@angular/material/card';
 
 
 const imports = [
@@ -22,7 +23,8 @@ const imports = [
     MatDividerModule,
     MatListModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
 
 ]
 @NgModule({

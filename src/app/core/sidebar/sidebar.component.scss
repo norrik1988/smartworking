@@ -19,16 +19,22 @@ mat-drawer-container {
             top: 36px;
             margin-top: 10%;
             margin-left: 10%;
-            margin-bottom: 80%;
+            margin-bottom: 80px;
         }
 
         mat-divider {
-            margin-top: 120%;
+            margin-top: 290%;
         }
 
         @media screen and(max-width:575px) {
-            width: 41px;
+            width: 42px;
 
+        }
+
+        @media screen and(max-width:2000px) {
+            mat-divider {
+                margin-top: 55vh;
+            }
         }
 
         .layout {

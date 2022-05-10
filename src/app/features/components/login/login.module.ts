@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "src/app/material/material.module";
 import { SharedModule } from "src/app/shared/shared.module";
@@ -28,7 +29,8 @@ const components = [
                 ]
             }
         ]),
-        MaterialModule
+        MaterialModule,
+        FormsModule
     ],
 })
 

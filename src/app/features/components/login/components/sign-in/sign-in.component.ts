@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,16 +8,22 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent  {
+  user: string = "pippo";
+  hide: boolean=true;
 
-  hide = true;
-  email = new FormControl('', [Validators.required, Validators.email]);
+  constructor(private router: Router) { }
+  ngOnInit(): void {
+    localStorage.removeItem("SessionUser");
+  }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
+  isLogged: boolean = false;
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+
+  goToDashboard(f: NgForm) {
+
+    localStorage.setItem("SessionUser", f.value.user);
+    this.isLogged = true
+    this.router.navigateByUrl('/dashboard');
   }
 
 }

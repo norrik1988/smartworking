@@ -8,23 +8,23 @@ mat-drawer-container {
     //router-outlet
     height: 100%;
 
+
     mat-drawer {
+
 
         //sidebar
         .logo {
-            position: initial;
+            position: sticky;
             width: 158px;
             height: 50px;
             left: 17px;
             top: 36px;
-            margin-top: 10%;
-            margin-left: 10%;
-            margin-bottom: 80px;
+
+            margin-top: 5%;
+            margin-bottom: 40%;
         }
 
-        mat-divider {
-            margin-top: 290%;
-        }
+
 
         @media screen and(max-width:575px) {
             width: 42px;
@@ -33,16 +33,16 @@ mat-drawer-container {
 
         @media screen and(max-width:2000px) {
             mat-divider {
-                margin-top: 55vh;
+                margin-top: 100%;
             }
         }
 
         .layout {
-            margin-top: 4px;
+            margin-top: 4%;
             flex-direction: column;
-            padding: 0px;
             width: 100%;
             position: initial;
+
         }
 
         height: 100%;

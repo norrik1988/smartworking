@@ -3,15 +3,22 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { SharedModule } from "src/app/shared/shared.module";
 import { SettingsComponent } from "./settings.component";
+import { GearComponent } from './gear/gear.component';
 
 @NgModule({
     declarations: [
         SettingsComponent,
+        GearComponent,
     ],
     imports: [
         CommonModule,
         RouterModule.forChild([
-            { path: '', component: SettingsComponent }
+            {
+                path: '', component: SettingsComponent,
+                children: [
+                    { path: 'gear', component: GearComponent }
+                ]
+            }
         ]),
         SharedModule
     ],

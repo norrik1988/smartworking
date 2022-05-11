@@ -7,9 +7,9 @@ import { Router } from '@angular/router';
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
-export class SignInComponent  {
+export class SignInComponent {
   user: string = "pippo";
-  hide: boolean=true;
+  hide: boolean = true;
 
   constructor(private router: Router) { }
   ngOnInit(): void {
@@ -23,7 +23,7 @@ export class SignInComponent  {
 
     localStorage.setItem("SessionUser", f.value.user);
     this.isLogged = true
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('home/dashboard');
   }
 
 }

@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { MaterialModule } from "src/app/material/material.module";
 import { UsersComponent } from "./users.component";
 import { UsersTableComponent } from './users-table/users-table.component';
+import { SharedModule } from "src/app/shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { UsersTableComponent } from './users-table/users-table.component';
                 ]
             }
         ]),
+        SharedModule,
         MaterialModule
     ],
     exports: []

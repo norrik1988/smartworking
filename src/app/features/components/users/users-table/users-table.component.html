@@ -1,5 +1,45 @@
-<div *ngFor="let utente of utenteService.utenti">
-    {{utente | json}}
-</div>
+<app-card titolo="Utenti">
 
-<p>ciao</p>
+
+    <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row " fxLayoutAlign="end "
+        class="botton">
+
+        <button mat-raised-button style="background-color:rgb(255, 174, 0) ;">Inserisci</button>
+
+
+
+    </div>
+    <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row " fxLayoutGap="10px grid">
+
+
+        <div fxFlex="50">
+
+            <span><strong>Nominativo</strong></span>
+        </div>
+        <div fxFlex="30">
+            <span><strong>Codice Fiscale</strong></span>
+        </div>
+        <div fxFlex="15">
+            <span><strong>Azioni</strong></span>
+        </div>
+
+    </div>
+    <hr>
+    <div *ngFor="let utente of utenteService.utenti" fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row"
+        fxLayout.md="row " fxLayoutGap="10px grid">
+
+
+        <div fxFlex="50">
+            <span>{{utente.nome}} {{utente.cognome}}</span>
+        </div>
+        <div fxFlex="30">
+            <span>{{utente.codice_fiscale}}</span>
+        </div>
+        <div fxFlex="15">
+
+        </div>
+
+
+    </div>
+
+</app-card>

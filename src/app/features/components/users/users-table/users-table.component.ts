@@ -13,5 +13,5 @@ export class UsersTableComponent implements OnInit {
   ngOnInit(): void {
     this.utenteService.getAll();
   }
-  abc: string[] = ['mario', 'luca', 'lucia']
+
 }

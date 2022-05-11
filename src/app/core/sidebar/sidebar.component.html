@@ -7,44 +7,45 @@
             </picture>
         </div>
 
-        <div class="layout">
-            <button mat-button class="menu-button" routerLink="/home/dashboard" routerLinkActive=" active">
-                <mat-icon>dashboard</mat-icon>
-                <span>Dashboard</span>
-            </button>
+        <div style="display:flexbox; justify-content:space-between">
+            <div class="layout">
+                <button mat-button class="menu-button" routerLink="/home/dashboard" routerLinkActive=" active">
+                    <mat-icon>dashboard</mat-icon>
+                    <span>Dashboard</span>
+                </button>
+            </div>
+
+            <div class="layout">
+
+                <button mat-button class="menu-button" routerLink="/users/users-table" routerLinkActive="active">
+                    <mat-icon>person</mat-icon>
+                    <span>Utenti</span>
+                </button>
+            </div>
+            <div class="layout">
+                <button mat-button class="menu-button" routerLink="/projects/comm" routerLinkActive="active">
+                    <mat-icon>class</mat-icon>
+                    <span>Progetti</span>
+                </button>
+            </div>
+
+            <div class="layout">
+                <button mat-button class="menu-button" routerLink="/profile/user-profile" routerLinkActive="active">
+                    <mat-icon>manage_accounts</mat-icon>
+                    <span>Profilo</span>
+                </button>
+            </div>
+
+            <div class="layout">
+                <button mat-button class="menu-button" routerLink="/settings/gear" routerLinkActive="active">
+                    <mat-icon>settings</mat-icon>
+                    <span>Settings</span>
+                </button>
+            </div>
         </div>
 
-        <div class="layout">
-
-            <button mat-button class="menu-button" routerLink="/users/users-table" routerLinkActive="active">
-                <mat-icon>person</mat-icon>
-                <span>Utenti</span>
-            </button>
-        </div>
-        <div class="layout">
-            <button mat-button class="menu-button" routerLink="/projects/comm" routerLinkActive="active">
-                <mat-icon>class</mat-icon>
-                <span>Progetti</span>
-            </button>
-        </div>
-
-        <div class="layout">
-            <button mat-button class="menu-button" routerLink="/profile/user-profile" routerLinkActive="active">
-                <mat-icon>manage_accounts</mat-icon>
-                <span>Profilo</span>
-            </button>
-        </div>
-
-        <div class="layout">
-            <button mat-button class="menu-button" routerLink="/settings/gear" routerLinkActive="active">
-                <mat-icon>settings</mat-icon>
-                <span>Settings</span>
-            </button>
-        </div>
-
-        <mat-divider></mat-divider>
-
-        <div class="layout ">
+        <div class="layout-logout">
+            <mat-divider></mat-divider>
             <button mat-button class="menu-button " (click)="logOut()">
                 <mat-icon>logout</mat-icon>
                 <span>Logout</span>

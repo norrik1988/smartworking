@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AuthService } from './shared/service/auth.service/auth.service';
 
@@ -7,6 +8,6 @@ import { AuthService } from './shared/service/auth.service/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public auth: AuthService){}
+  constructor(public auth: AuthService, private http: HttpClient) { }
   title = 'smartworking';
 }

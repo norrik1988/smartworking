@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { MaterialModule } from "../material/material.module";
 import { CardComponent } from "./components/card/card.component";
 import { DialogComponent } from "./components/dialog/dialog.component";
@@ -14,7 +15,8 @@ const components = [
 
 @NgModule({
     declarations: [...components],
-    imports: [MaterialModule],
+    imports: [MaterialModule,
+        FormsModule],
     exports: [...components]
 })
 

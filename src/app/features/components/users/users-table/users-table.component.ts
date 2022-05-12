@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UtentiService } from 'src/app/shared/model/user/service/user.service';
 
 @Component({
   selector: 'app-users-table',
@@ -8,10 +7,9 @@ import { UtentiService } from 'src/app/shared/model/user/service/user.service';
 })
 export class UsersTableComponent implements OnInit {
 
-  constructor(public utenteService: UtentiService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.utenteService.getAll();
   }
   abc: string[] = ['mario', 'luca', 'lucia']
 }

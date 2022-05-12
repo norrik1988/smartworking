@@ -27,8 +27,6 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./features/components/users/users.module').then(m => m.UsersModule), canActivate: [AuthGuard]
   },
-  { path: '', redirectTo: 'login/sign-in', pathMatch: 'full' },
-
 ];
 
 @NgModule({

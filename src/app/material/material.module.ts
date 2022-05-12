@@ -11,11 +11,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from "@angular/material/dialog";
 
 
 const imports = [
     FlexLayoutModule,
-    MatFormFieldModule ,
+    MatFormFieldModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
@@ -24,7 +25,8 @@ const imports = [
     MatListModule,
     MatTableModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
 
 ]
 @NgModule({

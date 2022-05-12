@@ -10,7 +10,7 @@ const ELEMENT_DATA: Utente[] = []
   styleUrls: ['./users-table.component.scss']
 })
 export class UsersTableComponent implements OnInit {
-  displayedColumns: string[] = ['nome', 'cognome', 'cf'];
+  displayedColumns: string[] = ['nome', 'cognome', 'cf', 'azioni'];
   dataSource = ELEMENT_DATA;
 
   constructor(public utenteService: UtentiService) { }

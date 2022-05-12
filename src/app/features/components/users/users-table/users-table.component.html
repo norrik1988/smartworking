@@ -1,8 +1,6 @@
 <div fxLayout="column">
-
-
     <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row " fxLayoutAlign="end ">
-        <button mat-icon-button style="background-color: #ffae00;">
+        <button mat-raised-button class="addBotton">
             <mat-icon>add</mat-icon>
         </button>
     </div>
@@ -29,6 +27,18 @@
         <ng-container matColumnDef="cf">
             <th mat-header-cell *matHeaderCellDef> Codice fiscale </th>
             <td mat-cell *matCellDef="let element"> {{element.codice_fiscale}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="azioni">
+            <th mat-header-cell *matHeaderCellDef> Azioni </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

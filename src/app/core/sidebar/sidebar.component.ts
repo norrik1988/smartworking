@@ -9,12 +9,10 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
 
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 
   logOut(): void {
     localStorage.removeItem("SessionUser");
     this.router.navigateByUrl('login/sign-in');
   }
-
-
 }

@@ -18,7 +18,6 @@ export class SignInComponent {
 
   isLogged: boolean = false;
 
-
   goToDashboard(f: NgForm) {
 
     localStorage.setItem("SessionUser", f.value.user);

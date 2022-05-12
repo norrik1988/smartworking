@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { UtentiService } from '../../model/user/service/user.service';
-import { Utente } from '../../model/user/user';
+import { UtentiService } from 'src/app/shared/model/user/service/user.service';
+import { Utente } from 'src/app/shared/model/user/user';
 
 @Component({
   selector: 'app-dialog',
@@ -37,10 +37,10 @@ import { Utente } from '../../model/user/user';
   `,
   styleUrls: ['./dialog.component.scss']
 })
-export class DialogComponent implements OnInit {
+export class AddDialogComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<DialogComponent>,
+    public dialogRef: MatDialogRef<AddDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Utente,
     public utenteService: UtentiService
   ) { }

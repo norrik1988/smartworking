@@ -29,13 +29,6 @@
       "id": 5
     },
     {
-      "nome": null,
-      "cognome": null,
-      "codice_fiscale": null,
-      "data_di_nascita": null,
-      "id": 6
-    },
-    {
       "nome": "gfd",
       "cognome": "sdgs",
       "codice_fiscale": "dgd",
@@ -48,13 +41,6 @@
       "codice_fiscale": "dhgfd",
       "data_di_nascita": "275760-03-12",
       "id": 8
-    },
-    {
-      "nome": null,
-      "cognome": null,
-      "codice_fiscale": null,
-      "data_di_nascita": null,
-      "id": 9
     },
     {
       "nome": "fdh",
@@ -111,18 +97,6 @@
       "codice_fiscale": "sfds",
       "data_di_nascita": "1993-03-12",
       "id": 17
-    },
-    {
-      "cognome": "Cagiacchetta",
-      "codice_fiscale": "sgsd",
-      "data_di_nascita": "4322-03-12",
-      "id": 18
-    },
-    {
-      "cognome": "shf",
-      "codice_fiscale": "dhfg",
-      "data_di_nascita": "1178-03-12",
-      "id": 19
     },
     {
       "nome": "sgfsa",

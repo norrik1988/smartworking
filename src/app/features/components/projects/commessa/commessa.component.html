@@ -1,1 +1,39 @@
-<p>projects works!</p>
+<div fxLayout="column">
+    <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row " fxLayoutAlign="end ">
+        <button mat-raised-button class="addBotton" (click)="openDialog()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <table mat-table [dataSource]="commService.array" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="Commessa">
+            <th mat-header-cell *matHeaderCellDef> Commessa </th>
+            <td mat-cell *matCellDef="let element"> {{element.commessa}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Progetto">
+            <th mat-header-cell *matHeaderCellDef> Progetto </th>
+            <td mat-cell *matCellDef="let element"> {{element.progetto}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Descrizione">
+            <th mat-header-cell *matHeaderCellDef> Descrizione </th>
+            <td mat-cell *matCellDef="let element"> {{element.descrizione}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Azioni">
+            <th mat-header-cell *matHeaderCellDef> Azioni </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="warn" (click)="openDelete(element)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button (click)="openEdit(element)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

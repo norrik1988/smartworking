@@ -1,5 +1,5 @@
 <mat-drawer-container>
-    <mat-drawer mode="side" opened>
+    <mat-drawer mode="side" opened class="{{theme.getColor()}}">
 
         <div id="fadeshow1">
             <picture>
@@ -53,6 +53,8 @@
         </div>
     </mat-drawer>
     <mat-drawer-content>
-        <router-outlet></router-outlet>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
     </mat-drawer-content>
 </mat-drawer-container>

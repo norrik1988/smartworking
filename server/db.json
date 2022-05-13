@@ -20,6 +20,13 @@
       "codice_fiscale": "vnzboh123455",
       "data_di_Nascita": "2022-05-11",
       "id": 4
+    },
+    {
+      "nome": "Daniele",
+      "cognome": "Cibelli",
+      "codice_fiscale": "asaomdasopimfsaiomf",
+      "data_di_Nascita": "1999-02-15",
+      "id": 5
     }
   ],
   "progetti": [
@@ -36,10 +43,16 @@
       "id": 2
     },
     {
-      "progetto": "fqfqwfwqfq",
-      "commessa": "f1wf123fwqaf",
-      "descrizione": "123hg3q2wrdq",
-      "id": 3
+      "progetto": "asf",
+      "descrizione": "sfasaf",
+      "commessa": "ff1ffas",
+      "id": 4
+    },
+    {
+      "progetto": "1111",
+      "descrizione": "2222",
+      "commessa": "3333",
+      "id": 6
     }
   ]
 }

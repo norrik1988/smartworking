@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ThemeService } from 'src/app/shared/service/theme.service/theme.service';
 
 @Component({
   selector: 'app-gear',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GearComponent implements OnInit {
 
-  constructor() { }
+  constructor(public theme: ThemeService, private router: Router) { }
 
   ngOnInit(): void {
   }

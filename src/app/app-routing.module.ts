@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./features/components/dashboard/dashboard.module').then(m => m.DashboardModule),
+    loadChildren: () => import('./features/components/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard]
   },
   {
     path: 'profile',
@@ -27,6 +27,7 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./features/components/users/users.module').then(m => m.UsersModule), canActivate: [AuthGuard]
   },
+  { path: '', redirectTo: 'login/sign-in', pathMatch: 'full' },
 ];
 
 @NgModule({

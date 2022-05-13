@@ -3,16 +3,24 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddProjectDialogComponent } from 'src/app/shared/components/dialog/projects/add/add-project-dialog.component';
 import { DeleteProjectDialogComponent } from 'src/app/shared/components/dialog/projects/delete/delete-project-dialog.component';
 import { Commessa } from 'src/app/shared/model/commessa/commessa';
+import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.service';
+
+const ELEMENT_DATA: Commessa[] = []
 
 @Component({
   selector: 'app-commessa',
   templateUrl: './commessa.component.html',
   styleUrls: ['./commessa.component.scss']
 })
-export class CommessaComponent {
-  utenteService: any;
+export class CommessaComponent implements OnInit {
+  constructor(public dialog: MatDialog, public commService: CommessaService) { }
+  ngOnInit(): void {
+    this.commService.getAll();
+  }
 
-  constructor(public dialog: MatDialog) { }
+
+  displayedColumns: string[] = ['Commessa', 'Progetto', 'Descrizione', 'Azioni'];
+  dataSource = ELEMENT_DATA;
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddProjectDialogComponent, {
@@ -23,8 +31,8 @@ export class CommessaComponent {
       console.log('The dialog was closed');
     })
   }
-  openDelete(utente: Commessa) {
-    this.utenteService.userAttuale = utente;
+  openDelete(commessa: Commessa) {
+    this.commService.commSelected = commessa;
     const dialogRef = this.dialog.open(DeleteProjectDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.service';
@@ -32,11 +33,16 @@ import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.
 })
 export class DeleteProjectDialogComponent {
 
-  constructor(public commService: CommessaService, public router: Router) { }
+  constructor(public commService: CommessaService, public router: Router, private http: HttpClient) { }
+
+  comm: any;
 
   canc() {
     this.commService.delete(this.commService.commSelected);
-    this.router.navigateByUrl('users-table');
+    setTimeout(() => {
+      this.http.get<any[]>('http://localhost:3000/progetti')
+        .subscribe(result => this.comm = result);
+    }, 0);
   }
 
 }

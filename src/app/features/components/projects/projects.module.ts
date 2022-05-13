@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { ProjectsComponent } from "./projects.component";
 import { CommessaComponent } from './commessa/commessa.component';
-import { MaterialModule } from "src/app/material/material.module";
 
 @NgModule({
     declarations: [
@@ -20,8 +19,7 @@ import { MaterialModule } from "src/app/material/material.module";
                     { path: 'comm', component: CommessaComponent }
                 ]
             }
-        ]),
-        MaterialModule
+        ])
     ],
     exports: []
 })

@@ -2,6 +2,8 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDialogComponent } from 'src/app/shared/components/dialog/add-dialog/dialog.component';
 import { DeleteDialogComponent } from 'src/app/shared/components/dialog/delete-dialog/dialog-delete.component';
+import { EditDialogComponent } from 'src/app/shared/components/dialog/edit-dialog/edit-dialog.component';
+
 import { UtentiService } from 'src/app/shared/model/user/service/user.service';
 import { Utente } from 'src/app/shared/model/user/user';
 
@@ -43,6 +45,17 @@ export class UsersTableComponent implements OnInit {
   openDelete(utente: Utente) {
     this.utenteService.userAttuale = utente;
     const dialogRef = this.dialog.open(DeleteDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+
+  openEditDialog(utente: Utente){
+    this.utenteService.userAttuale = utente;
+    const dialogRef = this.dialog.open(EditDialogComponent,{
+      width: '250px',
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

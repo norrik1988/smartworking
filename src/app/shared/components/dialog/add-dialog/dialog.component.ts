@@ -24,7 +24,7 @@ import { Utente } from 'src/app/shared/model/user/user';
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Data di nascita</mat-label>
-    <input matInput type="date" required ngModel name="data_di_nascita" >
+    <input matInput type="date" required ngModel name="data_di_Nascita" >
   </mat-form-field>
  
 </div>

@@ -4,8 +4,10 @@ import { MaterialModule } from "../material/material.module";
 import { CardComponent } from "./components/card/card.component";
 import { AddDialogComponent } from "./components/dialog/add-dialog/dialog.component";
 import { DeleteDialogComponent } from "./components/dialog/delete-dialog/dialog-delete.component";
+
 import { PaginationComponent } from "./components/pagination/pagination.component";
 import { SearchComponent } from "./components/search/search.component";
+import { EditDialogComponent } from './components/dialog/edit-dialog/edit-dialog.component';
 
 const components = [
     CardComponent,
@@ -16,7 +18,7 @@ const components = [
 ]
 
 @NgModule({
-    declarations: [...components],
+    declarations: [...components, EditDialogComponent],
     imports: [
         MaterialModule,
         FormsModule

@@ -37,7 +37,7 @@ export class DeleteDialogComponent {
 
   canc() {
     this.utenteService.delete(this.utenteService.userAttuale);
-    this.router.navigateByUrl('users-table');
+    this.router.navigateByUrl('/users-table');
   }
 
 }

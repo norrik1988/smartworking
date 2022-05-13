@@ -26,7 +26,8 @@ const imports = [
     MatTableModule,
     MatInputModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule
 
 ]
 @NgModule({

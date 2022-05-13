@@ -5,6 +5,7 @@ import { MaterialModule } from "../material/material.module";
 import { CardComponent } from "./components/card/card.component";
 import { AddProjectDialogComponent } from "./components/dialog/projects/add/add-project-dialog.component";
 import { DeleteProjectDialogComponent } from "./components/dialog/projects/delete/delete-project-dialog.component";
+import { EditProjectDialogComponent } from "./components/dialog/projects/edit-dialog/edit-project-dialog.component";
 import { PaginationComponent } from "./components/pagination/pagination.component";
 import { SearchComponent } from "./components/search/search.component";
 
@@ -13,7 +14,8 @@ const components = [
     PaginationComponent,
     SearchComponent,
     AddProjectDialogComponent,
-    DeleteProjectDialogComponent
+    DeleteProjectDialogComponent,
+    EditProjectDialogComponent
 ]
 
 @NgModule({

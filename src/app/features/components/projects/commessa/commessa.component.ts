@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddProjectDialogComponent } from 'src/app/shared/components/dialog/projects/add/add-project-dialog.component';
 import { DeleteProjectDialogComponent } from 'src/app/shared/components/dialog/projects/delete/delete-project-dialog.component';
+import { EditProjectDialogComponent } from 'src/app/shared/components/dialog/projects/edit-dialog/edit-project-dialog.component';
 import { Commessa } from 'src/app/shared/model/commessa/commessa';
 import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.service';
 
@@ -38,6 +39,17 @@ export class CommessaComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  openEdit(commessa: Commessa) {
+    this.commService.commSelected = commessa;
+    const dialogRef = this.dialog.open(EditProjectDialogComponent, {
+      width: '250px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }
 
 

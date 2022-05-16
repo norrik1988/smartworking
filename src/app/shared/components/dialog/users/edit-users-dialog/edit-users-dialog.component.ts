@@ -7,7 +7,7 @@ import { Utente } from 'src/app/shared/model/user/user';
 @Component({
   selector: 'app-edit-users-dialog',
   template: `
-    <form #form="ngForm" (submit)="edit(form.value)">
+    <form #form="ngForm">
 <div mat-dialog-container>
   
   <mat-form-field appearance="outline">
@@ -30,7 +30,7 @@ import { Utente } from 'src/app/shared/model/user/user';
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Annulla</button>
-  <button mat-button  cdkFocusInitial [mat-dialog-close]="data" type='submit'[disabled]="form.invalid" class="addBotton">Modifica</button>
+  <button mat-button  cdkFocusInitial [mat-dialog-close]="data" type='submit'[disabled]="form.invalid" class="addBotton" (click)="edit(form.value)">Modifica</button>
 </div>
 </form>
   `,

@@ -9,7 +9,7 @@ import { CommessaService } from "src/app/shared/model/commessa/service/commessa.
   selector: 'app-edit-project-dialog',
   template: `
   <h2 mat-dialog-title>Edit Project</h2>
-  <form #form="ngForm" (submit)="edit(form.value)">
+  <form #form="ngForm" >
     <div mat-dialog-container>
   
     <mat-form-field appearance="outline">
@@ -30,7 +30,7 @@ import { CommessaService } from "src/app/shared/model/commessa/service/commessa.
   
     <div mat-dialog-actions>
       <button mat-button (click)="onNoClick()">Annulla</button>
-      <button mat-button  cdkFocusInitial [mat-dialog-close]="data" type='submit'[disabled]="form.invalid" class="addBotton">Modifica</button>
+      <button mat-button  cdkFocusInitial [mat-dialog-close]="data" type='submit'[disabled]="form.invalid" class="addBotton" (click)="edit(form.value)">Modifica</button>
     </div>
   </form>
   `,

@@ -10,7 +10,6 @@ import { EditUsersDialogComponent } from 'src/app/shared/components/dialog/users
 import { UtentiService } from 'src/app/shared/model/user/service/user.service';
 import { Utente } from 'src/app/shared/model/user/user';
 
-const ELEMENT_DATA: Utente[] = []
 
 @Component({
   selector: 'app-users-table',
@@ -38,9 +37,6 @@ export class UsersTableComponent implements OnInit, AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-
-
   ngOnInit(): void {
     this.utenteService.getAll()
   }

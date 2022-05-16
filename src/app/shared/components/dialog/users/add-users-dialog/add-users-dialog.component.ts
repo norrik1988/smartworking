@@ -7,6 +7,7 @@ import { Utente } from 'src/app/shared/model/user/user';
 @Component({
   selector: 'app-add-users-dialog',
   template: `
+     <h2 mat-dialog-title>Add User</h2>
     <form #f="ngForm">
 <div mat-dialog-container>
   

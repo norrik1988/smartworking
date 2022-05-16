@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { ProjectsComponent } from "./projects.component";
 import { CommessaComponent } from './commessa/commessa.component';
 import { MaterialModule } from "src/app/material/material.module";
+import { SharedModule } from "src/app/shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { MaterialModule } from "src/app/material/material.module";
                 ]
             }
         ]),
-        MaterialModule
+        MaterialModule,
+        SharedModule
     ],
     exports: []
 })

@@ -5,7 +5,7 @@ import { UtentiService } from 'src/app/shared/model/user/service/user.service';
 @Component({
   selector: 'app-delete-users-dialog',
   template: `
-     <h2 mat-dialog-title>Install Angular</h2>
+     <h2 mat-dialog-title>Delete User</h2>
 <mat-dialog-content class="mat-typography">
 <strong>Nominativo : </strong>
     <span>{{utenteService.userAttuale?.nome}}</span>

@@ -7,6 +7,7 @@ import { Utente } from 'src/app/shared/model/user/user';
 @Component({
   selector: 'app-edit-users-dialog',
   template: `
+     <h2 mat-dialog-title>Edit User</h2>
     <form #form="ngForm">
 <div mat-dialog-container>
   

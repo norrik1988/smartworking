@@ -19,22 +19,21 @@ import { Utente } from 'src/app/shared/model/user/user';
 
 export class UsersTableComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['nome', 'cognome', 'cf', 'azioni'];
-  dataSource: MatTableDataSource<Utente>
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(public utenteService: UtentiService, public dialog: MatDialog) {
-    this.dataSource = new MatTableDataSource<Utente>(utenteService.utenti);
+    this.utenteService.dataSource = new MatTableDataSource<Utente>(utenteService.utenti);
   }
   ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
+    this.utenteService.dataSource.paginator = this.paginator;
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.utenteService.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+    if (this.utenteService.dataSource.paginator) {
+      this.utenteService.dataSource.paginator.firstPage();
     }
   }
   ngOnInit(): void {

@@ -16,22 +16,21 @@ import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.
 export class CommessaComponent implements OnInit {
   displayedColumns: string[] = ['Commessa', 'Progetto', 'Descrizione', 'Azioni'];
 
-  dataSource: MatTableDataSource<Commessa>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(public commService: CommessaService, public dialog: MatDialog) {
-    this.dataSource = new MatTableDataSource<Commessa>(commService.array);
+    this.commService.dataSource = new MatTableDataSource<Commessa>(commService.array);
   }
   ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
+    this.commService.dataSource.paginator = this.paginator;
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.commService.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+    if (this.commService.dataSource.paginator) {
+      this.commService.dataSource.paginator.firstPage();
     }
   }
   ngOnInit(): void {

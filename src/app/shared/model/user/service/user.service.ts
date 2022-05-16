@@ -2,53 +2,53 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { Utente } from '../user';
+import { User } from '../user';
 
 @Injectable({
     providedIn: 'root'
 })
-export class UtentiService {
-    utenti: Utente[] = [];
-    utente!: Utente;
-    userAttuale: Utente = {} as Utente;
-    dataSource!: MatTableDataSource<Utente>;
+export class UserService {
+    users: User[] = [];
+    user!: User;
+    userSelected: User = {} as User;
+    dataSource!: MatTableDataSource<User>;
 
     constructor(private http: HttpClient) {
 
     }
 
     getAll() {
-        this.http.get<Utente[]>('http://localhost:3000/utente').subscribe(res => this.dataSource.data = res)
+        this.http.get<User[]>('http://localhost:3000/user').subscribe(res => this.dataSource.data = res)
     }
 
-    add(utente: Utente) {
-        this.http.post<Utente>(`http://localhost:3000/utente`, utente).subscribe(res => {
+    add(user: User) {
+        this.http.post<User>(`http://localhost:3000/user`, user).subscribe(res => {
             this.dataSource.data.push(res);
         })
     }
 
-    delete(utente: Utente): Utente {
-        this.http.delete(`http://localhost:3000/utente/${utente.id}`)
+    delete(user: User): User {
+        this.http.delete(`http://localhost:3000/user/${user.id}`)
             .subscribe(() => {
-                const indice = this.dataSource.data.findIndex(ut => ut.id === utente.id);
+                const indice = this.dataSource.data.findIndex(ut => ut.id === user.id);
                 this.dataSource.data.splice(indice, 1);
             })
-        return utente
+        return user
     }
 
-    getUtente(utente: Utente): Utente {
-        this.http.get<Utente>(`http://localhost:3000/utente/${utente.id}`).subscribe(res => {
-            const index = this.dataSource.data.findIndex(ut => ut.id === utente.id);
+    getUser(user: User): User {
+        this.http.get<User>(`http://localhost:3000/user/${user.id}`).subscribe(res => {
+            const index = this.dataSource.data.findIndex(ut => ut.id === user.id);
             this.dataSource.data[index] = res
-            console.log(this.utenti[index])
+            console.log(this.users[index])
         })
-        return utente
+        return user
     }
 
     edit(form: NgForm) {
-        this.http.patch<Utente>(`http://localhost:3000/utente/${this.userAttuale?.id}`, form)
+        this.http.patch<User>(`http://localhost:3000/user/${this.userSelected?.id}`, form)
             .subscribe(res => {
-                const index = this.dataSource.data.findIndex(ut => ut.id === this.userAttuale?.id);
+                const index = this.dataSource.data.findIndex(ut => ut.id === this.userSelected?.id);
                 this.dataSource.data[index] = res;
             });
     }

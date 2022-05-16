@@ -1,58 +1,71 @@
 {
-  "utente": [
+  "user": [
     {
-      "nome": "Anthony",
-      "cognome": "Liccardo",
-      "codice_fiscale": "LCCNTN00A16F799R",
-      "data_di_Nascita": "2022-04-30",
+      "name": "Anthony",
+      "surname": "Liccardo",
+      "tax_id_code": "LCCNTN00A16F799R",
+      "date": "2022-04-30",
       "id": 2
     },
     {
-      "nome": "Johnny",
-      "cognome": "Pepp",
-      "codice_fiscale": "LCCNTN00A16F799R",
-      "data_di_Nascita": "2022-05-06",
+      "name": "Johnny",
+      "surname": "Pepp",
+      "tax_id_code": "LCCNTN00A16F799R",
+      "date": "2022-05-06",
       "id": 3
     },
     {
-      "nome": "Vecienzo",
-      "cognome": "Boh",
-      "codice_fiscale": "vnzboh123455",
-      "data_di_Nascita": "2022-05-11",
+      "name": "Vecienzo",
+      "surname": "Boh",
+      "tax_id_code": "vnzboh123455",
+      "date": "2022-05-11",
       "id": 4
     },
     {
-      "nome": "Daniele",
-      "cognome": "Cibelli",
-      "codice_fiscale": "asaomdasopimfsaiomf",
-      "data_di_Nascita": "1999-02-15",
+      "name": "Daniele",
+      "surname": "Cibelli",
+      "tax_id_code": "asaomdasopimfsaiomf",
+      "date": "1999-02-15",
       "id": 5
+    },
+    {
+      "name": "gqwgqgq",
+      "surname": "asfasf",
+      "tax_id_code": "fsafas",
+      "date": "2022-05-04",
+      "id": 7
     }
   ],
-  "progetti": [
+  "projects": [
     {
-      "progetto": "Topolino",
+      "name": "Topolino",
       "commessa": "Topo1l1n0re",
-      "descrizione": "mi piace topolino",
+      "description": "mi piace topolino",
       "id": 1
     },
     {
-      "progetto": "Progetto con il nome molto più lungo del normale",
+      "name": "Progetto con il name molto più lungo del normale",
       "commessa": "Comasfomasfionwqfl2oinf12o0ifn2108",
-      "descrizione": "eea",
+      "description": "eea",
       "id": 2
     },
     {
-      "progetto": "asf",
-      "descrizione": "sfasaf",
+      "name": "asf",
+      "description": "sfasaf",
       "commessa": "ff1ffas",
       "id": 4
     },
     {
-      "progetto": "1111",
-      "descrizione": "5612512",
+      "name": "1111",
+      "description": "5612512",
       "commessa": "3333",
       "id": 6
+    },
+    {
+      "name": "111111111",
+      "description": "fsafasf",
+      "commessa": "fghqwgqg",
+      "id": 7
     }
   ]
 }

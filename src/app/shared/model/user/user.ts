@@ -1,7 +1,7 @@
-export class Utente {
+export class User {
     id!: number;
-    nome!: string;
-    cognome!: string;
-    data_di_Nascita!: Date;
-    codice_fiscale!: string;
+    name!: string;
+    surname!: string;
+    date!: Date;
+    tax_id_code!: string;
 }

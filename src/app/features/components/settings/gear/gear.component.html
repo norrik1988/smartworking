@@ -1,19 +1,22 @@
-<div class="container">
+<mat-card>
+    <mat-card-title>Scegli il tema della sidebar</mat-card-title>
+    <div class="container">
 
-    <form name="color" method="post">
-        <div>
-            <input checked type="radio" name="color" value="blue" (click)="theme.setColor('blue')">
-            <span>Blu</span>
-        </div>
+        <form name="color" method="post">
+            <div>
+                <input checked type="radio" name="color" value="blue" (click)="theme.setColor('blue')">
+                <span>Blu</span>
+            </div>
 
-        <div>
-            <input type="radio" name="color" value="red" (click)="theme.setColor('red')">
-            <span>Orangered scuro</span>
-        </div>
+            <div>
+                <input type="radio" name="color" value="red" (click)="theme.setColor('red')">
+                <span>Orangered scuro</span>
+            </div>
 
-        <div>
-            <input type="radio" name="color" value="black" (click)="theme.setColor('black')">
-            <span>Scuro</span>
-        </div>
-    </form>
-</div>
+            <div>
+                <input type="radio" name="color" value="black" (click)="theme.setColor('black')">
+                <span>Scuro</span>
+            </div>
+        </form>
+    </div>
+</mat-card>

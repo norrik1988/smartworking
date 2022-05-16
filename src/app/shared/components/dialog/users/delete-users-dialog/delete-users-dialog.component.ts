@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UtentiService } from 'src/app/shared/model/user/service/user.service';
+import { UserService } from 'src/app/shared/model/user/service/user.service';
 
 @Component({
   selector: 'app-delete-users-dialog',
@@ -8,18 +8,18 @@ import { UtentiService } from 'src/app/shared/model/user/service/user.service';
      <h2 mat-dialog-title>Delete User</h2>
 <mat-dialog-content class="mat-typography">
 <strong>Nominativo : </strong>
-    <span>{{utenteService.userAttuale?.nome}}</span>
-    <span> {{utenteService.userAttuale?.cognome}}</span>
+    <span>{{userService.userSelected?.name}}</span>
+    <span> {{userService.userSelected?.surname}}</span>
 
     <br>
 
     <strong>Codice fiscale : </strong>
-    <span>{{utenteService.userAttuale?.codice_fiscale}}</span>
+    <span>{{userService.userSelected?.tax_id_code}}</span>
 
     <br>
 
     <strong>Data di Nascita : </strong>
-    <span>{{utenteService.userAttuale?.data_di_Nascita}}</span>
+    <span>{{userService.userSelected?.date}}</span>
 
 
 </mat-dialog-content>
@@ -32,12 +32,12 @@ import { UtentiService } from 'src/app/shared/model/user/service/user.service';
 })
 export class DeleteUsersDialogComponent {
 
-  constructor(public utenteService: UtentiService, public router: Router) { }
+  constructor(public userService: UserService, public router: Router) { }
 
 
 
   delete() {
-    this.utenteService.delete(this.utenteService.userAttuale);
+    this.userService.delete(this.userService.userSelected);
     this.router.navigateByUrl('/users-table');
   }
 }

@@ -14,7 +14,7 @@ import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.
   styleUrls: ['./commessa.component.scss']
 })
 export class CommessaComponent implements OnInit {
-  displayedColumns: string[] = ['Commessa', 'Progetto', 'Descrizione', 'Azioni'];
+  displayedColumns: string[] = ['Progetto', 'Descrizione', 'Commessa', 'Azioni'];
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

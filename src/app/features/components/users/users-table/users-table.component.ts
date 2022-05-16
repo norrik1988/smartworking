@@ -7,8 +7,8 @@ import { AddUsersDialogComponent } from 'src/app/shared/components/dialog/users/
 import { DeleteUsersDialogComponent } from 'src/app/shared/components/dialog/users/delete-users-dialog/delete-users-dialog.component';
 import { EditUsersDialogComponent } from 'src/app/shared/components/dialog/users/edit-users-dialog/edit-users-dialog.component';
 
-import { UtentiService } from 'src/app/shared/model/user/service/user.service';
-import { Utente } from 'src/app/shared/model/user/user';
+import { UserService } from 'src/app/shared/model/user/service/user.service';
+import { User } from 'src/app/shared/model/user/user';
 
 
 @Component({
@@ -22,22 +22,22 @@ export class UsersTableComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(public utenteService: UtentiService, public dialog: MatDialog) {
-    this.utenteService.dataSource = new MatTableDataSource<Utente>(utenteService.utenti);
+  constructor(public userService: UserService, public dialog: MatDialog) {
+    this.userService.dataSource = new MatTableDataSource<User>(userService.users);
   }
   ngAfterViewInit(): void {
-    this.utenteService.dataSource.paginator = this.paginator;
+    this.userService.dataSource.paginator = this.paginator;
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.utenteService.dataSource.filter = filterValue.trim().toLowerCase();
+    this.userService.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.utenteService.dataSource.paginator) {
-      this.utenteService.dataSource.paginator.firstPage();
+    if (this.userService.dataSource.paginator) {
+      this.userService.dataSource.paginator.firstPage();
     }
   }
   ngOnInit(): void {
-    this.utenteService.getAll()
+    this.userService.getAll()
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(AddUsersDialogComponent, {
@@ -47,17 +47,15 @@ export class UsersTableComponent implements OnInit, AfterViewInit {
       console.log('The dialog was closed');
     })
   }
-  openDelete(utente: Utente) {
-    this.utenteService.userAttuale = utente;
+  openDelete(user: User) {
+    this.userService.userSelected = user;
     const dialogRef = this.dialog.open(DeleteUsersDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
-
-
-  openEdit(utente: Utente) {
-    this.utenteService.userAttuale = utente;
+  openEdit(user: User) {
+    this.userService.userSelected = user;
     const dialogRef = this.dialog.open(EditUsersDialogComponent, {
       width: '250px',
     });

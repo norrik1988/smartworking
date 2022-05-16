@@ -1,8 +1,8 @@
 export class Commessa {
     id!: number;
 
-    progetto!: string;
+    name!: string;
     commessa!: string;
-    descrizione!: string;
+    description!: string;
 
 }

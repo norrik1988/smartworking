@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { UtentiService } from 'src/app/shared/model/user/service/user.service';
-import { Utente } from 'src/app/shared/model/user/user';
+import { UserService } from 'src/app/shared/model/user/service/user.service';
+import { User } from 'src/app/shared/model/user/user';
 
 @Component({
   selector: 'app-edit-users-dialog',
@@ -13,19 +13,19 @@ import { Utente } from 'src/app/shared/model/user/user';
   
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
-    <input matInput type="text" required [ngModel]='utenteService.userAttuale?.nome'  name="nome" placeholder="inserisci nome">
+    <input matInput type="text" required [ngModel]='userService.userSelected?.name'  name="name" placeholder="inserisci nome">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Cognome</mat-label>
-    <input matInput type="text" required [ngModel]='utenteService.userAttuale?.cognome' name="cognome" placeholder="inserisci cognome">
+    <input matInput type="text" required [ngModel]='userService.userSelected?.surname' name="surname" placeholder="inserisci cognome">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>CF</mat-label>
-    <input matInput type="text" required [ngModel]='utenteService.userAttuale?.codice_fiscale' name="codice_fiscale" placeholder="inserisci codice fiscale">
+    <input matInput type="text" required [ngModel]='userService.userSelected?.tax_id_code' name="tax_id_code" placeholder="inserisci codice fiscale">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Data di nascita</mat-label>
-    <input matInput type="date" required [ngModel]='utenteService.userAttuale?.data_di_Nascita' name="data_di_Nascita" >
+    <input matInput type="date" required [ngModel]='userService.userSelected?.date' name="date" >
   </mat-form-field>
  
 </div>
@@ -40,8 +40,8 @@ import { Utente } from 'src/app/shared/model/user/user';
 export class EditUsersDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EditUsersDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Utente,
-    public utenteService: UtentiService) { }
+    @Inject(MAT_DIALOG_DATA) public data: User,
+    public userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -51,7 +51,7 @@ export class EditUsersDialogComponent implements OnInit {
   }
 
   edit(form: NgForm) {
-    this.utenteService.edit(form);
+    this.userService.edit(form);
   }
 
 }

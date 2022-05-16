@@ -1,5 +1,7 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { AddDialogComponent } from 'src/app/shared/components/dialog/add-dialog/dialog.component';
 import { DeleteDialogComponent } from 'src/app/shared/components/dialog/delete-dialog/dialog-delete.component';
 import { EditDialogComponent } from 'src/app/shared/components/dialog/edit-dialog/edit-dialog.component';
@@ -14,17 +16,32 @@ const ELEMENT_DATA: Utente[] = []
   templateUrl: './users-table.component.html',
   styleUrls: ['./users-table.component.scss']
 })
-export class UsersTableComponent implements OnInit {
+export class UsersTableComponent implements OnInit,AfterViewInit {
   displayedColumns: string[] = ['nome', 'cognome', 'cf', 'azioni'];
-  dataSource = ELEMENT_DATA;
+  dataSource: MatTableDataSource<Utente>
   nome!: string;
   cognome!: string;
   data_di_Nascita!: Date;
   codice_fiscale!: string;
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  constructor(public utenteService: UtentiService, public dialog: MatDialog) {
+    this.dataSource= new MatTableDataSource<Utente>(utenteService.utenti);
+   }
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-  constructor(public utenteService: UtentiService, public dialog: MatDialog) { }
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+ 
+ 
 
   ngOnInit(): void {
     this.utenteService.getAll();

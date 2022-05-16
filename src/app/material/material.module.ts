@@ -11,6 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 const imports = [
@@ -25,7 +26,8 @@ const imports = [
     MatTableModule,
     MatInputModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule,
 
 ]
 @NgModule({

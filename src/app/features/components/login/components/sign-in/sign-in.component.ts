@@ -10,16 +10,15 @@ import { Router } from '@angular/router';
 export class SignInComponent {
   user: string = "pippo";
   hide: boolean = true;
+  isLogged: boolean = false;
 
   constructor(private router: Router) { }
+
   ngOnInit(): void {
     localStorage.removeItem("SessionUser");
   }
 
-  isLogged: boolean = false;
-
   goToDashboard(f: NgForm) {
-
     localStorage.setItem("SessionUser", f.value.user);
     this.isLogged = true
     this.router.navigateByUrl('home/dashboard');

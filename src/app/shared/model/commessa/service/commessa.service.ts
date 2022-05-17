@@ -24,6 +24,7 @@ export class CommessaService {
         this.http.post<Commessa>(`http://localhost:3000/projects`, comm)
             .subscribe(res => {
                 this.dataSource.data.push(res);
+                window.location.reload();
             })
     }
 
@@ -32,6 +33,7 @@ export class CommessaService {
             .subscribe(() => {
                 const indice = this.dataSource.data.findIndex(c => c.id === comm.id)
                 this.dataSource.data.splice(indice, 1);
+                window.location.reload();
             })
         return comm;
     }
@@ -52,6 +54,7 @@ export class CommessaService {
             .subscribe(res => {
                 const index = this.dataSource.data.findIndex(cm => cm.id === this.commSelected?.id);
                 this.dataSource.data[index] = res;
+                window.location.reload();
             });
     }
 

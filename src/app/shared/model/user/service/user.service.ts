@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, ɵɵqueryRefresh } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../user';
@@ -24,6 +24,7 @@ export class UserService {
     add(user: User) {
         this.http.post<User>(`http://localhost:3000/user`, user).subscribe(res => {
             this.dataSource.data.push(res);
+            window.location.reload();
         })
     }
 
@@ -32,6 +33,7 @@ export class UserService {
             .subscribe(() => {
                 const indice = this.dataSource.data.findIndex(ut => ut.id === user.id);
                 this.dataSource.data.splice(indice, 1);
+                window.location.reload();
             })
         return user
     }
@@ -50,6 +52,7 @@ export class UserService {
             .subscribe(res => {
                 const index = this.dataSource.data.findIndex(ut => ut.id === this.userSelected?.id);
                 this.dataSource.data[index] = res;
+                window.location.reload();
             });
     }
 

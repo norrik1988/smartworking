@@ -22,20 +22,23 @@ export class CommessaComponent implements OnInit {
   constructor(public commService: CommessaService, public dialog: MatDialog) {
     this.commService.dataSource = new MatTableDataSource<Commessa>(commService.array);
   }
+
   ngAfterViewInit(): void {
     this.commService.dataSource.paginator = this.paginator;
   }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.commService.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.commService.dataSource.paginator) {
       this.commService.dataSource.paginator.firstPage();
     }
   }
+
   ngOnInit(): void {
     this.commService.getAll()
   }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(AddProjectDialogComponent, {
       width: '250px',
@@ -44,6 +47,7 @@ export class CommessaComponent implements OnInit {
       console.log('The dialog was closed');
     })
   }
+
   openDelete(comm: Commessa) {
     this.commService.commSelected = comm;
 
@@ -52,7 +56,6 @@ export class CommessaComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-
 
   openEdit(comm: Commessa) {
     this.commService.commSelected = comm;
@@ -63,5 +66,6 @@ export class CommessaComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
 }
 

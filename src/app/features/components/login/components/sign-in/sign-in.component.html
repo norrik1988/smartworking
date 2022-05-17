@@ -1,10 +1,13 @@
 <div class="example-container" fxFlexFill fxLayoutAlign="center center">
+
   <form #f="ngForm" fxLayout="column" fxFlexFill fxLayoutAlign="center center" fxLayoutGap="5px">
+
     <div id="fadeshow1">
       <picture>
         <img class="logo" src="assets/images/login/image.jpg">
       </picture>
     </div>
+
     <mat-form-field appearance="outline">
       <mat-label>Enter your email</mat-label>
       <button disabled mat-icon-button matSuffix>
@@ -14,7 +17,6 @@
       <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
     </mat-form-field>
 
-
     <mat-form-field appearance="outline">
       <mat-label>Enter your password</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'">
@@ -23,8 +25,11 @@
         <mat-icon color="primary">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
+
     <a href="/forgot-psw">Password dimenticata?</a>
 
     <button mat-raised-button color="primary" (click)="goToDashboard(f)">LOGIN</button>
+
   </form>
+
 </div>

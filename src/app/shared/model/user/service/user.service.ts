@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, ɵɵqueryRefresh } from '@angular/core';
+import { Injectable, } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../user';
@@ -13,6 +13,16 @@ export class UserService {
     userSelected: User = {} as User;
     dataSource!: MatTableDataSource<User>;
 
+    showSpinner: boolean = false;
+
+
+    loadSpinner() {
+        this.showSpinner = true;
+        setTimeout(() => {
+            this.showSpinner = false;
+        }, 4000);
+    }
+
     constructor(private http: HttpClient) {
 
     }
@@ -24,7 +34,7 @@ export class UserService {
     add(user: User) {
         this.http.post<User>(`http://localhost:3000/user`, user).subscribe(res => {
             this.dataSource.data.push(res);
-            window.location.reload();
+            this.loadSpinner();
         })
     }
 

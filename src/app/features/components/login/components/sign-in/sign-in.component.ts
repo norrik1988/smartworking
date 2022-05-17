@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -11,6 +11,7 @@ export class SignInComponent {
   user: string = "pippo";
   hide: boolean = true;
   isLogged: boolean = false;
+
 
   constructor(private router: Router) { }
 

@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { Commessa } from "src/app/shared/model/commessa/commessa";
-import { CommessaService } from "src/app/shared/model/commessa/service/commessa.service";
+import { Order } from "src/app/shared/model/commessa/order";
+import { OrderService } from "src/app/shared/model/commessa/service/order.service";
 
 
 @Component({
@@ -14,17 +14,17 @@ import { CommessaService } from "src/app/shared/model/commessa/service/commessa.
   
     <mat-form-field appearance="outline">
       <mat-label>Progetto</mat-label>
-      <input matInput type="text" required [ngModel]='commService.commSelected?.name'  name="name" placeholder="inserisci progetto">
+      <input matInput type="text" required [ngModel]='orderService.orderSelected?.name'  name="name" placeholder="inserisci progetto">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Descrizione</mat-label>
-      <input matInput type="text" required [ngModel]='commService.commSelected?.description' name="description" placeholder="inserisci descrizione">
+      <input matInput type="text" required [ngModel]='orderService.orderSelected?.description' name="description" placeholder="inserisci descrizione">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Commessa</mat-label>
-      <input matInput type="text" required [ngModel]='commService.commSelected?.commessa' name="commessa" placeholder="inserisci commessa">
+      <input matInput type="text" required [ngModel]='orderService.orderSelected?.order' name="order" placeholder="inserisci commessa">
     </mat-form-field>
     </div>
   
@@ -39,8 +39,8 @@ import { CommessaService } from "src/app/shared/model/commessa/service/commessa.
 export class EditProjectDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EditProjectDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Commessa,
-    public commService: CommessaService) { }
+    @Inject(MAT_DIALOG_DATA) public data: Order,
+    public orderService: OrderService) { }
 
   ngOnInit(): void {
   }
@@ -50,7 +50,7 @@ export class EditProjectDialogComponent implements OnInit {
   }
 
   edit(form: NgForm) {
-    this.commService.edit(form);
+    this.orderService.edit(form);
 
   }
 

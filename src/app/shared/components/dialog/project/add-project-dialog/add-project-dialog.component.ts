@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Commessa } from 'src/app/shared/model/commessa/commessa';
-import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.service';
+import { Order } from 'src/app/shared/model/commessa/order';
+import { OrderService } from 'src/app/shared/model/commessa/service/order.service';
 
 @Component({
   selector: 'app-add-project-dialog',
@@ -23,7 +23,7 @@ import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.
   
         <mat-form-field appearance="outline">
           <mat-label>Commessa</mat-label>
-          <input matInput type="text" required ngModel name="commessa" placeholder="Commessa">
+          <input matInput type="text" required ngModel name="order" placeholder="Commessa">
         </mat-form-field>
       </div>
 
@@ -39,8 +39,8 @@ export class AddProjectDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<AddProjectDialogComponent>,
-    public commService: CommessaService,
-    @Inject(MAT_DIALOG_DATA) public data: Commessa,
+    public orderService: OrderService,
+    @Inject(MAT_DIALOG_DATA) public data: Order,
   ) { }
 
   onNoClick(): void {
@@ -48,7 +48,7 @@ export class AddProjectDialogComponent {
   }
 
   add(f: NgForm) {
-    this.commService.add(f.value);
+    this.orderService.add(f.value);
     f.reset();
   }
 }

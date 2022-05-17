@@ -1,15 +1,16 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { ProjectsComponent } from "./projects.component";
-import { CommessaComponent } from './commessa/commessa.component';
 import { MaterialModule } from "src/app/material/material.module";
 import { SharedModule } from "src/app/shared/shared.module";
+import { ProjectsTableComponent } from "./commessa/projects-table.component";
+import { ProjectsComponent } from "./projects.component";
+
 
 @NgModule({
     declarations: [
         ProjectsComponent,
-        CommessaComponent,
+        ProjectsTableComponent
 
     ],
     imports: [
@@ -18,7 +19,7 @@ import { SharedModule } from "src/app/shared/shared.module";
             {
                 path: '', component: ProjectsComponent,
                 children: [
-                    { path: 'comm', component: CommessaComponent }
+                    { path: 'projects-table', component: ProjectsTableComponent }
                 ]
             }
         ]),

@@ -5,38 +5,38 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AddProjectDialogComponent } from 'src/app/shared/components/dialog/project/add-project-dialog/add-project-dialog.component';
 import { DeleteProjectDialogComponent } from 'src/app/shared/components/dialog/project/delete-project-dialog/delete-project-dialog.component';
 import { EditProjectDialogComponent } from 'src/app/shared/components/dialog/project/edit-project-dialog/edit-project-dialog.component';
-import { Commessa } from 'src/app/shared/model/commessa/commessa';
-import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.service';
+import { Order } from 'src/app/shared/model/commessa/order';
+import { OrderService } from 'src/app/shared/model/commessa/service/order.service';
 
 @Component({
-  selector: 'app-commessa',
-  templateUrl: './commessa.component.html',
-  styleUrls: ['./commessa.component.scss']
+  selector: 'app-projects-table',
+  templateUrl: './projects-table.component.html',
+  styleUrls: ['./projects-table.component.scss']
 })
-export class CommessaComponent implements OnInit {
+export class ProjectsTableComponent implements OnInit {
   displayedColumns: string[] = ['Progetto', 'Descrizione', 'Commessa', 'Azioni'];
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(public commService: CommessaService, public dialog: MatDialog) {
-    this.commService.dataSource = new MatTableDataSource<Commessa>(commService.array);
+  constructor(public orderService: OrderService, public dialog: MatDialog) {
+    this.orderService.dataSource = new MatTableDataSource<Order>(orderService.array);
   }
 
   ngAfterViewInit(): void {
-    this.commService.dataSource.paginator = this.paginator;
+    this.orderService.dataSource.paginator = this.paginator;
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.commService.dataSource.filter = filterValue.trim().toLowerCase();
-    if (this.commService.dataSource.paginator) {
-      this.commService.dataSource.paginator.firstPage();
+    this.orderService.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.orderService.dataSource.paginator) {
+      this.orderService.dataSource.paginator.firstPage();
     }
   }
 
   ngOnInit(): void {
-    this.commService.getAll()
+    this.orderService.getAll()
   }
 
   openDialog(): void {
@@ -48,8 +48,8 @@ export class CommessaComponent implements OnInit {
     })
   }
 
-  openDelete(comm: Commessa) {
-    this.commService.commSelected = comm;
+  openDelete(order: Order) {
+    this.orderService.orderSelected = order;
 
     const dialogRef = this.dialog.open(DeleteProjectDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
@@ -57,8 +57,8 @@ export class CommessaComponent implements OnInit {
     });
   }
 
-  openEdit(comm: Commessa) {
-    this.commService.commSelected = comm;
+  openEdit(order: Order) {
+    this.orderService.orderSelected = order;
     const dialogRef = this.dialog.open(EditProjectDialogComponent, {
       width: '250px',
     });

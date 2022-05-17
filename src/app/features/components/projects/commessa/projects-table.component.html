@@ -11,7 +11,7 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
     </mat-form-field>
 
-    <table mat-table [dataSource]="commService.dataSource" class=" mat-elevation-z8">
+    <table mat-table [dataSource]="orderService.dataSource" class=" mat-elevation-z8">
 
         <ng-container matColumnDef="Progetto">
             <th mat-header-cell *matHeaderCellDef> Progetto </th>

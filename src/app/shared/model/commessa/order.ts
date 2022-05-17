@@ -1,7 +1,7 @@
-export class Commessa {
+export class Order {
     id!: number;
     name!: string;
-    commessa!: string;
+    order!: string;
     description!: string;
 
 }

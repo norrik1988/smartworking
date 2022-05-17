@@ -29,6 +29,8 @@ export class UsersTableComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }
+
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -39,7 +41,10 @@ export class UsersTableComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
     this.utenteService.getAll()
+
   }
+
+
   openDialog(): void {
     const dialogRef = this.dialog.open(AddUsersDialogComponent, {
       width: '250px',

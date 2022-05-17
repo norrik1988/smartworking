@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { UtentiService } from 'src/app/shared/model/user/service/user.service';
-import { Utente } from 'src/app/shared/model/user/user';
+import { UserService } from 'src/app/shared/model/user/service/user.service';
+import { User } from 'src/app/shared/model/user/user';
 
 @Component({
   selector: 'app-add-users-dialog',
@@ -13,19 +13,19 @@ import { Utente } from 'src/app/shared/model/user/user';
   
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
-    <input matInput type="text" required ngModel  name="nome" placeholder="inserisci nome">
+    <input matInput type="text" required ngModel  name="name" placeholder="inserisci nome">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Cognome</mat-label>
-    <input matInput type="text" required ngModel name="cognome" placeholder="inserisci cognome">
+    <input matInput type="text" required ngModel name="surname" placeholder="inserisci cognome">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>CF</mat-label>
-    <input matInput type="text" required ngModel name="codice_fiscale" placeholder="inserisci codice fiscale">
+    <input matInput type="text" required ngModel name="tax_id_code" placeholder="inserisci codice fiscale">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Data di nascita</mat-label>
-    <input matInput type="date" required ngModel name="data_di_Nascita" >
+    <input matInput type="date" required ngModel name="date" >
   </mat-form-field>
  
 </div>
@@ -41,8 +41,8 @@ export class AddUsersDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AddUsersDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Utente,
-    public utenteService: UtentiService
+    @Inject(MAT_DIALOG_DATA) public data: User,
+    public userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -53,7 +53,7 @@ export class AddUsersDialogComponent implements OnInit {
   }
 
   add(f: NgForm) {
-    this.utenteService.add(f.value);
+    this.userService.add(f.value);
     f.reset();
   }
 

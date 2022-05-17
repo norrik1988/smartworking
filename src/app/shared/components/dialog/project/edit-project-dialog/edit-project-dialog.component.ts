@@ -14,12 +14,12 @@ import { CommessaService } from "src/app/shared/model/commessa/service/commessa.
   
     <mat-form-field appearance="outline">
       <mat-label>Progetto</mat-label>
-      <input matInput type="text" required [ngModel]='commService.commSelected?.progetto'  name="progetto" placeholder="inserisci progetto">
+      <input matInput type="text" required [ngModel]='commService.commSelected?.name'  name="name" placeholder="inserisci progetto">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Descrizione</mat-label>
-      <input matInput type="text" required [ngModel]='commService.commSelected?.descrizione' name="descrizione" placeholder="inserisci descrizione">
+      <input matInput type="text" required [ngModel]='commService.commSelected?.description' name="description" placeholder="inserisci descrizione">
     </mat-form-field>
 
     <mat-form-field appearance="outline">

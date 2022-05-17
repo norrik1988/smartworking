@@ -13,12 +13,12 @@ import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.
 
         <mat-form-field appearance="outline">
           <mat-label>Progetto</mat-label>
-          <input matInput type="text" required ngModel  name="progetto" placeholder="Progetto">
+          <input matInput type="text" required ngModel  name="name" placeholder="Progetto">
         </mat-form-field>
     
         <mat-form-field appearance="outline">
           <mat-label>Descrizione</mat-label>
-          <input matInput type="text" required ngModel name="descrizione" placeholder="Descrizione">
+          <input matInput type="text" required ngModel name="description" placeholder="Descrizione">
         </mat-form-field>
   
         <mat-form-field appearance="outline">

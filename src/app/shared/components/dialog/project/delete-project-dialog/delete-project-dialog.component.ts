@@ -14,12 +14,12 @@ import { CommessaService } from 'src/app/shared/model/commessa/service/commessa.
       <br>
 
       <strong>Progetto : </strong>
-      <span>{{commService.commSelected?.progetto}}</span>  
+      <span>{{commService.commSelected?.name}}</span>  
         
       <br>
 
       <strong>Descrizione : </strong>
-      <span> {{commService.commSelected?.descrizione}}</span>
+      <span> {{commService.commSelected?.description}}</span>
 
     </mat-dialog-content>
 
@@ -39,7 +39,7 @@ export class DeleteProjectDialogComponent {
   delete() {
     this.commService.delete(this.commService.commSelected);
     setTimeout(() => {
-      this.http.get<any[]>('http://localhost:3000/progetti')
+      this.http.get<any[]>('http://localhost:3000/projects')
         .subscribe(result => this.comm = result);
     }, 0);
   }

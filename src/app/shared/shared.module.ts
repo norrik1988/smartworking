@@ -1,7 +1,5 @@
 import { NgModule } from "@angular/core";
 import { MaterialModule } from "../material/material.module";
-import { PaginationComponent } from "./components/pagination/pagination.component";
-import { SearchComponent } from "./components/search/search.component";
 
 
 import { AddProjectDialogComponent } from './components/dialog/project/add-project-dialog/add-project-dialog.component';
@@ -15,9 +13,6 @@ import { EditUsersDialogComponent } from './components/dialog/users/edit-users-d
 import { DeleteUsersDialogComponent } from './components/dialog/users/delete-users-dialog/delete-users-dialog.component';
 
 const components = [
-    PaginationComponent,
-    SearchComponent,
-
     AddProjectDialogComponent,
     EditProjectDialogComponent,
     DeleteProjectDialogComponent,

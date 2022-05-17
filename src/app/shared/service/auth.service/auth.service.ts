@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { Utente } from "../../model/user/user";
+import { User } from "../../model/user/user";
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthService {
 
-    utente: Utente[] = [];
+    user: User[] = [];
     flag: boolean = false;
     constructor(private router: Router) { }
 

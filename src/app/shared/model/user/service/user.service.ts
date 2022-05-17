@@ -17,10 +17,12 @@ export class UserService {
 
 
     loadSpinner() {
+
         this.showSpinner = true;
         setTimeout(() => {
             this.showSpinner = false;
-        }, 4000);
+            this.getAll()
+        }, 2000);
     }
 
     constructor(private http: HttpClient) {
@@ -43,7 +45,7 @@ export class UserService {
             .subscribe(() => {
                 const indice = this.dataSource.data.findIndex(ut => ut.id === user.id);
                 this.dataSource.data.splice(indice, 1);
-                window.location.reload();
+                this.loadSpinner();
             })
         return user
     }
@@ -62,7 +64,7 @@ export class UserService {
             .subscribe(res => {
                 const index = this.dataSource.data.findIndex(ut => ut.id === this.userSelected?.id);
                 this.dataSource.data[index] = res;
-                window.location.reload();
+                this.loadSpinner();
             });
     }
 

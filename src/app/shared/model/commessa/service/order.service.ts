@@ -15,6 +15,19 @@ export class OrderService {
     array: Order[] = [];
     orderSelected: Order = {} as Order;
 
+
+    showSpinner: boolean = false;
+
+
+    loadSpinner() {
+
+        this.showSpinner = true;
+        setTimeout(() => {
+            this.showSpinner = false;
+            this.getAll()
+        }, 2000);
+    }
+
     getAll() {
         this.http.get<Order[]>('http://localhost:3000/projects')
             .subscribe(res => this.dataSource.data = res)
@@ -24,7 +37,7 @@ export class OrderService {
         this.http.post<Order>(`http://localhost:3000/projects`, order)
             .subscribe(res => {
                 this.dataSource.data.push(res);
-                window.location.reload();
+                this.loadSpinner();
             })
     }
 
@@ -33,7 +46,8 @@ export class OrderService {
             .subscribe(() => {
                 const indice = this.dataSource.data.findIndex(c => c.id === order.id)
                 this.dataSource.data.splice(indice, 1);
-                window.location.reload();
+                this.loadSpinner();
+
             })
         return order;
     }
@@ -54,7 +68,8 @@ export class OrderService {
             .subscribe(res => {
                 const index = this.dataSource.data.findIndex(cm => cm.id === this.orderSelected?.id);
                 this.dataSource.data[index] = res;
-                window.location.reload();
+                this.loadSpinner();
+
             });
     }
 

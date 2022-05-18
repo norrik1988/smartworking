@@ -17,9 +17,6 @@ export class OrderService {
     array: Order[] = [];
     orderSelected: Order = {} as Order;
 
-    showSpinner = globalVariable.show;
-
-
     getAll() {
         this.http.get<Order[]>('http://localhost:3000/projects')
             .subscribe(res => this.dataSource.data = res)
@@ -29,9 +26,7 @@ export class OrderService {
         this.http.post<Order>(`http://localhost:3000/projects`, order)
             .subscribe(res => {
                 this.dataSource.data.push(res);
-                if (this.showSpinner) {
-                    this.getAll();
-                }
+                this.getAll();
             })
     }
 
@@ -41,16 +36,6 @@ export class OrderService {
                 const indice = this.dataSource.data.findIndex(c => c.id === order.id)
                 this.dataSource.data.splice(indice, 1);
                 this.getAll();
-            })
-        return order;
-    }
-
-    getorder(order: Order): Order {
-        this.http.get(`http://localhost:3000/projects/${order.id}`)
-            .subscribe(result => {
-                const indice = this.dataSource.data.findIndex(c => c.id === order.id)
-                this.dataSource.data[indice] === result;
-                console.log(this.array[indice])
             })
         return order;
     }

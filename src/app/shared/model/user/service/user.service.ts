@@ -13,14 +13,8 @@ export class UserService {
     userSelected: User = {} as User;
     dataSource!: MatTableDataSource<User>;
 
-    showSpinner: boolean = false;
 
-
-
-
-    constructor(private http: HttpClient) {
-
-    }
+    constructor(private http: HttpClient) { }
 
     getAll() {
         this.http.get<User[]>('http://localhost:3000/user').subscribe(res => this.dataSource.data = res)
@@ -40,14 +34,6 @@ export class UserService {
                 this.dataSource.data.splice(indice, 1);
                 this.getAll();
             })
-        return user
-    }
-
-    getUser(user: User): User {
-        this.http.get<User>(`http://localhost:3000/user/${user.id}`).subscribe(res => {
-            const index = this.dataSource.data.findIndex(ut => ut.id === user.id);
-            this.dataSource.data[index] = res
-        })
         return user
     }
 

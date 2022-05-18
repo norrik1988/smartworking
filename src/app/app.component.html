@@ -1,4 +1,7 @@
-<app-sidebar *ngIf="auth.isLogged()"></app-sidebar>
-<mat-progress-spinner *ngIf="showSpinner" id="loading" color="primary" value="100" mode="indeterminate">
+<mat-progress-spinner id="loading" color="primary" value="100" mode="indeterminate">
 </mat-progress-spinner>
+
+<app-sidebar *ngIf="auth.isLogged()"></app-sidebar>
+
+
 <router-outlet *ngIf="!auth.isLogged()"></router-outlet>

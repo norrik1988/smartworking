@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { globalVariable } from './shared/model/global/global-variable';
 import { AuthService } from './shared/service/auth.service/auth.service';
@@ -9,7 +10,10 @@ import { AuthService } from './shared/service/auth.service/auth.service';
 })
 export class AppComponent {
   constructor(public auth: AuthService) { }
+
+
   title = 'smartworking';
+  users = [];
 
   showSpinner = globalVariable.show;
 

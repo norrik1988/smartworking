@@ -38,6 +38,5 @@ export class DeleteUsersDialogComponent {
 
   delete() {
     this.userService.delete(this.userService.userSelected);
-    this.router.navigateByUrl('/users-table');
   }
 }

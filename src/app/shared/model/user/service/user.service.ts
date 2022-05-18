@@ -29,7 +29,7 @@ export class UserService {
     add(user: User) {
         this.http.post<User>(`http://localhost:3000/user`, user).subscribe(res => {
             this.dataSource.data.push(res);
-
+            this.getAll();
         })
     }
 
@@ -38,7 +38,7 @@ export class UserService {
             .subscribe(() => {
                 const indice = this.dataSource.data.findIndex(ut => ut.id === user.id);
                 this.dataSource.data.splice(indice, 1);
-
+                this.getAll();
             })
         return user
     }
@@ -47,7 +47,6 @@ export class UserService {
         this.http.get<User>(`http://localhost:3000/user/${user.id}`).subscribe(res => {
             const index = this.dataSource.data.findIndex(ut => ut.id === user.id);
             this.dataSource.data[index] = res
-            console.log(this.users[index])
         })
         return user
     }
@@ -57,7 +56,7 @@ export class UserService {
             .subscribe(res => {
                 const index = this.dataSource.data.findIndex(ut => ut.id === this.userSelected?.id);
                 this.dataSource.data[index] = res;
-
+                this.getAll();
             });
     }
 

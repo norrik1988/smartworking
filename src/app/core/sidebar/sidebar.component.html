@@ -46,7 +46,7 @@
 
         <div class="layout-logout">
             <mat-divider></mat-divider>
-            <button mat-button class="menu-button " (click)="logOut()">
+            <button mat-button class="menu-button" (click)="logOut()">
                 <mat-icon>logout</mat-icon>
                 <span>Logout</span>
             </button>
@@ -54,6 +54,10 @@
     </mat-drawer>
     <mat-drawer-content>
         <div class="container">
+            <div *ngIf="spinner.showSpinner">
+                <mat-progress-spinner id="loading" color="primary" value="50" mode="indeterminate">
+                </mat-progress-spinner>
+            </div>
             <router-outlet></router-outlet>
         </div>
     </mat-drawer-content>

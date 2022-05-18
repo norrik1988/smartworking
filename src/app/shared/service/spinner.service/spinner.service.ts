@@ -10,10 +10,5 @@ export class SpinnerService {
 
     showSpinner = globalVariable.show;
 
-    loadSpinner() {
-        this.showSpinner = true;
-        setTimeout(() => {
-            this.showSpinner = false
-        }, 2000);
-    }
+
 }

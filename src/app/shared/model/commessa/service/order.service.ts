@@ -40,7 +40,7 @@ export class OrderService {
             .subscribe(() => {
                 const indice = this.dataSource.data.findIndex(c => c.id === order.id)
                 this.dataSource.data.splice(indice, 1);
-
+                this.getAll();
             })
         return order;
     }
@@ -61,7 +61,7 @@ export class OrderService {
             .subscribe(res => {
                 const index = this.dataSource.data.findIndex(cm => cm.id === this.orderSelected?.id);
                 this.dataSource.data[index] = res;
-
+                this.getAll();
             });
     }
 

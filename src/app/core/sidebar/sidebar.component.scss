@@ -52,7 +52,7 @@ mat-drawer-container {
         }
 
         .layout-logout {
-            position: initial;
+            // position: initial;
 
             mat-divider {
                 width: 99%;
@@ -72,9 +72,24 @@ mat-drawer-container {
     }
 }
 
+
+
 .active {
     width: 100%;
     font-weight: 900 !important;
     color: orange !important;
     background-color: whitesmoke !important;
+}
+
+#loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
 }

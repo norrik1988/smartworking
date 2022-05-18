@@ -1,6 +1,8 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { globalVariable } from 'src/app/shared/model/global/global-variable';
+import { SpinnerService } from 'src/app/shared/service/spinner.service/spinner.service';
 import { ThemeService } from 'src/app/shared/service/theme.service/theme.service';
 
 @Component({
@@ -10,7 +12,8 @@ import { ThemeService } from 'src/app/shared/service/theme.service/theme.service
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private router: Router, public theme: ThemeService) { }
+
+  constructor(private router: Router, public theme: ThemeService, public spinner: SpinnerService) { }
 
   ngOnInit(): void {
     this.theme.themeClass = 'blue';

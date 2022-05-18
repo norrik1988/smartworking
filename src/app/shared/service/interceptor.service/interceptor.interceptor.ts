@@ -8,25 +8,28 @@ import {
 } from '@angular/common/http';
 import { delay, finalize, Observable, of, tap } from 'rxjs';
 import { SpinnerService } from '../spinner.service/spinner.service';
+import { UserService } from '../../model/user/service/user.service';
 
 @Injectable()
 export class InterceptorInterceptor implements HttpInterceptor {
-  constructor(public spinner: SpinnerService, private loader: Loader) { }
+  constructor(public spinner: SpinnerService, public userService: UserService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
     return next.handle(request)
       .pipe(
         tap(() =>
-          this.loader.pending = true),
-        delay(2000),
+          this.spinner.showSpinner = true),
+        delay(100),
         finalize(() => {
-          this.loader.pending = false;
+          this.spinner.showSpinner = false;
         })
       )
+
   }
+
+
+
 }
 
-@Injectable({ providedIn: 'root' })
-export class Loader {
-  pending = false;
-}
+

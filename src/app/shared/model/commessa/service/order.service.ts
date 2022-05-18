@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material/table";
+import { globalVariable } from "../../global/global-variable";
 import { Order } from "../order";
 
 @Injectable({
@@ -12,21 +13,12 @@ export class OrderService {
     constructor(private http: HttpClient) { }
     dataSource!: MatTableDataSource<Order>;
 
+
     array: Order[] = [];
     orderSelected: Order = {} as Order;
 
+    showSpinner = globalVariable.show;
 
-    showSpinner: boolean = false;
-
-
-    loadSpinner() {
-
-        this.showSpinner = true;
-        setTimeout(() => {
-            this.showSpinner = false;
-            this.getAll()
-        }, 2000);
-    }
 
     getAll() {
         this.http.get<Order[]>('http://localhost:3000/projects')
@@ -37,7 +29,9 @@ export class OrderService {
         this.http.post<Order>(`http://localhost:3000/projects`, order)
             .subscribe(res => {
                 this.dataSource.data.push(res);
-                this.loadSpinner();
+                if (this.showSpinner) {
+                    this.getAll();
+                }
             })
     }
 
@@ -46,7 +40,6 @@ export class OrderService {
             .subscribe(() => {
                 const indice = this.dataSource.data.findIndex(c => c.id === order.id)
                 this.dataSource.data.splice(indice, 1);
-                this.loadSpinner();
 
             })
         return order;
@@ -68,7 +61,6 @@ export class OrderService {
             .subscribe(res => {
                 const index = this.dataSource.data.findIndex(cm => cm.id === this.orderSelected?.id);
                 this.dataSource.data[index] = res;
-                this.loadSpinner();
 
             });
     }

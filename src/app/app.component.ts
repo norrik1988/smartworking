@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { globalVariable } from './shared/model/global/global-variable';
 import { AuthService } from './shared/service/auth.service/auth.service';
 
 @Component({
@@ -7,6 +8,9 @@ import { AuthService } from './shared/service/auth.service/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public auth: AuthService){}
+  constructor(public auth: AuthService) { }
   title = 'smartworking';
+
+  showSpinner = globalVariable.show;
+
 }

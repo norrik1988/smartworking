@@ -21,10 +21,11 @@ const components = [
     AddUsersDialogComponent,
     EditUsersDialogComponent,
     DeleteUsersDialogComponent,
+
 ]
 
 @NgModule({
-    declarations: [...components,],
+    declarations: [...components],
     imports: [
         MaterialModule,
         FormsModule

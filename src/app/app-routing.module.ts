@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./features/components/users/users.module').then(m => m.UsersModule), canActivate: [AuthGuard]
   },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./features/components/calendar/calendar.module').then(m => m.CalendarModule), canActivate: [AuthGuard]
+  },
   { path: '', redirectTo: 'login/sign-in', pathMatch: 'full' },
 ];
 

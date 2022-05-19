@@ -1,0 +1,21 @@
+<mat-dialog-content class="mat-typography">
+  
+    <form class="e-schedule-form" onsubmit="return false;">
+        <mat-form-field appearance="outline">
+            <input matInput type="text" required ngModel  name="name" placeholder="inserisci ">
+            
+          </mat-form-field>
+    </form>
+    <tr><td><div class="e-date-time">
+        <mat-icon>calendar_today</mat-icon>
+        <div >{{calendarService.selected }}</div></div></td></tr>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close color="primary" >Inserisci</button>
+      <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Annulla</button>
+    </mat-dialog-actions>
+
+
+
+ 

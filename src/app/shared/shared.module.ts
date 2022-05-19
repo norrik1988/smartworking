@@ -11,6 +11,7 @@ import { EditUsersDialogComponent } from './components/dialog/users/edit-users-d
 import { DeleteUsersDialogComponent } from './components/dialog/users/delete-users-dialog/delete-users-dialog.component';
 
 import { FormsModule } from "@angular/forms";
+import { CalendarDialogComponent } from './dialog/calendar-dialog/calendar-dialog.component';
 
 
 const components = [
@@ -25,7 +26,7 @@ const components = [
 ]
 
 @NgModule({
-    declarations: [...components],
+    declarations: [...components, CalendarDialogComponent],
     imports: [
         MaterialModule,
         FormsModule

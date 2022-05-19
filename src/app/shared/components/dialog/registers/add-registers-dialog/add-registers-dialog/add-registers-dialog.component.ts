@@ -12,11 +12,6 @@ import { RegisterService } from 'src/app/shared/model/register/service/register.
 <div mat-dialog-container>
   
   <mat-form-field appearance="outline">
-    <mat-label>Giorno</mat-label>
-    <input matInput type="text" required ngModel  name="day" placeholder="inserisci giorno">
-  </mat-form-field>
-
-  <mat-form-field appearance="outline">
     <mat-label>Data</mat-label>
     <input matInput type="date" required ngModel name="date">
   </mat-form-field>

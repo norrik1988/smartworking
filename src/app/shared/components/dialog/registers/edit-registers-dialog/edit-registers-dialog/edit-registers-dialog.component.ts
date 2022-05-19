@@ -13,10 +13,7 @@ import { User } from 'src/app/shared/model/user/user';
     <form #form="ngForm">
 <div mat-dialog-container>
   
-  <mat-form-field appearance="outline">
-    <mat-label>Giorno</mat-label>
-    <input matInput type="text" required [ngModel]='registerServise.registerSelected?.day'  name="day" placeholder="inserisci giorno">
-  </mat-form-field>
+  
 
   <mat-form-field appearance="outline">
     <mat-label>Data</mat-label>

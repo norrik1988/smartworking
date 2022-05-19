@@ -54,5 +54,23 @@
       "order": "asf",
       "id": 11
     }
+  ],
+  "register": [
+    {
+      "day": "Lunedì",
+      "date": "01-05-2022",
+      "start": "09:00",
+      "end": "18:00",
+      "permit": "",
+      "id": 1
+    },
+    {
+      "day": "Martedì",
+      "date": "2022-05-01",
+      "start": "09:00",
+      "end": "19:00",
+      "permit": "20 minuti",
+      "id": 2
+    }
   ]
 }

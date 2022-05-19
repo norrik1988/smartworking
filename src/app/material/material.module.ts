@@ -30,7 +30,6 @@ const imports = [
     MatCardModule,
     MatDialogModule,
     MatPaginatorModule,
-
     MatProgressSpinnerModule
 
 ]

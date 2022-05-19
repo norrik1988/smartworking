@@ -20,7 +20,7 @@ export class InterceptorInterceptor implements HttpInterceptor {
       .pipe(
         tap(() =>
           this.spinner.showSpinner = true),
-        delay(1000),
+        delay(400),
         finalize(() => {
           this.spinner.showSpinner = false;
         })

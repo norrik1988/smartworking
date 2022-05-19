@@ -1,7 +1,7 @@
 <div fxLayout="column" fxFlexFill fxLayoutAlign="center center">
 <mat-card class="demo-inline-calendar-card">
     <h4>Smart working pianificato:</h4>
-  <mat-calendar [(selected)]="calendarService.selected" (click)="openDialog(calendarService.selected)">
+  <mat-calendar [(selected)]="calendarService.selected" (click)="openDialog($event)">
      
   </mat-calendar>
 </mat-card>

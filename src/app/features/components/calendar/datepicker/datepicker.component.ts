@@ -11,12 +11,15 @@ import { CalendarService } from 'src/app/shared/service/calendar.service/calenda
 export class DatepickerComponent implements OnInit {
 
   constructor( public dialog: MatDialog, public calendarService:CalendarService) { }
+  selected!: Event| null;
 
   ngOnInit(): void {
   }
 
-  openDialog(date:Date): void {
-    this.calendarService.selected = date;
+  openDialog(date:Event): void {
+    const target = date.target as HTMLDivElement;
+    if(target.classList.contains('mat-calendar-body-cell-content')){
+    this.selected= date;
     const dialogRef = this.dialog.open(CalendarDialogComponent, {
       width: '250px',
     });
@@ -24,5 +27,6 @@ export class DatepickerComponent implements OnInit {
       console.log('The dialog was closed');
     })
   }
+}
 
 }

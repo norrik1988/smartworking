@@ -28,12 +28,12 @@ import { RegisterService } from 'src/app/shared/model/register/service/register.
 
   <mat-form-field appearance="outline">
     <mat-label>Fine</mat-label>
-    <input matInput type="time" required ngModel name="end" >
+    <input matInput type="time" ngModel name="end" >
   </mat-form-field>
   
   <mat-form-field appearance="outline">
     <mat-label>Permesso</mat-label>
-    <input matInput type="text" required ngModel  name="permit" placeholder="inserisci permesso">
+    <input matInput type="text" ngModel  name="permit" placeholder="inserisci permesso">
   </mat-form-field>
  
 </div>

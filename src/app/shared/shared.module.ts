@@ -11,6 +11,8 @@ import { EditUsersDialogComponent } from './components/dialog/users/edit-users-d
 import { FormsModule } from "@angular/forms";
 import { AddRegistersDialogComponent } from "./components/dialog/registers/add-registers-dialog/add-registers-dialog/add-registers-dialog.component";
 import { DeleteUsersDialogComponent } from "./components/dialog/users/delete-users-dialog/delete-users-dialog.component";
+import { DeleteRegistersDialogComponent } from "./components/dialog/registers/delete-registers-dialog/delete-registers-dialog/delete-registres-dialog.component";
+import { EditRegistersDialogComponent } from "./components/dialog/registers/edit-registers-dialog/edit-registers-dialog/edit-registers-dialog.component";
 
 
 const components = [
@@ -23,8 +25,8 @@ const components = [
     DeleteUsersDialogComponent,
 
     AddRegistersDialogComponent,
-    // EditRegistersDialogComponent,
-    // DeleteRegistersDialogComponent
+    EditRegistersDialogComponent,
+    DeleteRegistersDialogComponent
 
 ]
 

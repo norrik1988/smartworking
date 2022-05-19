@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 const imports = [
     FlexLayoutModule,
@@ -30,7 +30,7 @@ const imports = [
     MatCardModule,
     MatDialogModule,
     MatPaginatorModule,
-
+    MatDatepickerModule,
     MatProgressSpinnerModule
 
 ]

@@ -1,34 +1,20 @@
-<div class="container d-flex justify-content-center">
-    <h1>Benvenuto {{showName}}</h1>
-</div>
-<!---
-<div fxLayout="row wrap" fxLayoutGap="16px grid" fxFlexFill>
-    <div fxLayout="column">
-        <div fxFlex="100%">
-            <mat-card>pino</mat-card>
-        </div>
-
+<div fxLayout="row wrap">
+    <div fxFlex="60" fxFlex.sm="40" fxFlex.md="50">
+        <span><strong>Benvenuto {{showName}}</strong></span>
     </div>
-    <div fxLayout="column" fxLayoutGap="16px grid">
-        <div fxFlex="50%">
-            <mat-card>mauro</mat-card>
-        </div>
-        <div fxFlex="50%">
-            <mat-card>mauro</mat-card>
-        </div>
+    <div fxFlex="40" fxFlex.sm="60" fxFlex.md="50" fxLayoutAlign.lg="end">
+        <span>Smart working pianificato: </span>
+        <input matInput type="date">
     </div>
-
 </div>
--->
 
 <div fxLayout="row wrap" fxLayoutGap="16px grid" fxFlexFill>
     <div fxFlex="50%">
-        <mat-card style="height:500px;">pino</mat-card>
+        <mat-card id="left-card">pino</mat-card>
     </div>
 
     <div fxFlex="50%">
-        <mat-card style="height: 230px;">mauro</mat-card>
-        <mat-card style="height: 230px; margin-top: 1%;">mauro</mat-card>
+        <mat-card id="right-upper-card">mauro</mat-card>
+        <mat-card id="right-bottom-card">mauro</mat-card>
     </div>
-
 </div>

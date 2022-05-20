@@ -1,19 +1,29 @@
 #left-card {
-    height: 500px;
+    height: 300%;
 }
 
 #right-upper-card {
-    height: 240px;
+    height: 150%;
 }
 
 #right-bottom-card {
-    height: 220px;
+    height: 132.5%;
     margin-top: 8px
 }
 
 mat-card {
+    height: 100%;
+
+
     .card-content {
-        width: 10%;
+        width: 15%;
         height: 50%;
+
+        .icon-avatar {
+            font-size: 30px;
+
+            position: relative;
+        }
+
     }
 }

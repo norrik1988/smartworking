@@ -54,5 +54,16 @@
       "order": "asf",
       "id": 11
     }
+  ],
+  "calendar": [
+    {
+      "work": "smart",
+      "id": 1
+    },
+    {
+      "work": "home",
+      "date": "2022-05-11T22:00:00.000Z",
+      "id": 2
+    }
   ]
 }

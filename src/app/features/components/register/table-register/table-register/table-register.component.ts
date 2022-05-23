@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { AddRegistersDialogComponent } from 'src/app/shared/components/dialog/registers/add-registers-dialog/add-registers-dialog/add-registers-dialog.component';
 import { DeleteRegistersDialogComponent } from 'src/app/shared/components/dialog/registers/delete-registers-dialog/delete-registers-dialog/delete-registres-dialog.component';
+import { DetailRegistersDialogComponent } from 'src/app/shared/components/dialog/registers/detail-registers-dialog/detail-registers-dialog/detail-registers-dialog.component';
 import { EditRegistersDialogComponent } from 'src/app/shared/components/dialog/registers/edit-registers-dialog/edit-registers-dialog/edit-registers-dialog.component';
 import { Register } from 'src/app/shared/model/register/register';
 import { RegisterService } from 'src/app/shared/model/register/service/register.service';
@@ -66,4 +67,13 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     });
   }
 
+  openDetail(register: Register) {
+    this.registerService.registerSelected = register;
+    const dialogRef = this.dialog.open(DetailRegistersDialogComponent, {
+      width: '250px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }

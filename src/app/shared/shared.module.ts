@@ -13,6 +13,7 @@ import { AddRegistersDialogComponent } from "./components/dialog/registers/add-r
 import { DeleteUsersDialogComponent } from "./components/dialog/users/delete-users-dialog/delete-users-dialog.component";
 import { DeleteRegistersDialogComponent } from "./components/dialog/registers/delete-registers-dialog/delete-registers-dialog/delete-registres-dialog.component";
 import { EditRegistersDialogComponent } from "./components/dialog/registers/edit-registers-dialog/edit-registers-dialog/edit-registers-dialog.component";
+import { DetailRegistersDialogComponent } from './components/dialog/registers/detail-registers-dialog/detail-registers-dialog/detail-registers-dialog.component';
 
 
 const components = [
@@ -26,12 +27,13 @@ const components = [
 
     AddRegistersDialogComponent,
     EditRegistersDialogComponent,
+    DetailRegistersDialogComponent,
     DeleteRegistersDialogComponent
 
 ]
 
 @NgModule({
-    declarations: [...components],
+    declarations: [...components, DetailRegistersDialogComponent],
     imports: [
         MaterialModule,
         FormsModule

@@ -3,13 +3,12 @@ import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Register } from 'src/app/shared/model/register/register';
 import { RegisterService } from 'src/app/shared/model/register/service/register.service';
-import { UserService } from 'src/app/shared/model/user/service/user.service';
-import { User } from 'src/app/shared/model/user/user';
+
 
 @Component({
-    selector: 'app-edit-users-dialog',
-    template: `
-     <h2 mat-dialog-title>Edit User</h2>
+  selector: 'app-edit-registers-dialog',
+  template: `
+     <h2 mat-dialog-title>Edit Register</h2>
     <form #form="ngForm">
 <div mat-dialog-container>
   
@@ -42,23 +41,23 @@ import { User } from 'src/app/shared/model/user/user';
 </div>
 </form>
   `,
-    styleUrls: ['./edit-registers-dialog.component.scss']
+  styleUrls: ['./edit-registers-dialog.component.scss']
 })
 export class EditRegistersDialogComponent implements OnInit {
 
-    constructor(public dialogRef: MatDialogRef<EditRegistersDialogComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: Register,
-        public registerServise: RegisterService) { }
+  constructor(public dialogRef: MatDialogRef<EditRegistersDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Register,
+    public registerServise: RegisterService) { }
 
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {
+  }
 
-    onNoClick(): void {
-        this.dialogRef.close();
-    }
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
-    edit(form: NgForm) {
-        this.registerServise.edit(form);
-    }
+  edit(form: NgForm) {
+    this.registerServise.edit(form);
+  }
 
 }

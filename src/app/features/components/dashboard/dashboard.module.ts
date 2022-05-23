@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "src/app/material/material.module";
 import { DashboardComponent } from "./dashboard.component";
@@ -22,7 +23,8 @@ const declarations = [
                     { path: 'dashboard', component: HomeComponent }
                 ]
             }
-        ])
+        ]),
+        FormsModule
     ],
     exports: [...declarations]
 })

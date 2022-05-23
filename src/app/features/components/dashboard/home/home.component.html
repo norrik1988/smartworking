@@ -26,7 +26,9 @@
                         <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
                             <div fxLayout="column" fxFlexFill>
                                 <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
+                                    <button mat-icon-button>
+                                        <mat-icon class="icon" (click)="openEdit()">edit_note </mat-icon>
+                                    </button>
                                 </div>
                                 <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
                                     <div fxFlex="60%">
@@ -36,7 +38,7 @@
 
                                 <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
                                     <mat-card-content>
-                                        free
+                                        {{userService.userSelected?.name}}
                                     </mat-card-content>
                                 </div>
                                 <div fxFlex="20%" fxLayout="row">
@@ -259,7 +261,6 @@
         </div>
 
         <div fxFlex="50%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.sm="100%" fxFlex.xs="100%">
-
             <div class="exampleTwo-boundary">
                 <div fxLayout="column " fxFlexFill>
                     <div fxFlex="50%" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="5px">

@@ -11,6 +11,8 @@ import { EditUsersDialogComponent } from './components/dialog/users/edit-users-d
 import { DeleteUsersDialogComponent } from './components/dialog/users/delete-users-dialog/delete-users-dialog.component';
 
 import { FormsModule } from "@angular/forms";
+import { EditDashboardDialogComponent } from './components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
+import { CommonModule } from "@angular/common";
 
 
 const components = [
@@ -25,10 +27,11 @@ const components = [
 ]
 
 @NgModule({
-    declarations: [...components],
+    declarations: [...components, EditDashboardDialogComponent],
     imports: [
         MaterialModule,
-        FormsModule
+        FormsModule,
+        CommonModule
     ],
     exports: [...components]
 })

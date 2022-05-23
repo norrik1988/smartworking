@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const imports = [
     FlexLayoutModule,
@@ -31,7 +32,8 @@ const imports = [
     MatDialogModule,
     MatPaginatorModule,
     MatDatepickerModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    DragDropModule
 
 ]
 @NgModule({

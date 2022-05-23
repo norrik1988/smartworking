@@ -10,7 +10,7 @@
 </div>
 
 
-<!-- 
+<!--
 <div style="margin-top: 5%">
     <div fxLayout="row wrap" fxLayoutGap="10px grid" fxFlexFill>
         <div fxFlex="50%">
@@ -122,4 +122,82 @@
             </mat-card>
         </div>
     </div>
-</div> -->
+</div>
+-->
+<div fxLayout="row wrap" fxLayoutGap="10px grid" fxFlexFill>
+    <div fxFlex="50%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+        <div class="example-boundary">
+            <div fxLayout="column " fxFlexFill>
+                <div fxFlex="25%" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="5px">
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+                        I can only be dragged within the dotted container
+                    </mat-card>
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+                        I can only be dragged within the dotted container
+                    </mat-card>
+                </div>
+                <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
+
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
+                        style="background-color: red">
+                    </mat-card>
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
+                        style="background-color: red">
+                    </mat-card>
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
+                        style="background-color: red">
+                    </mat-card>
+                </div>
+                <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
+                        style="background-color:violet;">
+                    </mat-card>
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
+                        style="background-color:violet;">
+                    </mat-card>
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
+                        style="background-color:violet;">
+                    </mat-card>
+                </div>
+                <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
+                        style="background-color:orange;">
+                    </mat-card>
+                    <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
+                        style="background-color:orange;">
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div fxFlex="50%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+
+        <div class="exampleTwo-boundary">
+            <div fxLayout="column wrap" fxFlexFill>
+                <div fxFlex="50%" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="5px">
+                    <mat-card style=" background-color:black;" class="example-box"
+                        cdkDragBoundary=".exampleTwo-boundary" cdkDrag></mat-card>
+                    <mat-card style=" background-color:black;" class="example-box"
+                        cdkDragBoundary=".exampleTwo-boundary" cdkDrag></mat-card>
+                    <mat-card style=" background-color:black;" class="example-box"
+                        cdkDragBoundary=".exampleTwo-boundary" cdkDrag></mat-card>
+                </div>
+
+                <div fxFlex="50%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px">
+                    <mat-card style=" background-color:red; " class="example-box" cdkDragBoundary=".example-boundary"
+                        cdkDrag></mat-card>
+                    <mat-card style=" background-color:red;" class="example-box" cdkDragBoundary=".example-boundary"
+                        cdkDrag></mat-card>
+                    <mat-card style=" background-color:red;" class="example-box" cdkDragBoundary=".example-boundary"
+                        cdkDrag></mat-card>
+                </div>
+            </div>
+        </div>
+
+        <div class="exampleThree-boundary">
+
+        </div>
+    </div>
+
+</div>

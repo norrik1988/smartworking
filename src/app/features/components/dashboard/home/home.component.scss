@@ -40,7 +40,6 @@ mat-card {
     text-align: center;
     background: #fff;
     border-radius: 4px;
-    margin-right: 25px;
     position: relative;
     z-index: 1;
     box-sizing: border-box;
@@ -59,21 +58,22 @@ mat-card {
 
 .example-boundary {
     width: 800px;
-    height: 800px;
+    height: 750px;
     max-width: 100%;
-    border: dotted #ccc 2px;
+    border: solid #ccc 2px;
 }
 
 .exampleTwo-boundary {
     width: 800px;
-    height: 400px;
+    height: 380px;
     max-width: 100%;
-    border: dotted #ccc 2px;
+    border: solid #ccc 2px;
 }
 
 .exampleThree-boundary {
-    width: 400px;
-    height: 400px;
+    width: 800px;
+    height: 355px;
+    margin-top: 2%;
     max-width: 100%;
-    border: dotted #ccc 2px;
+    border: solid #ccc 2px;
 }

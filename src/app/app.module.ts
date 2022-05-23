@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorInterceptor } from './shared/service/interceptor.service/interceptor.interceptor';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 
@@ -29,7 +30,16 @@ import { InterceptorInterceptor } from './shared/service/interceptor.service/int
     HttpClientModule
 
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true }],
+  providers: [
+    {
+      provide:
+        HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true
+    },
+    {
+      provide:
+        MAT_DATE_LOCALE, useValue: 'it-IT'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

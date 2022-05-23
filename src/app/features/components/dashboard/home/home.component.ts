@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 
 
 @Component({
@@ -13,6 +13,5 @@ export class HomeComponent {
   public get showName() {
     return localStorage.getItem("SessionUser")
   }
-
 
 }

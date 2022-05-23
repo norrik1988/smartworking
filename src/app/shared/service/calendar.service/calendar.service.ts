@@ -9,7 +9,6 @@ import { Calendar } from '../../model/calendar/calendar';
 })
 export class CalendarService {
     selected!: Date;
-    app: string = 'smart';
     calendar: Calendar = {} as Calendar;
     arrayCal: Calendar[] = []
 
@@ -22,6 +21,20 @@ export class CalendarService {
         })
     }
 
+
+    getAll() {
+        this.http.get<Calendar[]>('http://localhost:3000/calendar').subscribe(res => this.arrayCal = res)
+      }
+
+
+      getCalendar(calendar: Calendar): Calendar {
+        this.http.get<Calendar>(`http://localhost:3000/calendar/${calendar.id}`).subscribe(res => {
+          const index = this.arrayCal.findIndex(cl => cl.id === calendar.id);
+          this.arrayCal[index] = res
+          console.log(this.arrayCal[index]);
+        })
+        return calendar;
+      }
 
 
 

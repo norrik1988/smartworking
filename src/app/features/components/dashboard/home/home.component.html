@@ -1,144 +1,14 @@
 <div fxLayout="row ">
-    <div fxFlex="60" fxFlex.sm="40" fxFlex.md="50" fxLayoutAlign="start">
+    <div class="override-font-size" fxFlex="60" fxFlex.sm="40" fxFlex.md="50" fxLayoutAlign="start">
         <span><strong>Benvenuto {{showName}}</strong></span>
     </div>
 
-    <div fxFlex="40" fxFlex.sm="60" fxFlex.md="50" fxLayoutAlign="end end">
-        <span>Smart working pianificato: </span>
-        <input matInput type="date">
+    <div class="override-font-size" fxFlex="40" fxFlex.sm="60" fxFlex.md="50" fxLayoutAlign="end end">
+        <span>Smart working pianificato: <input type="date"> </span>
+
     </div>
 </div>
 
-
-<!--
-<div style="margin-top: 5%">
-    <div fxLayout="row wrap" fxLayoutGap="10px grid" fxFlexFill>
-        <div fxFlex="50%">
-            <mat-card id="left-card">
-                <div fxLayout="column " fxFlexFill>
-
-                    <div fxFlex="25%" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="5px">
-                        <mat-card style="width: 10%; background-color:#005669;height:50%"></mat-card>
-                        <mat-card style="width: 10%; background-color:#005669;height:50%"></mat-card>
-                    </div>
-
-                    <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
-
-                        <mat-card class="card-content">
-                            <div fxLayout="column wrap" fxFlexFill fxLayoutAlign="center space-between">
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon-edit">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon-avatar ">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row">
-                                    free
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-
-                        <mat-card class="card-content">
-                            <div fxLayout="column wrap" fxFlexFill fxLayoutAlign="center space-between">
-                                <div fxFlex="50%" fxLayout="row">
-                                    <mat-icon class="card-edit ">edit_note</mat-icon>
-                                    <mat-icon class="card-avatar">account_circle_full</mat-icon>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row">
-                                    free
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-                        <mat-card class="card-content">
-                            <div fxLayout="column wrap" fxFlexFill fxLayoutAlign="center space-between">
-                                <div fxFlex="50%" fxLayout="row">
-                                    <mat-icon>edit_note</mat-icon>
-                                    <mat-icon>account_circle_full</mat-icon>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row">
-                                    free
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-                    </div>
-                    <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
-                        <mat-card style="width: 10%; background-color:violet;height:50%"></mat-card>
-                        <mat-card style="width: 10%; background-color:violet;height:50%"></mat-card>
-                        <mat-card style="width: 10%; background-color:violet;height:50%"></mat-card>
-                    </div>
-                    <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
-                        <mat-card style="width: 10%; background-color:orange;height:50%"></mat-card>
-                        <mat-card style="width: 10%; background-color:orange;height:50%"></mat-card>
-                    </div>
-                </div>
-            </mat-card>
-        </div>
-
-        <div fxFlex="50%">
-            <mat-card id="right-upper-card">
-                <div fxLayout="column wrap" fxFlexFill>
-                    <div fxFlex="50%" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="5px">
-                        <mat-card style="width: 10%; background-color:black;height:50%"></mat-card>
-                        <mat-card style="width: 10%; background-color:black;height:50%"></mat-card>
-                        <mat-card style="width: 10%; background-color:black;height:50%"></mat-card>
-                    </div>
-                    <div fxFlex="50%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px">
-                        <mat-card style="width: 10%; background-color:red; height:50%"></mat-card>
-                        <mat-card style="width: 10%; background-color:red;height:50%"></mat-card>
-                        <mat-card style="width: 10%; background-color:red;height:50%"></mat-card>
-                    </div>
-                </div>
-            </mat-card>
-
-            <mat-card id="right-bottom-card">
-                <div fxFlexFill>
-                    <div fxFlex="30%" fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="5px">
-                        <mat-card style="width: 30%; background-color:blue;height:30%"></mat-card>
-                    </div>
-                    <div fxFlex="40%" fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="5px">
-                                            <mat-card style=" background-color:black;" class="example-box"
-                        cdkDragBoundary=".exampleThree-boundary" cdkDrag></mat-card>
-                                            <mat-card style=" background-color:black;" class="example-box"
-                        cdkDragBoundary=".exampleThree-boundary" cdkDrag></mat-card>
-                                            <mat-card style=" background-color:black;" class="example-box"
-                        cdkDragBoundary=".exampleThree-boundary" cdkDrag></mat-card>
-                    </div>
-                    <div fxFlex="30%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px">
-                        <mat-card style="width: 30%; background-color:blue;height:30%"></mat-card>
-                    </div>
-                </div>
-            </mat-card>
-        </div>
-    </div>
-</div>
-<mat-card fxLayout="column" class="example-box" cdkDragBoundary=".example-boundary" cdkDrag
-                            style="background-color: red">
-                            <mat-card-header>
-                                <mat-card-title>
-                                    <mat-icon fxLayoutAlign="start center" id="icon-avatar">account_circle_full
-                                    </mat-icon>
-                                </mat-card-title>
-                            </mat-card-header>
-
-                            <mat-card-content>free</mat-card-content>
-                            <hr >
-                        </mat-card>
--->
 <div class="top">
     <div fxLayout="row wrap" fxLayoutGap="10px grid" fxFlexFill>
         <div fxFlex="50%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.sm="100%" fxFlex.xs="100%">

@@ -31,6 +31,16 @@ mat-card {
     }
 }
 
+.top {
+    margin-top: 5%;
+}
+
+.override-font-size {
+    span {
+        font-size: 30px;
+    }
+}
+
 .example-box {
     overflow: hidden;
 

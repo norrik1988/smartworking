@@ -14,4 +14,5 @@ export class HomeComponent {
     return localStorage.getItem("SessionUser")
   }
 
+
 }

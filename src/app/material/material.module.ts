@@ -33,7 +33,7 @@ const imports = [
     MatPaginatorModule,
     MatDatepickerModule,
     MatProgressSpinnerModule,
-    DragDropModule
+    DragDropModule,
 
 ]
 @NgModule({

@@ -12,7 +12,7 @@ export class CalendarService {
     app: string = 'smart';
     calendar: Calendar = {} as Calendar;
     arrayCal: Calendar[] = []
-
+    boh: any
     constructor(private http: HttpClient) { }
 
     add(cal: Calendar) {

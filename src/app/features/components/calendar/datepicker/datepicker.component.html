@@ -1,4 +1,4 @@
-<div fxLayout="column" fxFlexFill fxLayoutAlign="center center">
+<!-- <div fxLayout="column" fxFlexFill fxLayoutAlign="center center">
   <mat-card class="demo-inline-calendar-card">
     <h4>Smart working pianificato:</h4>
     <mat-calendar [(selected)]="calendarService.app" [(selected)]="calendarService.selected"
@@ -11,4 +11,7 @@
     <p>Selected date: {{calendarService.calendar.date}}</p>
     <p>Selected app: {{calendarService.calendar.work}}</p>
   </div>
+</div> -->
+<div class="container">
+  <full-calendar [options]="calendarOptions"></full-calendar>
 </div>

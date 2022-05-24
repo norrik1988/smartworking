@@ -11,13 +11,13 @@ import { CalendarService } from '../../service/calendar.service/calendar.service
 export class CalendarDialogComponent implements OnInit {
   constructor(public calendarService: CalendarService) { }
   ngOnInit(): void {
-    this.res.dataStr
+
   }
   datePicker!: DatepickerComponent;
   flag: boolean = false;
-  res: any;
+
   add(f: NgForm) {
-    this.calendarService.add(f.value);
+    this.calendarService.addEvents(f.value);
     f.reset();
   }
 }

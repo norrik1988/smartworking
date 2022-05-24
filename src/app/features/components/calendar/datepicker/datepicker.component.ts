@@ -67,8 +67,6 @@ export class DatepickerComponent implements OnInit {
     this.dialog.open(CalendarDialogComponent, {
       width: '250px',
     });
-
-
   }
   ngOnInit() {
     setTimeout(() => {

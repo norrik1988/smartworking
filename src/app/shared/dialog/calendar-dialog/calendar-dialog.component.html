@@ -1,15 +1,17 @@
 <mat-dialog-content class="mat-typography">
-  <tr>
-    <td>
-      <div class="e-date-time">
-        <h2>
-          <mat-icon>calendar_today</mat-icon>
-          {{ calendarService.boh }}
-        </h2>
-      </div>
-    </td>
-  </tr>
+
   <form class="e-schedule-form" #f="ngForm">
+    <tr>
+      <td>
+        <div class="e-date-time" [ngModel]="calendarService.dateSelected" name="ate">
+          <h2>
+            <mat-icon>calendar_today</mat-icon>
+            {{ calendarService.dateSelected }}
+          </h2>
+        </div>
+      </td>
+    </tr>
+
     <mat-form-field appearance="outline">
       <input matInput type="text" required ngModel name="work" placeholder="inserisci ">
 

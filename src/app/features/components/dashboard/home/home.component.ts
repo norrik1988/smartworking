@@ -22,6 +22,7 @@ export class HomeComponent {
     const dialogRef = this.dialog.open(EditDashboardDialogComponent, {
       width: '250px',
     });
+    this.userService.getUser();
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

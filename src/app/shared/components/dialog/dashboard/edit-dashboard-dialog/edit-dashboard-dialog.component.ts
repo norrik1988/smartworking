@@ -1,41 +1,51 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { map, Observable, startWith } from 'rxjs';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
 
 @Component({
   selector: 'app-edit-dashboard-dialog',
   template: `
-    <h2 mat-dialog-title>Edit Position</h2>
-    <form #form="ngForm" >
-    <div mat-dialog-container>
-  
-    <mat-form-field > 
-      <input matInput type="search" matInput (keyup)="applyFilter($event)">
-      <button disabled mat-icon-button matSuffix>
-        <mat-icon color="primary">search</mat-icon>
-      </button>
+    <form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>State</mat-label>
+    <input matInput
+           aria-label="State"
+           [matAutocomplete]="auto"
+           [formControl]="myFormControl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let state of filteredUsers | async" [value]="state.name">
+        <img class="example-option-img" aria-hidden  height="25">
+        <span>{{state.name}}</span> |
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 
+  <br>
 
-    </mat-form-field>
-
-      <div mat-dialog-actions>
-        <button mat-button (click)="onNoClick()">Annulla</button>
-        <button mat-button  cdkFocusInitial [mat-dialog-close]="data" type='submit'[disabled]="form.invalid" class="addBotton" (click)="edit(form.value)">Modifica</button>
-      </div>
-    </div>
-    </form>
+  <mat-slide-toggle
+    [checked]="myFormControl.disabled"
+    (change)="myFormControl.disabled ? myFormControl.enable() : myFormControl.disable()">
+    Disable Input?
+  </mat-slide-toggle>
+</form>
   `,
   styleUrls: ['./edit-dashboard-dialog.component.scss']
 })
-export class EditDashboardDialogComponent implements OnInit {
+export class EditDashboardDialogComponent {
 
   constructor(public dialogRef: MatDialogRef<EditDashboardDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: User, public userService: UserService) { }
+    @Inject(MAT_DIALOG_DATA) public data: User, public userService: UserService) {
 
-  ngOnInit(): void {
+    this.filteredUsers = this.myFormControl.valueChanges.pipe(
+      startWith(''),
+      map(state => (state ? this._filterUsers(state) : this.userService.users.slice())),
+    );
   }
+  myFormControl = new FormControl();
+  filteredUsers: Observable<User[]>;
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -44,9 +54,9 @@ export class EditDashboardDialogComponent implements OnInit {
   edit(form: NgForm) {
     this.userService.edit(form);
   }
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.userService.dataSource.filter = filterValue.trim().toLowerCase();
 
+  private _filterUsers(value: string): User[] {
+    const filterValue = value.toLowerCase();
+    return this.userService.users.filter(state => state.name.toLowerCase().includes(filterValue));
   }
 }

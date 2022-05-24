@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,10 +16,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
-
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatNativeDateModule } from "@angular/material/core";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+
+
 
 const imports = [
     FlexLayoutModule,
@@ -37,7 +39,9 @@ const imports = [
     MatDatepickerModule,
     MatProgressSpinnerModule,
     DragDropModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatSlideToggleModule
 
 ]
 @NgModule({

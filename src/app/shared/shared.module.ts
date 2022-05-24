@@ -10,7 +10,7 @@ import { AddUsersDialogComponent } from './components/dialog/users/add-users-dia
 import { EditUsersDialogComponent } from './components/dialog/users/edit-users-dialog/edit-users-dialog.component';
 import { DeleteUsersDialogComponent } from './components/dialog/users/delete-users-dialog/delete-users-dialog.component';
 
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { EditDashboardDialogComponent } from './components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { CommonModule } from "@angular/common";
 
@@ -31,7 +31,8 @@ const components = [
     imports: [
         MaterialModule,
         FormsModule,
-        CommonModule
+        CommonModule,
+        ReactiveFormsModule
     ],
     exports: [...components]
 })

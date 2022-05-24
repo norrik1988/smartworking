@@ -17,7 +17,12 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        this.http.get<User[]>('http://localhost:3000/user').subscribe(res => this.dataSource.data = res)
+        this.http.get<User[]>('http://localhost:3000/user').subscribe(res => this.dataSource.data = res);
+    }
+
+    getUser() {
+        this.http.get<User[]>('http://localhost:3000/user').subscribe(res => this.users = res)
+
     }
 
     add(user: User) {

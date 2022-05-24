@@ -76,4 +76,11 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  selected = 'all';
+
+  onChange($event: any) {
+
+  }
+
 }

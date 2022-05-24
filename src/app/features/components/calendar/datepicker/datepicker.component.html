@@ -1,15 +1,14 @@
 <div fxLayout="column" fxFlexFill fxLayoutAlign="center center">
   <mat-card class="demo-inline-calendar-card">
     <h4>Smart working pianificato:</h4>
-    <mat-calendar  [(selected)]="calendarService.selected"
+    <mat-calendar [(selected)]="calendarService.app" [(selected)]="calendarService.selected"
       (click)="openDialog($event)">
 
     </mat-calendar>
   </mat-card>
-  <p>Selected date: {{calendarService.calendar.date | date : 'EEEE, MMMM d, y'}}</p>
-  <p>Selected app: {{calendarService.calendar?.work}}</p> 
-  <div *ngFor="let cl of calendarService.arrayCal">
-    <span>{{cl.date}} {{cl.work}}</span>
+  <p>Selected date: {{calendarService.selected}}</p>
+  <div>
+    <p>Selected date: {{calendarService.calendar.date}}</p>
+    <p>Selected app: {{calendarService.calendar.work}}</p>
   </div>
-  
 </div>

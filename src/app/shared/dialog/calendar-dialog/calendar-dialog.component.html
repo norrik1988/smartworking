@@ -2,27 +2,22 @@
 
   <form class="e-schedule-form" #f="ngForm">
     <mat-form-field appearance="outline">
-      <input matInput type="text" required [ngModel]="calendarService.calendar.work" name="work" placeholder="inserisci ">
-     
-    </mat-form-field>
-    <div [ngModel]="calendarService.calendar.date" name="date" [disabled]="flag"></div> 
-    <button mat-button mat-dialog-close color="primary" (click)="add(f)">Inserisci</button>
+      <input matInput type="text" required ngModel name="work" placeholder="inserisci ">
 
-      <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Annulla</button>
-      
-   
+    </mat-form-field>
+    <button mat-button mat-dialog-close color="primary" (click)="add(f)">Inserisci</button>
   </form>
   <tr>
     <td>
       <div class="e-date-time">
         <mat-icon>calendar_today</mat-icon>
-        <div>Date: {{calendarService.calendar.date}}</div>
+        <div>{{calendarService.selected }}</div>
       </div>
-      <div>Work: {{calendarService.calendar.work}}</div>
     </td>
   </tr>
 
-
 </mat-dialog-content>
+<mat-dialog-actions align="end">
 
-
+  <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Annulla</button>
+</mat-dialog-actions>

@@ -35,6 +35,7 @@ export class DatepickerComponent implements OnInit {
     const target = date.target as HTMLDivElement;
     const day = Number(target.textContent)
     if (target.classList.contains('mat-calendar-body-cell-content') && day >= 1 && day <= 31) {
+      this.selected = date;
       this.calendarService.calendar.date = this.calendarService.selected
       const dialogRef = this.dialog.open(CalendarDialogComponent, {
         width: '250px',

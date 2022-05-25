@@ -23,6 +23,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['giorno', 'inizio', 'fine', 'permesso', 'azioni'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  selected = 'all';
 
   ngOnInit(): void {
     this.registerService.getAll()
@@ -34,10 +35,16 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.registerService.dataSource.filter = filterValue.trim().toLowerCase();
+    this.registerService.dataSource.filter = filterValue;
     if (this.registerService.dataSource.paginator) {
       this.registerService.dataSource.paginator.firstPage();
     }
+  }
+
+  mesiFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.registerService.dataSource.filter = filterValue;
+    // const result = this.registerService.registers.filter((res: Register) => res.date);
   }
 
   openDialog(): void {
@@ -75,12 +82,6 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-  }
-
-  selected = 'all';
-
-  onChange($event: any) {
-
   }
 
 }

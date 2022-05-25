@@ -5,32 +5,17 @@
             <mat-icon>add</mat-icon>
         </button>
     </div>
-    <!-- ----------------------------------------------------------------------------------------- -->
+
     <mat-form-field appearance="standard">
         <mat-label>Search</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input type="date">
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-        <mat-label>Filter by month</mat-label>
-        <mat-select [(value)]="selected" (selectonChange)="mesiFilter($event)">
-
-            <mat-option value="all">all months</mat-option>
-            <mat-option value="01">Gennaio</mat-option>
-            <mat-option value="02">Febbraio</mat-option>
-            <mat-option value="03">Marzo</mat-option>
-            <mat-option value="04">Aprile</mat-option>
-            <mat-option value="05">Maggio</mat-option>
-            <mat-option value="06">Giugno</mat-option>
-            <mat-option value="07">Luglio</mat-option>
-            <mat-option value="08">Agosto</mat-option>
-            <mat-option value="09">Settembre</mat-option>
-            <mat-option value="10">Ottobre</mat-option>
-            <mat-option value="11">Novembre</mat-option>
-            <mat-option value="12">Dicembre</mat-option>
-        </mat-select>
+    <mat-form-field appearance="standard">
+        <mat-label>Search mounth</mat-label>
+        <input matInput type="month" #month (keypress)="searchMonth($event)">
     </mat-form-field>
-    <!-- ----------------------------------------------------------------------------------------- -->
+
 
     <table mat-table [dataSource]="registerService.dataSource" class="mat-elevation-z8">
 

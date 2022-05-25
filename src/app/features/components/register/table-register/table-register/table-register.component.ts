@@ -41,10 +41,14 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     }
   }
 
-  mesiFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
+  searchMonth(event: Event) {
+
+    const filterValue = (event.target as HTMLOptionElement).value;
     this.registerService.dataSource.filter = filterValue;
-    // const result = this.registerService.registers.filter((res: Register) => res.date);
+    if (this.registerService.dataSource.paginator) {
+      this.registerService.dataSource.paginator.firstPage();
+    }
+    console.log(filterValue)
   }
 
   openDialog(): void {

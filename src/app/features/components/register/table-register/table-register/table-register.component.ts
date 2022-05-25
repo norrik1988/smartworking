@@ -42,7 +42,6 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   }
 
   searchMonth(event: Event) {
-
     const filterValue = (event.target as HTMLOptionElement).value;
     this.registerService.dataSource.filter = filterValue;
     if (this.registerService.dataSource.paginator) {

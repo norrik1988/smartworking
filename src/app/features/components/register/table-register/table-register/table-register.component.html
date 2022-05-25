@@ -6,16 +6,21 @@
         </button>
     </div>
 
-    <mat-form-field appearance="standard">
-        <mat-label>Search</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input type="date">
-    </mat-form-field>
+    <form>
+        <div>
+            <mat-form-field appearance="standard">
+                <mat-label>Search</mat-label>
+                <input matInput (keyup)="applyFilter($event)" #input type="date">
+            </mat-form-field>
 
-    <mat-form-field appearance="standard">
-        <mat-label>Search mounth</mat-label>
-        <input matInput type="month" #month (keypress)="searchMonth($event)">
-    </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Search mounth</mat-label>
+                <input matInput type="month" #month (keypress)="searchMonth($event)">
+            </mat-form-field>
 
+            <input type="reset" value="Reset">
+        </div>
+    </form>
 
     <table mat-table [dataSource]="registerService.dataSource" class="mat-elevation-z8">
 
@@ -59,6 +64,6 @@
 
     </table>
 
-    <mat-paginator [pageSizeOptions]="[2, 10, 25, 100]" aria-label="Select page of register"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of register"></mat-paginator>
 
 </div>

@@ -12,8 +12,14 @@
     <p>Selected app: {{calendarService.calendar.work}}</p>
   </div>
 </div> -->
-<div class="container">
-  <full-calendar [options]="calendarService.calendarOptions">
 
-  </full-calendar>
+<div class='demo-app'>
+
+  <div class='demo-app-main'>
+    <full-calendar
+      *ngIf='calendarVisible'
+      [options]='calendarOptions'
+    ></full-calendar>
+  </div>
+
 </div>

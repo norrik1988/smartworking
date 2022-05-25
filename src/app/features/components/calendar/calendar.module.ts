@@ -9,11 +9,17 @@ import { DatepickerComponent } from "./datepicker/datepicker.component";
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { FullCalendarModule } from "@fullcalendar/angular";
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
 
-FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
+FullCalendarModule.registerPlugins([interactionPlugin,dayGridPlugin,
+    timeGridPlugin,
+    listPlugin,
+    ]);
 const components = [
     CalendarComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    
 ]
 
 @NgModule({

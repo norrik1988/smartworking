@@ -24,7 +24,7 @@ export class HomeComponent {
     });
     this.userService.getUser();
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(result);
     });
   }
 

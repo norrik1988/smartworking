@@ -1,9 +1,6 @@
 <div fxLayout="row ">
-    <div class="override-font-size" fxFlex="60" fxFlex.sm="40" fxFlex.md="50" fxLayoutAlign="start">
-        <span><strong>Benvenuto {{showName}}</strong></span>
-    </div>
 
-    <div class="" fxFlex="40" fxFlex.sm="60" fxFlex.md="50" fxLayoutAlign="end end">
+    <div fxFlex="40%" fxFlex.sm="60" fxFlex.md="50" fxLayoutAlign="end end">
         <span>Smart working pianificato:
             <mat-form-field appearance="fill">
                 <mat-label>Scegli una data</mat-label>
@@ -16,515 +13,51 @@
     </div>
 </div>
 
-<div class="top">
-    <div fxLayout="row wrap" fxLayoutGap="10px grid" fxFlexFill>
-        <div fxFlex="50%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.sm="100%" fxFlex.xs="100%">
-            <div class="example-boundary">
-                <div fxLayout="column " fxFlexFill>
+<div fxLayout="row " fxLayoutGap="15px grid" fxFlexFill>
+    <div>
+        <div class="example-boundary">
 
-                    <div fxFlex="25%" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="5px">
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <button mat-icon-button>
-                                        <mat-icon class="icon" (click)="openEdit()">edit_note </mat-icon>
-                                    </button>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        {{userService.userSelected?.name}}
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-                    </div>
-
-                    <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
-
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                    </div>
-
-                    <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                    </div>
-
-                    <div fxFlex="25%" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="5px">
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div fxFlex="50%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.sm="100%" fxFlex.xs="100%">
-            <div class="exampleTwo-boundary">
-                <div fxLayout="column " fxFlexFill>
-                    <div fxFlex="50%" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="5px">
-                        <mat-card class="example-box" cdkDragBoundary=".exampleTwo-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".exampleTwo-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".exampleTwo-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                    </div>
-
-                    <div fxFlex="50%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px">
-                        <mat-card class="example-box" cdkDragBoundary=".exampleTwo-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".exampleTwo-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".exampleTwo-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
+            <!-- <div fxLayout="row" fxLayoutAlign="space-between">
+                <div *ngFor="let row of [1,2,3,4,5]">
+                    <div *ngFor="let column of [1,2,3,4,5]">
+                        <app-card></app-card>
                     </div>
                 </div>
-            </div>
-
-            <div class="exampleThree-boundary">
-                <div fxFlex="100%" fxFlexFill fxLayout="column">
-
-
-                    <div fxFlex="50%" fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="5px">
-                        <mat-card class="example-box" cdkDragBoundary=".exampleThree-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".exampleThree-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".exampleThree-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                    </div>
-
-                    <div fxFlex="50%" fxLayoutAlign="space-between" fxLayoutGap="5px">
-                        <mat-card class="example-box" cdkDragBoundary=".exampleThree-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                        <mat-card class="example-box" cdkDragBoundary=".exampleThree-boundary" cdkDrag>
-                            <div fxLayout="column" fxFlexFill>
-                                <div fxLayoutAlign="space-between">
-                                    <mat-icon class="icon">edit_note</mat-icon>
-                                </div>
-                                <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                                    <div fxFlex="60%">
-                                        <mat-icon class="icon">account_circle_full</mat-icon>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
-                                    <mat-card-content>
-                                        free
-                                    </mat-card-content>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row">
-                                    <hr>
-                                </div>
-                            </div>
-                        </mat-card>
-
-                    </div>
-                </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
+
+    <div>
+        <div class="exampleTwo-boundary">
+            <div fxLayout="column " fxFlexFill>
+
+
+                <!--   <div fxFlex="100%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px"
+                    style="flex: 1 1 1e-09px; box-sizing: border-box; align-self: center;"
+                    fxLayoutAlign="space-between">
+                    <div *ngFor="let row of [1,2,3,4,5]">
+                        <div *ngFor="let column of [1,2,3]">
+                            <app-card></app-card>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </div>
+
+        <div class="exampleThree-boundary">
+            <!--             <div fxFlex="100%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px"
+                style="flex: 1 1 1e-09px; box-sizing: border-box; align-self: center;" fxLayoutAlign="space-between">
+                <div *ngFor="let row of [1,2,3,4,5]">
+                    <div *ngFor="let column of [1,2]">
+                        <app-card></app-card>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
 </div>

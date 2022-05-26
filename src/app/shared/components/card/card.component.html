@@ -1,0 +1,23 @@
+<mat-card class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+    <div fxLayout="column" fxFlexFill>
+        <div fxLayoutAlign="space-between">
+            <button mat-icon-button>
+                <mat-icon class="icon" (click)="openEdit()">edit_note </mat-icon>
+            </button>
+        </div>
+        <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
+            <div fxFlex="60%">
+                <mat-icon class="icon">account_circle_full</mat-icon>
+            </div>
+        </div>
+
+        <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
+            <mat-card-content>
+                {{userService.userSelected?.name}}
+            </mat-card-content>
+        </div>
+        <div fxFlex="20%" fxLayout="row">
+            <hr>
+        </div>
+    </div>
+</mat-card>

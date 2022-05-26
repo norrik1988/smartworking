@@ -3,6 +3,7 @@ import { Component, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "src/app/material/material.module";
+import { SharedModule } from "src/app/shared/shared.module";
 import { DashboardComponent } from "./dashboard.component";
 import { HomeComponent } from './home/home.component';
 
@@ -24,7 +25,8 @@ const declarations = [
                 ]
             }
         ]),
-        FormsModule
+        FormsModule,
+        SharedModule
     ],
     exports: [...declarations]
 })

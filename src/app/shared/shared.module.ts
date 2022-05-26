@@ -13,6 +13,7 @@ import { DeleteUsersDialogComponent } from './components/dialog/users/delete-use
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { EditDashboardDialogComponent } from './components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { CommonModule } from "@angular/common";
+import { CardComponent } from './components/card/card.component';
 
 
 const components = [
@@ -24,10 +25,13 @@ const components = [
     EditUsersDialogComponent,
     DeleteUsersDialogComponent,
 
+    EditDashboardDialogComponent,
+    CardComponent
+
 ]
 
 @NgModule({
-    declarations: [...components, EditDashboardDialogComponent],
+    declarations: [...components,],
     imports: [
         MaterialModule,
         FormsModule,

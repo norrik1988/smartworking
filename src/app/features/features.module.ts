@@ -7,7 +7,6 @@ import { ProfileModule } from "./components/profile/profile.module";
 import { ProjectsModule } from "./components/projects/projects.module";
 import { SettingsModule } from "./components/settings/settings.module";
 import { UsersModule } from "./components/users/users.module";
-import { RegisterComponent } from './components/register/register.component';
 import { RegisterModule } from "./components/register/register.module";
 
 

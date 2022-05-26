@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { TableRegisterComponent } from './table-register/table-register/table-register.component';
 import { MaterialModule } from 'src/app/material/material.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +18,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     SharedModule,
     MaterialModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: '', component: RegisterComponent,

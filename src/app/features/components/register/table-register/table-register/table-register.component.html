@@ -6,21 +6,39 @@
         </button>
     </div>
 
-    <form>
-        <div>
-            <mat-form-field appearance="standard">
-                <mat-label>Search</mat-label>
-                <input matInput (keyup)="applyFilter($event)" #input type="date">
-            </mat-form-field>
-
-            <mat-form-field appearance="standard">
-                <mat-label>Search mounth</mat-label>
-                <input matInput type="month" #month (keypress)="searchMonth($event)">
-            </mat-form-field>
-
-            <input type="reset" value="Reset">
+    <!-- <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.md="row" fxLayout.xs="column" fxLayout.sm="start start">
+        <div fxFlex="20%" fxFlex.md="30%" fxFlex.xs="45%" fxFlex.sm="45%">
+            <form #form="ngForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Search</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" #input type="date">
+                </mat-form-field>
+            </form>
         </div>
-    </form>
+
+        <div fxFlex="20%" fxFlex.md="30%" fxFlex.xs="45%" fxFlex.sm="45%">
+            <form #formMonth="ngForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Search mounth</mat-label>
+                    <input matInput type="month" #month (keypress)="searchMonth($event)">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div fxFlex="50%" fxFlex.md="10%" fxFlex.xs="10%" fxFlex.sm="10%">
+            <button (click)="refresh()" mat-raised-button type="reset" class="reset button">Reset</button>
+        </div>
+
+    </div> -->
+
+
+    <!-- <div fxLayout="row" fxLayoutAlign="center start">
+        <div fxFlexFill fxFlex="70%">
+            <button mat-raised-button class="buttonSearch" (click)="applyFilter($event)">Search</button>
+        </div>
+    </div> -->
+
+
 
     <table mat-table [dataSource]="registerService.dataSource" class="mat-elevation-z8">
 

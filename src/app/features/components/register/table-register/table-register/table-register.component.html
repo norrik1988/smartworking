@@ -58,7 +58,8 @@
             </div>
             <div fxFlexFill fxFlex="16%" fxFlex.md="50%">
                 <button mat-raised-button class="buttonSearch" (click)="applyFilter(form.value)">Search</button>
-                <button (click)="refresh()" mat-raised-button type="reset" class="reset button">Reset</button>
+                <button (click)="refresh($event, form)" mat-raised-button type="reset"
+                    class="reset button">Reset</button>
             </div>
 
         </div>

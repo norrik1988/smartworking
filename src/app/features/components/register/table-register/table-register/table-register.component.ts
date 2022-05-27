@@ -83,8 +83,17 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     });
   }
 
-  refresh() {
-    window.location.reload();
+  // refresh() {
+  //   window.location.reload();
+  // }
+
+  refresh(event: Event, form: NgForm) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.registerService.dataSource.filter = filterValue;
+    if (this.registerService.dataSource.paginator) {
+      this.registerService.dataSource.paginator.firstPage();
+    }
+    form.reset();
   }
 
 }

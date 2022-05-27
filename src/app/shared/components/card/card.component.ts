@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../../model/user/service/user.service';
 import { EditDashboardDialogComponent } from '../dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
@@ -12,7 +12,9 @@ export class CardComponent implements OnInit {
 
   constructor(public dialog: MatDialog, public userService: UserService) { }
 
-  @Input() class: any
+  @Input() isScrollable: boolean = false;
+  @Input() customCls: string | undefined;
+
   ngOnInit(): void {
   }
 
@@ -25,5 +27,11 @@ export class CardComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
     });
+  }
+  @HostBinding('className') get className() {
+    let cls = 'card';
+    cls += this.isScrollable ? ' scrollable' : '';
+    cls += this.customCls ? ` ${this.customCls}` : '';
+    return cls;
   }
 }

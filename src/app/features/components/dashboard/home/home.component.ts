@@ -35,6 +35,25 @@ export class HomeComponent {
     { flag: true },
   ];
 
+  matrix: Row[][] =
+    [[
+      { flag: false },
+      { flag: false },
+      { flag: false },
+      { flag: true },
+      { flag: true },
+    ],
+    [
+      { flag: true },
+      { flag: false },
+      { flag: true, },
+      { flag: false },
+      { flag: true },
+    ]]
+
+
+
+
 
 
   constructor(public dialog: MatDialog, public userService: UserService) { }

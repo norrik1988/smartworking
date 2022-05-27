@@ -18,7 +18,7 @@
         <div class="example-boundary">
             <div>
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
-
+                    <!--
                     <div *ngFor="let row of row" class="cell">
                         <div *ngFor="let column of column" class="cell">
 
@@ -28,6 +28,14 @@
                         </div>
 
 
+
+                    </div>
+                    -->
+                    <div *ngFor="let riga of matrix; index as i">
+                        <div *ngFor="let colonna of matrix[i]">
+                            <app-card *ngIf="colonna.flag"></app-card>
+
+                        </div>
 
                     </div>
 

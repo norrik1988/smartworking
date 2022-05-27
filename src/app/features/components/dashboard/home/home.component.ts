@@ -35,22 +35,6 @@ export class HomeComponent {
     { flag: true },
   ];
 
-  blankRow: Row[] = [
-    { flag: false },
-    { flag: false },
-    { flag: false },
-    { flag: true },
-    { flag: true },
-  ];
-
-  blankColumn: Column[] = [
-    { flag: true },
-    { flag: false },
-    { flag: true, },
-    { flag: false },
-    { flag: true },
-  ];
-
 
 
   constructor(public dialog: MatDialog, public userService: UserService) { }
@@ -68,6 +52,9 @@ export class HomeComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
     });
+
   }
+
+
 
 }

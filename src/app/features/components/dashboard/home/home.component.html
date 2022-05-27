@@ -21,10 +21,16 @@
 
                     <div *ngFor="let row of row" class="cell">
                         <div *ngFor="let column of column" class="cell">
+
                             <app-card *ngIf="row.flag && column.flag"></app-card>
-                            <app-blank *ngIf="!row.flag && column.flag"></app-blank>
+                            <app-blank *ngIf="column.flag && row.flag ? false:true"></app-blank>
+
                         </div>
+
+
+
                     </div>
+
 
                 </div>
             </div>
@@ -35,10 +41,20 @@
 
     <div>
         <div class="exampleTwo-boundary">
+            <div fxLayout="column " fxFlexFill>
 
+            </div>
         </div>
 
         <div class="exampleThree-boundary">
+            <!--             <div fxFlex="100%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px"
+                style="flex: 1 1 1e-09px; box-sizing: border-box; align-self: center;" fxLayoutAlign="space-between">
+                <div *ngFor="let row of [1,2,3,4,5]">
+                    <div *ngFor="let column of [1,2]">
+                        <app-card></app-card>
+                    </div>
+                </div>
+            </div> -->
 
         </div>
     </div>

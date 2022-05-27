@@ -43,21 +43,21 @@
             fxLayoutAlign="start start">
 
             <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
-
                 <mat-form-field appearance="fill">
                     <mat-label>Search</mat-label>
-                    <input matInput type="date" name="search" ngModel #search="ngModel">
+                    <input matInput type="date" name="search" #search ngModel>
                 </mat-form-field>
             </div>
 
-            <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
+            <!-- <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
                 <mat-form-field appearance="fill">
                     <mat-label>Search month</mat-label>
                     <input matInput type="month" name="month" ngModel #month="ngModel">
                 </mat-form-field>
-            </div>
+            </div>-->
+
             <div fxFlexFill fxFlex="16%" fxFlex.md="50%">
-                <button mat-raised-button class="buttonSearch" (click)="applyFilter(form.value)">Search</button>
+                <button mat-raised-button class="buttonSearch" (click)="applyFilter(search)">Search</button>
                 <button (click)="refresh($event, form)" mat-raised-button type="reset"
                     class="reset button">Reset</button>
             </div>

@@ -33,15 +33,41 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.registerService.dataSource.paginator = this.paginator;
   }
+  searchRegister: Register[] = []
+  applyFilter(form: HTMLInputElement) {
+    // console.log(form + 'ciaaa')
+    // //const filterValue = (event.target as HTMLInputElement).value;
+    // this.search = form;
+    // this.registerService.dataSource.filter = this.search.trim();
+    // if (this.registerService.dataSource.paginator) {
+    //   this.registerService.dataSource.paginator.firstPage();
+    // }
 
-  applyFilter(event: Event) {
-    console.log(event + 'ciaaa')
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.registerService.dataSource.filter = filterValue;
+
+
+    //const filterValue = this.registerService.registers.filter((res) => res.date == form)
+    // console.log(form.value);
+    // if (form.value == this.registerService.registers) { }
+    // const filterValue = this.registerService.dataSource.data.filter(res => res.date == form.value);
+    // console.log(filterValue);
+
+    //this.registerService.dataSource.filter = this.searchRegister;
+    //if (this.registerService.dataSource.paginator) {
+    //this.registerService.dataSource.paginator.firstPage();
+    //}
+
+
+    // const filterValue = this.registerService.dataSource.data.filter((res: any) => res.date == formValue);
+    // console.log(filterValue)
+    console.log(form.value);
+    const filterValue = this.registerService.dataSource.data.filter(res => res.date == form.value);
+    console.log(filterValue);
+    this.registerService.dataSource.data = filterValue
     if (this.registerService.dataSource.paginator) {
       this.registerService.dataSource.paginator.firstPage();
     }
   }
+
 
 
 
@@ -88,12 +114,8 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   // }
 
   refresh(event: Event, form: NgForm) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.registerService.dataSource.filter = filterValue;
-    if (this.registerService.dataSource.paginator) {
-      this.registerService.dataSource.paginator.firstPage();
-    }
     form.reset();
+    this.registerService.getAll()
   }
 
 }

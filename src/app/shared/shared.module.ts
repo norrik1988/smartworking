@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { EditDashboardDialogComponent } from './components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { CommonModule } from "@angular/common";
 import { CardComponent } from './components/card/card.component';
+import { BlankComponent } from './components/card/blank/blank.component';
 
 
 const components = [
@@ -26,8 +27,9 @@ const components = [
     DeleteUsersDialogComponent,
 
     EditDashboardDialogComponent,
-    CardComponent
 
+    CardComponent,
+    BlankComponent,
 ]
 
 @NgModule({

@@ -3,18 +3,15 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditDashboardDialogComponent } from 'src/app/shared/components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 
-export interface FirstRow {
+export interface Row {
   flag: boolean;
 }
-export interface BlankRow {
+
+export interface Column {
   flag: boolean;
 }
-export interface SecondRow {
-  flag: boolean;
-}
-export interface ThirdRow {
-  flag: boolean;
-}
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,58 +19,40 @@ export interface ThirdRow {
 })
 export class HomeComponent {
 
-  cards: FirstRow[] = [{
-    flag: false
-  },
-  {
-    flag: false
-  },
-  {
-    flag: false
-  },
-  {
-    flag: true
-  }, {
-    flag: true
-  },
+  row: Row[] = [
+    { flag: false },
+    { flag: false },
+    { flag: false },
+    { flag: true },
+    { flag: true },
   ];
 
-  blank: BlankRow[] = [
+  column: Column[] = [
+    { flag: true },
     { flag: false },
+    { flag: true, },
     { flag: false },
-    { flag: false },
-    { flag: false },
-    { flag: false },
-  ]
+    { flag: true },
+  ];
 
-  cardsTwo: SecondRow[] = [{
-    flag: true
-  },
-  {
-    flag: false
-  },
-  {
-    flag: true,
-  },
-  {
-    flag: false
-  }, {
-    flag: true
-  },];
-  cardsThree: ThirdRow[] = [{
-    flag: true
-  },
-  {
-    flag: false
-  },
-  {
-    flag: false,
-  },
-  {
-    flag: false
-  }, {
-    flag: true
-  },];
+  blankRow: Row[] = [
+    { flag: false },
+    { flag: false },
+    { flag: false },
+    { flag: true },
+    { flag: true },
+  ];
+
+  blankColumn: Column[] = [
+    { flag: true },
+    { flag: false },
+    { flag: true, },
+    { flag: false },
+    { flag: true },
+  ];
+
+
+
   constructor(public dialog: MatDialog, public userService: UserService) { }
 
   public get showName() {

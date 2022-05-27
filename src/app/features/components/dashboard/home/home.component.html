@@ -18,77 +18,27 @@
         <div class="example-boundary">
             <div>
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
-                    <div *ngFor="let row of cards" class="cell">
-                        <app-card *ngIf="row.flag "></app-card>
+
+                    <div *ngFor="let row of row" class="cell">
+                        <div *ngFor="let column of column" class="cell">
+                            <app-card *ngIf="row.flag && column.flag"></app-card>
+                            <app-blank *ngIf="!row.flag && column.flag"></app-blank>
+                        </div>
                     </div>
 
-                </div>
-
-                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
-                    <div *ngFor="let row of blank" class="cell">
-                        <app-card *ngIf="row.flag "></app-card>
-                    </div>
-                </div>
-
-                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
-                    <div *ngFor="let row of cardsTwo" class="cell">
-                        <app-card *ngIf="row.flag "></app-card>
-                    </div>
-                </div>
-
-                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
-                    <div *ngFor="let row of cardsTwo" class="cell">
-                        <app-card *ngIf="row.flag "></app-card>
-                    </div>
-                </div>
-
-                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
-                    <div *ngFor="let row of cardsThree" class="cell">
-                        <app-card *ngIf="row.flag "></app-card>
-                    </div>
-                </div>
-
-            </div>
-            <!-- <div fxLayout="row" fxLayoutAlign="space-between">
-                <div *ngFor="let row of [1,2,3,4,5]">
-                    <div *ngFor="let column of [1,2,3,4,5]">
-                        <app-card></app-card>
-                    </div>
                 </div>
             </div>
- -->
+
 
         </div>
     </div>
 
     <div>
         <div class="exampleTwo-boundary">
-            <div fxLayout="column " fxFlexFill>
 
-
-                <!--   <div fxFlex="100%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px"
-                    style="flex: 1 1 1e-09px; box-sizing: border-box; align-self: center;"
-                    fxLayoutAlign="space-between">
-                    <div *ngFor="let row of [1,2,3,4,5]">
-                        <div *ngFor="let column of [1,2,3]">
-                            <app-card></app-card>
-                        </div>
-                    </div>
-                </div> -->
-
-
-            </div>
         </div>
 
         <div class="exampleThree-boundary">
-            <!--             <div fxFlex="100%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px"
-                style="flex: 1 1 1e-09px; box-sizing: border-box; align-self: center;" fxLayoutAlign="space-between">
-                <div *ngFor="let row of [1,2,3,4,5]">
-                    <div *ngFor="let column of [1,2]">
-                        <app-card></app-card>
-                    </div>
-                </div>
-            </div> -->
 
         </div>
     </div>

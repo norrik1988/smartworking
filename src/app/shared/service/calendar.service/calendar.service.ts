@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CalendarOptions } from '@fullcalendar/core';
+import { INITIAL_EVENTS } from 'src/app/features/components/calendar/datepicker/event-utils';
 import { CalendarDialogComponent } from '../../dialog/calendar-dialog/calendar-dialog.component';
 import { Calendar } from '../../model/calendar/calendar';
 
@@ -11,20 +12,21 @@ import { Calendar } from '../../model/calendar/calendar';
     providedIn: 'root'
 })
 export class CalendarService {
-    app: string = 'smart';
+    work: string = '';
     calendar: Calendar = {} as Calendar;
     arrayCal: Calendar[] = []
-    dateSelected!: Date;
-    events: Calendar[] = [];
+    dateSelected : any ;
+    events: any[] = [];
     constructor(private http: HttpClient, public dialog: MatDialog) { }
 
     add(cal: Calendar) {
         this.http.post<Calendar>(`http://localhost:3000/calendar`, cal).subscribe(res => {
             this.events.push(res);
+            INITIAL_EVENTS.push(res)
+            window.location.reload();
         })
     }
-
-
+   
     calendarOptions: CalendarOptions = {
         headerToolbar: {
             left: 'prev,next today',
@@ -39,9 +41,10 @@ export class CalendarService {
         dayMaxEvents: true,
 
     };
-    onDateClick(res: any) {
-        this.dateSelected = res.dateStr;
-        this.dialog.open(CalendarDialogComponent, {
+    onDateClick(res: any) { 
+        this.dateSelected= res.dateStr
+         console.log(this.dateSelected)
+         this.dialog.open(CalendarDialogComponent, {
             width: '250px',
         });
     }

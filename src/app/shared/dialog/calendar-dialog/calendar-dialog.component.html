@@ -3,7 +3,7 @@
   <form class="e-schedule-form" #f="ngForm">
     <tr>
       <td>
-        <div class="e-date-time" [ngModel]="calendarService.dateSelected" name="ate">
+        <div class="e-date-time" [ngModel]="calendarService.dateSelected" name="date">
           <h2>
             <mat-icon>calendar_today</mat-icon>
             {{ calendarService.dateSelected }}
@@ -11,9 +11,9 @@
         </div>
       </td>
     </tr>
-
+    <input matInput type="date" required [ngModel]="calendarService.dateSelected" name="date">
     <mat-form-field appearance="outline">
-      <input matInput type="text" required ngModel name="work" placeholder="inserisci ">
+      <input matInput type="text" required ngModel name="title" placeholder="inserisci ">
 
     </mat-form-field>
     <button mat-button mat-dialog-close color="primary" (click)="add(f)">Inserisci</button>

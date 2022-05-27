@@ -20,7 +20,7 @@
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
                     <div *ngFor="let row of matrix; index as i" class="cell">
                         <div *ngFor="let column of matrix[i]" class="cell">
-                            <app-card *ngIf="column.flag"></app-card>
+                            <app-card *ngIf="column.flag" cdkDragBoundary="example-boundary"></app-card>
                             <app-blank *ngIf="column.flag  ? false:true"></app-blank>
                         </div>
 
@@ -41,7 +41,7 @@
                     <div *ngFor="let row of matrixTwo; index as i" class="cell">
                         <div *ngFor="let column of matrixTwo[i]" class="cell">
                             <app-card *ngIf="column.flag"></app-card>
-                            <app-blank *ngIf="column.flag  ? false:true"></app-blank>
+                            <app-blank *ngIf="column.flag  ? false:true"> </app-blank>
                         </div>
 
                     </div>
@@ -52,8 +52,8 @@
 
         <div class="exampleThree-boundary">
             <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
-                <div *ngFor="let row of matrixThree; index as i" class="cell">
-                    <div *ngFor="let column of matrixThree[i]" class="cell">
+                <div *ngFor="let row of matrixThree; index as i">
+                    <div *ngFor="let column of matrixThree[i]">
                         <app-card *ngIf="column.flag"></app-card>
                         <app-blank *ngIf="column.flag  ? false:true"></app-blank>
                     </div>

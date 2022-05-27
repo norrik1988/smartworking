@@ -29,6 +29,7 @@ export class UsersTableComponent implements OnInit, AfterViewInit {
   }
 
   applyFilter(event: Event) {
+    console.log(event)
     const filterValue = (event.target as HTMLInputElement).value;
     this.userService.dataSource.filter = filterValue.trim().toLowerCase();
 

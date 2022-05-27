@@ -35,6 +35,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   }
 
   applyFilter(event: Event) {
+    console.log(event + 'ciaaa')
     const filterValue = (event.target as HTMLInputElement).value;
     this.registerService.dataSource.filter = filterValue;
     if (this.registerService.dataSource.paginator) {
@@ -42,14 +43,8 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     }
   }
 
-  searchMonth(event: Event) {
-    const filterValue = (event.target as HTMLOptionElement).value;
-    this.registerService.dataSource.filter = filterValue;
-    if (this.registerService.dataSource.paginator) {
-      this.registerService.dataSource.paginator.firstPage();
-    }
-    console.log(filterValue)
-  }
+
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddRegistersDialogComponent, {

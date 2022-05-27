@@ -9,11 +9,19 @@
 }
 
 .button {
+    @media screen and(max-width:960px) {
+        bottom: 2px
+    }
+
     bottom: -10px
 }
 
 .buttonSearch {
-    bottom: 10px;
+    @media screen and(max-width:960px) {
+        bottom: 2px
+    }
+
+    bottom: -10px;
     background-color: #163c70;
     color: white;
 }

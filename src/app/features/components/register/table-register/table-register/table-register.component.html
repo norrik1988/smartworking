@@ -38,6 +38,40 @@
         </div>
     </div> -->
 
+    <form #form="ngForm">
+        <div fxFlexFill fxLayout="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column"
+            fxLayoutAlign="start start">
+
+            <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Search</mat-label>
+                    <input matInput type="date" name="search" ngModel #search="ngModel">
+                </mat-form-field>
+            </div>
+
+            <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
+                <mat-form-field appearance="fill">
+                    <mat-label>Search month</mat-label>
+                    <input matInput type="month" name="month" ngModel #month="ngModel">
+                </mat-form-field>
+            </div>
+            <div fxFlexFill fxFlex="16%" fxFlex.md="50%">
+                <button mat-raised-button class="buttonSearch" (click)="applyFilter(form.value)">Search</button>
+                <button (click)="refresh()" mat-raised-button type="reset" class="reset button">Reset</button>
+            </div>
+
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+
 
 
     <table mat-table [dataSource]="registerService.dataSource" class="mat-elevation-z8">

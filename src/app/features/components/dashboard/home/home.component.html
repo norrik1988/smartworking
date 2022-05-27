@@ -18,19 +18,6 @@
         <div class="example-boundary">
             <div>
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
-                    <!--
-                    <div *ngFor="let row of row" class="cell">
-                        <div *ngFor="let column of column" class="cell">
-
-                            <app-card *ngIf="row.flag && column.flag"></app-card>
-                            <app-blank *ngIf="column.flag && row.flag ? false:true"></app-blank>
-
-                        </div>
-
-
-
-                    </div>
-                    -->
                     <div *ngFor="let row of matrix; index as i" class="cell">
                         <div *ngFor="let column of matrix[i]" class="cell">
                             <app-card *ngIf="column.flag"></app-card>
@@ -50,19 +37,29 @@
     <div>
         <div class="exampleTwo-boundary">
             <div fxLayout="column " fxFlexFill>
+                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
+                    <div *ngFor="let row of matrixTwo; index as i" class="cell">
+                        <div *ngFor="let column of matrixTwo[i]" class="cell">
+                            <app-card *ngIf="column.flag"></app-card>
+                            <app-blank *ngIf="column.flag  ? false:true"></app-blank>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
         </div>
 
         <div class="exampleThree-boundary">
-            <!--             <div fxFlex="100%" fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="5px"
-                style="flex: 1 1 1e-09px; box-sizing: border-box; align-self: center;" fxLayoutAlign="space-between">
-                <div *ngFor="let row of [1,2,3,4,5]">
-                    <div *ngFor="let column of [1,2]">
-                        <app-card></app-card>
+            <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
+                <div *ngFor="let row of matrixThree; index as i" class="cell">
+                    <div *ngFor="let column of matrixThree[i]" class="cell">
+                        <app-card *ngIf="column.flag"></app-card>
+                        <app-blank *ngIf="column.flag  ? false:true"></app-blank>
                     </div>
+
                 </div>
-            </div> -->
+            </div>
 
         </div>
     </div>

@@ -7,9 +7,7 @@ export interface Row {
   flag: boolean;
 }
 
-export interface Column {
-  flag: boolean;
-}
+
 
 
 @Component({
@@ -18,22 +16,6 @@ export interface Column {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
-  row: Row[] = [
-    { flag: false },
-    { flag: false },
-    { flag: false },
-    { flag: true },
-    { flag: true },
-  ];
-
-  column: Column[] = [
-    { flag: true },
-    { flag: false },
-    { flag: true, },
-    { flag: false },
-    { flag: true },
-  ];
 
   matrix: Row[][] =
     [[
@@ -71,6 +53,67 @@ export class HomeComponent {
       { flag: true },
       { flag: true },
     ]]
+
+  matrixTwo: Row[][] =
+    [[
+      { flag: false },
+      { flag: false },
+      { flag: false },
+
+    ],
+    [
+      { flag: false },
+      { flag: false },
+      { flag: false, },
+
+    ],
+    [
+      { flag: true },
+      { flag: false },
+      { flag: true },
+
+    ],
+    [
+      { flag: true },
+      { flag: false },
+      { flag: true },
+
+    ],
+    [
+      { flag: true },
+      { flag: false },
+      { flag: true },
+
+    ],
+    ]
+
+  matrixThree: Row[][] =
+    [[
+      { flag: false },
+      { flag: true },
+
+    ],
+    [
+      { flag: true },
+      { flag: false },
+
+    ],
+    [
+      { flag: true },
+      { flag: false },
+
+    ],
+    [
+      { flag: true },
+      { flag: false },
+
+    ],
+    [
+      { flag: false },
+      { flag: true },
+
+    ],
+    ]
 
 
 

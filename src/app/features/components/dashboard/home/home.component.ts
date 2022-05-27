@@ -39,15 +39,36 @@ export class HomeComponent {
     [[
       { flag: false },
       { flag: false },
+      { flag: true },
+      { flag: true },
+      { flag: true },
+    ],
+    [
       { flag: false },
+      { flag: false },
+      { flag: false, },
+      { flag: false },
+      { flag: false },
+    ],
+    [
+      { flag: false },
+      { flag: false },
+      { flag: true, },
       { flag: true },
+      { flag: false },
+    ],
+    [
       { flag: true },
+      { flag: false },
+      { flag: false, },
+      { flag: false },
+      { flag: false },
     ],
     [
       { flag: true },
       { flag: false },
       { flag: true, },
-      { flag: false },
+      { flag: true },
       { flag: true },
     ]]
 

@@ -31,10 +31,10 @@
 
                     </div>
                     -->
-                    <div *ngFor="let riga of matrix; index as i">
-                        <div *ngFor="let colonna of matrix[i]">
-                            <app-card *ngIf="colonna.flag"></app-card>
-
+                    <div *ngFor="let row of matrix; index as i" class="cell">
+                        <div *ngFor="let column of matrix[i]" class="cell">
+                            <app-card *ngIf="column.flag"></app-card>
+                            <app-blank *ngIf="column.flag  ? false:true"></app-blank>
                         </div>
 
                     </div>

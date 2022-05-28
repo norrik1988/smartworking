@@ -1,4 +1,4 @@
-<mat-card class="example-box" cdkDragBoundary="{{customCls}}" cdkDrag>
+<mat-card class="example-box" cdkDragBoundary="{{customCls}}" cdkDrag cdkDragDisabled>
     <div fxLayout="column" fxFlexFill>
         <div fxLayoutAlign="space-between">
             <button mat-icon-button>
@@ -13,7 +13,13 @@
 
         <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
             <mat-card-content>
-                {{userService.userSelected?.name}}
+                <div *ngIf="!user">
+                    <span>free</span>
+                </div>
+
+                <div *ngIf="user">
+                    <span>{{user?.name}} {{user?.surname}}</span>
+                </div>
             </mat-card-content>
         </div>
         <div fxFlex="20%" fxLayout="row">

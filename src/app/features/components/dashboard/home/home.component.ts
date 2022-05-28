@@ -3,12 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditDashboardDialogComponent } from 'src/app/shared/components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 
-export interface Row {
+export interface Flag {
   flag: boolean;
 }
-
-
-
 
 @Component({
   selector: 'app-home',
@@ -17,108 +14,107 @@ export interface Row {
 })
 export class HomeComponent {
 
-  matrix: Row[][] =
-    [[
-      { flag: false },
-      { flag: false },
-      { flag: true },
-      { flag: true },
-      { flag: true },
-    ],
-    [
-      { flag: false },
-      { flag: false },
-      { flag: false, },
-      { flag: false },
-      { flag: false },
-    ],
-    [
-      { flag: false },
-      { flag: false },
-      { flag: true, },
-      { flag: true },
-      { flag: false },
-    ],
-    [
-      { flag: true },
-      { flag: false },
-      { flag: false, },
-      { flag: false },
-      { flag: false },
-    ],
-    [
-      { flag: true },
-      { flag: false },
-      { flag: true, },
-      { flag: true },
-      { flag: true },
-    ]]
+  flag?: boolean;
 
-  matrixTwo: Row[][] =
-    [[
-      { flag: false },
-      { flag: false },
-      { flag: false },
-
-    ],
+  firstMatrix: Flag[][] =
     [
-      { flag: false },
-      { flag: false },
-      { flag: false, },
-
-    ],
-    [
-      { flag: true },
-      { flag: false },
-      { flag: true },
-
-    ],
-    [
-      { flag: true },
-      { flag: false },
-      { flag: true },
-
-    ],
-    [
-      { flag: true },
-      { flag: false },
-      { flag: true },
-
-    ],
+      [
+        { flag: false },
+        { flag: false },
+        { flag: true },
+        { flag: true },
+        { flag: true },
+      ],
+      [
+        { flag: false },
+        { flag: false },
+        { flag: false, },
+        { flag: false },
+        { flag: false },
+      ],
+      [
+        { flag: false },
+        { flag: false },
+        { flag: true, },
+        { flag: true },
+        { flag: false },
+      ],
+      [
+        { flag: true },
+        { flag: false },
+        { flag: false, },
+        { flag: false },
+        { flag: false },
+      ],
+      [
+        { flag: true },
+        { flag: false },
+        { flag: true, },
+        { flag: true },
+        { flag: true },
+      ]
     ]
-
-  matrixThree: Row[][] =
-    [[
-      { flag: false },
-      { flag: true },
-
-    ],
+  secondMatrix: Flag[][] =
     [
-      { flag: true },
-      { flag: false },
+      [
+        { flag: false },
+        { flag: false },
+        { flag: false },
 
-    ],
-    [
-      { flag: true },
-      { flag: false },
+      ],
+      [
+        { flag: false },
+        { flag: false },
+        { flag: false, },
 
-    ],
-    [
-      { flag: true },
-      { flag: false },
+      ],
+      [
+        { flag: true },
+        { flag: false },
+        { flag: true },
 
-    ],
-    [
-      { flag: false },
-      { flag: true },
+      ],
+      [
+        { flag: true },
+        { flag: false },
+        { flag: true },
 
-    ],
+      ],
+      [
+        { flag: true },
+        { flag: false },
+        { flag: true },
+
+      ],
     ]
+  thirdMatrix: Flag[][] =
+    [
+      [
+        { flag: false },
+        { flag: true },
 
+      ],
+      [
+        { flag: true },
+        { flag: false },
 
+      ],
+      [
+        { flag: true },
+        { flag: false },
 
+      ],
+      [
+        { flag: true },
+        { flag: false },
 
+      ],
+      [
+        { flag: false },
+        { flag: true },
 
+      ],
+    ]
 
   constructor(public dialog: MatDialog, public userService: UserService) { }
 
@@ -135,9 +131,6 @@ export class HomeComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
     });
-
   }
-
-
 
 }

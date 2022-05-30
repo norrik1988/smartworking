@@ -15,27 +15,28 @@ export class DatepickerComponent implements OnInit {
   constructor(public dialog: MatDialog, public calendarService: CalendarService) { }
 
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+
     },
     initialView: 'dayGridMonth',
-    initialEvents: INITIAL_EVENTS, 
+    initialEvents: INITIAL_EVENTS,
     events: `http://localhost:3000/calendar`,
     weekends: true,
     editable: true,
+
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
     select: this.calendarService.onDateClick.bind(this),
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this)
-   
+
   };
   currentEvents: EventApi[] = [];
 
@@ -67,7 +68,7 @@ export class DatepickerComponent implements OnInit {
 
   handleEventClick(clickInfo: EventClickArg) {
     if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-     
+
       clickInfo.event.remove();
     }
   }

@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
+import { DashboardService } from 'src/app/shared/service/dashboard.service/dashboard.service.service';
 
 @Component({
   selector: 'app-edit-dashboard-dialog',
@@ -14,10 +16,14 @@ export class EditDashboardDialogComponent {
   filteredUsers = new Array<User>();
   timeoutInput: any;
 
+
+  date = new Date();
+
   constructor(
     public dialogRef: MatDialogRef<EditDashboardDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: User,
-    public userService: UserService
+    public userService: UserService,
+    public dashService: DashboardService
   ) { }
 
   onNoClick(): void {
@@ -31,6 +37,7 @@ export class EditDashboardDialogComponent {
 
   add(user: User) {
     this.dialogRef.close(user);
+    this.dashService.add(user);
   }
 
   displayFn(user: User): string {

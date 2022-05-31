@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, } from '@angular/core';
+import { Injectable, Input, } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CalendarOptions, DateSelectArg } from '@fullcalendar/core';
 import { INITIAL_EVENTS } from 'src/app/features/components/calendar/datepicker/event-utils';
@@ -16,8 +16,10 @@ export class CalendarService {
     calendar: Calendar = {} as Calendar;
     arrayCal: Calendar[] = []
     dateSelected: any;
-
+    
     events: any[] = [];
+
+    
     constructor(private http: HttpClient, public dialog: MatDialog) { }
 
     add(cal: Calendar) {
@@ -43,20 +45,24 @@ export class CalendarService {
 
     };
 
-    startStr: any;
-    endStr: any;
+    
     onDateClick(selectInfo: DateSelectArg) {
-        this.startStr = selectInfo.startStr;
-        this.endStr = selectInfo.endStr;
-        console.log('Data Inizio ' + this.startStr);
-        console.log('Data Fine ' + this.endStr);
+        startStr = selectInfo.startStr;
+        endStr = selectInfo.endStr;
+        console.log('Data Inizio ' + startStr);
+        console.log('Data Fine ' + endStr);
 
         this.dialog.open(CalendarDialogComponent, {
             width: '250px',
-            data: { start: this.startStr, end: this.endStr }
+            data: { start: startStr, end: endStr }
         });
 
     }
 
 
 }
+
+export var startStr:any;
+export var  endStr:any;
+
+

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CalendarService, startStr } from '../../service/calendar.service/calendar.service';
+import { CalendarService, endStr, startStr } from '../../service/calendar.service/calendar.service';
 
 @Component({
   selector: 'app-calendar-dialog',
@@ -9,11 +9,11 @@ import { CalendarService, startStr } from '../../service/calendar.service/calend
 })
 export class CalendarDialogComponent implements OnInit {
   start : any
+  end : any;
   constructor(public calendarService: CalendarService) { }
   ngOnInit(): void {
-    console.log('calendar dialog ' + startStr)
-this.start = startStr  
-console.log('calendar dialog start' + this.start)
+  this.start = startStr  
+    this.end = endStr
   }
 
   flag: boolean = false;

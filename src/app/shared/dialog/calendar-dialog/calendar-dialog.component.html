@@ -12,6 +12,8 @@
       </td>
     </tr>
     <mat-form-field appearance="outline">
+      <input hidden [ngModel]="start" name="date">
+      <input hidden [ngModel]="end" name="endStr">
       <input matInput type="text" required ngModel name="title" placeholder="inserisci ">
 
     </mat-form-field>

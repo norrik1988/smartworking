@@ -30,7 +30,19 @@ mat-card {
         border-bottom-right-radius: 6px;
         background-color: aqua;
         border: 1px solid #ccc;
+
     }
+}
+.active{
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    left: -1px;
+    top: 126px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #0A1E51 !important;
+    border: 1px solid #ccc;
 }
 
 

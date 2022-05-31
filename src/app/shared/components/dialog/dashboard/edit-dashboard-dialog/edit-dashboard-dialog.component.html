@@ -19,6 +19,17 @@
 
     <br>
 
+    <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select [(ngModel)]="role" name="role">
+          <mat-option *ngFor="let role of roleList" [value]="role">
+            {{role}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <br>
+
     <div mat-dialog-actions>
         <button mat-button (click)="onNoClick()">Annulla</button>
         <button id="button-save" mat-button cdkFocusInitial (click)="add(userSelected)" [mat-dialog-close]="data"

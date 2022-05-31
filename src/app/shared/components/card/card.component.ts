@@ -15,7 +15,9 @@ export class CardComponent {
 
   @Input() customCls: string | undefined;
 
+
   user!: User;
+
 
   constructor(public dialog: MatDialog, public userService: UserService) { }
 

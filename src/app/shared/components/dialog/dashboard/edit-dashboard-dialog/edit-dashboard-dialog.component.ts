@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
@@ -16,6 +17,8 @@ export class EditDashboardDialogComponent {
   filteredUsers = new Array<User>();
   timeoutInput: any;
 
+  role = new FormControl();
+  roleList: string[]=['BE Developer','FE Developer'];
 
   date = new Date();
 

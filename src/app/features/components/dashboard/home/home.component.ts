@@ -8,13 +8,7 @@ export interface Flag {
   flag: boolean;
 }
 
-export interface Dashboard {
-  name: string;
-  surname: string;
-  date: Date;
-  role: string;
 
-}
 
 @Component({
   selector: 'app-home',

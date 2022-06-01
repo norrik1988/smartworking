@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDashboardDialogComponent } from 'src/app/shared/components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
-import { DashboardService } from 'src/app/shared/service/dashboard.service/dashboard.service.service';
 
 export interface Flag {
   flag: boolean;
@@ -121,11 +120,9 @@ export class HomeComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     public userService: UserService,
-    public dashService: DashboardService
   ) { }
 
   ngOnInit(): void {
-    this.dashService?.getData();
   }
 
   public get showName() {

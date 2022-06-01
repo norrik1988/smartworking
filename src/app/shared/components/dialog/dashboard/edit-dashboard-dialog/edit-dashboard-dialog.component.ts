@@ -4,7 +4,6 @@ import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
-import { DashboardService } from 'src/app/shared/service/dashboard.service/dashboard.service.service';
 
 @Component({
   selector: 'app-edit-dashboard-dialog',
@@ -18,7 +17,7 @@ export class EditDashboardDialogComponent {
   timeoutInput: any;
 
   role = new FormControl();
-  roleList: string[]=['BE Developer','FE Developer'];
+  roleList: string[] = ['BE Developer', 'FE Developer'];
 
   date = new Date();
 
@@ -26,7 +25,6 @@ export class EditDashboardDialogComponent {
     public dialogRef: MatDialogRef<EditDashboardDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: User,
     public userService: UserService,
-    public dashService: DashboardService
   ) { }
 
   onNoClick(): void {
@@ -39,8 +37,6 @@ export class EditDashboardDialogComponent {
   }
 
   add(user: User) {
-    this.dialogRef.close(user);
-    this.dashService.add(user);
   }
 
   displayFn(user: User): string {

@@ -54,11 +54,13 @@
     </mat-drawer>
     <mat-drawer-content>
         <div class="container">
+
+            <router-outlet></router-outlet>
+
             <div *ngIf="spinner.showSpinner">
                 <mat-progress-spinner id="loading" color="primary" value="50" mode="indeterminate">
                 </mat-progress-spinner>
             </div>
-            <router-outlet></router-outlet>
         </div>
     </mat-drawer-content>
 </mat-drawer-container>

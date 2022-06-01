@@ -12,7 +12,7 @@ export class UserService {
     user!: User;
     userSelected: User = {} as User;
     dataSource!: MatTableDataSource<User>;
-
+    home!: User[];
 
     constructor(private http: HttpClient) { }
 
@@ -50,6 +50,7 @@ export class UserService {
                 this.getAll();
             });
     }
+
 
 
 

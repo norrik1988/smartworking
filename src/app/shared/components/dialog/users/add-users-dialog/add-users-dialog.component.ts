@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
@@ -27,6 +27,17 @@ import { User } from 'src/app/shared/model/user/user';
     <mat-label>Data di nascita</mat-label>
     <input matInput type="date" required ngModel name="date" >
   </mat-form-field>
+
+  <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select [(ngModel)]="role" name="role">
+          <mat-option *ngFor="let role of roleList" [value]="role">
+            {{role}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <br>
  
 </div>
 <div mat-dialog-actions>
@@ -38,6 +49,9 @@ import { User } from 'src/app/shared/model/user/user';
   styleUrls: ['./add-users-dialog.component.scss']
 })
 export class AddUsersDialogComponent implements OnInit {
+
+  role = new FormControl();
+  roleList: string[] = ['BE Developer', 'FE Developer'];
 
   constructor(
     public dialogRef: MatDialogRef<AddUsersDialogComponent>,

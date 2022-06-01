@@ -1,10 +1,12 @@
 <mat-card class="example-box" cdkDragBoundary="{{customCls}}" cdkDrag cdkDragDisabled>
     <div fxLayout="column" fxFlexFill>
+
         <div fxLayoutAlign="space-between">
             <button mat-icon-button>
                 <mat-icon class="icon" (click)="openEdit()">edit_note </mat-icon>
             </button>
         </div>
+
         <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
             <div fxFlex="60%">
                 <mat-icon class="icon">account_circle_full</mat-icon>
@@ -19,12 +21,16 @@
 
                 <div *ngIf="user">
                     <span>{{user?.name}} {{user?.surname}} </span>
+                    <br>
+                    <span><strong>{{user.role}}</strong></span>
                 </div>
             </mat-card-content>
         </div>
+
         <div fxFlex="20%" fxLayout="row">
             <hr *ngIf="!user">
             <hr *ngIf="user" class="active">
         </div>
+
     </div>
 </mat-card>

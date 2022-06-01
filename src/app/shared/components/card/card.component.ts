@@ -15,7 +15,6 @@ export class CardComponent {
 
   @Input() customCls: string | undefined;
 
-
   user!: User;
 
 
@@ -27,7 +26,9 @@ export class CardComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       this.user = result
+
     });
+
   }
 
   @HostBinding('className') get className() {//custom container drag

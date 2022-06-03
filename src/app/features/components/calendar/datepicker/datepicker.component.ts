@@ -34,7 +34,7 @@ export class DatepickerComponent implements OnInit {
     selectMirror: true,
     dayMaxEvents: true,
     select: this.calendarService.onDateClick.bind(this),
-    eventClick: this.handleEventClick.bind(this),
+    eventClick: this.calendarService.openDelete.bind(this),
     eventsSet: this.handleEvents.bind(this)
 
   };

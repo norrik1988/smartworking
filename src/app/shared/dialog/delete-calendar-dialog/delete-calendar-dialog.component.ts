@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalendarService, eventSelected } from '../../service/calendar.service/calendar.service';
 
 @Component({
   selector: 'app-delete-calendar-dialog',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteCalendarDialogComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public calendarService: CalendarService) { }
+  evento: any;
   ngOnInit(): void {
+    console.log(eventSelected)
+    this.evento = eventSelected
   }
 
+  delete() {
+    this.calendarService.delete(eventSelected)
+  }
 }

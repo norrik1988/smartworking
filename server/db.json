@@ -57,60 +57,22 @@
   ],
   "calendar": [
     {
-      "date": "2022-05-10",
-      "title": "home",
-      "id": 1
-    },
-    {
-      "date": "2022-05-27T14:25:38.478Z",
-      "title": "work",
+      "date": "2022-05-12",
+      "endStr": "2022-05-13",
+      "title": "smart",
       "id": 2
     },
     {
-      "date": "2022-05-27T14:26:02.132Z",
-      "title": "lolll",
-      "id": 3
-    },
-    {
-      "date": "2022-05-27",
-      "title": "xsxs",
+      "date": "2022-06-03",
+      "endStr": "2022-06-04",
+      "title": "home",
       "id": 4
     },
     {
-      "date": "2022-05-08",
-      "title": "dasdds",
+      "date": "2022-06-06",
+      "endStr": "2022-06-07",
+      "title": "ufficio",
       "id": 5
-    },
-    {
-      "date": "2022-05-12",
-      "title": "dfdd",
-      "id": 6
-    },
-    {
-      "date": "2022-05-30T10:44:57.579Z",
-      "title": "work",
-      "id": 7
-    },
-    {
-      "date": "2022-05-25",
-      "title": "dsad",
-      "id": 8
-    },
-    {
-      "date": "2022-05-19",
-      "title": "asss",
-      "id": 9
-    },
-    {
-      "date": "2022-05-06",
-      "title": "dsd",
-      "id": 10
-    },
-    {
-      "date": "2022-05-01",
-      "endStr": "2022-05-04",
-      "title": "adsd",
-      "id": 11
     }
   ]
 }

@@ -16,7 +16,7 @@ export class CalendarService {
     work: string = '';
     calendar: Calendar = {} as Calendar;
     arrayCal: Calendar[] = []
-    dateSelected: any;
+    eventSelected: any;
 
     events: any[] = [];
 

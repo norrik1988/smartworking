@@ -11,11 +11,8 @@ export class DeleteCalendarDialogComponent implements OnInit {
   constructor(public calendarService: CalendarService) { }
   evento: any;
   ngOnInit(): void {
-    console.log(eventSelected)
     this.evento = eventSelected
   }
 
-  delete() {
-    this.calendarService.delete(eventSelected)
-  }
+
 }

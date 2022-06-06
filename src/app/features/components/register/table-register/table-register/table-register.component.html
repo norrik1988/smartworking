@@ -45,21 +45,25 @@
             <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
                 <mat-form-field appearance="fill">
                     <mat-label>Search</mat-label>
-                    <input matInput type="date" name="search" #search ngModel>
+                    <input matInput type="date" name="search" #search ngModel [disabled]="!flag1"
+                        (click)="test1(month)">
                 </mat-form-field>
             </div>
 
-            <!-- <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
+
+            <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
                 <mat-form-field appearance="fill">
                     <mat-label>Search month</mat-label>
-                    <input matInput type="month" name="month" ngModel #month="ngModel">
+                    <input matInput type="number" name="month" #month ngModel [disabled]="!flag2"
+                        (click)="test2(search)">
                 </mat-form-field>
-            </div>-->
+            </div>
+
 
             <div fxFlexFill fxFlex="16%" fxFlex.md="50%">
-                <button mat-raised-button class="buttonSearch" (click)="applyFilter(search)">Search</button>
-                <button (click)="refresh($event, form)" mat-raised-button type="reset"
-                    class="reset button">Reset</button>
+                <button mat-raised-button class="buttonSearch" (click)="applyFilter(search,month)">Search</button>
+                <button (click)="refresh(form)" mat-raised-button type="reset" class="reset button"
+                    title="Resetta campi di input e tabella">Reset</button>
             </div>
 
         </div>
@@ -80,6 +84,7 @@
         <ng-container matColumnDef="giorno">
             <th mat-header-cell *matHeaderCellDef> Giorno </th>
             <td mat-cell *matCellDef="let element"> {{element.date|date:'EEEE dd/MM/yyyy'}} </td>
+            <!-- <td mat-cell *matCellDef="let element"> {{element.day}}/{{element.month}}/{{element.year}} </td>-->
         </ng-container>
 
         <ng-container matColumnDef="inizio">
@@ -117,6 +122,6 @@
 
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of register"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[ 15, 25, 100]" aria-label="Select page of register"></mat-paginator>
 
 </div>

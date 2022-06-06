@@ -15,6 +15,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 
 
 
@@ -34,6 +36,7 @@ const imports = [
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatSelectModule,
+    MatDatepickerModule
 ]
 @NgModule({
     imports: [...imports],

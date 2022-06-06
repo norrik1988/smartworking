@@ -22,6 +22,10 @@ export class RegisterService {
     }
 
     add(register: Register) {
+        var date = new Date(register.date);
+        console.log(date)
+        register.month = date.getMonth() + 1;
+
         this.http.post<Register>(`http://localhost:3000/register`, register).subscribe(res => {
             this.dataSource.data.push(res);
             this.getAll();

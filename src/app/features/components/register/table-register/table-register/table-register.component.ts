@@ -24,7 +24,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['giorno', 'inizio', 'fine', 'permesso', 'azioni'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  selected = 'all';
+
 
   ngOnInit(): void {
     this.registerService.getAll()
@@ -33,43 +33,39 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.registerService.dataSource.paginator = this.paginator;
   }
-  searchRegister: Register[] = []
-  applyFilter(form: HTMLInputElement) {
-    // console.log(form + 'ciaaa')
-    // //const filterValue = (event.target as HTMLInputElement).value;
-    // this.search = form;
-    // this.registerService.dataSource.filter = this.search.trim();
-    // if (this.registerService.dataSource.paginator) {
-    //   this.registerService.dataSource.paginator.firstPage();
-    // }
 
 
 
-    //const filterValue = this.registerService.registers.filter((res) => res.date == form)
-    // console.log(form.value);
-    // if (form.value == this.registerService.registers) { }
-    // const filterValue = this.registerService.dataSource.data.filter(res => res.date == form.value);
-    // console.log(filterValue);
+  applyFilter(search: HTMLInputElement, searchMonth: HTMLInputElement) {
 
-    //this.registerService.dataSource.filter = this.searchRegister;
-    //if (this.registerService.dataSource.paginator) {
-    //this.registerService.dataSource.paginator.firstPage();
-    //}
-
-
-    // const filterValue = this.registerService.dataSource.data.filter((res: any) => res.date == formValue);
-    // console.log(filterValue)
-    console.log(form.value);
-    const filterValue = this.registerService.dataSource.data.filter(res => res.date == form.value);
-    console.log(filterValue);
-    this.registerService.dataSource.data = filterValue
-    if (this.registerService.dataSource.paginator) {
-      this.registerService.dataSource.paginator.firstPage();
+    if (search.value) {
+      console.log('metodo searchDate')
+      const filterValueSearch = this.registerService.dataSource.data.filter((res: any) => res.date == search.value);
+      this.registerService.dataSource.data = filterValueSearch
+      if (this.registerService.dataSource.paginator) {
+        this.registerService.dataSource.paginator.firstPage();
+      }
+    } else {
+      console.log('metodo searchMonth')
+      const filterValueMonth = this.registerService.dataSource.data.filter((res: Register) => res.month == Number(searchMonth.value));
+      this.registerService.dataSource.data = filterValueMonth;
+      if (this.registerService.dataSource.paginator) {
+        this.registerService.dataSource.paginator.firstPage();
+      }
     }
+    this.flag1 = true;
+    this.flag2 = true;
   }
 
 
-
+  flag1: boolean = true;
+  flag2: boolean = true;
+  test1(search: HTMLInputElement) {
+    this.flag2 = false;
+  }
+  test2(month: HTMLInputElement) {
+    this.flag1 = false;
+  }
 
 
   openDialog(): void {
@@ -109,13 +105,11 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     });
   }
 
-  // refresh() {
-  //   window.location.reload();
-  // }
-
-  refresh(event: Event, form: NgForm) {
+  refresh(form: NgForm) {
     form.reset();
-    this.registerService.getAll()
+    this.registerService.getAll();
+    this.flag1 = true;
+    this.flag2 = true;
   }
 
 }

@@ -14,14 +14,14 @@
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Data </mat-label>
-        <input matInput type="date" ngModel name="date_smart">
+        <input matInput type="date" disabled [ngModel]="date" name="date">
     </mat-form-field>
 
     <br>
 
     <div mat-dialog-actions>
         <button mat-button (click)="onNoClick()">Annulla</button>
-        <button id="button-save" mat-button cdkFocusInitial (click)="add(f)" [mat-dialog-close]="data"
+        <button id="button-save" mat-button cdkFocusInitial (click)="add(userSelected)" [mat-dialog-close]="data"
             [disabled]="f.invalid" class="addBotton">
             <mat-icon>save</mat-icon> Inserisci
         </button>

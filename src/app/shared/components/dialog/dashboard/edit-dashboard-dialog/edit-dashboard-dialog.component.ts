@@ -1,8 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SmartService } from 'src/app/shared/model/dashboard/service/smart.service';
-import { Smart } from 'src/app/shared/model/dashboard/smart';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
 
@@ -23,7 +20,6 @@ export class EditDashboardDialogComponent {
     public dialogRef: MatDialogRef<EditDashboardDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: User,
     public userService: UserService,
-    public smartService: SmartService
   ) { }
 
   onNoClick(): void {
@@ -34,14 +30,9 @@ export class EditDashboardDialogComponent {
     const filterValue = value.toLowerCase();
     return this.userService.users.filter(state => state.name.toLowerCase().includes(filterValue));
   }
-  /*
-    add(user: User) {
-      this.dialogRef.close(user)
-    }*/
 
-  add(f: NgForm) {
-    this.smartService.add(f.value);
-
+  add(user: User) {
+    this.dialogRef.close(user)
   }
 
   displayFn(user: User): string {

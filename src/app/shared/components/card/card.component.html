@@ -15,12 +15,12 @@
 
         <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
             <mat-card-content>
-                <div *ngIf="!user">
+                <div *ngIf="!smart">
                     <span>Free</span>
                 </div>
 
-                <div *ngIf="user">
-                    <span>{{user?.name}} {{user?.surname}} </span>
+                <div *ngIf="smart">
+                    <span>{{smart.user_smart[1].name}} {{user?.surname}} </span>
                     <br>
                     <span><strong>{{user.role}}</strong></span>
                 </div>

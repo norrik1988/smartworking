@@ -13,6 +13,7 @@ import { DeleteUsersDialogComponent } from './components/dialog/users/delete-use
 import { FormsModule } from "@angular/forms";
 import { CalendarDialogComponent } from './dialog/calendar-dialog/calendar-dialog.component';
 import { DeleteCalendarDialogComponent } from './dialog/delete-calendar-dialog/delete-calendar-dialog.component';
+import { EditCalendarDialogComponent } from './dialog/edit-calendar-dialog/edit-calendar-dialog.component';
 
 
 const components = [
@@ -27,7 +28,7 @@ const components = [
 ]
 
 @NgModule({
-    declarations: [...components, CalendarDialogComponent, DeleteCalendarDialogComponent],
+    declarations: [...components, CalendarDialogComponent, DeleteCalendarDialogComponent, EditCalendarDialogComponent],
     imports: [
         MaterialModule,
         FormsModule

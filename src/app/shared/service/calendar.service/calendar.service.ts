@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Input, } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { CalendarOptions, DateSelectArg, EventClickArg } from '@fullcalendar/core';
+import { CalendarOptions, DateSelectArg, EventApi, EventChangeArg, EventClickArg, EventDropArg } from '@fullcalendar/core';
 import { INITIAL_EVENTS } from 'src/app/features/components/calendar/datepicker/event-utils';
 import { CalendarDialogComponent } from '../../dialog/calendar-dialog/calendar-dialog.component';
 import { DeleteCalendarDialogComponent } from '../../dialog/delete-calendar-dialog/delete-calendar-dialog.component';
+import { EditCalendarDialogComponent } from '../../dialog/edit-calendar-dialog/edit-calendar-dialog.component';
 import { Calendar } from '../../model/calendar/calendar';
 
 
@@ -13,23 +15,24 @@ import { Calendar } from '../../model/calendar/calendar';
     providedIn: 'root'
 })
 export class CalendarService {
-    work: string = '';
     calendar: Calendar = {} as Calendar;
-    arrayCal: Calendar[] = []
     eventSelected: any;
-
-    events: any[] = [];
-
+    colorEvent!: any;
 
     constructor(private http: HttpClient, public dialog: MatDialog) { }
 
+    currentEvents: EventApi[] = [];
+
+
+
     add(cal: Calendar) {
         this.http.post<Calendar>(`http://localhost:3000/calendar`, cal).subscribe(res => {
-            this.events.push(res);
             INITIAL_EVENTS.push(res)
             window.location.reload();
         })
     }
+
+
 
     delete(cal: Calendar): Calendar {
         this.http.delete(`http://localhost:3000/calendar/${cal.id}`)
@@ -40,22 +43,14 @@ export class CalendarService {
             })
         return cal
     }
-
-    calendarOptions: CalendarOptions = {
-        headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-        },
-        initialView: 'dayGridMonth',
-        weekends: true,
-        editable: true,
-        selectable: true,
-        selectMirror: true,
-        dayMaxEvents: true,
-
-    };
-
+    edit(cal: Calendar) {
+        this.http.patch<Calendar>(`http://localhost:3000/calendar/${idSelected}`, cal)
+            .subscribe(res => {
+                const index = INITIAL_EVENTS.findIndex(cl => cl.id === cal.id);
+                INITIAL_EVENTS[index] = res;
+                window.location.reload();
+            });
+    }
 
     onDateClick(selectInfo: DateSelectArg) {
         startStr = selectInfo.startStr;
@@ -65,9 +60,7 @@ export class CalendarService {
 
         this.dialog.open(CalendarDialogComponent, {
             width: '250px',
-            data: { start: startStr, end: endStr }
         });
-
     }
     openDelete(clickInfo: EventClickArg) {
         eventSelected = clickInfo.event;
@@ -76,7 +69,22 @@ export class CalendarService {
             console.log(`Dialog result: ${result}`);
         });
     }
+    handleEvents(events: EventApi[]) {
+        events = INITIAL_EVENTS;
+    }
+    dropEvent(arg: EventChangeArg) {
+        idSelected = arg.event.id;
+        eventSelected = arg.event.title
+        startStr = arg.event.startStr
+        console.log(eventSelected)
+        console.log(startStr)
+        const dialogRef = this.dialog.open(EditCalendarDialogComponent);
+        dialogRef.afterClosed().subscribe(result => {
+            console.log(`Dialog result: ${result}`);
+        });
+    }
 }
+export var idSelected: any;
 export var eventSelected: any;
 export var startStr: any;
 export var endStr: any;

@@ -1,9 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CalendarOptions, DateSelectArg, EventApi, EventClickArg } from '@fullcalendar/core';
+import { CalendarOptions, EventApi } from '@fullcalendar/core';
 import { CalendarService } from 'src/app/shared/service/calendar.service/calendar.service';
-import { createEventId, INITIAL_EVENTS } from 'src/app/features/components/calendar/datepicker/event-utils';
+import { INITIAL_EVENTS } from 'src/app/features/components/calendar/datepicker/event-utils';
 
 @Component({
   selector: 'app-datepicker',
@@ -17,6 +17,7 @@ export class DatepickerComponent implements OnInit {
 
   ngOnInit() { }
   calendarVisible = true;
+
   calendarOptions: CalendarOptions = {
     headerToolbar: {
       left: 'prev,next today',
@@ -29,13 +30,15 @@ export class DatepickerComponent implements OnInit {
     events: `http://localhost:3000/calendar`,
     weekends: true,
     editable: true,
-
+    eventColor: this.calendarService.colorEvent,
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
+
     select: this.calendarService.onDateClick.bind(this),
     eventClick: this.calendarService.openDelete.bind(this),
-    eventsSet: this.handleEvents.bind(this)
+    eventsSet: this.calendarService.handleEvents.bind(this),
+    eventChange: this.calendarService.dropEvent.bind(this)
 
   };
   currentEvents: EventApi[] = [];
@@ -49,29 +52,6 @@ export class DatepickerComponent implements OnInit {
     calendarOptions.weekends = !calendarOptions.weekends;
   }
 
-  handleDateSelect(selectInfo: DateSelectArg) {
-    const title = prompt('Please enter a new title for your event');
-    const calendarApi = selectInfo.view.calendar;
-
-    calendarApi.unselect(); // clear date selection
-
-    if (title) {
-      calendarApi.addEvent({
-        id: createEventId(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay
-      });
-    }
-  }
-
-  handleEventClick(clickInfo: EventClickArg) {
-    if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-
-      clickInfo.event.remove();
-    }
-  }
 
   handleEvents(events: EventApi[]) {
     this.currentEvents = events;

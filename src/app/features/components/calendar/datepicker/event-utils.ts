@@ -1,6 +1,6 @@
 
-let eventGuid = 0;
 
+let eventGuid = 0;
 export let INITIAL_EVENTS: any[] = [];
 
 export function createEventId() {

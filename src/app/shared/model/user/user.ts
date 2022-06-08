@@ -4,11 +4,12 @@ export class User {
     surname!: string;
     date!: Date;
     tax_id_code!: string;
-    date_smart!: Dates[];
     role!: string;
 }
 
-export class Dates {
+export class WorkStation {
     id!: number;
-    date_work!: Date;
+    user!: User;
+    date!: Date;
+    flag!: boolean;
 }

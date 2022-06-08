@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
       [
         { flag: false },
         { flag: false },
-        { flag: false, },
+        { flag: false },
         { flag: false },
         { flag: false },
       ],

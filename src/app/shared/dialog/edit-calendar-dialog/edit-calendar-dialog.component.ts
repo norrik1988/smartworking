@@ -21,10 +21,7 @@ export class EditCalendarDialogComponent implements OnInit {
 
   edit(form: NgForm) {
     this.calendarService.edit(form.value)
-    console.log(form.value)
+
   }
 
-  annulla() {
-    window.location.reload();
-  }
 }

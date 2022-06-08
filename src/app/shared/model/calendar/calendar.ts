@@ -4,4 +4,5 @@ export class Calendar {
     date !: Date;
     startStr !: Date;
     endStr !: Date;
+    color !: string;
 }

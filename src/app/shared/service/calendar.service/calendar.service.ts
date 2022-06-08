@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { CalendarOptions, DateSelectArg, EventApi, EventChangeArg, EventClickArg, EventDropArg } from '@fullcalendar/core';
+import { DateSelectArg, EventApi, EventChangeArg, EventClickArg } from '@fullcalendar/core';
 import { INITIAL_EVENTS } from 'src/app/features/components/calendar/datepicker/event-utils';
 import { CalendarDialogComponent } from '../../dialog/calendar-dialog/calendar-dialog.component';
 import { DeleteCalendarDialogComponent } from '../../dialog/delete-calendar-dialog/delete-calendar-dialog.component';
@@ -17,7 +16,6 @@ import { Calendar } from '../../model/calendar/calendar';
 export class CalendarService {
     calendar: Calendar = {} as Calendar;
     eventSelected: any;
-    colorEvent!: any;
 
     constructor(private http: HttpClient, public dialog: MatDialog) { }
 
@@ -30,6 +28,7 @@ export class CalendarService {
             INITIAL_EVENTS.push(res)
             window.location.reload();
         })
+
     }
 
 
@@ -76,11 +75,11 @@ export class CalendarService {
         idSelected = arg.event.id;
         eventSelected = arg.event.title
         startStr = arg.event.startStr
-        console.log(eventSelected)
-        console.log(startStr)
+
         const dialogRef = this.dialog.open(EditCalendarDialogComponent);
         dialogRef.afterClosed().subscribe(result => {
             console.log(`Dialog result: ${result}`);
+            window.location.reload();
         });
     }
 }

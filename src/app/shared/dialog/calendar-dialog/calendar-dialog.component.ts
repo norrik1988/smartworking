@@ -8,17 +8,20 @@ import { CalendarService, endStr, startStr } from '../../service/calendar.servic
   styleUrls: ['./calendar-dialog.component.scss']
 })
 export class CalendarDialogComponent implements OnInit {
-  start : any
-  end : any;
+  start: any
+  end: any;
+
   constructor(public calendarService: CalendarService) { }
   ngOnInit(): void {
-  this.start = startStr  
-    this.end = endStr
+    this.start = startStr;
+    this.end = endStr;
+
   }
 
   flag: boolean = false;
 
   add(f: NgForm) {
+
     this.calendarService.add(f.value);
     f.reset();
   }

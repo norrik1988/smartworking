@@ -30,7 +30,6 @@ export class DatepickerComponent implements OnInit {
     events: `http://localhost:3000/calendar`,
     weekends: true,
     editable: true,
-    eventColor: this.calendarService.colorEvent,
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,

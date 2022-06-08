@@ -17,7 +17,14 @@
       <input hidden [ngModel]="end" name="endStr">
       <input matInput type="text" required ngModel name="title" placeholder="inserisci ">
 
+
     </mat-form-field>
+    <select name="color" ngModel id="color">
+      <option value="orangered">Riunione</option>
+      <option value="green">Smart Working</option>
+      <option value="primary">Ufficio</option>
+    </select>
+    <br>
     <button mat-button mat-dialog-close color="primary" (click)="add(f)">Inserisci</button>
     <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Annulla</button>
   </form>

@@ -57,40 +57,32 @@
   ],
   "calendar": [
     {
-      "date": "2022-06-03",
-      "endStr": "2022-06-04",
-      "title": "home",
+      "date": "2022-06-08",
+      "endStr": "2022-06-09",
+      "title": "Tonia Olmo",
+      "color": "green",
       "id": 1
     },
     {
-      "date": "2022-06-06",
-      "endStr": "2022-06-07",
-      "title": "ufficio",
+      "date": "2022-06-08",
+      "endStr": "2022-06-09",
+      "title": "Antonio Liccardo",
+      "color": "green",
       "id": 2
     },
     {
-      "date": "2022-06-26",
-      "endStr": "2022-07-01",
-      "title": "fffff",
+      "date": "2022-06-14",
+      "endStr": "2022-06-15",
+      "title": "Tutti",
+      "color": "primary",
       "id": 3
     },
     {
-      "date": "2022-06-19",
-      "endStr": "2022-06-23",
-      "title": "tertet",
+      "date": "2022-06-08",
+      "endStr": "2022-06-09",
+      "title": "Jonnhy Pepp",
+      "color": "orangered",
       "id": 4
-    },
-    {
-      "date": "2022-06-09",
-      "endStr": "2022-06-16",
-      "title": "boh",
-      "id": 5
-    },
-    {
-      "date": "2022-06-29",
-      "endStr": "2022-06-23",
-      "title": "fsfds",
-      "id": 6
     }
   ]
 }

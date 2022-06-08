@@ -6,8 +6,7 @@
 
         <h2>
           <mat-icon>calendar_today</mat-icon>
-          <p> {{ start }}</p>
-          <p> {{end}}</p>
+          {{ start }}
         </h2>
 
       </td>
@@ -19,11 +18,15 @@
 
 
     </mat-form-field>
-    <select name="color" ngModel id="color">
-      <option value="orangered">Riunione</option>
-      <option value="green">Smart Working</option>
-      <option value="primary">Ufficio</option>
-    </select>
+
+    <mat-form-field appearance="fill">
+    <mat-label>Tipo di evento</mat-label>
+  <mat-select name="color" ngModel id="color">
+    <mat-option value="orangered">Riunione</mat-option>
+    <mat-option value="green">Smart Working</mat-option>
+    <mat-option value="primary">Ufficio</mat-option>
+  </mat-select>
+</mat-form-field>
     <br>
     <button mat-button mat-dialog-close color="primary" (click)="add(f)">Inserisci</button>
     <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Annulla</button>

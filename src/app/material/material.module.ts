@@ -16,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -36,6 +37,7 @@ const imports = [
     MatDatepickerModule,
     MatProgressSpinnerModule,
     MatNativeDateModule,
+    MatSelectModule
    
 
 ]

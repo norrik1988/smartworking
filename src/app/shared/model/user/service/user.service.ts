@@ -62,23 +62,8 @@ export class UserService {
         return this.dateSelected;
     }
 
-    add_smartWorking(user: User) {
-        this.http.post<User>(`http://localhost:3000/smart`, user)
-            .subscribe(
-                res => {
-                    this.users_smart.push(res);
-                }
-            )
-    }
 
-    add_dateSmart(user: User) {
-        this.http.post<User>(`http://localhost:3000/smart`, user.date_smart)
-            .subscribe(
-                res => {
-                    this.users_smart.push(res);
-                }
-            )
-    }
+
 
     get_smartWorking() {
         this.http.get<User[]>('http://localhost:3000/smart').subscribe(res => this.users_smart = res);

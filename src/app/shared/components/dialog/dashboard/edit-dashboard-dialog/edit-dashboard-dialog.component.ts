@@ -35,16 +35,9 @@ export class EditDashboardDialogComponent implements OnInit {
 
 
   add(user: User) {
-    user.date_smart = this.userService.dateSelected
-    this.userService.add_smartWorking(user)
     this.dialogRef.close(user)
   }
 
-  add_date(user: User) {
-    user.date_smart = this.userService.dateSelected
-    this.userService.add_dateSmart(user)
-    this.dialogRef.close(user)
-  }
 
   displayFn(user: User): string {
     return user && user.name ? user.name : '';

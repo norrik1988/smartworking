@@ -24,6 +24,12 @@
             <div>
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
+                    <!--                     <div *ngFor="let row of firstMatrix; index as i" class="cell">
+                        <div *ngFor="let column of firstMatrix[i]" class="cell">
+                            <app-card *ngIf="column.flag" customCls=".example-boundary"></app-card>
+                            <app-blank *ngIf="column.flag  ? false:true"></app-blank>
+                        </div>
+                    </div> -->
                     <div *ngFor="let row of firstMatrix; index as i" class="cell">
                         <div *ngFor="let column of firstMatrix[i]" class="cell">
                             <app-card *ngIf="column.flag" customCls=".example-boundary"></app-card>

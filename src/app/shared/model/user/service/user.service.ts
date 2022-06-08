@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, } from '@angular/core';
+import { Injectable, Input, } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../user';
@@ -8,11 +8,18 @@ import { User } from '../user';
     providedIn: 'root'
 })
 export class UserService {
+    @Input() dateSelected: any;
+
+    users_smart: User[] = [];
     users: User[] = [];
     user!: User;
     userSelected: User = {} as User;
+
     dataSource!: MatTableDataSource<User>;
+
     home!: User[];
+
+
 
     constructor(private http: HttpClient) { }
 
@@ -51,7 +58,31 @@ export class UserService {
             });
     }
 
+    getData() {
+        return this.dateSelected;
+    }
 
+    add_smartWorking(user: User) {
+        this.http.post<User>(`http://localhost:3000/smart`, user)
+            .subscribe(
+                res => {
+                    this.users_smart.push(res);
+                }
+            )
+    }
+
+    add_dateSmart(user: User) {
+        this.http.post<User>(`http://localhost:3000/smart`, user.date_smart)
+            .subscribe(
+                res => {
+                    this.users_smart.push(res);
+                }
+            )
+    }
+
+    get_smartWorking() {
+        this.http.get<User[]>('http://localhost:3000/smart').subscribe(res => this.users_smart = res);
+    }
 
 
 

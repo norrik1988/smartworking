@@ -65,14 +65,24 @@
       "id": 20
     }
   ],
-  "dashboard": [
+  "smart": [
     {
       "name": "Daniele",
       "surname": "Cibelli",
       "tax_id_code": "asdasdasdasdasd",
       "date": "1999-02-15",
       "role": "FE Developer",
-      "id": 7
+      "id": 7,
+      "date_smart": "8/6/2022"
+    },
+    {
+      "name": "Anthony ",
+      "surname": "Liccardo",
+      "tax_id_code": "qsqsqsqsqsqsqsqs",
+      "date": "2022-06-10",
+      "role": "BE Developer",
+      "id": 8,
+      "date_smart": "8/6/2022"
     }
   ]
 }

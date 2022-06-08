@@ -1,14 +1,19 @@
 <div fxLayout="row ">
 
     <div fxFlex="100%" fxFlex.sm="60" fxFlex.md="50" fxLayoutAlign="end end">
-        <span>Smart working pianificato:
-            <mat-form-field appearance="fill">
-                <mat-label>Scegli una data</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-        </span>
+        <form #f="ngForm">
+            <span>Smart working pianificato:
+                <mat-form-field appearance="fill">
+                    <mat-label>{{userService.dateSelected}}</mat-label>
+                    <input matInput [matDatepicker]="picker" #data [(ngModel)]="planModel.start_time"
+                        name="dateSeleceted">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <button mat-raised-button (click)="save(data)">save</button>
+
+            </span>
+        </form>
 
     </div>
 </div>

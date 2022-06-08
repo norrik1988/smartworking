@@ -9,6 +9,7 @@ import { DetailRegistersDialogComponent } from 'src/app/shared/components/dialog
 import { EditRegistersDialogComponent } from 'src/app/shared/components/dialog/registers/edit-registers-dialog/edit-registers-dialog/edit-registers-dialog.component';
 import { Register } from 'src/app/shared/model/register/register';
 import { RegisterService } from 'src/app/shared/model/register/service/register.service';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-table-register',
@@ -22,6 +23,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   }
 
   displayedColumns: string[] = ['giorno', 'inizio', 'fine', 'permesso', 'azioni'];
+  fileName = 'ExcelSheet.xlsx';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -33,8 +35,6 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.registerService.dataSource.paginator = this.paginator;
   }
-
-
 
   applyFilter(search: HTMLInputElement, searchMonth: HTMLInputElement) {
 
@@ -111,5 +111,20 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     this.flag1 = true;
     this.flag2 = true;
   }
+
+  exportexcel(): void {
+    /* pass here the table id */
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    /* save to file */
+    XLSX.writeFile(wb, this.fileName);
+
+  }
+
 
 }

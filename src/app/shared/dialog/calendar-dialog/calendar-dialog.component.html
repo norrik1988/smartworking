@@ -20,13 +20,13 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-    <mat-label>Tipo di evento</mat-label>
-  <mat-select name="color" ngModel id="color">
-    <mat-option value="orangered">Riunione</mat-option>
-    <mat-option value="green">Smart Working</mat-option>
-    <mat-option value="primary">Ufficio</mat-option>
-  </mat-select>
-</mat-form-field>
+      <mat-label>Tipo di evento</mat-label>
+      <mat-select name="color" [(value)]="color" ngModel id="color">
+        <mat-option value="orangered">Riunione</mat-option>
+        <mat-option value="green">Smart Working</mat-option>
+        <mat-option value="primary">Ufficio</mat-option>
+      </mat-select>
+    </mat-form-field>
     <br>
     <button mat-button mat-dialog-close color="primary" (click)="add(f)">Inserisci</button>
     <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Annulla</button>

@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatCheckboxChange } from '@angular/material/checkbox';
+
 import { MatDialog } from '@angular/material/dialog';
 import { DateSelectArg, EventApi, EventChangeArg, EventClickArg } from '@fullcalendar/core';
 import { INITIAL_EVENTS } from 'src/app/features/components/calendar/datepicker/event-utils';
@@ -15,14 +17,22 @@ import { Calendar } from '../../model/calendar/calendar';
 })
 export class CalendarService {
     calendar: Calendar = {} as Calendar;
-    eventSelected: any;
-
+    eventSelect: any;
+    color !: string;
     constructor(private http: HttpClient, public dialog: MatDialog) { }
 
     currentEvents: EventApi[] = [];
 
+    showOptions(event: MatCheckboxChange): void {
+        if (event.source.value == 'green') {
 
-
+            console.log('value =  ' + event.source.value);
+        } else if (event.source.value == 'primary') {
+            console.log('value =  ' + event.source.value)
+        } else {
+            console.log('value =  ' + event.source.value)
+        }
+    }
     add(cal: Calendar) {
         this.http.post<Calendar>(`http://localhost:3000/calendar`, cal).subscribe(res => {
             INITIAL_EVENTS.push(res)
@@ -30,8 +40,6 @@ export class CalendarService {
         })
 
     }
-
-
 
     delete(cal: Calendar): Calendar {
         this.http.delete(`http://localhost:3000/calendar/${cal.id}`)
@@ -54,8 +62,7 @@ export class CalendarService {
     onDateClick(selectInfo: DateSelectArg) {
         startStr = selectInfo.startStr;
         endStr = selectInfo.endStr;
-        console.log('Data Inizio ' + startStr);
-        console.log('Data Fine ' + endStr);
+
 
         this.dialog.open(CalendarDialogComponent, {
             width: '250px',
@@ -71,6 +78,7 @@ export class CalendarService {
     handleEvents(events: EventApi[]) {
         events = INITIAL_EVENTS;
     }
+
     dropEvent(arg: EventChangeArg) {
         idSelected = arg.event.id;
         eventSelected = arg.event.title

@@ -90,6 +90,13 @@
       "title": "Pippo",
       "color": "orangered",
       "id": 5
+    },
+    {
+      "date": "2022-06-20",
+      "endStr": "2022-06-21",
+      "title": "pino",
+      "color": "green",
+      "id": 6
     }
   ]
 }

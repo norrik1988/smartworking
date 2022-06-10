@@ -69,8 +69,6 @@
         </div>
     </form>
 
-    <button (click)="exportexcel()">Export to Excel</button>
-
     <table mat-table [dataSource]="registerService.dataSource" class="mat-elevation-z8" id="excel-table">
 
         <ng-container matColumnDef="giorno">
@@ -114,6 +112,12 @@
 
     </table>
 
-    <mat-paginator [pageSizeOptions]="[ 15, 25, 100]" aria-label="Select page of register"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[ 2, 15, 25, 100]" aria-label="Select page of register"></mat-paginator>
+
+    <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row " fxLayoutAlign="end ">
+        <button mat-raised-button class="addBotton" (click)="exportexcel()">
+            <mat-icon>file_download</mat-icon>
+        </button>
+    </div>
 
 </div>

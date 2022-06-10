@@ -1,7 +1,9 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
-import { User } from 'src/app/shared/model/user/user';
+import { User, WorkStation } from 'src/app/shared/model/user/user';
 
 @Component({
   selector: 'app-edit-dashboard-dialog',
@@ -14,10 +16,10 @@ export class EditDashboardDialogComponent implements OnInit {
   filteredUsers = new Array<User>();
   timeoutInput: any;
 
-  date = new Date();
+  workstation!: WorkStation;
 
+  date = new Date();
   ngOnInit() {
-    this.userService.get_smartWorking()
   }
 
   constructor(
@@ -32,12 +34,13 @@ export class EditDashboardDialogComponent implements OnInit {
     return this.userService.users.filter(state => state.name.toLowerCase().includes(filterValue));
   }
 
+  add(workstation: WorkStation) {
+    workstation = this.userService.dateSelected;
 
+    this.dialogRef.close(workstation)
+    this.userService.add_Workstation(workstation)
 
-  add(user: User) {
-    this.dialogRef.close(user)
   }
-
 
   displayFn(user: User): string {
     return user && user.name ? user.name : '';

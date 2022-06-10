@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../../model/user/service/user.service';
-import { User } from '../../model/user/user';
+import { User, WorkStation } from '../../model/user/user';
 import { EditDashboardDialogComponent } from '../dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 
 @Component({
@@ -16,6 +16,8 @@ export class CardComponent {
   @Input() customCls: string | undefined;
 
   user!: User;
+
+  workstation!: WorkStation;
 
 
   constructor(public dialog: MatDialog, public userService: UserService) { }

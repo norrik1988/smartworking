@@ -9,7 +9,7 @@ export class User {
 
 export class WorkStation {
     id!: number;
-    user!: User;
-    date!: Date;
+    user?: User;
+    date_workstation!: Date;
     flag!: boolean;
 }

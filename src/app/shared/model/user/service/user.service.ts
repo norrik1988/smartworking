@@ -2,23 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, Input, } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from '../user';
+import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
+import { User, WorkStation } from '../user';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-    @Input() dateSelected: any;
+    @Input() dateSelected: any | undefined = undefined;
 
-    users_smart: User[] = [];
+    home!: HomeComponent;
+
     users: User[] = [];
     user!: User;
     userSelected: User = {} as User;
 
     dataSource!: MatTableDataSource<User>;
-
-    home!: User[];
-
 
 
     constructor(private http: HttpClient) { }
@@ -62,11 +61,11 @@ export class UserService {
         return this.dateSelected;
     }
 
-
-
-
-    get_smartWorking() {
-        this.http.get<User[]>('http://localhost:3000/smart').subscribe(res => this.users_smart = res);
+    add_Workstation(workstation: WorkStation) {
+        this.http.post<WorkStation[]>('http://localhost:3000/workstation', workstation)
+            .subscribe(res => {
+                this.home.firstMatrix.push(res)
+            })
     }
 
 

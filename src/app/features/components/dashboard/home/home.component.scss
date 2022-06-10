@@ -29,13 +29,21 @@ mat-card {
         background-color: aqua;
         border: 1px solid #ccc;
 
-        
+
     }
 
 
 }
 
+.addButton {
+    background-color: #163c70;
+    color: white
+}
 
+.addButton:hover {
+    background-color: #ffae00;
+    color: black
+}
 
 .example-boundary {
     width: 800px;

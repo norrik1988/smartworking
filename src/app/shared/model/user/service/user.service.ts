@@ -60,12 +60,8 @@ export class UserService {
             });
     }
 
-    getData() {
-        return this.dateSelected;
-    }
 
     add_Workstation(workstation: WorkStation) {
-        console.log('cazzetto' + workstation)
         this.http.post<WorkStation>('http://localhost:3000/workstation', workstation)
             .subscribe(res => {
                 this.home.setMatrix(res)

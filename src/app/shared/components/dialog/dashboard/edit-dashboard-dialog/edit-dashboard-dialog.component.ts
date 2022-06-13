@@ -35,7 +35,6 @@ export class EditDashboardDialogComponent implements OnInit {
   }
 
   add(workstation: WorkStation) {
-    console.log("cazzetto2 " + JSON.stringify(workstation))
     workstation.date_workstation = this.userService.dateSelected;
     this.dialogRef.close(workstation)
     this.userService.add_Workstation(workstation)

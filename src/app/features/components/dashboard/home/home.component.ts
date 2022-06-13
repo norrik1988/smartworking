@@ -15,13 +15,19 @@ import { WorkStation } from 'src/app/shared/model/user/user';
 })
 export class HomeComponent {
 
+  sendData(event: HTMLInputElement) {
+    this.planModel.start_time = event.value
+  }
 
   constructor(
     public dialog: MatDialog,
     public userService: UserService,
-  ) { }
-
-  planModel: any = { start_time: new Date() };
+  ) {
+    userService.dateSelected = this.planModel.start_time
+  }
+  planModel: any = {
+    start_time: new Date(),
+  };
 
   firstMatrix: WorkStation[][] =
     [

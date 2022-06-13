@@ -15,7 +15,8 @@
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Data</mat-label>
-        <input matInput type="text" [ngModel]="userService.dateSelected" name="date_workstation" #data disabled>
+        <input matInput type="text" [ngModel]="userService.dateSelected | date:'dd/MM/YYYY'" name="date_workstation"
+            #data disabled>
     </mat-form-field>
 
     <br>

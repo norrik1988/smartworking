@@ -12,7 +12,7 @@ import { User, WorkStation } from 'src/app/shared/model/user/user';
 })
 export class EditDashboardDialogComponent implements OnInit {
 
-  @Input() userSelected: any;
+  @Input() userSelected!: WorkStation;
   filteredUsers = new Array<User>();
   timeoutInput: any;
 
@@ -35,11 +35,10 @@ export class EditDashboardDialogComponent implements OnInit {
   }
 
   add(workstation: WorkStation) {
-    workstation = this.userService.dateSelected;
-
+    console.log("cazzetto2 " + JSON.stringify(workstation))
+    workstation.date_workstation = this.userService.dateSelected;
     this.dialogRef.close(workstation)
     this.userService.add_Workstation(workstation)
-
   }
 
   displayFn(user: User): string {
@@ -51,6 +50,7 @@ export class EditDashboardDialogComponent implements OnInit {
     this.timeoutInput = setTimeout(() => {
       if (typeof name === 'string') {
         this.filteredUsers = name ? this.filterUsers(name) : this.userService.users.slice()
+        this.userService.user = this.filterUsers(name)[0]
       }
     }, 500);
   }

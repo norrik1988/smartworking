@@ -11,13 +11,13 @@ import { EditDashboardDialogComponent } from '../dialog/dashboard/edit-dashboard
 })
 export class CardComponent {
 
-  @Input() isScrollable: boolean = false;
 
+
+  @Input() isScrollable: boolean = false;
   @Input() customCls: string | undefined;
 
   user!: User;
 
-  workstation!: WorkStation;
 
 
   constructor(public dialog: MatDialog, public userService: UserService) { }

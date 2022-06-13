@@ -28,8 +28,8 @@
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
                     <div *ngFor="let row of firstMatrix; index as i" class="cell">
-                        <div *ngFor="let column of firstMatrix[i]" class="cell">
-                            <app-card *ngIf="column.flag" customCls=".example-boundary"></app-card>
+                        <div *ngFor="let column of firstMatrix[i]" class="cell" row column>
+                            <app-card *ngIf="column.flag" customCls=".example-boundary"> </app-card>
                             <app-blank *ngIf="column.flag  ? false:true"></app-blank>
                         </div>
                     </div>
@@ -44,12 +44,12 @@
             <div fxLayout="column " fxFlexFill>
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
-                    <div *ngFor="let row of secondMatrix; index as i" class="cell">
+                    <!--    <div *ngFor="let row of secondMatrix; index as i" class="cell">
                         <div *ngFor="let column of secondMatrix[i]" class="cell">
                             <app-card *ngIf="column.flag" customCls=".exampleTwo-boundary"></app-card>
                             <app-blank *ngIf="column.flag  ? false:true"> </app-blank>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -58,12 +58,12 @@
         <div class="exampleThree-boundary">
             <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
-                <div *ngFor="let row of thirdMatrix; index as i">
+                <!--          <div *ngFor="let row of thirdMatrix; index as i">
                     <div *ngFor="let column of thirdMatrix[i]">
                         <app-card *ngIf="column.flag" customCls=".exampleThree-boundary"></app-card>
                         <app-blank *ngIf="column.flag  ? false:true"></app-blank>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>

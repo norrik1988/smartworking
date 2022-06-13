@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Input, } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
 import { User, WorkStation } from '../user';
@@ -11,7 +12,9 @@ import { User, WorkStation } from '../user';
 export class UserService {
     @Input() dateSelected: any | undefined = undefined;
 
-    home!: HomeComponent;
+    dialog!: MatDialog;
+
+    home: HomeComponent = new HomeComponent(this.dialog, this);
 
     users: User[] = [];
     user!: User;
@@ -62,9 +65,10 @@ export class UserService {
     }
 
     add_Workstation(workstation: WorkStation) {
-        this.http.post<WorkStation[]>('http://localhost:3000/workstation', workstation)
+        console.log('cazzetto' + workstation)
+        this.http.post<WorkStation>('http://localhost:3000/workstation', workstation)
             .subscribe(res => {
-                this.home.firstMatrix.push(res)
+                this.home.setMatrix(res)
             })
     }
 

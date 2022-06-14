@@ -9,8 +9,6 @@ export class User {
 
 export class WorkStation {
     id!: number
-    row!: number;
-    column!: number;
     user?: User;
     date_workstation!: Date;
     flag!: boolean;

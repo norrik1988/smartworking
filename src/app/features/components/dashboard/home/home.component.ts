@@ -1,7 +1,5 @@
 import { Component, ElementRef, Inject, Input, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { first } from 'rxjs';
 import { EditDashboardDialogComponent } from 'src/app/shared/components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { WorkStation } from 'src/app/shared/model/user/user';
@@ -31,8 +29,6 @@ export class HomeComponent {
       {
         id: 1,
 
-        row: 0,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -40,8 +36,6 @@ export class HomeComponent {
       {
         id: 2,
 
-        row: 1,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -49,8 +43,6 @@ export class HomeComponent {
       {
         id: 3,
 
-        row: 2,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -58,8 +50,6 @@ export class HomeComponent {
       {
         id: 4,
 
-        row: 3,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -67,8 +57,6 @@ export class HomeComponent {
       {
         id: 5,
 
-        row: 4,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -77,8 +65,6 @@ export class HomeComponent {
       {
         id: 6,
 
-        row: 0,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -86,8 +72,6 @@ export class HomeComponent {
       {
         id: 7,
 
-        row: 1,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -95,8 +79,6 @@ export class HomeComponent {
       {
         id: 8,
 
-        row: 2,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -104,8 +86,6 @@ export class HomeComponent {
       {
         id: 9,
 
-        row: 3,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -113,8 +93,6 @@ export class HomeComponent {
       {
         id: 10,
 
-        row: 4,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -123,8 +101,6 @@ export class HomeComponent {
       {
         id: 11,
 
-        row: 0,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -132,8 +108,6 @@ export class HomeComponent {
       {
         id: 12,
 
-        row: 1,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -141,8 +115,6 @@ export class HomeComponent {
       {
         id: 13,
 
-        row: 2,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -150,8 +122,6 @@ export class HomeComponent {
       {
         id: 14,
 
-        row: 3,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -159,8 +129,6 @@ export class HomeComponent {
       {
         id: 15,
 
-        row: 4,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -169,8 +137,6 @@ export class HomeComponent {
       {
         id: 16,
 
-        row: 0,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -178,8 +144,6 @@ export class HomeComponent {
       {
         id: 17,
 
-        row: 1,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -187,8 +151,6 @@ export class HomeComponent {
       {
         id: 18,
 
-        row: 2,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -196,8 +158,6 @@ export class HomeComponent {
       {
         id: 19,
 
-        row: 3,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -205,8 +165,6 @@ export class HomeComponent {
       {
         id: 20,
 
-        row: 4,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -215,8 +173,6 @@ export class HomeComponent {
       {
         id: 21,
 
-        row: 0,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -224,8 +180,6 @@ export class HomeComponent {
       {
         id: 22,
 
-        row: 1,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -233,8 +187,6 @@ export class HomeComponent {
       {
         id: 23,
 
-        row: 2,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -242,8 +194,6 @@ export class HomeComponent {
       {
         id: 24,
 
-        row: 3,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -251,8 +201,6 @@ export class HomeComponent {
       {
         id: 25,
 
-        row: 4,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -264,8 +212,6 @@ export class HomeComponent {
       {
         id: 26,
 
-        row: 0,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -273,8 +219,6 @@ export class HomeComponent {
       {
         id: 27,
 
-        row: 1,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -282,8 +226,6 @@ export class HomeComponent {
       {
         id: 28,
 
-        row: 2,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -292,8 +234,6 @@ export class HomeComponent {
       {
         id: 29,
 
-        row: 0,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -301,8 +241,6 @@ export class HomeComponent {
       {
         id: 30,
 
-        row: 1,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -310,8 +248,6 @@ export class HomeComponent {
       {
         id: 31,
 
-        row: 2,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -320,8 +256,6 @@ export class HomeComponent {
       {
         id: 32,
 
-        row: 0,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -329,8 +263,6 @@ export class HomeComponent {
       {
         id: 33,
 
-        row: 1,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -338,8 +270,6 @@ export class HomeComponent {
       {
         id: 34,
 
-        row: 2,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -348,8 +278,6 @@ export class HomeComponent {
       {
         id: 35,
 
-        row: 0,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -357,8 +285,6 @@ export class HomeComponent {
       {
         id: 36,
 
-        row: 1,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -366,8 +292,6 @@ export class HomeComponent {
       {
         id: 37,
 
-        row: 2,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -376,8 +300,6 @@ export class HomeComponent {
       {
         id: 38,
 
-        row: 0,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -385,8 +307,6 @@ export class HomeComponent {
       {
         id: 39,
 
-        row: 1,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -394,8 +314,6 @@ export class HomeComponent {
       {
         id: 40,
 
-        row: 2,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -407,8 +325,6 @@ export class HomeComponent {
       {
         id: 41,
 
-        row: 0,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -416,8 +332,6 @@ export class HomeComponent {
       {
         id: 42,
 
-        row: 1,
-        column: 0,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -426,8 +340,6 @@ export class HomeComponent {
       {
         id: 43,
 
-        row: 0,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -435,8 +347,6 @@ export class HomeComponent {
       {
         id: 44,
 
-        row: 1,
-        column: 1,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -445,8 +355,6 @@ export class HomeComponent {
       {
         id: 45,
 
-        row: 0,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -454,8 +362,6 @@ export class HomeComponent {
       {
         id: 46,
 
-        row: 1,
-        column: 2,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -464,8 +370,6 @@ export class HomeComponent {
       {
         id: 47,
 
-        row: 0,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true
@@ -473,8 +377,6 @@ export class HomeComponent {
       {
         id: 48,
 
-        row: 1,
-        column: 3,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -483,8 +385,6 @@ export class HomeComponent {
       {
         id: 49,
 
-        row: 0,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: false
@@ -492,8 +392,6 @@ export class HomeComponent {
       {
         id: 50,
 
-        row: 1,
-        column: 4,
         user: this.userService.userSelected,
         date_workstation: this.userService.dateSelected,
         flag: true

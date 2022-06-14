@@ -1,7 +1,7 @@
 <div fxLayout="column">
 
     <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row " fxLayoutAlign="end ">
-        <button mat-raised-button class="addBotton" (click)="openDialog()">
+        <button mat-raised-button class="addBotton" (click)="openDialog()" title="Aggiungi">
             <mat-icon>add</mat-icon>
         </button>
     </div>
@@ -29,7 +29,8 @@
 
 
             <div fxFlexFill fxFlex="16%" fxFlex.md="50%">
-                <button mat-raised-button class="buttonSearch" (click)="applyFilter(search,month)">Search</button>
+                <button mat-raised-button class="buttonSearch" (click)="applyFilter(search,month)"
+                    title="Cerca tramite data o mese">Search</button>
                 <button (click)="refresh(form)" mat-raised-button type="reset" class="reset button"
                     title="Resetta campi di input e tabella">Reset</button>
             </div>
@@ -79,10 +80,10 @@
 
     </table>
 
-    <mat-paginator [pageSizeOptions]="[ 5, 15, 25, 100]" aria-label="Select page of register"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[ 5, 10, 15, 25, 100]" aria-label="Select page of register"></mat-paginator>
 
     <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row " fxLayoutAlign="end ">
-        <button mat-raised-button class="addBotton" (click)="exportexcel()">
+        <button mat-raised-button class="addBotton" (click)="exportexcel()" title="Export excel">
             <mat-icon>file_download</mat-icon>
         </button>
     </div>

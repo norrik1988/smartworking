@@ -22,23 +22,54 @@ export class CalendarService {
     constructor(private http: HttpClient, public dialog: MatDialog) { }
 
     currentEvents: EventApi[] = [];
-
-    showOptions(event: MatCheckboxChange): void {
+events: Calendar [] = [];
+event: Calendar [] = [];
+    showOptions(event: any): void {
         if (event.source.value == 'green') {
-
+           
             console.log('value =  ' + event.source.value);
         } else if (event.source.value == 'primary') {
             console.log('value =  ' + event.source.value)
         } else {
             console.log('value =  ' + event.source.value)
         }
+        this.filterEvents(event.source.value)
     }
+
+    filterEvents(value: any): Calendar[] {
+        this.http.get<Calendar[]>(`http://localhost:3000/calendar`).subscribe(res => this.events = res);
+        const filterValue = value.toLowerCase();
+        this.event =this.events.filter(state => state.color.toLowerCase().includes(filterValue));
+        console.log(this.event);
+        return this.event
+      }
+
+    
+    
+
+ 
+   
+
     add(cal: Calendar) {
         this.http.post<Calendar>(`http://localhost:3000/calendar`, cal).subscribe(res => {
             INITIAL_EVENTS.push(res)
             window.location.reload();
         })
 
+    }
+
+
+    Boh()  {
+        // console.log('CIAAA')
+        // this.http.get<Calendar[]>(`http://localhost:3000/calendar/${cal?.color}`)
+        //     .subscribe(res => {
+        //         const index = INITIAL_EVENTS.findIndex(cl => cl.color === cal?.color);
+        //         INITIAL_EVENTS[index] = res;
+        //         console.log('boooh' + res)
+        //     });
+
+        //     return cal
+        this.http.get<Calendar[]>(`http://localhost:3000/calendar`).subscribe(res => this.events = res);
     }
 
     delete(cal: Calendar): Calendar {

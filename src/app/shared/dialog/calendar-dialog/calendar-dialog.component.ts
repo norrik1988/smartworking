@@ -23,17 +23,8 @@ export class CalendarDialogComponent implements OnInit {
 
 
   add(f: NgForm) {
-    if (this.color == "orangered") {
-
-      console.log(this.color)
-    } else if (this.color == "green") {
-      console.log(this.color)
-    }
-    else if (this.color == "primary") {
-      console.log(this.color)
-    }
-    //  this.calendarService.add(f.value);
-    //  f.reset();
+     this.calendarService.add(f.value);
+     f.reset();
 
   }
 }

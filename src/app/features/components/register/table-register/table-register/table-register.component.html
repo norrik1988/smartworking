@@ -6,38 +6,6 @@
         </button>
     </div>
 
-    <!-- <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.md="row" fxLayout.xs="column" fxLayout.sm="start start">
-        <div fxFlex="20%" fxFlex.md="30%" fxFlex.xs="45%" fxFlex.sm="45%">
-            <form #form="ngForm">
-                <mat-form-field appearance="fill">
-                    <mat-label>Search</mat-label>
-                    <input matInput (keyup)="applyFilter($event)" #input type="date">
-                </mat-form-field>
-            </form>
-        </div>
-
-        <div fxFlex="20%" fxFlex.md="30%" fxFlex.xs="45%" fxFlex.sm="45%">
-            <form #formMonth="ngForm">
-                <mat-form-field appearance="fill">
-                    <mat-label>Search mounth</mat-label>
-                    <input matInput type="month" #month (keypress)="searchMonth($event)">
-                </mat-form-field>
-            </form>
-        </div>
-
-        <div fxFlex="50%" fxFlex.md="10%" fxFlex.xs="10%" fxFlex.sm="10%">
-            <button (click)="refresh()" mat-raised-button type="reset" class="reset button">Reset</button>
-        </div>
-
-    </div> -->
-
-
-    <!-- <div fxLayout="row" fxLayoutAlign="center start">
-        <div fxFlexFill fxFlex="70%">
-            <button mat-raised-button class="buttonSearch" (click)="applyFilter($event)">Search</button>
-        </div>
-    </div> -->
-
     <form #form="ngForm">
         <div fxFlexFill fxLayout="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column"
             fxLayoutAlign="start start">
@@ -46,7 +14,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Search</mat-label>
                     <input matInput type="date" name="search" #search ngModel [disabled]="!flag1"
-                        (click)="test1(month)">
+                        (click)="flagOne(month)">
                 </mat-form-field>
             </div>
 
@@ -55,7 +23,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Search month</mat-label>
                     <input matInput type="number" name="month" #month ngModel [disabled]="!flag2"
-                        (click)="test2(search)">
+                        (click)="flagTwo(search)">
                 </mat-form-field>
             </div>
 

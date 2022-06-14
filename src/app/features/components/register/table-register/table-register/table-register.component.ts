@@ -59,15 +59,13 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     this.flag2 = true;
   }
 
-
-
-  test1(search: HTMLInputElement) {
+  flagOne(search: HTMLInputElement) {
     this.flag2 = false;
   }
-  test2(month: HTMLInputElement) {
+
+  flagTwo(month: HTMLInputElement) {
     this.flag1 = false;
   }
-
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddRegistersDialogComponent, {

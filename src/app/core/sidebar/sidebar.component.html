@@ -1,4 +1,4 @@
-<mat-drawer-container>
+<!-- <mat-drawer-container>
     <mat-drawer mode="side" opened class="{{theme.getColor()}}">
 
         <div id="fadeshow1">
@@ -63,4 +63,69 @@
             </div>
         </div>
     </mat-drawer-content>
-</mat-drawer-container>
+</mat-drawer-container>a -->
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened class="{{theme.getColor()}}">
+        <div id="fadeshow1" class="m-b-logo">
+            <picture>
+                <img class="logo" src="assets/images/sidebar/image-sidebar.png">
+            </picture>
+        </div>
+        <div class="containerFlex">
+            <div fxLayout="row wrap" fxLayoutAlign="start center "
+                style="justify-content: flex-start; align-items: flex-start;">
+                <mat-list-item>
+                    <button mat-button class="menu-button" routerLink="/home/dashboard" routerLinkActive=" active">
+                        <mat-icon>dashboard</mat-icon>
+                        <span>Dashboard</span>
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-button class="menu-button" routerLink="/users/users-table" routerLinkActive="active">
+                        <mat-icon>person</mat-icon>
+                        <span>Utenti</span>
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-button class="menu-button" routerLink="/projects/projects-table"
+                        routerLinkActive="active">
+                        <mat-icon>class</mat-icon>
+                        <span>Progetti</span>
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-button class="menu-button" routerLink="/profile/user-profile" routerLinkActive="active">
+                        <mat-icon>manage_accounts</mat-icon>
+                        <span>Profilo</span>
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-button class="menu-button" routerLink="/settings/gear" routerLinkActive="active">
+                        <mat-icon>settings</mat-icon>
+                        <span>Settings</span>
+                    </button>
+                </mat-list-item>
+            </div>
+            <div class="containerFlexLogout">
+                <mat-divider></mat-divider>
+                <div fxLayout="row wrap" fxLayoutAlign="start center "
+                    style="justify-content: flex-start; align-items: flex-start;">
+                    <mat-list-item>
+                        <button mat-button class="menu-button" (click)="logOut()">
+                            <mat-icon>logout</mat-icon>
+                            <span>Logout</span>
+                        </button>
+                    </mat-list-item>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+        <div *ngIf="spinner.showSpinner">
+            <mat-progress-spinner id="loading" color="primary" value="50" mode="indeterminate">
+            </mat-progress-spinner>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

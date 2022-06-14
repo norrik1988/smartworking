@@ -127,7 +127,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     }
 
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.utils.book_append_sheet(wb, ws, 'Foglio1');
     /* save file */
     XLSX.writeFile(wb, 'SheetTest.xlsx');
   }

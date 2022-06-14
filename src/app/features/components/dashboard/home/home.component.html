@@ -24,10 +24,8 @@
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
                     <div *ngFor="let row of firstMatrix; index as i" class="cell">
-                        <div *ngFor="let column of firstMatrix[i]" class="cell">
-                            <app-card id="workstation.id{{firstMatrix[i]}}" *ngIf="column.flag"
-                                customCls=".example-boundary" [attr.id]="'workstation.id' + firstMatrix[i]">
-                            </app-card>
+                        <div *ngFor="let column of firstMatrix[i]; index as j" class="cell">
+                            <app-card  *ngIf="column.flag" customCls=".example-boundary"></app-card>
                             <app-blank *ngIf="column.flag  ? false:true"></app-blank>
                         </div>
                     </div>
@@ -43,7 +41,7 @@
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
                     <div *ngFor="let row of secondMatrix; index as i" class="cell">
-                        <div *ngFor="let column of secondMatrix[i]" class="cell">
+                        <div *ngFor="let column of secondMatrix[i]; index as j" class="cell">
                             <app-card *ngIf="column.flag" customCls=".exampleTwo-boundary"></app-card>
                             <app-blank *ngIf="column.flag  ? false:true"> </app-blank>
                         </div>
@@ -57,7 +55,7 @@
             <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
                 <div *ngFor="let row of thirdMatrix; index as i">
-                    <div *ngFor="let column of thirdMatrix[i]">
+                    <div *ngFor="let column of thirdMatrix[i]; index as j">
                         <app-card *ngIf="column.flag" customCls=".exampleThree-boundary"></app-card>
                         <app-blank *ngIf="column.flag  ? false:true"></app-blank>
                     </div>

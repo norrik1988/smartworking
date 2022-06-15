@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CalendarService, eventSelected } from '../../service/calendar.service/calendar.service';
 
 @Component({
@@ -6,13 +6,10 @@ import { CalendarService, eventSelected } from '../../service/calendar.service/c
   templateUrl: './delete-calendar-dialog.component.html',
   styleUrls: ['./delete-calendar-dialog.component.scss']
 })
-export class DeleteCalendarDialogComponent implements OnInit {
-
+export class DeleteCalendarDialogComponent {
+  evento: any = eventSelected;
   constructor(public calendarService: CalendarService) { }
-  evento: any;
-  ngOnInit(): void {
-    this.evento = eventSelected
-  }
+
 
 
 }

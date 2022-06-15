@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CalendarService, eventSelected, idSelected, startStr } from '../../service/calendar.service/calendar.service';
 
@@ -7,17 +7,13 @@ import { CalendarService, eventSelected, idSelected, startStr } from '../../serv
   templateUrl: './edit-calendar-dialog.component.html',
   styleUrls: ['./edit-calendar-dialog.component.scss']
 })
-export class EditCalendarDialogComponent implements OnInit {
+export class EditCalendarDialogComponent {
+  event: any = eventSelected;
+  dateEvent: string = startStr;
+  idSelected: number = idSelected;
 
   constructor(public calendarService: CalendarService) { }
-  event: any;
-  dateEvent: any;
-  idSelected: any;
-  ngOnInit(): void {
-    this.event = eventSelected;
-    this.dateEvent = startStr;
-    this.idSelected = idSelected
-  }
+
 
   edit(form: NgForm) {
     this.calendarService.edit(form.value)

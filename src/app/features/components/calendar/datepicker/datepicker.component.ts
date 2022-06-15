@@ -10,7 +10,7 @@ import { CalendarService } from 'src/app/shared/service/calendar.service/calenda
   styleUrls: ['./datepicker.component.scss']
 })
 export class DatepickerComponent implements OnInit {
-
+  currentEvents: EventApi[] = [];
   color !: string;
 
   constructor(public dialog: MatDialog, public calendarService: CalendarService) { }
@@ -36,10 +36,10 @@ export class DatepickerComponent implements OnInit {
     eventClick: this.calendarService.openDelete.bind(this),
     eventsSet: this.calendarService.handleEvents.bind(this),
     eventChange: this.calendarService.dropEvent.bind(this),
-    eventSourceSuccess: (events) => events.filter(event => event.color === this.color),
+    //   eventSourceSuccess: (events) => events.filter(event => event.color === this.color),
 
   };
-  currentEvents: EventApi[] = [];
+
 
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;

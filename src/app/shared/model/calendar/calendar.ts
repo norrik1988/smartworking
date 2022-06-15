@@ -5,7 +5,5 @@ export class Calendar {
     startStr !: Date;
     endStr !: Date;
     color !: string;
-    stateSmart !: boolean;
-    stateOffice !: boolean;
-    stateMeeting !: boolean;
+
 }

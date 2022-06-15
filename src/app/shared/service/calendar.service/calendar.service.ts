@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatCheckboxChange } from '@angular/material/checkbox';
 
 import { MatDialog } from '@angular/material/dialog';
 import { DateSelectArg, EventApi, EventChangeArg, EventClickArg } from '@fullcalendar/core';
-import { INITIAL_EVENTS } from 'src/app/features/components/calendar/datepicker/event-utils';
 import { CalendarDialogComponent } from '../../dialog/calendar-dialog/calendar-dialog.component';
 import { DeleteCalendarDialogComponent } from '../../dialog/delete-calendar-dialog/delete-calendar-dialog.component';
 import { EditCalendarDialogComponent } from '../../dialog/edit-calendar-dialog/edit-calendar-dialog.component';
 import { Calendar } from '../../model/calendar/calendar';
 
-
+export var idSelected: any;
+export var eventSelected: any;
+export var startStr: string;
+export var endStr: string;
 
 @Injectable({
     providedIn: 'root'
@@ -19,14 +20,15 @@ export class CalendarService {
     calendar: Calendar = {} as Calendar;
     eventSelect: any;
     color !: string;
+    currentEvents: EventApi[] = [];
+    events: Calendar[] = [];
+    event: Calendar[] = [];
+
     constructor(private http: HttpClient, public dialog: MatDialog) { }
 
-    currentEvents: EventApi[] = [];
-events: Calendar [] = [];
-event: Calendar [] = [];
     showOptions(event: any): void {
         if (event.source.value == 'green') {
-           
+
             console.log('value =  ' + event.source.value);
         } else if (event.source.value == 'primary') {
             console.log('value =  ' + event.source.value)
@@ -39,44 +41,23 @@ event: Calendar [] = [];
     filterEvents(value: any): Calendar[] {
         this.http.get<Calendar[]>(`http://localhost:3000/calendar`).subscribe(res => this.events = res);
         const filterValue = value.toLowerCase();
-        this.event =this.events.filter(state => state.color.toLowerCase().includes(filterValue));
+        this.event = this.events.filter(state => state.color.toLowerCase().includes(filterValue));
         console.log(this.event);
         return this.event
-      }
-
-    
-    
-
- 
-   
+    }
 
     add(cal: Calendar) {
         this.http.post<Calendar>(`http://localhost:3000/calendar`, cal).subscribe(res => {
-            INITIAL_EVENTS.push(res)
+            this.events.push(res)
             window.location.reload();
         })
-
-    }
-
-
-    Boh()  {
-        // console.log('CIAAA')
-        // this.http.get<Calendar[]>(`http://localhost:3000/calendar/${cal?.color}`)
-        //     .subscribe(res => {
-        //         const index = INITIAL_EVENTS.findIndex(cl => cl.color === cal?.color);
-        //         INITIAL_EVENTS[index] = res;
-        //         console.log('boooh' + res)
-        //     });
-
-        //     return cal
-        this.http.get<Calendar[]>(`http://localhost:3000/calendar`).subscribe(res => this.events = res);
     }
 
     delete(cal: Calendar): Calendar {
         this.http.delete(`http://localhost:3000/calendar/${cal.id}`)
             .subscribe(() => {
-                const indice = INITIAL_EVENTS.findIndex(cl => cl.id === cal.id);
-                INITIAL_EVENTS.splice(indice, 1);
+                const indice = this.events.findIndex(cl => cl.id === cal.id);
+                this.events.splice(indice, 1);
                 window.location.reload();
             })
         return cal
@@ -84,8 +65,8 @@ event: Calendar [] = [];
     edit(cal: Calendar) {
         this.http.patch<Calendar>(`http://localhost:3000/calendar/${idSelected}`, cal)
             .subscribe(res => {
-                const index = INITIAL_EVENTS.findIndex(cl => cl.id === cal.id);
-                INITIAL_EVENTS[index] = res;
+                const index = this.events.findIndex(cl => cl.id === cal.id);
+                this.events[index] = res;
                 window.location.reload();
             });
     }
@@ -107,7 +88,7 @@ event: Calendar [] = [];
         });
     }
     handleEvents(events: EventApi[]) {
-        events = INITIAL_EVENTS;
+        events = this.currentEvents;
     }
 
     dropEvent(arg: EventChangeArg) {
@@ -122,9 +103,6 @@ event: Calendar [] = [];
         });
     }
 }
-export var idSelected: any;
-export var eventSelected: any;
-export var startStr: any;
-export var endStr: any;
+
 
 

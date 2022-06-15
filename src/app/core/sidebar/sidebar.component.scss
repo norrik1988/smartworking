@@ -10,6 +10,9 @@ mat-sidenav-container {
     //router-outlet
     height: 100%;
 
+    .container {
+        padding: 16px;
+    }
 
     mat-sidenav {
 

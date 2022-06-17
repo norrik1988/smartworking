@@ -1,26 +1,22 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Form, NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
-import { User, WorkStation } from 'src/app/shared/model/user/user';
+import { User, WorkSpace, WorkStation } from 'src/app/shared/model/user/user';
 
 @Component({
   selector: 'app-edit-dashboard-dialog',
   templateUrl: './edit-dashboard-dialog.component.html',
   styleUrls: ['./edit-dashboard-dialog.component.scss']
 })
-export class EditDashboardDialogComponent implements OnInit {
+export class EditDashboardDialogComponent {
 
-  @Input() userSelected!: WorkStation;
+  @Input() userSelected!: WorkSpace;
+  @Input() positionSelected!: WorkSpace;
+
   filteredUsers = new Array<User>();
   timeoutInput: any;
-
-  workstation!: WorkStation;
-
-  date = new Date();
-  ngOnInit() {
-  }
 
   constructor(
     public dialogRef: MatDialogRef<EditDashboardDialogComponent>,
@@ -28,16 +24,16 @@ export class EditDashboardDialogComponent implements OnInit {
     public userService: UserService,
   ) { }
 
-
   filterUsers(value: string): User[] {
     const filterValue = value.toLowerCase();
     return this.userService.users.filter(state => state.name.toLowerCase().includes(filterValue));
   }
 
-  add(workstation: WorkStation) {
-    workstation.date_workstation = this.userService.dateSelected;
-    this.dialogRef.close(workstation)
-    this.userService.add_Workstation(workstation)
+  add(workspace: WorkSpace) {
+    workspace.id_position = this.userService.positionSelected;
+    workspace.date_workstation = this.userService.dateSelected;
+    this.dialogRef.close(workspace);
+    this.userService.add_Workstation(workspace);
   }
 
   displayFn(user: User): string {

@@ -4,13 +4,15 @@ import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
-import { User, WorkStation } from '../user';
+import { User, WorkSpace, WorkStation } from '../user';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
+
     @Input() dateSelected: any | undefined = undefined;
+    @Input() positionSelected: any | undefined = undefined;
 
     dialog!: MatDialog;
 
@@ -20,8 +22,9 @@ export class UserService {
     user!: User;
     userSelected: User = {} as User;
 
-    dataSource!: MatTableDataSource<User>;
+    workstation!: WorkStation;
 
+    dataSource!: MatTableDataSource<User>;
 
     constructor(private http: HttpClient) { }
 
@@ -60,9 +63,8 @@ export class UserService {
             });
     }
 
-
-    add_Workstation(workstation: WorkStation) {
-        this.http.post<WorkStation>('http://localhost:3000/workstation', workstation)
+    add_Workstation(workspace: WorkSpace) {
+        this.http.post<WorkSpace>('http://localhost:3000/workstation', workspace)
             .subscribe(res => {
                 this.home.setMatrix(res)
             })

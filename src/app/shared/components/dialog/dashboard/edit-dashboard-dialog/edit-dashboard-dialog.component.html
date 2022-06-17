@@ -22,7 +22,7 @@
     <br>
 
     <div mat-dialog-actions>
-        <button id="button-save" mat-button cdkFocusInitial (click)="add(userSelected)" [mat-dialog-close]="data"
+        <button id="button-save" mat-button cdkFocusInitial (click)="add(f.value)" [mat-dialog-close]="data"
             [disabled]="f.invalid" class="addBotton">
             <mat-icon>save</mat-icon> Inserisci
         </button>

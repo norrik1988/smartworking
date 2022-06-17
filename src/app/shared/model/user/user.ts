@@ -8,8 +8,14 @@ export class User {
 }
 
 export class WorkStation {
-    id!: number
+    id!: number;
+    position!: number;
+    card_visibility!: boolean;
+}
+
+export class WorkSpace {
+    id!: number;
     user?: User;
     date_workstation!: Date;
-    flag!: boolean;
+    id_position!: number;
 }

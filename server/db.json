@@ -65,48 +65,5 @@
       "id": 20
     }
   ],
-  "workstation": [
-    {
-      "id": "1",
-      "row": "3",
-      "column": "0",
-      "userSelected": {
-        "name": "Daniele",
-        "surname": "Cibelli",
-        "tax_id_code": "asdasdasdasdasd",
-        "date": "1999-02-15",
-        "role": "FE Developer",
-        "id": 7
-      },
-      "date_workstation": "2022-06-13",
-      "flag": "true"
-    },
-    {
-      "name": "Daniele",
-      "surname": "Cibelli",
-      "tax_id_code": "asdasdasdasdasd",
-      "date": "1999-02-15",
-      "role": "FE Developer",
-      "id": 7,
-      "date_workstation": "2022-06-14"
-    },
-    {
-      "name": "Vecienzo",
-      "surname": "Granatiello",
-      "tax_id_code": "vncgrn",
-      "date": "2022-06-26",
-      "role": "BE Developer",
-      "id": 10,
-      "date_workstation": "2022-06-14"
-    },
-    {
-      "name": "Johnny",
-      "surname": "Pepp",
-      "tax_id_code": "rerererererere",
-      "date": "2022-06-25",
-      "role": "FE Developer",
-      "id": 9,
-      "date_workstation": "2022-06-14"
-    }
-  ]
+  "workstation": []
 }

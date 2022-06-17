@@ -1,8 +1,7 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
 import { UserService } from '../../model/user/service/user.service';
-import { User, WorkStation } from '../../model/user/user';
+import { User, WorkSpace, WorkStation } from '../../model/user/user';
 import { EditDashboardDialogComponent } from '../dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 
 @Component({
@@ -15,6 +14,7 @@ export class CardComponent {
   @Input() isScrollable: boolean = false;
   @Input() customCls: string | undefined;
 
+
   user!: User;
 
   constructor(public dialog: MatDialog, public userService: UserService) { }
@@ -25,7 +25,6 @@ export class CardComponent {
     dialogRef.afterClosed().subscribe(result => {
       this.user = result
     });
-
   }
 
   @HostBinding('className') get className() {//custom container drag
@@ -35,5 +34,7 @@ export class CardComponent {
     return cls;
   }
 
+  get() {
 
+  }
 }

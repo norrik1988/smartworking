@@ -65,5 +65,19 @@
       "id": 20
     }
   ],
-  "workstation": []
+  "workstation": [
+    {
+      "userSelected": {
+        "name": "Daniele",
+        "surname": "Cibelli",
+        "tax_id_code": "asdasdasdasdasd",
+        "date": "1999-02-15",
+        "role": "FE Developer",
+        "id": 7
+      },
+      "id_position": "16",
+      "date_workstation": "2022-06-18",
+      "id": 1
+    }
+  ]
 }

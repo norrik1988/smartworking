@@ -9,7 +9,6 @@ export class User {
 
 export class WorkStation {
     id!: number;
-    position!: number;
     card_visibility!: boolean;
 }
 

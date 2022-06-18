@@ -41,6 +41,8 @@ mat-sidenav-container {
             border: 0.5px solid #FFFFFF;
         }
 
+
+
         .containerFlex {
             margin-top: 100px;
         }
@@ -50,7 +52,13 @@ mat-sidenav-container {
         }
 
         .containerFlexLogout {
-            margin-top: 200%;
+            @media screen and(min-width:1920px) {
+                margin-top: 280%;
+            }
+
+            @media screen and(min-width:1366px) {
+                margin-top: 200%;
+            }
         }
 
         .logo {

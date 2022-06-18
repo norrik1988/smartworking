@@ -9,21 +9,28 @@ import { EditDashboardDialogComponent } from '../dialog/dashboard/edit-dashboard
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
 
   @Input() isScrollable: boolean = false;
   @Input() customCls: string | undefined;
 
 
   user!: User;
-
   constructor(public dialog: MatDialog, public userService: UserService) { }
 
-  openEdit() {//opening dialog
+  ngOnInit(): void {
+  }
+
+  openEdit(event: any) {//opening dialog
     const dialogRef = this.dialog.open(EditDashboardDialogComponent);
     this.userService.getUser();
+
+    this.userService.positionSelected = event.srcElement.__ngContext__[0].id;
+    console.log(this.userService.positionSelected)
+
     dialogRef.afterClosed().subscribe(result => {
-      this.user = result
+      console.log(result)
+      this.user = result.userSelected
     });
   }
 
@@ -34,7 +41,4 @@ export class CardComponent {
     return cls;
   }
 
-  get() {
-
-  }
 }

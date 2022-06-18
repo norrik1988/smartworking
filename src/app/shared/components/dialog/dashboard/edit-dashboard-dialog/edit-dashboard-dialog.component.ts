@@ -15,6 +15,8 @@ export class EditDashboardDialogComponent {
   @Input() userSelected!: WorkSpace;
   @Input() positionSelected!: WorkSpace;
 
+  @Input() workspaceUser !: User;
+
   filteredUsers = new Array<User>();
   timeoutInput: any;
 
@@ -32,6 +34,8 @@ export class EditDashboardDialogComponent {
   add(workspace: WorkSpace) {
     workspace.id_position = this.userService.positionSelected;
     workspace.date_workstation = this.userService.dateSelected;
+
+
     this.dialogRef.close(workspace);
     this.userService.add_Workstation(workspace);
   }

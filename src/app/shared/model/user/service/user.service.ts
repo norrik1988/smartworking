@@ -22,7 +22,8 @@ export class UserService {
     user!: User;
     userSelected: User = {} as User;
 
-    workstation!: WorkStation;
+    workspaceArray: WorkSpace[] = [];
+    workspace!: WorkSpace;
 
     dataSource!: MatTableDataSource<User>;
 
@@ -36,6 +37,8 @@ export class UserService {
         this.http.get<User[]>('http://localhost:3000/user').subscribe(res => this.users = res)
 
     }
+
+
 
     add(user: User) {
         this.http.post<User>(`http://localhost:3000/user`, user).subscribe(res => {
@@ -66,8 +69,12 @@ export class UserService {
     add_Workstation(workspace: WorkSpace) {
         this.http.post<WorkSpace>('http://localhost:3000/workstation', workspace)
             .subscribe(res => {
-                this.home.setMatrix(res)
+                this.workspaceArray.push(res)
             })
+    }
+
+    getWorkspace() {
+
     }
 
 }

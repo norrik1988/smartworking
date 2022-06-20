@@ -1,8 +1,8 @@
 <form class="example-form" #f="ngForm">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>User</mat-label>
-        <input matInput [matAutocomplete]="auto" [(ngModel)]="userSelected" (ngModelChange)="inputChange($event)"
-            name="userSelected">
+        <input matInput [matAutocomplete]="auto" [(ngModel)]="userService.userSelected"
+            (ngModelChange)="inputChange($event)" name="user">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
             <mat-option *ngFor="let user of filteredUsers" [value]="user">
                 <img class="example-option-img" aria-hidden height="25">

@@ -35,7 +35,6 @@ export class UserService {
 
     getUser() {
         this.http.get<User[]>('http://localhost:3000/user').subscribe(res => this.users = res)
-
     }
 
     add(user: User) {
@@ -65,15 +64,16 @@ export class UserService {
     }
 
     add_Workstation(workspace: WorkSpace) {
-        this.http.post<WorkSpace>('http://localhost:3000/workstation', workspace)
+        this.http.post<WorkSpace>(`http://localhost:3000/workspace`, workspace)
             .subscribe(res => {
                 this.workspaceArray.push(res)
+
+                this.getWorkspace();
             })
     }
 
     getWorkspace() {
-        this.http.get<WorkSpace[]>('http://localhost:3000/workstation')
-        .subscribe(res => this.workspaceArray = res)
+        this.http.get<WorkSpace[]>('http://localhost:3000/workspace')
+            .subscribe(res => this.workspaceArray = res)
     }
-
 }

@@ -65,9 +65,9 @@
       "id": 20
     }
   ],
-  "workstation": [
+  "workspace": [
     {
-      "userSelected": {
+      "user": {
         "name": "Daniele",
         "surname": "Cibelli",
         "tax_id_code": "asdasdasdasdasd",
@@ -76,7 +76,7 @@
         "id": 7
       },
       "id_position": "16",
-      "date_workstation": "2022-06-18",
+      "date_workstation": "2022-06-20",
       "id": 1
     }
   ]

@@ -12,7 +12,7 @@ import { User, WorkSpace, WorkStation } from 'src/app/shared/model/user/user';
 })
 export class EditDashboardDialogComponent {
 
-  @Input() userSelected!: WorkSpace;
+  //@Input() userSelected!: WorkSpace;
   @Input() positionSelected!: WorkSpace;
 
   @Input() workspaceUser !: User;
@@ -34,7 +34,7 @@ export class EditDashboardDialogComponent {
   add(workspace: WorkSpace) {
     workspace.id_position = this.userService.positionSelected;
     workspace.date_workstation = this.userService.dateSelected;
-
+    workspace.user = this.userService.userSelected;
 
     this.dialogRef.close(workspace);
     this.userService.add_Workstation(workspace);

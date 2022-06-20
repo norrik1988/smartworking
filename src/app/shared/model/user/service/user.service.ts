@@ -38,8 +38,6 @@ export class UserService {
 
     }
 
-
-
     add(user: User) {
         this.http.post<User>(`http://localhost:3000/user`, user).subscribe(res => {
             this.dataSource.data.push(res);
@@ -74,7 +72,8 @@ export class UserService {
     }
 
     getWorkspace() {
-
+        this.http.get<WorkSpace[]>('http://localhost:3000/workstation')
+        .subscribe(res => this.workspaceArray = res)
     }
 
 }

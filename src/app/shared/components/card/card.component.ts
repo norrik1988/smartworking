@@ -26,13 +26,16 @@ export class CardComponent implements OnInit {
     this.userService.getUser();
 
     this.userService.positionSelected = event.srcElement.__ngContext__[0].id;
+    console.log(event)
     console.log(this.userService.positionSelected)
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(result)
-      this.user = result.userSelected
+      this.user = result?.userSelected
     });
   }
+
+  
 
   @HostBinding('className') get className() {//custom container drag
     let cls = 'card';

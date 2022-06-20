@@ -313,5 +313,9 @@ export class HomeComponent {
   }
 
 
+  getData(){
+  
+  }
+
 
 }

@@ -18,9 +18,9 @@ export var endStr: any;
 export class CalendarService {
     calendar: Calendar = {} as Calendar;
     eventSelect: any;
-    color !: string;
+    color: string = '';
     currentEvents: EventApi[] = [];
-    events: Calendar[] = [];
+    events: any[] = [];
     event: Calendar[] = [];
     eventi: EventSourceFunc[] = [];
     constructor(private http: HttpClient, public dialog: MatDialog) {
@@ -44,18 +44,9 @@ export class CalendarService {
         eventClick: this.openDelete.bind(this),
         eventsSet: this.handleEvents.bind(this),
         eventChange: this.dropEvent.bind(this),
-        //   eventSourceSuccess: this.showOptions.bind(this),
+        eventSourceSuccess: (events) => events.filter(event => event.color === this.color),
 
     };
-    /*  filtro(events: any) {
-          console.log(events.source.value)
-          if (events.source.value === ' green') {
-              console.log(events.source.value)
-              this.calendarOptions.events = this.fil.filter(event => event.color === events.source.value)
-  
-          }
-          this.filterEvents(events)
-      }*/
     getAll(): any {
         this.http.get<EventSourceFunc[]>(`http://localhost:3000/calendar`).subscribe(res => {
             this.eventi = res
@@ -64,28 +55,24 @@ export class CalendarService {
         });
 
     }
-    fil: EventInput[] = []
+
     showOptions(event: any): void {
-        if (event.source.value == 'green') {
 
-            console.log('value =  ' + event.source.value);
-        } else if (event.source.value == 'primary') {
-            console.log('value =  ' + event.source.value)
-        } else {
-            console.log('value =  ' + event.source.value)
-        }
-        this.filterEvents(event.source.value)
+        this.color = event.source.value
+
+        this.getAll()
     }
 
-    filterEvents(value: any): Calendar[] {
-        this.http.get<Calendar[]>(`http://localhost:3000/calendar`).subscribe(res => {
-            this.events = res
-            const filterValue = value.toLowerCase();
-            this.event = this.events.filter(state => state.color.toLowerCase().includes(filterValue));
-            console.log(this.event);
-        })
-        return this.event
-    }
+    /*  filterEvents(value: any): Calendar[] {
+          this.http.get<Calendar[]>(`http://localhost:3000/calendar`).subscribe(res => {
+              this.events = res
+              const filterValue = value.toLowerCase();
+              this.eventi = this.events.filter(state => state.color.includes(filterValue));
+              console.log(this.eventi);
+          })
+          this.getAll()
+          return this.event
+      }*/
 
     add(cal: Calendar) {
         this.http.post<Calendar>(`http://localhost:3000/calendar`, cal).subscribe(res => {

@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CalendarOptions, EventApi } from '@fullcalendar/core';
+import { EventApi } from '@fullcalendar/core';
 import { CalendarService } from 'src/app/shared/service/calendar.service/calendar.service';
 
 @Component({
@@ -11,8 +11,9 @@ import { CalendarService } from 'src/app/shared/service/calendar.service/calenda
 })
 export class DatepickerComponent implements OnInit {
   currentEvents: EventApi[] = [];
-  color !: string;
-
+  green: string = ' green';
+  blue: string = 'blue';
+  orange: string = ' orange'
   constructor(public dialog: MatDialog, public calendarService: CalendarService) {
     this.calendarService.getAll()
 

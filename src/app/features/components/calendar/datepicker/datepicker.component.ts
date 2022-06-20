@@ -13,47 +13,14 @@ export class DatepickerComponent implements OnInit {
   currentEvents: EventApi[] = [];
   color !: string;
 
-  constructor(public dialog: MatDialog, public calendarService: CalendarService) { }
+  constructor(public dialog: MatDialog, public calendarService: CalendarService) {
+    this.calendarService.getAll()
+
+  }
+
 
   ngOnInit() { }
-  calendarVisible = true;
 
-  calendarOptions: CalendarOptions = {
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
-    },
-    initialView: 'dayGridMonth',
-    events: `http://localhost:3000/calendar`,
-    weekends: true,
-    editable: true,
-    selectable: true,
-    selectMirror: true,
-    dayMaxEvents: true,
-
-    select: this.calendarService.onDateClick.bind(this),
-    eventClick: this.calendarService.openDelete.bind(this),
-    eventsSet: this.calendarService.handleEvents.bind(this),
-    eventChange: this.calendarService.dropEvent.bind(this),
-    //   eventSourceSuccess: (events) => events.filter(event => event.color === this.color),
-
-  };
-
-
-  handleCalendarToggle() {
-    this.calendarVisible = !this.calendarVisible;
-  }
-
-  handleWeekendsToggle() {
-    const { calendarOptions } = this;
-    calendarOptions.weekends = !calendarOptions.weekends;
-  }
-
-
-  handleEvents(events: EventApi[]) {
-    this.currentEvents = events;
-  }
 }
 
 

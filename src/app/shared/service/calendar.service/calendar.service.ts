@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
-import { DateSelectArg, EventApi, EventChangeArg, EventClickArg } from '@fullcalendar/core';
+import { CalendarOptions, DateSelectArg, EventApi, EventChangeArg, EventClickArg, EventInput, EventSourceFunc } from '@fullcalendar/core';
 import { CalendarDialogComponent } from '../../dialog/calendar-dialog/calendar-dialog.component';
 import { DeleteCalendarDialogComponent } from '../../dialog/delete-calendar-dialog/delete-calendar-dialog.component';
 import { EditCalendarDialogComponent } from '../../dialog/edit-calendar-dialog/edit-calendar-dialog.component';
@@ -10,9 +10,8 @@ import { Calendar } from '../../model/calendar/calendar';
 
 export var idSelected: any;
 export var eventSelected: any;
-export var startStr: string;
-export var endStr: string;
-
+export var startStr: any;
+export var endStr: any;
 @Injectable({
     providedIn: 'root'
 })
@@ -23,9 +22,49 @@ export class CalendarService {
     currentEvents: EventApi[] = [];
     events: Calendar[] = [];
     event: Calendar[] = [];
+    eventi: EventSourceFunc[] = [];
+    constructor(private http: HttpClient, public dialog: MatDialog) {
+    }
+    calendarVisible = true;
 
-    constructor(private http: HttpClient, public dialog: MatDialog) { }
+    calendarOptions: CalendarOptions = {
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+        },
+        initialView: 'dayGridMonth',
+        //   events: this.eventi,
+        weekends: true,
+        editable: true,
+        selectable: true,
+        selectMirror: true,
+        dayMaxEvents: true,
+        select: this.onDateClick.bind(this),
+        eventClick: this.openDelete.bind(this),
+        eventsSet: this.handleEvents.bind(this),
+        eventChange: this.dropEvent.bind(this),
+        //   eventSourceSuccess: this.showOptions.bind(this),
 
+    };
+    /*  filtro(events: any) {
+          console.log(events.source.value)
+          if (events.source.value === ' green') {
+              console.log(events.source.value)
+              this.calendarOptions.events = this.fil.filter(event => event.color === events.source.value)
+  
+          }
+          this.filterEvents(events)
+      }*/
+    getAll(): any {
+        this.http.get<EventSourceFunc[]>(`http://localhost:3000/calendar`).subscribe(res => {
+            this.eventi = res
+            this.calendarOptions.events = this.eventi
+            console.log(this.eventi)
+        });
+
+    }
+    fil: EventInput[] = []
     showOptions(event: any): void {
         if (event.source.value == 'green') {
 
@@ -39,17 +78,20 @@ export class CalendarService {
     }
 
     filterEvents(value: any): Calendar[] {
-        this.http.get<Calendar[]>(`http://localhost:3000/calendar`).subscribe(res => this.events = res);
-        const filterValue = value.toLowerCase();
-        this.event = this.events.filter(state => state.color.toLowerCase().includes(filterValue));
-        console.log(this.event);
+        this.http.get<Calendar[]>(`http://localhost:3000/calendar`).subscribe(res => {
+            this.events = res
+            const filterValue = value.toLowerCase();
+            this.event = this.events.filter(state => state.color.toLowerCase().includes(filterValue));
+            console.log(this.event);
+        })
         return this.event
     }
 
     add(cal: Calendar) {
         this.http.post<Calendar>(`http://localhost:3000/calendar`, cal).subscribe(res => {
             this.events.push(res)
-            window.location.reload();
+            this.getAll()
+
         })
     }
 
@@ -58,7 +100,7 @@ export class CalendarService {
             .subscribe(() => {
                 const indice = this.events.findIndex(cl => cl.id === cal.id);
                 this.events.splice(indice, 1);
-                window.location.reload();
+                this.getAll()
             })
         return cal
     }
@@ -67,15 +109,13 @@ export class CalendarService {
             .subscribe(res => {
                 const index = this.events.findIndex(cl => cl.id === cal.id);
                 this.events[index] = res;
-                window.location.reload();
+                this.getAll()
             });
     }
 
     onDateClick(selectInfo: DateSelectArg) {
         startStr = selectInfo.startStr;
         endStr = selectInfo.endStr;
-
-
         this.dialog.open(CalendarDialogComponent, {
             width: '250px',
         });
@@ -102,7 +142,15 @@ export class CalendarService {
             window.location.reload();
         });
     }
+    handleCalendarToggle() {
+        this.calendarVisible = !this.calendarVisible;
+    }
+
+    handleWeekendsToggle() {
+        const { calendarOptions } = this;
+        calendarOptions.weekends = !calendarOptions.weekends;
+    }
+
+
+
 }
-
-
-

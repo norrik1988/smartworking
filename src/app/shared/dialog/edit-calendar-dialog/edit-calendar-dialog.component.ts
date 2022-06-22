@@ -9,8 +9,8 @@ import { CalendarService, endStr, eventSelected, idSelected, startStr } from '..
 })
 export class EditCalendarDialogComponent {
   event: any = eventSelected;
-  dateEvent: string = startStr;
-  dateEventEnd : string = endStr
+  dateEvent: string = new Date(startStr).toISOString().replace(/T.*$/, '');;
+  dateEventEnd : string =  new Date(endStr).toISOString().replace(/T.*$/, '');
   idSelected: number = idSelected;
 
   constructor(public calendarService: CalendarService) { }
@@ -20,5 +20,7 @@ export class EditCalendarDialogComponent {
     this.calendarService.edit(form.value)
 
   }
-
+  annulla(){
+    this.calendarService.getAll()
+  }
 }

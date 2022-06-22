@@ -302,20 +302,4 @@ export class HomeComponent {
     return localStorage.getItem("SessionUser")
   }
 
-  openEdit() {
-    const dialogRef = this.dialog.open(EditDashboardDialogComponent);
-    this.userService.getUser();
-    dialogRef.afterClosed().subscribe(
-      result => {
-        console.log(result);
-      }
-    );
-  }
-
-
-  getData(){
-  
-  }
-
-
 }

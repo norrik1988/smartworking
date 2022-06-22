@@ -16,11 +16,11 @@ export class CardComponent implements OnInit {
 
   user?: User;
   constructor(public dialog: MatDialog, public userService: UserService) {
-    this.userService.getWorkspace();
 
   }
 
   ngOnInit(): void {
+    this.userService.getWorkspace();
 
   }
 

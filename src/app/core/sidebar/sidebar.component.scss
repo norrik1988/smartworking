@@ -1,6 +1,11 @@
 @media only screen and (max-width: 575px) {
     #fadeshow1 {
         display: none;
+
+        height: 0px;
+        width: 0px;
+        left: 0px;
+        top: 0px;
     }
 }
 
@@ -15,7 +20,6 @@ mat-sidenav-container {
     }
 
     mat-sidenav {
-
 
         overflow-x: hidden;
         overflow-y: hidden;
@@ -41,8 +45,6 @@ mat-sidenav-container {
             border: 0.5px solid #FFFFFF;
         }
 
-
-
         .containerFlex {
             margin-top: 100px;
         }
@@ -52,12 +54,13 @@ mat-sidenav-container {
         }
 
         .containerFlexLogout {
-            @media screen and(min-width:1920px) {
+
+            @media screen and(min-width:576px)and(max-width:1920px) {
                 margin-top: 280%;
             }
 
-            @media screen and(min-width:1366px) {
-                margin-top: 200%;
+            @media screen and(min-width:0px)and(max-width:575px) {
+                margin-top: 1300%;
             }
         }
 
@@ -77,8 +80,6 @@ mat-sidenav-container {
 
     }
 }
-
-
 
 .active {
     width: 100%;

@@ -18,15 +18,13 @@ export var endStr: any;
 export class CalendarService {
     calendar: Calendar = {} as Calendar;
     eventSelect: any;
-    yellow: string = 'orangered';
-    blue: string = 'primary';
+    orangered: string = 'orangered';
+    primary: string = 'primary';
     green: string = 'green';
     currentEvents: EventApi[] = [];
     events: any[] = [];
-    event: Calendar[] = [];
-    eventi: EventSourceFunc[] = [];
-    checked: boolean = true;
-    flag: boolean = true;
+    event: EventSourceFunc[] = [];
+   
     constructor(private http: HttpClient, public dialog: MatDialog) {
     }
     calendarVisible = true;
@@ -48,14 +46,14 @@ export class CalendarService {
         eventClick: this.openDelete.bind(this),
         eventsSet: this.handleEvents.bind(this),
         eventChange: this.dropEvent.bind(this),
-        eventSourceSuccess: (events) => events.filter(event => event.color === this.yellow || event.color == this.green || event.color == this.blue),
+        eventSourceSuccess: (events) => events.filter(event => event.color === this.orangered || event.color == this.green || event.color == this.primary),
 
     };
     getAll(): any {
         this.http.get<EventSourceFunc[]>(`http://localhost:3000/calendar`).subscribe(res => {
-            this.eventi = res
-            this.calendarOptions.events = this.eventi
-            console.log(this.eventi)
+            this.event = res
+            this.calendarOptions.events = this.event
+            console.log(this.event)
         });
 
     }
@@ -64,25 +62,25 @@ export class CalendarService {
         console.log(event.source.checked);
         if(event.source.checked == true){
             if(event.source.value == 'orangered' ){
-                this.yellow = event.source.value;
+                this.orangered = event.source.value;
             }
             else if(event.source.value == 'green' ){
                 this.green = event.source.value;
             }
             else if(event.source.value == 'primary' ){
-                this.blue = event.source.value;
+                this.primary = event.source.value;
             }
             
             }
             else{
                 if(event.source.value == 'orangered' ){
-                    this.yellow = '';
+                    this.orangered = '';
                 }
                 else if(event.source.value == 'green' ){
                     this.green = '';
                 }
                 else if(event.source.value == 'primary' ){
-                    this.blue ='';
+                    this.primary ='';
                 }
 
             }
@@ -127,8 +125,8 @@ export class CalendarService {
     }
 
     onDateClick(selectInfo: DateSelectArg) {
-        startStr = selectInfo.startStr;
-        endStr = selectInfo.endStr;
+        startStr = selectInfo.start;
+        endStr = selectInfo.end;
         this.dialog.open(CalendarDialogComponent, {
             width: '250px',
         });
@@ -147,12 +145,12 @@ export class CalendarService {
     dropEvent(arg: EventChangeArg) {
         idSelected = arg.event.id;
         eventSelected = arg.event.title
-        startStr = arg.event.startStr
+        startStr = arg.event.start
+        endStr = arg.event.end
 
         const dialogRef = this.dialog.open(EditCalendarDialogComponent);
         dialogRef.afterClosed().subscribe(result => {
             console.log(`Dialog result: ${result}`);
-            window.location.reload();
         });
     }
     handleCalendarToggle() {

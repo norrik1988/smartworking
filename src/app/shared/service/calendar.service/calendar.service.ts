@@ -18,7 +18,9 @@ export var endStr: any;
 export class CalendarService {
     calendar: Calendar = {} as Calendar;
     eventSelect: any;
-    color: string = '';
+    yellow: string = '';
+    blue: string = '';
+    green: string = '';
     currentEvents: EventApi[] = [];
     events: any[] = [];
     event: Calendar[] = [];
@@ -44,7 +46,7 @@ export class CalendarService {
         eventClick: this.openDelete.bind(this),
         eventsSet: this.handleEvents.bind(this),
         eventChange: this.dropEvent.bind(this),
-        eventSourceSuccess: (events) => events.filter(event => event.color === this.color),
+        eventSourceSuccess: (events) => events.filter(event => event.color === this.yellow || event.color == this.green || event.color == this.blue),
 
     };
     getAll(): any {
@@ -57,8 +59,16 @@ export class CalendarService {
     }
 
     showOptions(event: any): void {
-
-        this.color = event.source.value
+        if(event.source.value == 'orangered'){
+            this.yellow = event.source.value;
+        }
+        else if(event.source.value == 'green'){
+            this.green = event.source.value;
+        }
+        else if(event.source.value == 'primary'){
+            this.blue = event.source.value;
+        }
+        
 
         this.getAll()
     }

@@ -18,9 +18,9 @@ export var endStr: any;
 export class CalendarService {
     calendar: Calendar = {} as Calendar;
     eventSelect: any;
-    yellow: string = '';
-    blue: string = '';
-    green: string = '';
+    yellow: string = 'orangered';
+    blue: string = 'primary';
+    green: string = 'green';
     currentEvents: EventApi[] = [];
     events: any[] = [];
     event: Calendar[] = [];

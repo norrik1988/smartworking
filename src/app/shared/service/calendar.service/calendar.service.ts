@@ -25,6 +25,8 @@ export class CalendarService {
     events: any[] = [];
     event: Calendar[] = [];
     eventi: EventSourceFunc[] = [];
+    checked: boolean = true;
+    flag: boolean = true;
     constructor(private http: HttpClient, public dialog: MatDialog) {
     }
     calendarVisible = true;
@@ -59,18 +61,32 @@ export class CalendarService {
     }
 
     showOptions(event: any): void {
-        if(event.source.value == 'orangered'){
-            this.yellow = event.source.value;
-        }
-        else if(event.source.value == 'green'){
-            this.green = event.source.value;
-        }
-        else if(event.source.value == 'primary'){
-            this.blue = event.source.value;
-        }
-        
+        console.log(event.source.checked);
+        if(event.source.checked == true){
+            if(event.source.value == 'orangered' ){
+                this.yellow = event.source.value;
+            }
+            else if(event.source.value == 'green' ){
+                this.green = event.source.value;
+            }
+            else if(event.source.value == 'primary' ){
+                this.blue = event.source.value;
+            }
+            
+            }
+            else{
+                if(event.source.value == 'orangered' ){
+                    this.yellow = '';
+                }
+                else if(event.source.value == 'green' ){
+                    this.green = '';
+                }
+                else if(event.source.value == 'primary' ){
+                    this.blue ='';
+                }
 
-        this.getAll()
+            }
+            this.getAll();
     }
 
     /*  filterEvents(value: any): Calendar[] {

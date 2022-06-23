@@ -1,7 +1,11 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
+import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
 import { UserService } from '../../model/user/service/user.service';
 import { User, WorkSpace, WorkStation } from '../../model/user/user';
+import { AddDashboardDialogComponent } from '../dialog/dashboard/add-dashboard-dialog/add-dashboard-dialog.component';
 import { EditDashboardDialogComponent } from '../dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 
 @Component({
@@ -15,28 +19,39 @@ export class CardComponent implements OnInit {
   @Input() customCls: string | undefined;
 
   user?: User;
-  constructor(public dialog: MatDialog, public userService: UserService) {
 
-  }
+  constructor(public dialog: MatDialog, public userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.getWorkspace();
-
   }
 
-
-  openEdit(event: any) {//opening dialog
-    const dialogRef = this.dialog.open(EditDashboardDialogComponent);
-    this.userService.getUser();
+  save(form: NgForm, event: any) {
     this.test(event)
+    if (this.user) {
+      this.openEdit(form);
+    } else {
+      this.openAdd(event)
+    }
+  }
+
+  openAdd(event: any) {//opening add dialog
+    const dialogRef = this.dialog.open(AddDashboardDialogComponent);
+    this.userService.getUser();
     this.userService.positionSelected = event.srcElement.__ngContext__[0].id;
-    // console.log(event)
-    // console.log(this.userService.positionSelected)
 
     dialogRef.afterClosed().subscribe(result => {
-      //console.log(result)
       this.user = result?.userSelected
     });
+  }
+
+  openEdit(form: NgForm) {//opening edit dialog
+    const dialogRef = this.dialog.open(EditDashboardDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('sono edit')
+      this.user = result?.userSelected
+    })
   }
 
   test(event: any) {

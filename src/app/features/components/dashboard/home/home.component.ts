@@ -1,6 +1,5 @@
 import { Component, ElementRef, Inject, Input, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EditDashboardDialogComponent } from 'src/app/shared/components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { WorkSpace, WorkStation } from 'src/app/shared/model/user/user';
 

@@ -24,6 +24,7 @@ export class UserService {
 
     workspaceArray: WorkSpace[] = [];
     workspace!: WorkSpace;
+    workspaceSelected: WorkSpace = {} as WorkSpace;
 
     dataSource!: MatTableDataSource<User>;
 
@@ -69,6 +70,15 @@ export class UserService {
                 this.workspaceArray.push(res)
 
                 this.getWorkspace();
+            })
+    }
+
+    edit_Workstation(form: NgForm) {
+        this.http.patch<WorkSpace>(`http://localhost:3000/${this.workspaceSelected.id}`, form)
+            .subscribe(res => {
+                const index = this.workspaceArray.findIndex(ws => ws.id === this.workspaceSelected?.id);
+                this.workspaceArray[index] = res;
+                this.getWorkspace()
             })
     }
 

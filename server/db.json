@@ -78,6 +78,19 @@
       "id_position": "16",
       "date_workstation": "2022-06-20",
       "id": 1
+    },
+    {
+      "user": {
+        "name": "Johnny",
+        "surname": "Pepp",
+        "tax_id_code": "rerererererere",
+        "date": "2022-06-25",
+        "role": "FE Developer",
+        "id": 9
+      },
+      "id_position": "21",
+      "date_workstation": "2022-06-23",
+      "id": 2
     }
   ]
 }

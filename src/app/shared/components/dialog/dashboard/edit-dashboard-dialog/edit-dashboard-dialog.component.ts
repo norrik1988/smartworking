@@ -1,47 +1,28 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
-import { Form, NgForm } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
-import { User, WorkSpace, WorkStation } from 'src/app/shared/model/user/user';
+import { User, WorkSpace } from 'src/app/shared/model/user/user';
 
 @Component({
   selector: 'app-edit-dashboard-dialog',
   templateUrl: './edit-dashboard-dialog.component.html',
   styleUrls: ['./edit-dashboard-dialog.component.scss']
 })
-export class EditDashboardDialogComponent {
-
-  //@Input() userSelected!: WorkSpace;
-  @Input() positionSelected!: WorkSpace;
-
-  @Input() workspaceUser !: User;
+export class EditDashboardDialogComponent implements OnInit {
 
   filteredUsers = new Array<User>();
   timeoutInput: any;
 
-  constructor(
-    public dialogRef: MatDialogRef<EditDashboardDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: User,
-    public userService: UserService,
-  ) { }
+  constructor(public userService: UserService) { }
+
+  ngOnInit(): void {
+  }
+
+  edit(workspace: WorkSpace) { }
 
   filterUsers(value: string): User[] {
     const filterValue = value.toLowerCase();
     return this.userService.users.filter(state => state.name.toLowerCase().includes(filterValue));
-  }
-
-  add(workspace: WorkSpace) {
-    workspace.id_position = this.userService.positionSelected;
-    workspace.date_workstation = this.userService.dateSelected;
-    workspace.user = this.userService.userSelected;
-
-    this.dialogRef.close(workspace);
-    this.userService.add_Workstation(workspace);
-  }
-
-  displayFn(user: User): string {
-    return user && user.name ? user.name : '';
   }
 
   inputChange(name: any) {
@@ -54,4 +35,7 @@ export class EditDashboardDialogComponent {
     }, 500);
   }
 
+  displayFn(user: User): string {
+    return user && user.name ? user.name : '';
+  }
 }

@@ -11,10 +11,11 @@ import { EditUsersDialogComponent } from './components/dialog/users/edit-users-d
 import { DeleteUsersDialogComponent } from './components/dialog/users/delete-users-dialog/delete-users-dialog.component';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { EditDashboardDialogComponent } from './components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 import { CommonModule } from "@angular/common";
 import { CardComponent } from './components/card/card.component';
 import { BlankComponent } from './components/card/blank/blank.component';
+import { AddDashboardDialogComponent } from "./components/dialog/dashboard/add-dashboard-dialog/add-dashboard-dialog.component";
+import { EditDashboardDialogComponent } from "./components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component";
 
 
 const components = [
@@ -27,13 +28,14 @@ const components = [
     DeleteUsersDialogComponent,
 
     EditDashboardDialogComponent,
+    AddDashboardDialogComponent,
 
     CardComponent,
     BlankComponent,
 ]
 
 @NgModule({
-    declarations: [...components,],
+    declarations: [...components],
     imports: [
         MaterialModule,
         FormsModule,

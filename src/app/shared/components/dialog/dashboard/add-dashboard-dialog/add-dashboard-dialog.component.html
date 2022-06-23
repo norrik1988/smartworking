@@ -6,7 +6,7 @@
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
             <mat-option *ngFor="let user of filteredUsers" [value]="user">
                 <img class="example-option-img" aria-hidden height="25">
-                <span>{{user?.name}} </span> <span>{{user?.surname}}</span>
+                <span>{{user.name}} </span> <span>{{user.surname}}</span>
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
@@ -22,9 +22,9 @@
     <br>
 
     <div mat-dialog-actions>
-        <button id="button-save" mat-button cdkFocusInitial (click)="edit(f.value)" [mat-dialog-close]="data"
+        <button id="button-save" mat-button cdkFocusInitial (click)="add(f.value)" [mat-dialog-close]="data"
             [disabled]="f.invalid" class="addBotton">
-            <mat-icon>save</mat-icon> Modifica
+            <mat-icon>save</mat-icon> Inserisci
         </button>
 
     </div>

@@ -74,7 +74,7 @@ export class UserService {
     }
 
     edit_Workstation(form: NgForm) {
-        this.http.patch<WorkSpace>(`http://localhost:3000/${this.workspaceSelected.id}`, form)
+        this.http.patch<WorkSpace>(`http://localhost:3000/workspace/${this.workspaceSelected.id}`, form)
             .subscribe(res => {
                 const index = this.workspaceArray.findIndex(ws => ws.id === this.workspaceSelected?.id);
                 this.workspaceArray[index] = res;
@@ -86,4 +86,9 @@ export class UserService {
         this.http.get<WorkSpace[]>('http://localhost:3000/workspace')
             .subscribe(res => this.workspaceArray = res)
     }
+
+    /*     getWorkspaceById(){
+            this.http.get<WorkSpace[]>(`http://localhost:3000/workspace/${this.workspace.id}`)
+            
+        } */
 }

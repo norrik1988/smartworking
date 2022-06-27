@@ -8,17 +8,17 @@ import { User, WorkSpace } from 'src/app/shared/model/user/user';
   templateUrl: './edit-dashboard-dialog.component.html',
   styleUrls: ['./edit-dashboard-dialog.component.scss']
 })
-export class EditDashboardDialogComponent implements OnInit {
+export class EditDashboardDialogComponent {
 
   filteredUsers = new Array<User>();
   timeoutInput: any;
 
   constructor(public userService: UserService) { }
 
-  ngOnInit(): void {
-  }
 
-  edit(workspace: WorkSpace) { }
+  edit(form: NgForm) {
+    this.userService.edit_Workstation(form)
+  }
 
   filterUsers(value: string): User[] {
     const filterValue = value.toLowerCase();

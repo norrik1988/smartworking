@@ -26,10 +26,10 @@ export class CardComponent implements OnInit {
     this.userService.getWorkspace();
   }
 
-  save(form: NgForm, event: any) {
-    this.test(event)
+  save(event: any) {
+    this.get_id_position(event)
     if (this.user) {
-      this.openEdit(form);
+      this.openEdit();
     } else {
       this.openAdd(event)
     }
@@ -45,25 +45,31 @@ export class CardComponent implements OnInit {
     });
   }
 
-  openEdit(form: NgForm) {//opening edit dialog
+  openEdit() {//opening edit dialog
     const dialogRef = this.dialog.open(EditDashboardDialogComponent);
-
+    this.userService.getUser();
+    console.log(this.userService.workspaceSelected)
     dialogRef.afterClosed().subscribe(result => {
-      console.log('sono edit')
-      this.user = result?.userSelected
+      this.user = result?.user
     })
   }
 
-  test(event: any) {
+  get_id_position(event: any) {
     for (let i = 0; i < this.userService.workspaceArray.length; i++) {
       if (this.userService.workspaceArray[i].id_position == event.srcElement.__ngContext__[0].id) {
         this.user = this.userService.workspaceArray[i].user;
-        console.log(this.user);
+        this.userService.workspaceSelected = this.userService.workspaceArray[i]
       }
     }
   }
 
+  dateFilter() {
+    for (let i = 0; i < this.userService.workspaceArray.length; i++) {
+      if (this.userService.workspaceArray[i].date_workstation == this.userService.dateSelected) {
 
+      }
+    }
+  }
 
   @HostBinding('className') get className() {//custom container drag
     let cls = 'card';

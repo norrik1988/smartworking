@@ -10,8 +10,9 @@ import { CalendarService, endStr, eventSelected, idSelected, startStr } from '..
 export class EditCalendarDialogComponent {
   event: any = eventSelected;
   dateEvent: string = new Date(startStr).toLocaleDateString();
-  dateEventEnd: string = new Date(endStr).toLocaleDateString();
+  dateEventEnd: string = endStr;
   idSelected: number = idSelected;
+  dateView: string = startStr;
 
   constructor(public calendarService: CalendarService) { }
 

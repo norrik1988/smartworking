@@ -9,9 +9,9 @@ import { CalendarService, endStr, startStr } from '../../service/calendar.servic
 })
 export class CalendarDialogComponent {
   start: string = new Date(startStr).toLocaleDateString();
-  end: string = new Date(endStr).toLocaleDateString();
+  end: string = endStr;
   color!: string;
-
+  dateView: string = startStr;
   constructor(public calendarService: CalendarService) { }
 
 

@@ -8,8 +8,8 @@ import { CalendarService, endStr, startStr } from '../../service/calendar.servic
   styleUrls: ['./calendar-dialog.component.scss']
 })
 export class CalendarDialogComponent {
-  start: string =  new Date(startStr).toISOString().replace(/T.*$/, '');
-  end: string = new Date(endStr).toISOString().replace(/T.*$/, '');
+  start: string = new Date(startStr).toLocaleDateString();
+  end: string = new Date(endStr).toLocaleDateString();
   color!: string;
 
   constructor(public calendarService: CalendarService) { }

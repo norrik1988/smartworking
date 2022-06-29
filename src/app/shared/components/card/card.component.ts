@@ -1,10 +1,7 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
-import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
 import { UserService } from '../../model/user/service/user.service';
-import { User, WorkSpace, WorkStation } from '../../model/user/user';
+import { User } from '../../model/user/user';
 import { AddDashboardDialogComponent } from '../dialog/dashboard/add-dashboard-dialog/add-dashboard-dialog.component';
 import { EditDashboardDialogComponent } from '../dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 
@@ -24,6 +21,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getWorkspace();
+
   }
 
   save(event: any) {
@@ -48,25 +46,17 @@ export class CardComponent implements OnInit {
   openEdit() {//opening edit dialog
     const dialogRef = this.dialog.open(EditDashboardDialogComponent);
     this.userService.getUser();
-    console.log(this.userService.workspaceSelected)
+    console.log(this.userService.workstationSelected)
     dialogRef.afterClosed().subscribe(result => {
       this.user = result?.user
     })
   }
 
   get_id_position(event: any) {
-    for (let i = 0; i < this.userService.workspaceArray.length; i++) {
-      if (this.userService.workspaceArray[i].id_position == event.srcElement.__ngContext__[0].id) {
-        this.user = this.userService.workspaceArray[i].user;
-        this.userService.workspaceSelected = this.userService.workspaceArray[i]
-      }
-    }
-  }
-
-  dateFilter() {
-    for (let i = 0; i < this.userService.workspaceArray.length; i++) {
-      if (this.userService.workspaceArray[i].date_workstation == this.userService.dateSelected) {
-
+    for (let i = 0; i < this.userService.workstationArray.length; i++) {
+      if (this.userService.workstationArray[i].id == event.srcElement.__ngContext__[0].id) {
+        this.user = this.userService.workstationArray[i].user;
+        this.userService.workstationSelected = this.userService.workstationArray[i]
       }
     }
   }

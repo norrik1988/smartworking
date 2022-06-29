@@ -3,7 +3,6 @@ import { Injectable, Input, } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
 import { User, WorkSpace, WorkStation } from '../user';
 
 @Injectable({
@@ -16,15 +15,14 @@ export class UserService {
 
     dialog!: MatDialog;
 
-    home: HomeComponent = new HomeComponent(this.dialog, this);
-
     users: User[] = [];
     user!: User;
     userSelected: User = {} as User;
 
-    workspaceArray: WorkSpace[] = [];
     workspace!: WorkSpace;
-    workspaceSelected: WorkSpace = {} as WorkSpace;
+
+    workstationArray: WorkStation[] = [];
+    workstationSelected: WorkStation = {} as WorkStation;
 
     dataSource!: MatTableDataSource<User>;
 
@@ -65,30 +63,26 @@ export class UserService {
     }
 
     add_Workstation(workspace: WorkSpace) {
-        this.http.post<WorkSpace>(`http://localhost:3000/workspace`, workspace)
+        this.http.post<WorkStation>(`http://localhost:3000/workspace`, workspace)
             .subscribe(res => {
-                this.workspaceArray.push(res)
+                this.workstationArray.push(res)
 
                 this.getWorkspace();
             })
     }
 
     edit_Workstation(form: NgForm) {
-        this.http.patch<WorkSpace>(`http://localhost:3000/workspace/${this.workspaceSelected.id}`, form)
+        this.http.patch<WorkStation>(`http://localhost:3000/workspace/${this.workstationSelected.id}`, form)
             .subscribe(res => {
-                const index = this.workspaceArray.findIndex(ws => ws.id === this.workspaceSelected?.id);
-                this.workspaceArray[index] = res;
+                const index = this.workstationArray.findIndex(ws => ws.id === this.workstationSelected?.id);
+                this.workstationArray[index] = res;
                 this.getWorkspace()
             })
     }
 
     getWorkspace() {
-        this.http.get<WorkSpace[]>('http://localhost:3000/workspace')
-            .subscribe(res => this.workspaceArray = res)
+        this.http.get<WorkStation[]>('http://localhost:3000/workspace')
+            .subscribe(res => this.workstationArray = res)
     }
 
-    /*     getWorkspaceById(){
-            this.http.get<WorkSpace[]>(`http://localhost:3000/workspace/${this.workspace.id}`)
-            
-        } */
 }

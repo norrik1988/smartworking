@@ -1,7 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { Form, NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { HomeComponent } from 'src/app/features/components/dashboard/home/home.component';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User, WorkSpace, WorkStation } from 'src/app/shared/model/user/user';
 import { EditDashboardDialogComponent } from '../edit-dashboard-dialog/edit-dashboard-dialog.component';
@@ -13,9 +11,7 @@ import { EditDashboardDialogComponent } from '../edit-dashboard-dialog/edit-dash
 })
 export class AddDashboardDialogComponent {
 
-  //@Input() userSelected!: WorkSpace;
   @Input() positionSelected!: WorkSpace;
-
   @Input() workspaceUser !: User;
 
   filteredUsers = new Array<User>();
@@ -32,15 +28,6 @@ export class AddDashboardDialogComponent {
     return this.userService.users.filter(state => state.name.toLowerCase().includes(filterValue));
   }
 
-  add(workspace: WorkSpace) {
-    workspace.id_position = this.userService.positionSelected;
-    workspace.date_workstation = this.userService.dateSelected;
-    workspace.user = this.userService.userSelected;
-
-    this.dialogRef.close(workspace);
-    this.userService.add_Workstation(workspace);
-  }
-
   displayFn(user: User): string {
     return user && user.name ? user.name : '';
   }
@@ -53,6 +40,12 @@ export class AddDashboardDialogComponent {
         this.userService.user = this.filterUsers(name)[0]
       }
     }, 500);
+  }
+
+  add(workspace: WorkSpace) {
+    workspace.date_workstation = this.userService.dateSelected;
+    this.dialogRef.close(workspace);
+    this.userService.add_Workstation(workspace);
   }
 
 }

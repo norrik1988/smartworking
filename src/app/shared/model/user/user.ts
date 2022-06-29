@@ -7,7 +7,7 @@ export class User {
     role!: string;
 }
 
-export class WorkStation {
+/* export class WorkStation {
     id!: number;
     card_visibility!: boolean;
 }
@@ -17,4 +17,16 @@ export class WorkSpace {
     user?: User;
     date_workstation!: Date;
     id_position!: number;
+} */
+
+export class WorkStation {
+    id!: number;
+    user?: User;
+    card_visibility!: boolean;
+}
+
+export class WorkSpace {
+    id!: number;
+    date_workstation!: Date;
+    workstations!: WorkStation[];
 }

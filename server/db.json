@@ -67,7 +67,7 @@
   ],
   "workspace": [
     {
-      "user": {
+      "user_workstation": {
         "name": "Daniele",
         "surname": "Cibelli",
         "tax_id_code": "asdasdasdasdasd",
@@ -75,31 +75,24 @@
         "role": "FE Developer",
         "id": 7
       },
-      "date_workstation": "2022-06-28",
+      "date_workstation": "2022-06-29",
       "id": 1
     },
     {
-      "user": {
-        "name": "Daniele",
-        "surname": "Cibelli",
-        "tax_id_code": "asdasdasdasdasd",
-        "date": "1999-02-15",
-        "role": "FE Developer",
-        "id": 7
+      "workstation": {
+        "id": 1,
+        "user": {
+          "name": "Daniele",
+          "surname": "Cibelli",
+          "tax_id_code": "asdasdasdasdasd",
+          "date": "1999-02-15",
+          "role": "FE Developer",
+          "id": 7
+        },
+        "card_visibility": true
       },
-      "id": 2
-    },
-    {
-      "user": {
-        "name": "Daniele",
-        "surname": "Cibelli",
-        "tax_id_code": "asdasdasdasdasd",
-        "date": "1999-02-15",
-        "role": "FE Developer",
-        "id": 7
-      },
-      "date_workstation": "2022-06-28",
-      "id": 3
+      "date_workstation": "2022-06-29",
+      "id": 1
     }
   ]
 }

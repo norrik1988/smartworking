@@ -44,6 +44,8 @@ export class AddDashboardDialogComponent {
 
   add(workspace: WorkSpace) {
     workspace.date_workstation = this.userService.dateSelected;
+
+
     this.dialogRef.close(workspace);
     this.userService.add_Workstation(workspace);
   }

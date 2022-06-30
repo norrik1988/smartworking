@@ -24,10 +24,9 @@ export class CalendarService {
     currentEvents: EventApi[] = [];
     events: any[] = [];
     event: EventSourceFunc[] = [];
-   
-    constructor(private http: HttpClient, public dialog: MatDialog) {
-    }
-    calendarVisible = true;
+   calendarVisible = true;
+    constructor(private http: HttpClient, public dialog: MatDialog) {}
+    
 
     calendarOptions: CalendarOptions = {
         headerToolbar: {

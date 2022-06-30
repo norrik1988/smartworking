@@ -11,16 +11,12 @@ import { CalendarService } from 'src/app/shared/service/calendar.service/calenda
 })
 export class DatepickerComponent implements OnInit {
   currentEvents: EventApi[] = [];
-  green: string = ' green';
-  blue: string = 'blue';
-  orange: string = ' orange'
-  constructor(public dialog: MatDialog, public calendarService: CalendarService) {
-    this.calendarService.getAll()
-
-  }
+  constructor(public dialog: MatDialog, public calendarService: CalendarService) {}
   
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.calendarService.getAll()
+  }
 
 }
 

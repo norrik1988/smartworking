@@ -16,6 +16,7 @@ import { CardComponent } from './components/card/card.component';
 import { BlankComponent } from './components/card/blank/blank.component';
 import { AddDashboardDialogComponent } from "./components/dialog/dashboard/add-dashboard-dialog/add-dashboard-dialog.component";
 import { EditDashboardDialogComponent } from "./components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component";
+import { ToMatrixPipe } from "./pipe/toMatrix.pipe";
 
 
 const components = [
@@ -32,6 +33,8 @@ const components = [
 
     CardComponent,
     BlankComponent,
+
+    ToMatrixPipe
 ]
 
 @NgModule({

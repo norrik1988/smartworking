@@ -55,8 +55,13 @@ mat-sidenav-container {
 
         .containerFlexLogout {
 
-            @media screen and(min-width:576px)and(max-width:1920px) {
+            @media screen and(max-width:1920px) {
                 margin-top: 280%;
+            }
+
+            @media screen and(max-width:1366px) {
+                overflow: hidden !important;
+                margin-top: 125%;
             }
 
             @media screen and(min-width:0px)and(max-width:575px) {

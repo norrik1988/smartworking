@@ -24,8 +24,11 @@
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
                    
-                    <div *ngFor="let element of workspace.workstations | toMatrix:n">
-                        <app-card></app-card>
+                    <div *ngFor="let element of arrNumber | toMatrix:n ">
+                        <div *ngFor="let x of element">
+                            <app-card></app-card>
+                            {{x | json}}
+                    </div>
                     </div>
                 
 
@@ -79,4 +82,3 @@
         </div>
     </div>
 
-</div>

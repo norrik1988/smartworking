@@ -7,18 +7,6 @@ export class User {
     role!: string;
 }
 
-/* export class WorkStation {
-    id!: number;
-    card_visibility!: boolean;
-}
-
-export class WorkSpace {
-    id!: number;
-    user?: User;
-    date_workstation!: Date;
-    id_position!: number;
-} */
-
 export class WorkStation {
     id!: number;
     user?: User;

@@ -67,264 +67,266 @@
   ],
   "workspace": [
     {
+      "date_workstation": "2022-06-29",
+      "id": 1,
+      
       "workstations": [
         {
           "id": 1,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 2,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 3,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 4,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 5,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 6,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 7,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 8,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 9,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 10,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 11,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 12,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 13,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 14,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 15,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 16,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 17,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 18,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 18,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 20,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 21,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 22,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 23,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 24,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 25,
-          "user": "",
+          "user": null,
           "card_visibility": true
         }
       ],
       "workstationsTwo": [
         {
           "id": 1,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 2,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 3,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 4,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 5,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 6,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 7,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 8,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 9,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 10,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 11,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 12,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 13,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 14,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 15,
-          "user": "",
+          "user": null,
           "card_visibility": true
         }
       ],
       "workstationsThree": [
         {
           "id": 1,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 2,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 3,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 4,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 5,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 6,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 7,
-          "user": "",
+          "user": null,
           "card_visibility": true
         },
         {
           "id": 8,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 9,
-          "user": "",
+          "user": null,
           "card_visibility": false
         },
         {
           "id": 10,
-          "user": "",
+          "user": null,
           "card_visibility": true
         }
-      ],
-      "date_workstation": "2022-06-29",
-      "id": 1
+      ]
+      
     }
   ]
 }

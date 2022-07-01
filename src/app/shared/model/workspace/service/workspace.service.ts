@@ -12,18 +12,18 @@ export class WorkSpaceService {
 
     constructor(private http: HttpClient) { }
 
-    workspace!: WorkSpace;
+    workspace!: WorkSpace[];
 
     workstationArray: WorkStation[] = [];
     workstationSelected: WorkStation = {} as WorkStation;
 
 
-    edit_Workstation(form: NgForm) {
-        this.http.patch<WorkStation>(`http://localhost:3000/workspace/${this.workstationSelected.id}`, form)
+    edit_Workstation(form: NgForm, id: number) {
+        this.http.patch<WorkStation>(`http://localhost:3000/workspace/1`, form)
             .subscribe(res => {
-                const index = this.workstationArray.findIndex(ws => ws.id === this.workstationSelected?.id);
-                this.workstationArray[index] = res;
-                this.getWorkspace()
+                const index = this.workspace[0].workstations.findIndex(ws => ws.id === id);
+                this.workspace[0].workstations[index] = res;
+                this.getWorkspace();
             })
     }
 

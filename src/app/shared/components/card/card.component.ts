@@ -17,17 +17,20 @@ export class CardComponent implements OnInit {
 
   user?: User;
 
+  @Input() idWorkStation!: number;
+ 
   constructor(public dialog: MatDialog, public userService: UserService, public workspaceService: WorkSpaceService) { }
 
   ngOnInit(): void {
     this.workspaceService.getWorkspace();
-
+    
   }
 
   openEdit() {//opening edit dialog
-    const dialogRef = this.dialog.open(EditDashboardDialogComponent);
+    const dialogRef = this.dialog.open(EditDashboardDialogComponent, {
+      data: {id: this.idWorkStation},});
+     
     this.userService.getUser();
-    console.log(this.workspaceService.workstationSelected)
     dialogRef.afterClosed().subscribe(result => {
       this.user = result?.user
     })

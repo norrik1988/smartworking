@@ -3,7 +3,7 @@ import { Component, ElementRef, Inject, Input, OnInit, ViewChild } from '@angula
 import { MatDialog } from '@angular/material/dialog';
 import { first } from 'rxjs';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
-import { WorkSpace, WorkStation } from 'src/app/shared/model/user/user';
+import { User, WorkSpace, WorkStation } from 'src/app/shared/model/user/user';
 
 
 
@@ -15,11 +15,44 @@ import { WorkSpace, WorkStation } from 'src/app/shared/model/user/user';
 export class HomeComponent {
 
   @Input() workstation!: WorkStation;
-  
-  arr: WorkStation[] = [];
-  arrNumber : any []=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+
+  arr: WorkSpace[] = [];
+
+  array!: WorkStation[];
+
+  ngOnInit() {
+    let workstation: WorkStation
+    let i: number
+    for (let column = 0; column < 5; column++) {
+      for (let row = 0; row < 5; row++) {
+        workstation = {
+          id: this.counter,
+          user: new User,
+          card_visibility: true
+        }
+        i = column * row;
+        console.log(i)
+        this.counter++;
+        this.array[i] = workstation
+
+      }
+    }
+
+
+    this.arr = [
+      {
+        id: this.counter,
+        date_workstation: new Date,
+        workstations: this.array
+
+      }
+    ]
+    console.log(this.arr)
+
+  }
+
   n = 5;
-  flag : boolean = false
+  flag: boolean = false
   planModel: any = {
     start_time: new Date().toISOString().replace(/T.*$/, ''),
   };
@@ -28,43 +61,10 @@ export class HomeComponent {
   card!: any;
   counter: number = 1;
 
-  constructor(public dialog: MatDialog, public userService: UserService, private http:  HttpClient) {
+  constructor(public dialog: MatDialog, public userService: UserService, private http: HttpClient) {
     userService.dateSelected = this.planModel.start_time;
-    this.metodo()
   }
 
-  ngOnInit() {
-   
-     console.log(this.counter)
-     if (this.counter < 25) { 
-       for (let col = 0; col < 5; col++) {
-         for (let rig = 0; rig < 5; rig++) {
-           this.card = this.workspace?.workstations[this.counter];
-           this.counter++;
-           console.log(this.counter)
-
-         }
-       }
-      
-     }
-  }
-metodo(){
-  this.http.get<WorkStation[]>('http://localhost:3000/workspace').subscribe(res =>{ 
-    this.arr= res
-  for(let i = 0; i<= this.arr.length; i++){
-    console.log(this.arr)
-
-    if(this.arr[i].card_visibility == true){
-     this.flag = true
-      console.log(this.arr)
-    } else {
-      this.flag= false
-    }
-  } 
- 
-
-});
-}
   public get showName() {
     return localStorage.getItem("SessionUser")
   }

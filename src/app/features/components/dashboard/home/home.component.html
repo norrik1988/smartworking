@@ -23,14 +23,14 @@
             <div>
                 <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
 
-                   
-                    <div *ngFor="let element of arrNumber | toMatrix:n ">
-                        <div *ngFor="let x of element">
-                            <app-card></app-card>
-                            {{x | json}}
+
+                    <div *ngFor="let element of workspace.workstations | toMatrix:n " class="cell">
+                        <div *ngFor="let x of element" class="cell">
+                            <app-card *ngIf="x.card_visibility" customCls=".example-boundary"></app-card>
+                            <app-blank *ngIf="x.card_visibility  ? false:true"> </app-blank>
+                        </div>
                     </div>
-                    </div>
-                
+
 
 
                     <!-- <div *ngFor="let row of firstMatrix; index as i" class="cell">
@@ -81,4 +81,3 @@
             </div>
         </div>
     </div>
-

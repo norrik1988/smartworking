@@ -21,7 +21,7 @@
     <div>
         <div class="example-boundary">
             <div>
-                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;">
+                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;" *ngIf="workspace">
 
 
                     <div *ngFor="let element of workspace[0].workstations | toMatrix:n " class="cell">

@@ -70,12 +70,17 @@
       "workstation": [
         {
           "id": 1,
-          "user": "Daniele Cibelli",
+          "user": "",
           "card_visibility": true
         },
         {
           "id": 2,
-          "user": "Vincenzo Granato",
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 2,
+          "user": "",
           "card_visibility": true
         }
       ],

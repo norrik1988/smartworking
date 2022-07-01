@@ -194,6 +194,135 @@
           "card_visibility": true
         }
       ],
+      "workstationsTwo": [
+        {
+          "id": 1,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 2,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 3,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 4,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 5,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 6,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 7,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 8,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 9,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 10,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 11,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 12,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 13,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 14,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 15,
+          "user": "",
+          "card_visibility": true
+        }
+      ],
+      "workstationsThree": [
+        {
+          "id": 1,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 2,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 3,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 4,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 5,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 6,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 7,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 8,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 9,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 10,
+          "user": "",
+          "card_visibility": true
+        }
+      ],
       "date_workstation": "2022-06-29",
       "id": 1
     }

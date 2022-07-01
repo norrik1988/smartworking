@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
-import { User, WorkSpace, WorkStation } from '../user';
+import { User } from '../user';
 
 @Injectable({
     providedIn: 'root'
@@ -19,11 +19,6 @@ export class UserService {
     users: User[] = [];
     user!: User;
     userSelected: User = {} as User;
-
-    workspace!: WorkSpace;
-
-    workstationArray: WorkStation[] = [];
-    workstationSelected: WorkStation = {} as WorkStation;
 
     dataSource!: MatTableDataSource<User>;
 
@@ -63,27 +58,6 @@ export class UserService {
             });
     }
 
-    add_Workstation(workspace: WorkSpace) {
-        this.http.post<WorkStation>(`http://localhost:3000/workspace`, workspace)
-            .subscribe(res => {
-                this.workstationArray.push(res)
 
-                this.getWorkspace();
-            })
-    }
-
-    edit_Workstation(form: NgForm) {
-        this.http.patch<WorkStation>(`http://localhost:3000/workspace/${this.workstationSelected.id}`, form)
-            .subscribe(res => {
-                const index = this.workstationArray.findIndex(ws => ws.id === this.workstationSelected?.id);
-                this.workstationArray[index] = res;
-                this.getWorkspace()
-            })
-    }
-
-    getWorkspace(): Observable<WorkSpace[]>{
-        return this.http.get<WorkSpace[]>('http://localhost:3000/workspace');
-        
-    }
 
 }

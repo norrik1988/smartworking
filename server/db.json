@@ -71,15 +71,125 @@
         {
           "id": 1,
           "user": "",
-          "card_visibility": true
+          "card_visibility": false
         },
         {
           "id": 2,
           "user": "",
-          "card_visibility": true
+          "card_visibility": false
         },
         {
           "id": 3,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 4,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 5,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 6,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 7,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 8,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 9,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 10,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 11,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 12,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 13,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 14,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 15,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 16,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 17,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 18,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 18,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 20,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 21,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 22,
+          "user": "",
+          "card_visibility": false
+        },
+        {
+          "id": 23,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 24,
+          "user": "",
+          "card_visibility": true
+        },
+        {
+          "id": 25,
           "user": "",
           "card_visibility": true
         }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
-import { User, WorkSpace } from 'src/app/shared/model/user/user';
+import { User } from 'src/app/shared/model/user/user';
+import { WorkSpaceService } from 'src/app/shared/model/workspace/service/workspace.service';
 
 @Component({
   selector: 'app-edit-dashboard-dialog',
@@ -13,11 +14,11 @@ export class EditDashboardDialogComponent {
   filteredUsers = new Array<User>();
   timeoutInput: any;
 
-  constructor(public userService: UserService) { }
+  constructor(public userService: UserService, public workspaceService: WorkSpaceService) { }
 
 
   edit(form: NgForm) {
-    this.userService.edit_Workstation(form)
+    this.workspaceService.edit_Workstation(form)
   }
 
   filterUsers(value: string): User[] {

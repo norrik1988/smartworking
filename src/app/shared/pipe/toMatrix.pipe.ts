@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { WorkStation } from "../model/user/user";
 
 @Pipe({
     name: 'toMatrix'

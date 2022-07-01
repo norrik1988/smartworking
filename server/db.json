@@ -33,6 +33,9 @@
       "id": 10
     }
   ],
+
+
+
   "projects": [
     {
       "name": "Topolino",
@@ -65,11 +68,12 @@
       "id": 20
     }
   ],
+
+
   "workspace": [
     {
       "date_workstation": "2022-06-29",
       "id": 1,
-      
       "workstations": [
         {
           "id": 1,
@@ -83,7 +87,14 @@
         },
         {
           "id": 3,
-          "user": null,
+          "user": {
+            "name": "Daniele",
+            "surname": "Cibelli",
+            "tax_id_code": "asdasdasdasdasd",
+            "date": "1999-02-15",
+            "role": "FE Developer",
+            "id": 7
+          },
           "card_visibility": true
         },
         {
@@ -326,7 +337,8 @@
           "card_visibility": true
         }
       ]
-      
     }
   ]
+
+  
 }

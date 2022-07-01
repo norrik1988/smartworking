@@ -3,6 +3,7 @@ import { Injectable, Input, } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { Observable } from 'rxjs';
 import { User, WorkSpace, WorkStation } from '../user';
 
 @Injectable({
@@ -80,9 +81,9 @@ export class UserService {
             })
     }
 
-    getWorkspace() {
-        this.http.get<WorkStation[]>('http://localhost:3000/workspace')
-            .subscribe(res => this.workstationArray = res)
+    getWorkspace(): Observable<WorkSpace[]>{
+        return this.http.get<WorkSpace[]>('http://localhost:3000/workspace');
+        
     }
 
 }

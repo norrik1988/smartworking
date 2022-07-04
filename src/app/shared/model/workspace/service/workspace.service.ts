@@ -25,21 +25,19 @@ export class WorkSpaceService {
 
     edit_Workstation(form: NgForm, id: number) {
         id = this.id
+        console.log(form)
         for (let element of this.workspace[0].workstations) {
-            this.workstationArray = this.workspace[0].workstations
             if (element.id == id) {
-                this.http.put<WorkStation>(this.url, form)
+                this.workstationArray = this.workspace[0].workstations
+                this.http.patch<WorkStation>(this.url, form)
                     .subscribe(res => {
                         const index = this.workspace[0].workstations.findIndex(ws => ws.id === id);
-                        this.workspace[0].workstations[index] = res;
+                        this.workspace[0].workstations[index].user = res.user;
                         this.getWorkspace()
                     })
             }
-
-            console.log(element);
         }
-
-
+        console.log(this.workspace[0].workstations);
     }
 
     getWorkspace(): Observable<WorkSpace[]> {

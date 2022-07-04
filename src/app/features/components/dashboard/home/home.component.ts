@@ -29,6 +29,7 @@ export class HomeComponent {
     this.workspaceService.getWorkspace().subscribe((res) => {
       this.workspaceService.workspace = res;
       this.workspace = this.workspaceService.workspace;
+  //   console.log('home '+JSON.stringify(this.workspaceService.workspace))
     })
   }
 

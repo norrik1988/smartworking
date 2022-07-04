@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
 import { WorkSpaceService } from 'src/app/shared/model/workspace/service/workspace.service';
-import { WorkSpace } from 'src/app/shared/model/workspace/workspace';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 @Component({
   selector: 'app-edit-dashboard-dialog',

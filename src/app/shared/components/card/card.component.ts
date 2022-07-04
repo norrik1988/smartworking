@@ -24,7 +24,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.workspaceService.getWorkspace();
     for (let i = 0; i < this.workspaceService.workspace[0].workstations.length; i++) {
-      if (this.workspaceService.workspace[0].workstations[i].user != null) {
+      if (this.workspaceService.workspace[0].workstations[i].user != null && this.workspaceService.workspace[0].workstations[i].id == this.idWorkStation) {
 
         this.user = this.workspaceService.workspace[0].workstations[i].user
 

@@ -26,7 +26,7 @@
 
                     <div *ngFor="let element of workspace[0].workstations | toMatrix:5 " class="cell">
                         <div *ngFor="let x of element" class="cell">
-                            <app-card *ngIf="x.card_visibility" customCls=".example-boundary"></app-card>
+                            <app-card *ngIf="x.card_visibility" [idWorkStation]="x.id" customCls=".example-boundary"></app-card>
                             <app-blank *ngIf="x.card_visibility  ? false:true"> </app-blank>
                         </div>
                     </div>

@@ -29,7 +29,25 @@ export class CardComponent implements OnInit {
         this.user = this.workspaceService.workspace[0].workstations[i].user
 
       }
+
     }
+    for (let i = 0; i < this.workspaceService.workspace[0].workstationsTwo.length; i++) {
+      if (this.workspaceService.workspace[0].workstationsTwo[i].user != null && this.workspaceService.workspace[0].workstationsTwo[i].id == this.idWorkStation) {
+
+        this.user = this.workspaceService.workspace[0].workstationsTwo[i].user
+
+      }
+
+    }
+    for (let i = 0; i < this.workspaceService.workspace[0].workstationsThree.length; i++) {
+      if (this.workspaceService.workspace[0].workstationsThree[i].user != null && this.workspaceService.workspace[0].workstationsThree[i].id == this.idWorkStation) {
+
+        this.user = this.workspaceService.workspace[0].workstationsThree[i].user
+
+      }
+
+    }
+
 
   }
 

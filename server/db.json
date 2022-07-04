@@ -154,7 +154,14 @@
         },
         {
           "id": 16,
-          "user": null,
+          "user": {
+            "name": "Daniele",
+            "surname": "Cibelli",
+            "tax_id_code": "asdasdasdasdasd",
+            "date": "1999-02-15",
+            "role": "FE Developer",
+            "id": 7
+          },
           "card_visibility": true
         },
         {
@@ -236,7 +243,14 @@
         },
         {
           "id": 7,
-          "user": null,
+          "user": {
+            "name": "Anthony ",
+            "surname": "Liccardo",
+            "tax_id_code": "qsqsqsqsqsqsqsqs",
+            "date": "2022-06-10",
+            "role": "BE Developer",
+            "id": 8
+          },
           "card_visibility": true
         },
         {
@@ -288,7 +302,14 @@
         },
         {
           "id": 2,
-          "user": null,
+          "user": {
+            "name": "Vecienzo",
+            "surname": "Granatiello",
+            "tax_id_code": "vncgrn",
+            "date": "2022-06-26",
+            "role": "BE Developer",
+            "id": 10
+          },
           "card_visibility": true
         },
         {

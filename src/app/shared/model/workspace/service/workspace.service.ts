@@ -30,7 +30,7 @@ export class WorkSpaceService {
         //console.log('workstationArray 2 ' + JSON.stringify(this.workstationArray))
         for (let i = 0; i < this.workspace.workstations.length; i++) {
             if (this.workspace.workstations[i].id == id) {
-                this.workspace.workstations[i].user = form.value
+                this.workspace.workstations[i].user = form.value;
             }
         }
         for (let i = 0; i < this.workspace.workstationsTwo.length; i++) {

@@ -73,294 +73,292 @@
       "id": 20
     }
   ],
-  "workspace": [
-    {
-      "date_workstation": "2022-06-29",
-      "id": 1,
-      "workstations": [
-        {
-          "id": 1,
-          "user": null,
-          "card_visibility": false
+  "workspace": {
+    "date_workstation": "2022-06-29",
+    "id": 1,
+    "workstations": [
+      {
+        "id": 1,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 2,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 3,
+        "user": {
+          "name": "Johnny",
+          "surname": "Pepp",
+          "tax_id_code": "rerererererere",
+          "date": "2022-06-25",
+          "role": "FE Developer",
+          "id": 9
         },
-        {
-          "id": 2,
-          "user": null,
-          "card_visibility": false
+        "card_visibility": true
+      },
+      {
+        "id": 4,
+        "user": {
+          "name": "Tonya",
+          "surname": "Ommo",
+          "tax_id_code": "oagmiogmas",
+          "date": "1998-01-04",
+          "role": "FE Developer",
+          "id": 11
         },
-        {
-          "id": 3,
-          "user": {
-            "name": "Johnny",
-            "surname": "Pepp",
-            "tax_id_code": "rerererererere",
-            "date": "2022-06-25",
-            "role": "FE Developer",
-            "id": 9
-          },
-          "card_visibility": true
+        "card_visibility": true
+      },
+      {
+        "id": 5,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 6,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 7,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 8,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 9,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 10,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 11,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 12,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 13,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 14,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 15,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 16,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 17,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 18,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 19,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 20,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 21,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 22,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 23,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 24,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 25,
+        "user": null,
+        "card_visibility": true
+      }
+    ],
+    "workstationsTwo": [
+      {
+        "id": 26,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 27,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 28,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 29,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 30,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 31,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 32,
+        "user": {
+          "name": "Anthony ",
+          "surname": "Liccardo",
+          "tax_id_code": "qsqsqsqsqsqsqsqs",
+          "date": "2022-06-10",
+          "role": "BE Developer",
+          "id": 8
         },
-        {
-          "id": 4,
-          "user": {
-            "name": "Tonya",
-            "surname": "Ommo",
-            "tax_id_code": "oagmiogmas",
-            "date": "1998-01-04",
-            "role": "FE Developer",
-            "id": 11
-          },
-          "card_visibility": true
+        "card_visibility": true
+      },
+      {
+        "id": 33,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 34,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 35,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 36,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 37,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 38,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 39,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 40,
+        "user": null,
+        "card_visibility": true
+      }
+    ],
+    "workstationsThree": [
+      {
+        "id": 41,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 42,
+        "user": {
+          "name": "Vecienzo",
+          "surname": "Granatiello",
+          "tax_id_code": "vncgrn",
+          "date": "2022-06-26",
+          "role": "BE Developer",
+          "id": 10
         },
-        {
-          "id": 5,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 6,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 7,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 8,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 9,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 10,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 11,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 12,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 13,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 14,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 15,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 16,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 17,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 18,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 19,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 20,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 21,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 22,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 23,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 24,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 25,
-          "user": null,
-          "card_visibility": true
-        }
-      ],
-      "workstationsTwo": [
-        {
-          "id": 26,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 27,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 28,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 29,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 30,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 31,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 32,
-          "user": {
-            "name": "Anthony ",
-            "surname": "Liccardo",
-            "tax_id_code": "qsqsqsqsqsqsqsqs",
-            "date": "2022-06-10",
-            "role": "BE Developer",
-            "id": 8
-          },
-          "card_visibility": true
-        },
-        {
-          "id": 33,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 34,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 35,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 36,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 37,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 38,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 39,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 40,
-          "user": null,
-          "card_visibility": true
-        }
-      ],
-      "workstationsThree": [
-        {
-          "id": 41,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 42,
-          "user": {
-            "name": "Vecienzo",
-            "surname": "Granatiello",
-            "tax_id_code": "vncgrn",
-            "date": "2022-06-26",
-            "role": "BE Developer",
-            "id": 10
-          },
-          "card_visibility": true
-        },
-        {
-          "id": 43,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 44,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 45,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 46,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 47,
-          "user": null,
-          "card_visibility": true
-        },
-        {
-          "id": 48,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 49,
-          "user": null,
-          "card_visibility": false
-        },
-        {
-          "id": 50,
-          "user": null,
-          "card_visibility": true
-        }
-      ]
-    }
-  ]
+        "card_visibility": true
+      },
+      {
+        "id": 43,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 44,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 45,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 46,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 47,
+        "user": null,
+        "card_visibility": true
+      },
+      {
+        "id": 48,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 49,
+        "user": null,
+        "card_visibility": false
+      },
+      {
+        "id": 50,
+        "user": null,
+        "card_visibility": true
+      }
+    ]
+  }
 }

@@ -23,26 +23,26 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.workspaceService.getWorkspace();
-    for (let i = 0; i < this.workspaceService.workspace[0].workstations.length; i++) {
-      if (this.workspaceService.workspace[0].workstations[i].user != null && this.workspaceService.workspace[0].workstations[i].id == this.idWorkStation) {
+    for (let i = 0; i < this.workspaceService.workspace.workstations.length; i++) {
+      if (this.workspaceService.workspace.workstations[i].user != null && this.workspaceService.workspace.workstations[i].id == this.idWorkStation) {
 
-        this.user = this.workspaceService.workspace[0].workstations[i].user
-
-      }
-
-    }
-    for (let i = 0; i < this.workspaceService.workspace[0].workstationsTwo.length; i++) {
-      if (this.workspaceService.workspace[0].workstationsTwo[i].user != null && this.workspaceService.workspace[0].workstationsTwo[i].id == this.idWorkStation) {
-
-        this.user = this.workspaceService.workspace[0].workstationsTwo[i].user
+        this.user = this.workspaceService.workspace.workstations[i].user
 
       }
 
     }
-    for (let i = 0; i < this.workspaceService.workspace[0].workstationsThree.length; i++) {
-      if (this.workspaceService.workspace[0].workstationsThree[i].user != null && this.workspaceService.workspace[0].workstationsThree[i].id == this.idWorkStation) {
+    for (let i = 0; i < this.workspaceService.workspace.workstationsTwo.length; i++) {
+      if (this.workspaceService.workspace.workstationsTwo[i].user != null && this.workspaceService.workspace.workstationsTwo[i].id == this.idWorkStation) {
 
-        this.user = this.workspaceService.workspace[0].workstationsThree[i].user
+        this.user = this.workspaceService.workspace.workstationsTwo[i].user
+
+      }
+
+    }
+    for (let i = 0; i < this.workspaceService.workspace.workstationsThree.length; i++) {
+      if (this.workspaceService.workspace.workstationsThree[i].user != null && this.workspaceService.workspace.workstationsThree[i].id == this.idWorkStation) {
+
+        this.user = this.workspaceService.workspace.workstationsThree[i].user
 
       }
 

@@ -14,7 +14,7 @@ import { WorkSpace } from 'src/app/shared/model/workspace/workspace';
 })
 export class HomeComponent {
 
-  workspace!: WorkSpace[];
+  workspace!: WorkSpace;
 
 
   planModel: any = {

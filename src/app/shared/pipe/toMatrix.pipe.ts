@@ -1,12 +1,15 @@
 import { Pipe, PipeTransform } from "@angular/core";
+import { WorkSpaceService } from "../model/workspace/service/workspace.service";
+import { WorkStation } from "../model/workstation/workstation";
 
 @Pipe({
     name: 'toMatrix'
 })
 
 export class ToMatrixPipe implements PipeTransform {
-    transform(arr: any[], n: number): any[][] {
-        const rows = Array.from({ length: Math.ceil(arr.length / n) }, (_, i) => i);
-        return rows.map(idx => arr.slice(idx * n, idx * n + n));
+    constructor(public workspaceService: WorkSpaceService) { }
+    transform(workstations: WorkStation[], n: number): WorkStation[][] {
+        const rows = Array.from({ length: Math.ceil(workstations.length / n) }, (_, i) => i);
+        return rows.map(idx => workstations.slice(idx * n, idx * n + n));
     }
 }

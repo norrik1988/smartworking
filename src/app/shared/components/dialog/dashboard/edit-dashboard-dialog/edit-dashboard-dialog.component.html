@@ -1,8 +1,8 @@
 <form class="example-form" #f="ngForm">
 
     <mat-form-field class="example-full-width" appearance="fill">
-       
-           
+
+
         <mat-label>User</mat-label>
         <input matInput [matAutocomplete]="auto" [(ngModel)]="workspaceService.workstationSelected.user"
             (ngModelChange)="inputChange($event)" name="user"
@@ -26,7 +26,7 @@
     <br>
 
     <div mat-dialog-actions>
-        <button id="button-save" mat-button cdkFocusInitial (click)="edit(f.value)" [mat-dialog-close]="data"
+        <button id="button-save" mat-button cdkFocusInitial (click)="edit(f)" [mat-dialog-close]="data"
             [disabled]="f.invalid" class="addBotton">
             <mat-icon>save</mat-icon> Modifica
         </button>

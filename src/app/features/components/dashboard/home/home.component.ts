@@ -16,7 +16,7 @@ export class HomeComponent {
 
   workspace!: WorkSpace[];
 
-  n = 5;
+
   planModel: any = {
     start_time: new Date().toISOString().replace(/T.*$/, ''),
   };
@@ -29,7 +29,7 @@ export class HomeComponent {
     this.workspaceService.getWorkspace().subscribe((res) => {
       this.workspaceService.workspace = res;
       this.workspace = this.workspaceService.workspace;
-  //   console.log('home '+JSON.stringify(this.workspaceService.workspace))
+      //  console.log('HOME ' + JSON.stringify(this.workspaceService.workspace))
     })
   }
 

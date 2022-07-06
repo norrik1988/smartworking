@@ -28,29 +28,31 @@ export class WorkSpaceService {
         this.workstationArray = this.workspace
         // console.log('workstationArray 1 ' + JSON.stringify(this.workstationArray))
         //console.log('workstationArray 2 ' + JSON.stringify(this.workstationArray))
-        for (let i = 0; i < this.workspace.workstations.length; i++) {
-            if (this.workspace.workstations[i].id == id) {
-                this.workspace.workstations[i].user = form.value;
+        for (let i = 0; i < this.workstationArray.workstations.length; i++) {
+            if (this.workstationArray.workstations[i].id == id) {
+                this.workstationArray.workstations[i].user = form.value;
+                console.log(JSON.stringify(this.workstationArray.workstations))
             }
         }
-        for (let i = 0; i < this.workspace.workstationsTwo.length; i++) {
-            if (this.workspace.workstationsTwo[i].id == id) {
-                this.workspace.workstationsTwo[i].user = form.value
+        for (let i = 0; i < this.workstationArray.workstationsTwo.length; i++) {
+            if (this.workstationArray.workstationsTwo[i].id == id) {
+                this.workstationArray.workstationsTwo[i].user = form
             }
         }
-        for (let i = 0; i < this.workspace.workstationsThree.length; i++) {
-            if (this.workspace.workstationsThree[i].id == id) {
-                this.workspace.workstationsThree[i].user = form.value
+        for (let i = 0; i < this.workstationArray.workstationsThree.length; i++) {
+            if (this.workstationArray.workstationsThree[i].id == id) {
+                this.workstationArray.workstationsThree[i].user = form
             }
         }
         this.arrayConcat = this.workspace.workstations.concat(this.workspace.workstationsTwo, this.workspace.workstationsThree)
-        console.log('array Concat  ' + JSON.stringify(this.arrayConcat))
-        this.http.put<WorkSpace>(`http://localhost:3000/workspace/1`, this.arrayConcat)
-            .subscribe(res => {
-                // const index = this.workspace.findIndex(ws => ws.id === id);
-                // this.workspace[index] = res
-                // this.workspace.push(res)
-            })
+        console.log('array Concat  ' + JSON.stringify(this.workstationArray))
+        // this.http.put<WorkSpace>(`http://localhost:3000/workspace`, this.workstationArray)
+        //     .subscribe(res => {
+        //         //         //      // const index = this.workspace.findIndex(ws => ws.id === id);
+        //         //         //      // this.workspace[index] = res
+        //         console.log(res)
+        //         this.workspace = res
+        //     })
     }
     // this.http.post<WorkSpace>(`http://localhost:3000/workspace`, this.workspace[0].workstations[i]).subscribe(res => {
     //     this.workspace.push(res)

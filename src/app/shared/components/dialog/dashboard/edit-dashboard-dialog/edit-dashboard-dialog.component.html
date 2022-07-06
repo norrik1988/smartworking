@@ -4,7 +4,9 @@
 
 
         <mat-label>User</mat-label>
-        <input matInput [matAutocomplete]="auto" [(ngModel)]="workspaceService.workstationSelected.user"
+        <input type="hidden" [(ngModel)]="workspaceService.id" name="id">
+        <input type="hidden" [(ngModel)]="flag" name="card_visibility">
+        <input matInput [matAutocomplete]=" auto" [(ngModel)]="workspaceService.workstationSelected.user"
             (ngModelChange)="inputChange($event)" name="user"
             placeholder="{{workspaceService.workstationSelected.user?.name}}">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">

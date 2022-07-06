@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
 import { WorkSpaceService } from 'src/app/shared/model/workspace/service/workspace.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-edit-dashboard-dialog',
   templateUrl: './edit-dashboard-dialog.component.html',
@@ -13,13 +13,13 @@ export class EditDashboardDialogComponent {
 
   filteredUsers = new Array<User>();
   timeoutInput: any;
-  
+  flag = true;
 
-  constructor(public userService: UserService, public workspaceService: WorkSpaceService, @Inject(MAT_DIALOG_DATA) public data: any) { 
-    
+  constructor(public userService: UserService, public workspaceService: WorkSpaceService, @Inject(MAT_DIALOG_DATA) public data: any) {
+
   }
 
- 
+
   edit(form: NgForm) {
     this.workspaceService.edit_Workstation(form, this.data.id);
   }

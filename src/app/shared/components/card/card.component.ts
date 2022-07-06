@@ -57,7 +57,7 @@ export class CardComponent implements OnInit {
     });
     this.workspaceService.id = this.idWorkStation
     this.userService.getUser();
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       this.workspaceService.workstationSelected.user = undefined
     })
   }

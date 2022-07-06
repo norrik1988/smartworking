@@ -5,6 +5,8 @@ import { Observable } from "rxjs";
 import { WorkStation } from "../../workstation/workstation";
 import { WorkSpace } from "../workspace";
 
+export var boh: WorkSpace
+
 @Injectable({
     providedIn: 'root'
 })
@@ -13,11 +15,7 @@ export class WorkSpaceService {
     constructor(private http: HttpClient) {
 
     }
-
-
-    url = `http://localhost:3000/workspace/1`;
-
-    workspace!: WorkSpace;
+    workspace: any;
     id!: number;
     workstationArray: any;
     workstationSelected: WorkStation = {} as WorkStation;
@@ -25,12 +23,10 @@ export class WorkSpaceService {
 
     edit_Workstation(form: NgForm, id: number) {
         id = this.id
-        console.log(form.value)
         this.workstationArray = this.workspace
         for (let i = 0; i < this.workstationArray.workstations.length; i++) {
             if (this.workstationArray.workstations[i].id == id) {
                 this.workstationArray.workstations[i] = form.value;
-                console.log(JSON.stringify(this.workstationArray.workstations[i].user))
             }
         }
         for (let i = 0; i < this.workstationArray.workstationsTwo.length; i++) {
@@ -43,12 +39,10 @@ export class WorkSpaceService {
                 this.workstationArray.workstationsThree[i] = form.value
             }
         }
-        this.arrayConcat = this.workspace.workstations.concat(this.workspace.workstationsTwo, this.workspace.workstationsThree)
-        console.log('array Concat  ' + JSON.stringify(this.workstationArray))
         this.http.put<WorkSpace>(`http://localhost:3000/workspace`, this.workstationArray)
             .subscribe(res => {
                 this.workspace = res
-                this.getAll();
+                this.getWorkspace()
             })
     }
 
@@ -56,10 +50,6 @@ export class WorkSpaceService {
         return this.http.get<WorkSpace>('http://localhost:3000/workspace');
 
     }
-    getAll() {
-        this.http.get<WorkSpace>('http://localhost:3000/workspace').subscribe(res => {
-            res = this.workspace = res
-        });
-    }
+
 
 }

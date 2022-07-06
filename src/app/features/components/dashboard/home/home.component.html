@@ -21,10 +21,12 @@
     <div>
         <div class="example-boundary">
             <div>
-                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;" *ngIf="workspace">
+                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;"
+                    *ngIf="workspaceService.workspace">
 
 
-                    <div *ngFor="let element of workspace.workstations | toFirstWorkstation:5 " class="cell">
+                    <div *ngFor="let element of workspaceService.workspace.workstations | toFirstWorkstation:5 "
+                        class="cell">
                         <div *ngFor="let x of element" class="cell">
                             <app-card *ngIf="x.card_visibility " [idWorkStation]="x.id" customCls=".example-boundary">
 
@@ -41,9 +43,11 @@
     <div>
         <div class="exampleTwo-boundary">
             <div fxLayout="column " fxFlexFill>
-                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;" *ngIf="workspace">
+                <div fxFlexFill fxLayout="row" style=" justify-content: space-between;"
+                    *ngIf="workspaceService.workspace">
 
-                    <div *ngFor="let element of workspace.workstationsTwo | toSecondWorkstation:3 " class="cell">
+                    <div *ngFor="let element of workspaceService.workspace.workstationsTwo | toSecondWorkstation:3 "
+                        class="cell">
                         <div *ngFor="let x of element" class="cell">
                             <app-card *ngIf="x.card_visibility" customCls=".example-boundary" [idWorkStation]="x.id">
                             </app-card>
@@ -58,9 +62,10 @@
         </div>
 
         <div class="exampleThree-boundary">
-            <div fxFlexFill fxLayout="row" style=" justify-content: space-between;" *ngIf="workspace">
+            <div fxFlexFill fxLayout="row" style=" justify-content: space-between;" *ngIf="workspaceService.workspace">
 
-                <div *ngFor="let element of workspace.workstationsThree | toThirdWorkstation:2 " class="cell">
+                <div *ngFor="let element of workspaceService.workspace.workstationsThree | toThirdWorkstation:2 "
+                    class="cell">
                     <div *ngFor="let x of element" class="cell">
                         <app-card *ngIf="x.card_visibility" customCls=".example-boundary" [idWorkStation]="x.id">
                         </app-card>

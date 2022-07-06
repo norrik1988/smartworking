@@ -14,20 +14,18 @@ import { WorkSpace } from 'src/app/shared/model/workspace/workspace';
 })
 export class HomeComponent {
 
-  workspace!: WorkSpace;
 
   planModel: any = {
     start_time: new Date().toISOString().replace(/T.*$/, ''),
   };
 
-  constructor(public dialog: MatDialog, public userService: UserService, private http: HttpClient, private workspaceService: WorkSpaceService) {
+  constructor(public dialog: MatDialog, public userService: UserService, private http: HttpClient, public workspaceService: WorkSpaceService) {
     userService.dateSelected = this.planModel.start_time;
   }
 
   ngOnInit() {
     this.workspaceService.getWorkspace().subscribe((res) => {
       this.workspaceService.workspace = res;
-      this.workspace = this.workspaceService.workspace;
       //  console.log('HOME ' + JSON.stringify(this.workspaceService.workspace))
     })
   }

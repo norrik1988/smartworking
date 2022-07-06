@@ -16,7 +16,6 @@ export class HomeComponent {
 
   workspace!: WorkSpace;
 
-
   planModel: any = {
     start_time: new Date().toISOString().replace(/T.*$/, ''),
   };

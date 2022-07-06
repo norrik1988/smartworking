@@ -15,7 +15,9 @@ import { CommonModule } from "@angular/common";
 import { CardComponent } from './components/card/card.component';
 import { BlankComponent } from './components/card/blank/blank.component';
 import { EditDashboardDialogComponent } from "./components/dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component";
-import { ToMatrixPipe } from "./pipe/toMatrix.pipe";
+import { ToFirstWorkstationPipe } from "./pipe/toFirstWorkstation.pipe";
+import { ToSecondWorkstationPipe } from "./pipe/toSecondWorkstation.pipe";
+import { ToThirdWorkstationPipe } from "./pipe/toThirdWorkstation.pipe";
 
 
 const components = [
@@ -32,7 +34,9 @@ const components = [
     CardComponent,
     BlankComponent,
 
-    ToMatrixPipe
+    ToSecondWorkstationPipe,
+    ToFirstWorkstationPipe,
+    ToThirdWorkstationPipe
 ]
 
 @NgModule({

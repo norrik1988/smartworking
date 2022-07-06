@@ -89,6 +89,7 @@
       },
       {
         "id": 3,
+        "card_visibility": true,
         "user": {
           "name": "Johnny",
           "surname": "Pepp",
@@ -96,8 +97,7 @@
           "date": "2022-06-25",
           "role": "FE Developer",
           "id": 9
-        },
-        "card_visibility": true
+        }
       },
       {
         "id": 4,
@@ -153,7 +153,6 @@
       },
       {
         "id": 13,
-        "user": null,
         "card_visibility": true
       },
       {
@@ -168,7 +167,6 @@
       },
       {
         "id": 16,
-        "user": null,
         "card_visibility": true
       },
       {
@@ -193,7 +191,6 @@
       },
       {
         "id": 21,
-        "user": null,
         "card_visibility": true
       },
       {

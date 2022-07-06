@@ -12,7 +12,6 @@ export class ToFirstWorkstationPipe implements PipeTransform {
 
     transform(workstations: WorkStation[], n: number): WorkStation[][] {
         workstations = this.workspaceService.workspace.workstations
-        console.log(workstations)
         const rows = Array.from({ length: Math.ceil(workstations.length / n) }, (_, i) => i);
         return rows.map(idx => workstations.slice(idx * n, idx * n + n));
     }

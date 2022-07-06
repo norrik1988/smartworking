@@ -26,12 +26,9 @@ export class HomeComponent {
   ngOnInit() {
     this.workspaceService.getWorkspace().subscribe((res) => {
       this.workspaceService.workspace = res;
-      //  console.log('HOME ' + JSON.stringify(this.workspaceService.workspace))
     })
   }
 
-  public get showName() {
-    return localStorage.getItem("SessionUser")
-  }
+
 
 }

@@ -32,6 +32,9 @@
             [disabled]="f.invalid" class="addBotton">
             <mat-icon>save</mat-icon> Save
         </button>
-
+        <button id="button-save" mat-button cdkFocusInitial (click)="workspaceService.delete()"
+            [mat-dialog-close]="data" class="delete">
+            <mat-icon>delete</mat-icon> Delete
+        </button>
     </div>
 </form>

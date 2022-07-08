@@ -45,7 +45,31 @@ export class WorkSpaceService {
                 this.getWorkspace()
             })
     }
+    delete() {
 
+        this.workstationArray = this.workspace
+        this.workstationSelected.user = undefined
+        for (let i = 0; i < this.workstationArray.workstations.length; i++) {
+            if (this.workstationArray.workstations[i].id == this.id) {
+                this.workstationArray.workstations[i].user = this.workstationSelected.user;
+            }
+        }
+        for (let i = 0; i < this.workstationArray.workstationsTwo.length; i++) {
+            if (this.workstationArray.workstationsTwo[i].id == this.id) {
+                this.workstationArray.workstationsTwo[i].user = this.workstationSelected.user;
+            }
+        }
+        for (let i = 0; i < this.workstationArray.workstationsThree.length; i++) {
+            if (this.workstationArray.workstationsThree[i].id == this.id) {
+                this.workstationArray.workstationsThree[i].user = this.workstationSelected.user;
+            }
+        }
+        this.http.put<WorkSpace>(`http://localhost:3000/workspace`, this.workstationArray)
+            .subscribe(res => {
+                this.workspace = res
+                this.getWorkspace()
+            })
+    }
     getWorkspace(): Observable<WorkSpace> {
         return this.http.get<WorkSpace>('http://localhost:3000/workspace');
 

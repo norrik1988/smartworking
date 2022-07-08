@@ -18,7 +18,9 @@ export class EditDashboardDialogComponent {
   constructor(public userService: UserService, public workspaceService: WorkSpaceService, @Inject(MAT_DIALOG_DATA) public data: any) {
 
   }
-
+  delete() {
+    this.workspaceService.workstationSelected.user = undefined
+  }
 
   edit(form: NgForm) {
     this.workspaceService.edit_Workstation(form, this.data.id);

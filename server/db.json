@@ -89,7 +89,15 @@
       },
       {
         "id": 3,
-        "card_visibility": true
+        "card_visibility": true,
+        "user": {
+          "name": "Johnny",
+          "surname": "Pepp",
+          "tax_id_code": "rerererererere",
+          "date": "2022-06-25",
+          "role": "FE Developer",
+          "id": 9
+        }
       },
       {
         "id": 4,

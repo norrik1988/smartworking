@@ -19,7 +19,7 @@ export class WorkSpaceService {
     id!: number;
     workstationArray: any;
     workstationSelected: WorkStation = {} as WorkStation;
-    arrayConcat: any;
+    userSelect: any;
 
     edit_Workstation(form: NgForm, id: number) {
         id = this.id
@@ -75,5 +75,21 @@ export class WorkSpaceService {
 
     }
 
-
+    test(id: number) {
+        for (let i = 0; i < this.workspace.workstations.length; i++) {
+            if (this.workspace.workstations[i]?.id == id) {
+                this.userSelect = this.workspace.workstations[i]?.user
+            }
+        }
+        for (let i = 0; i < this.workspace.workstationsTwo.length; i++) {
+            if (this.workspace.workstationsTwo[i]?.id == id) {
+                this.userSelect = this.workspace.workstationsTwo[i]?.user
+            }
+        }
+        for (let i = 0; i < this.workspace.workstationsThree.length; i++) {
+            if (this.workspace.workstationsThree[i]?.id == id) {
+                this.userSelect = this.workspace.workstationsThree[i]?.user
+            }
+        }
+    }
 }

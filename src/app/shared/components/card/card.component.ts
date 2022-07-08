@@ -52,10 +52,12 @@ export class CardComponent implements OnInit {
   }
 
   openEdit() {//opening edit dialog
+
     const dialogRef = this.dialog.open(EditDashboardDialogComponent, {
       data: { id: this.idWorkStation },
     });
     this.workspaceService.id = this.idWorkStation
+    this.workspaceService.test(this.idWorkStation)
     this.userService.getUser();
     dialogRef.afterClosed().subscribe(() => {
     })

@@ -19,7 +19,7 @@ export class EditDashboardDialogComponent {
 
   }
   delete() {
-    this.workspaceService.workstationSelected.user = undefined
+    this.workspaceService.delete()
   }
 
   edit(form: NgForm) {

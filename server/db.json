@@ -89,15 +89,7 @@
       },
       {
         "id": 3,
-        "card_visibility": true,
-        "user": {
-          "name": "Johnny",
-          "surname": "Pepp",
-          "tax_id_code": "rerererererere",
-          "date": "2022-06-25",
-          "role": "FE Developer",
-          "id": 9
-        }
+        "card_visibility": true
       },
       {
         "id": 4,
@@ -167,15 +159,7 @@
       },
       {
         "id": 16,
-        "card_visibility": true,
-        "user": {
-          "name": "Daniele",
-          "surname": "Cibelli",
-          "tax_id_code": "asdasdasdasdasd",
-          "date": "1999-02-15",
-          "role": "FE Developer",
-          "id": 7
-        }
+        "card_visibility": true
       },
       {
         "id": 17,

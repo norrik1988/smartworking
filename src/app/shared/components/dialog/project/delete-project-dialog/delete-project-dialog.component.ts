@@ -4,30 +4,7 @@ import { OrderService } from 'src/app/shared/model/commessa/service/order.servic
 
 @Component({
   selector: 'app-delete-project-dialog',
-  template: `
-    <h2 mat-dialog-title>Delete Project</h2>
-    <mat-dialog-content class="mat-typography">
-  
-      <strong>Commessa : </strong>
-      <span>{{orderService.orderSelected?.order}}</span>
-
-      <br>
-
-      <strong>Progetto : </strong>
-      <span>{{orderService.orderSelected?.name}}</span>  
-        
-      <br>
-
-      <strong>Descrizione : </strong>
-      <span> {{orderService.orderSelected?.description}}</span>
-
-    </mat-dialog-content>
-
-    <mat-dialog-actions align="end">
-      <button mat-button mat-dialog-close (click)="delete()">Cancella</button>
-      <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Annulla</button>
-    </mat-dialog-actions>
-  `,
+  templateUrl: 'delete-project-dialog.component.html',
   styleUrls: ['./delete-project-dialog.component.scss']
 })
 export class DeleteProjectDialogComponent {

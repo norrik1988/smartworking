@@ -18,6 +18,10 @@ import { EditDashboardDialogComponent } from "./components/dialog/dashboard/edit
 import { ToFirstWorkstationPipe } from "./pipe/toFirstWorkstation.pipe";
 import { ToSecondWorkstationPipe } from "./pipe/toSecondWorkstation.pipe";
 import { ToThirdWorkstationPipe } from "./pipe/toThirdWorkstation.pipe";
+import { AddRegistersDialogComponent } from "./components/dialog/registers/add-registers-dialog/add-registers-dialog/add-registers-dialog.component";
+import { DeleteRegistersDialogComponent } from "./components/dialog/registers/delete-registers-dialog/delete-registers-dialog/delete-registres-dialog.component";
+import { EditRegistersDialogComponent } from "./components/dialog/registers/edit-registers-dialog/edit-registers-dialog/edit-registers-dialog.component";
+import { DetailRegistersDialogComponent } from './components/dialog/registers/detail-registers-dialog/detail-registers-dialog/detail-registers-dialog.component';
 
 
 const components = [
@@ -36,11 +40,17 @@ const components = [
 
     ToSecondWorkstationPipe,
     ToFirstWorkstationPipe,
-    ToThirdWorkstationPipe
+    ToThirdWorkstationPipe,
+
+    AddRegistersDialogComponent,
+    EditRegistersDialogComponent,
+    DetailRegistersDialogComponent,
+    DeleteRegistersDialogComponent
+
 ]
 
 @NgModule({
-    declarations: [...components],
+    declarations: [...components, DetailRegistersDialogComponent],
     imports: [
         MaterialModule,
         FormsModule,

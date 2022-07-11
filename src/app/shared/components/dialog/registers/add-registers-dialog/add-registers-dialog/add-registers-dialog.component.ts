@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Register } from 'src/app/shared/model/register/register';
 import { RegisterService } from 'src/app/shared/model/register/service/register.service';
+import { UserService } from 'src/app/shared/model/user/service/user.service';
 
 @Component({
   selector: 'app-add-registers-dialog',
@@ -14,7 +15,7 @@ export class AddRegistersDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<AddRegistersDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Register,
-    public registerService: RegisterService
+    public registerService: RegisterService, public userService: UserService
   ) { }
 
   ngOnInit(): void {

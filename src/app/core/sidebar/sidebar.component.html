@@ -122,7 +122,7 @@
         </mat-nav-list>
 
 
-        <mat-nav-list class="absolute ">
+        <mat-nav-list class="absolute">
             <mat-divider></mat-divider>
             <button mat-button class="menu-button " (click)="logOut()">
                 <mat-icon>logout</mat-icon>
@@ -131,4 +131,15 @@
         </mat-nav-list>
 
     </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="container">
+            <router-outlet></router-outlet>
+            <div *ngIf="spinner.showSpinner">
+                <mat-progress-spinner id="loading" color="primary" value="50" mode="indeterminate">
+                </mat-progress-spinner>
+            </div>
+        </div>
+    </mat-sidenav-content>
+
 </mat-sidenav-container>

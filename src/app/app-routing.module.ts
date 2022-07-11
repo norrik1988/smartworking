@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/components/register/register.module').then(m => m.RegisterModule), canActivate: [AuthGuard]
   },
   {
+    path: 'permit',
+    loadChildren: () => import('./features/components/permit/permit.module').then(m => m.PermitModule), canActivate: [AuthGuard]
+  },
+  {
     path: 'calendar',
     loadChildren: () => import('./features/components/calendar/calendar.module').then(m => m.CalendarModule), canActivate: [AuthGuard]
   },

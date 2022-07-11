@@ -24,7 +24,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
 
   flag1: boolean = true;
   flag2: boolean = true;
-  displayedColumns: string[] = ['giorno', 'inizio', 'fine', 'permesso', 'azioni'];
+  displayedColumns: string[] = ['giorno', 'inizio', 'fine', 'permesso', 'stato', 'azioni'];
   fileName = 'ExcelSheet.xlsx';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

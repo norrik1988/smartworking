@@ -15,15 +15,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatNativeDateModule } from "@angular/material/core";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-import { MatSelectModule } from '@angular/material/select';
+
+
+
+
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
-
-
-
+import { MatNativeDateModule } from "@angular/material/core";
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const imports = [
     FlexLayoutModule,
@@ -49,7 +50,12 @@ const imports = [
 
     MatProgressSpinnerModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatCheckboxModule,
+
+
 ]
 @NgModule({
     imports: [...imports],

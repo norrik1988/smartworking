@@ -1,0 +1,31 @@
+<mat-dialog-content class="mat-typography">
+
+    <form class="e-schedule-form" #f="ngForm">
+        <tr>
+            <td>
+
+                <h2>
+                    <mat-icon>calendar_today</mat-icon>
+                    <p>Sei sicuro di voler modificare l'evento {{event}} a data: </p>
+                    {{dateEvent }}
+                </h2>
+
+            </td>
+        </tr>
+
+        <input hidden [ngModel]="idSelected" name="id">
+        <input hidden [ngModel]="event" name="title">
+        <input hidden [ngModel]="dateView" name="date">
+        <input hidden [ngModel]="dateEventEnd" name="end">
+
+
+
+        <button mat-button mat-dialog-close (click)="edit(f)" color="primary">Inserisci</button>
+        <button mat-button [mat-dialog-close]="true" (click)="annulla()" color="warn" cdkFocusInitial>Annulla</button>
+    </form>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+
+</mat-dialog-actions>

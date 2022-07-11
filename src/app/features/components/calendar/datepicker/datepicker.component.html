@@ -1,0 +1,43 @@
+<!-- <div fxLayout="column" fxFlexFill fxLayoutAlign="center center">
+  <mat-card class="demo-inline-calendar-card">
+    <h4>Smart working pianificato:</h4>
+    <mat-calendar [(selected)]="calendarService.app" [(selected)]="calendarService.selected"
+      (click)="openDialog($event)">
+
+    </mat-calendar>
+  </mat-card>
+  <p>Selected date: {{calendarService.selected}}</p>
+  <div>
+    <p>Selected date: {{calendarService.calendar.date}}</p>
+    <p>Selected app: {{calendarService.calendar.work}}</p>
+  </div>
+</div> 
+<form #f="ngForm">
+  <h3>
+    <input type="checkbox" value="green" name="color" ngModel (click)="calendarService.filterEvent(f.value)">
+    🟢Smart Working
+    <input type="checkbox" value="blue" name="color" ngModel (click)="calendarService.filterEvent(f)">
+    🔵Ufficio
+    <input type="checkbox" value="orangered" name="color" ngModel (click)="calendarService.filterEvent(f)">
+    🟠Riunione
+  </h3>
+</form> -->
+
+<section class="example-section">
+  <h3>
+    <mat-checkbox (change)='calendarService.showOptions($event)' class="green" value='green'  checked="true">Smart
+      Working </mat-checkbox> &nbsp;
+    <mat-checkbox (change)='calendarService.showOptions($event)' class="primary"  value="primary"  checked="true">Ufficio
+    </mat-checkbox> &nbsp;
+    <mat-checkbox (change)='calendarService.showOptions($event)' class="orangered" value="orangered" checked="true">Riunione
+    </mat-checkbox>
+  </h3>
+</section>
+
+<div class='demo-app'>
+
+  <div class='demo-app-main'>
+    <full-calendar *ngIf='calendarService.calendarVisible' [options]='calendarService.calendarOptions'></full-calendar>
+  </div>
+
+</div>

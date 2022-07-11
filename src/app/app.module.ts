@@ -12,8 +12,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorInterceptor } from './shared/service/interceptor.service/interceptor.interceptor';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +25,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     CoreModule,
     FeaturesModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [

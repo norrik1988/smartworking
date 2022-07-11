@@ -22,6 +22,9 @@ import { AddRegistersDialogComponent } from "./components/dialog/registers/add-r
 import { DeleteRegistersDialogComponent } from "./components/dialog/registers/delete-registers-dialog/delete-registers-dialog/delete-registres-dialog.component";
 import { EditRegistersDialogComponent } from "./components/dialog/registers/edit-registers-dialog/edit-registers-dialog/edit-registers-dialog.component";
 import { DetailRegistersDialogComponent } from './components/dialog/registers/detail-registers-dialog/detail-registers-dialog/detail-registers-dialog.component';
+import { CalendarDialogComponent } from './dialog/calendar-dialog/calendar-dialog.component';
+import { DeleteCalendarDialogComponent } from './dialog/delete-calendar-dialog/delete-calendar-dialog.component';
+import { EditCalendarDialogComponent } from './dialog/edit-calendar-dialog/edit-calendar-dialog.component';
 
 
 const components = [
@@ -45,12 +48,17 @@ const components = [
     AddRegistersDialogComponent,
     EditRegistersDialogComponent,
     DetailRegistersDialogComponent,
-    DeleteRegistersDialogComponent
+    DeleteRegistersDialogComponent,
+
+    DetailRegistersDialogComponent,
+    CalendarDialogComponent,
+    DeleteCalendarDialogComponent,
+    EditCalendarDialogComponent
 
 ]
 
 @NgModule({
-    declarations: [...components, DetailRegistersDialogComponent],
+    declarations: [...components],
     imports: [
         MaterialModule,
         FormsModule,

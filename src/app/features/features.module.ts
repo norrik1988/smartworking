@@ -8,6 +8,8 @@ import { ProjectsModule } from "./components/projects/projects.module";
 import { SettingsModule } from "./components/settings/settings.module";
 import { UsersModule } from "./components/users/users.module";
 import { RegisterModule } from "./components/register/register.module";
+import { CalendarModule } from "./components/calendar/calendar.module";
+
 
 
 @NgModule({
@@ -20,10 +22,12 @@ import { RegisterModule } from "./components/register/register.module";
     SettingsModule,
     UsersModule,
     LoginModule,
-    RegisterModule
+    RegisterModule,
+    CalendarModule
   ],
   exports: [],
-  declarations: []
+  declarations: [],
+
 })
 
 export class FeaturesModule {

@@ -1,0 +1,39 @@
+<mat-dialog-content class="mat-typography">
+
+  <form class="e-schedule-form" #f="ngForm">
+    <tr>
+      <td>
+
+        <h2>
+          <mat-icon>calendar_today</mat-icon>
+          {{ start }}
+        </h2>
+
+      </td>
+    </tr>
+    <mat-form-field appearance="outline">
+      <input hidden [ngModel]="dateView" name="date">
+      <input hidden [ngModel]="end" name="end">
+      <input matInput type="text" required ngModel name="title" placeholder="inserisci ">
+
+
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo di evento</mat-label>
+      <mat-select name="color" [(value)]="color" ngModel id="color">
+        <mat-option value="orangered">Riunione</mat-option>
+        <mat-option value="green">Smart Working</mat-option>
+        <mat-option value="primary">Ufficio</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <button mat-button mat-dialog-close color="primary" (click)="add(f)">Inserisci</button>
+    <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Annulla</button>
+  </form>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+
+</mat-dialog-actions>

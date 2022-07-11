@@ -49,25 +49,16 @@ mat-sidenav-container {
             margin-top: 100px;
         }
 
+        .containerFlexLogout {
+            overflow: -moz-hidden-unscrollable;
+            margin-top: 90%;
+        }
+
         .mat-divider-m-t {
             margin-top: 180%;
         }
 
-        .containerFlexLogout {
 
-            @media screen and(max-width:1920px) {
-                margin-top: 280%;
-            }
-
-            @media screen and(max-width:1366px) {
-                overflow: hidden !important;
-                margin-top: 125%;
-            }
-
-            @media screen and(min-width:0px)and(max-width:575px) {
-                margin-top: 1300%;
-            }
-        }
 
         .logo {
             position: sticky;

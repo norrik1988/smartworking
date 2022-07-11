@@ -11,16 +11,19 @@ import { RegisterService } from 'src/app/shared/model/register/service/register.
 })
 export class PermissionManagementComponent implements OnInit {
   displayedColumns: string[] = ['nome', 'cognome', 'richiesta', 'giorno', 'inizio', 'fine', 'azioni'];
-  dataSource = new MatTableDataSource<Register>(this.registerservice.registers);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    this.registerService.dataSource.paginator = this.paginator;
   }
-  constructor(public registerservice: RegisterService) { }
+  constructor(public registerService: RegisterService) {
+    this.registerService.dataSource = new MatTableDataSource<Register>(registerService.registers);
+  }
 
   ngOnInit(): void {
+    this.registerService.getAll()
+
   }
 
 }

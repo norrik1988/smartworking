@@ -19,6 +19,7 @@ export class SidebarComponent implements OnInit {
     this.theme.themeClass = 'blue';
   }
 
+
   logOut(): void {
     localStorage.removeItem("SessionUser");
     this.router.navigateByUrl('login/sign-in');

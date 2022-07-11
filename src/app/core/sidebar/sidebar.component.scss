@@ -49,9 +49,11 @@ mat-sidenav-container {
             margin-top: 100px;
         }
 
-        .containerFlexLogout {
-            overflow: -moz-hidden-unscrollable;
-            margin-top: 90%;
+        .absolute {
+            position: absolute;
+            bottom: 0% !important;
+            width: 100% !important;
+
         }
 
         .mat-divider-m-t {

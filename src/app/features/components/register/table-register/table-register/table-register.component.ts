@@ -9,6 +9,7 @@ import { DetailRegistersDialogComponent } from 'src/app/shared/components/dialog
 import { EditRegistersDialogComponent } from 'src/app/shared/components/dialog/registers/edit-registers-dialog/edit-registers-dialog/edit-registers-dialog.component';
 import { Register } from 'src/app/shared/model/register/register';
 import { RegisterService } from 'src/app/shared/model/register/service/register.service';
+import { UserService } from 'src/app/shared/model/user/service/user.service';
 import * as XLSX from 'xlsx';
 
 @Component({
@@ -18,7 +19,7 @@ import * as XLSX from 'xlsx';
 })
 export class TableRegisterComponent implements OnInit, AfterViewInit {
 
-  constructor(public registerService: RegisterService, public dialog: MatDialog) {
+  constructor(public registerService: RegisterService, public dialog: MatDialog, public userService : UserService) {
     this.registerService.dataSource = new MatTableDataSource<Register>(registerService.registers);
   }
 
@@ -71,6 +72,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(AddRegistersDialogComponent, {
       width: '250px',
     });
+    this.userService.getUser()
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     })

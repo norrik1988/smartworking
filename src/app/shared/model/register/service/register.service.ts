@@ -13,7 +13,7 @@ export class RegisterService {
     register!: Register;
     registerSelected: Register = {} as Register;
     dataSource!: MatTableDataSource<Register>;
-
+    userSelected : Register= {} as Register;
 
     constructor(private http: HttpClient) { }
 

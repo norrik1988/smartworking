@@ -100,11 +100,15 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
     // ws['!cols'] = [];
     // ws['!cols'][0] = { hidden: true };
 
-    let column = 'E';
+    let column = 'F';
+    let columnState = 'E'
     let indexExcel: string;
+    let indexState: string
     for (let i = 1; i <= this.registerService.dataSource.data.length + 1; i++) {
       indexExcel = column + i;
+      indexState = columnState + i;
       delete (ws[indexExcel])
+      delete (ws[indexState])
     }
 
     const wb: XLSX.WorkBook = XLSX.utils.book_new();

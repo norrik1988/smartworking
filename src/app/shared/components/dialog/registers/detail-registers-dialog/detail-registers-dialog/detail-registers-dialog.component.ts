@@ -10,11 +10,19 @@ import { RegisterService } from 'src/app/shared/model/register/service/register.
  <form #form="ngForm">
 <div mat-dialog-container>
 
-
+<mat-form-field appearance="outline">
+ <mat-label>Nome</mat-label>
+ <input matInput type="text" [readonly]=true [ngModel]='registerServise.registerSelected?.user?.name' name="name">
+</mat-form-field>
 
 <mat-form-field appearance="outline">
  <mat-label>Data</mat-label>
  <input matInput type="date" [readonly]=true [ngModel]='registerServise.registerSelected?.date' name="date">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+ <mat-label>Rientro</mat-label>
+ <input matInput type="date" [readonly]=true [ngModel]='registerServise.registerSelected?.dateEnd' name="dateEnd">
 </mat-form-field>
 
 <mat-form-field appearance="outline">

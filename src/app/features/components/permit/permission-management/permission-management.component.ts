@@ -28,6 +28,7 @@ export class PermissionManagementComponent implements OnInit {
 
 
   check(value: Register) {
+    this.registerService.get(value)
     console.log('value:' + value)
     console.log('prima:' + value.state)
     this.registerService.registerSelected = value;
@@ -49,7 +50,7 @@ export class PermissionManagementComponent implements OnInit {
 
 
   getColor() {
-    return this.registerService
+    return this.registerService.themeClass
   }
 
 }

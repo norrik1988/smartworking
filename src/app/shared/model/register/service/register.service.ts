@@ -18,10 +18,18 @@ export class RegisterService {
 
     constructor(private http: HttpClient) { }
 
+    get(register: Register): Register {
+        this.http.get(`http://localhost:3000/register/${register.id}`)
+            .subscribe(() => {
+                const indice = this.dataSource.data.findIndex(re => re.id === register.id);
+                this.getAll();
+            })
+        return register;
+    }
+
     getAll() {
         this.http.get<Register[]>('http://localhost:3000/register').subscribe(res => {
             this.dataSource.data = res;
-            this.registers = res
         })
     }
 

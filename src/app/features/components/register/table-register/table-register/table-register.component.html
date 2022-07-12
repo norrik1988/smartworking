@@ -42,7 +42,8 @@
 
         <ng-container matColumnDef="giorno">
             <th mat-header-cell *matHeaderCellDef> Giorno </th>
-            <td mat-cell *matCellDef="let element"> <strong>Da</strong> &nbsp; {{element.date|date:'EEEE dd/MM/yyyy'}} &nbsp; <strong>a</strong> &nbsp; {{element.dateEnd |date:'EEEE dd/MM/yyyy'}} </td>
+            <td mat-cell *matCellDef="let element"> <strong>Da</strong> &nbsp; {{element.date|date:'EEEE dd/MM/yyyy'}}
+                &nbsp; <strong>a</strong> &nbsp; {{element.dateEnd |date:'EEEE dd/MM/yyyy'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="inizio">
@@ -62,7 +63,9 @@
 
         <ng-container matColumnDef="stato">
             <th mat-header-cell *matHeaderCellDef> Stato </th>
-            <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+            <td mat-cell *matCellDef="let element">
+                <div [style.background]="element.state" class="state"></div>
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="azioni" id="delete">

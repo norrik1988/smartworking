@@ -34,8 +34,8 @@ export class RegisterService {
     }
 
     getPermit() {
-        this.http.get<Register[]>('http://localhost:3000/register').subscribe(res => {
-            this.registers = res
+        this.http.get<Register>('http://localhost:3000/register').subscribe(res => {
+            this.register.state = res.state;
         });
     }
 

@@ -41,7 +41,7 @@
         <ng-container matColumnDef="stato" #state>
             <th mat-header-cell *matHeaderCellDef> Stato </th>
             <td mat-cell *matCellDef="let element">
-                <div class="{{getColor()}}"></div>
+                <div [style.background]="element.state" class="state"></div>
             </td>
         </ng-container>
 

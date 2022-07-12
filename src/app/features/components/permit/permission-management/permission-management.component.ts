@@ -28,15 +28,11 @@ export class PermissionManagementComponent implements OnInit {
 
 
   check(value: Register) {
-    this.registerService.get(value)
-    console.log('value:' + value)
-    console.log('prima:' + value.state)
+    console.log(value)
     this.registerService.registerSelected = value;
-    console.log('durante:' + this.registerService.registerSelected)
     value.state = 'green';
     this.registerService.themeClass = 'green';
     this.registerService.editPermit(value);
-    console.log('topo:' + this.registerService.registerSelected)
   }
 
   clear(value: Register) {

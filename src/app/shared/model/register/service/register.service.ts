@@ -13,12 +13,22 @@ export class RegisterService {
     register!: Register;
     registerSelected: Register = {} as Register;
     dataSource!: MatTableDataSource<Register>;
-    userSelected : Register= {} as Register;
+    userSelected: Register = {} as Register;
+    themeClass = '';
 
     constructor(private http: HttpClient) { }
 
     getAll() {
-        this.http.get<Register[]>('http://localhost:3000/register').subscribe(res => this.dataSource.data = res)
+        this.http.get<Register[]>('http://localhost:3000/register').subscribe(res => {
+            this.dataSource.data = res;
+            this.registers = res
+        })
+    }
+
+    getPermit() {
+        this.http.get<Register[]>('http://localhost:3000/register').subscribe(res => {
+            this.registers = res
+        });
     }
 
     add(register: Register) {
@@ -44,6 +54,15 @@ export class RegisterService {
 
     edit(form: NgForm) {
         this.http.patch<Register>(`http://localhost:3000/register/${this.registerSelected?.id}`, form)
+            .subscribe(res => {
+                const index = this.dataSource.data.findIndex(re => re.id === this.registerSelected?.id);
+                this.dataSource.data[index] = res;
+                this.getAll();
+            });
+    }
+
+    editPermit(value: Register) {
+        this.http.patch<Register>(`http://localhost:3000/register/${this.registerSelected?.id}`, value)
             .subscribe(res => {
                 const index = this.dataSource.data.findIndex(re => re.id === this.registerSelected?.id);
                 this.dataSource.data[index] = res;

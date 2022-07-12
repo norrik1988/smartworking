@@ -361,7 +361,7 @@
         "role": "FE Developer",
         "id": 9
       },
-      "state": "yellow",
+      "state": "red",
       "date": "2022-07-01",
       "dateEnd": "2022-07-08",
       "start": "17:36",
@@ -369,6 +369,42 @@
       "permit": "malattia",
       "month": 7,
       "id": 1
+    },
+    {
+      "user": {
+        "name": "Anthony ",
+        "surname": "Liccardo",
+        "tax_id_code": "qsqsqsqsqsqsqsqs",
+        "date": "2022-06-10",
+        "role": "BE Developer",
+        "id": 8
+      },
+      "state": "red",
+      "date": "2022-04-07",
+      "dateEnd": "2022-05-13",
+      "start": "12:22",
+      "end": "21:02",
+      "permit": "ferie",
+      "month": 4,
+      "id": 2
+    },
+    {
+      "user": {
+        "name": "Tonya",
+        "surname": "Ommo",
+        "tax_id_code": "oagmiogmas",
+        "date": "1998-01-04",
+        "role": "FE Developer",
+        "id": 11
+      },
+      "state": "red",
+      "date": "2022-08-01",
+      "dateEnd": "2022-09-30",
+      "start": "00:00",
+      "end": "00:00",
+      "permit": "ferie",
+      "month": 8,
+      "id": 3
     }
   ],
   "calendar": [

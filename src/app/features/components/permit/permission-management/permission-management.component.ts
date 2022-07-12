@@ -44,6 +44,22 @@ export class PermissionManagementComponent implements OnInit {
 
 
 
+  applyFilter(search: HTMLInputElement, searchMonth: HTMLInputElement) {
+    this.registerService.applyFilter(search, searchMonth)
+  }
+
+  flagOne(search: HTMLInputElement) {
+    this.registerService.flagOne(search);
+  }
+
+  flagTwo(month: HTMLInputElement) {
+    this.registerService.flagTwo(month);
+  }
+
+  refresh(form: NgForm) {
+    this.registerService.refresh(form)
+  }
+
 
   getColor() {
     return this.registerService.themeClass

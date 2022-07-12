@@ -13,7 +13,7 @@
             <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
                 <mat-form-field appearance="fill">
                     <mat-label>Search</mat-label>
-                    <input matInput type="date" name="search" #search ngModel [disabled]="!flag1"
+                    <input matInput type="date" name="search" #search ngModel [disabled]="!registerService.flag1"
                         (click)="flagOne(month)">
                 </mat-form-field>
             </div>
@@ -22,7 +22,7 @@
             <div fxFlexFill fxFlex="17%" fxFlex.md="35vh">
                 <mat-form-field appearance="fill">
                     <mat-label>Search month</mat-label>
-                    <input matInput type="number" name="month" #month ngModel [disabled]="!flag2"
+                    <input matInput type="number" name="month" #month ngModel [disabled]="!registerService.flag2"
                         (click)="flagTwo(search)">
                 </mat-form-field>
             </div>

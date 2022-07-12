@@ -8,7 +8,8 @@ import { Register } from "../register";
     providedIn: 'root'
 })
 export class RegisterService {
-
+    flag1: boolean = true;
+    flag2: boolean = true;
     registers: Register[] = [];
     register!: Register;
     registerSelected: Register = {} as Register;
@@ -78,4 +79,39 @@ export class RegisterService {
             });
     }
 
+    applyFilter(search: HTMLInputElement, searchMonth: HTMLInputElement) {
+
+        if (search.value) {
+            console.log('metodo searchDate')
+            const filterValueSearch = this.dataSource.data.filter((res: any) => res.date == search.value);
+            this.dataSource.data = filterValueSearch
+            if (this.dataSource.paginator) {
+                this.dataSource.paginator.firstPage();
+            }
+        } else {
+            console.log('metodo searchMonth')
+            const filterValueMonth = this.dataSource.data.filter((res: Register) => res.month == Number(searchMonth.value));
+            this.dataSource.data = filterValueMonth;
+            if (this.dataSource.paginator) {
+                this.dataSource.paginator.firstPage();
+            }
+        }
+        this.flag1 = true;
+        this.flag2 = true;
+    }
+
+    flagOne(search: HTMLInputElement) {
+        this.flag2 = false;
+    }
+
+    flagTwo(month: HTMLInputElement) {
+        this.flag1 = false;
+    }
+
+    refresh(form: NgForm) {
+        form.reset();
+        this.getAll();
+        this.flag1 = true;
+        this.flag2 = true;
+    }
 }

@@ -19,12 +19,11 @@ import * as XLSX from 'xlsx';
 })
 export class TableRegisterComponent implements OnInit, AfterViewInit {
 
-  constructor(public registerService: RegisterService, public dialog: MatDialog, public userService : UserService) {
+  constructor(public registerService: RegisterService, public dialog: MatDialog, public userService: UserService) {
     this.registerService.dataSource = new MatTableDataSource<Register>(registerService.registers);
   }
 
-  flag1: boolean = true;
-  flag2: boolean = true;
+
   displayedColumns: string[] = ['giorno', 'inizio', 'fine', 'permesso', 'stato', 'azioni'];
   fileName = 'ExcelSheet.xlsx';
 
@@ -40,32 +39,15 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   }
 
   applyFilter(search: HTMLInputElement, searchMonth: HTMLInputElement) {
-
-    if (search.value) {
-      console.log('metodo searchDate')
-      const filterValueSearch = this.registerService.dataSource.data.filter((res: any) => res.date == search.value);
-      this.registerService.dataSource.data = filterValueSearch
-      if (this.registerService.dataSource.paginator) {
-        this.registerService.dataSource.paginator.firstPage();
-      }
-    } else {
-      console.log('metodo searchMonth')
-      const filterValueMonth = this.registerService.dataSource.data.filter((res: Register) => res.month == Number(searchMonth.value));
-      this.registerService.dataSource.data = filterValueMonth;
-      if (this.registerService.dataSource.paginator) {
-        this.registerService.dataSource.paginator.firstPage();
-      }
-    }
-    this.flag1 = true;
-    this.flag2 = true;
+    this.registerService.applyFilter(search, searchMonth)
   }
 
   flagOne(search: HTMLInputElement) {
-    this.flag2 = false;
+    this.registerService.flagOne(search);
   }
 
   flagTwo(month: HTMLInputElement) {
-    this.flag1 = false;
+    this.registerService.flagTwo(month);
   }
 
   openDialog(): void {
@@ -107,10 +89,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   }
 
   refresh(form: NgForm) {
-    form.reset();
-    this.registerService.getAll();
-    this.flag1 = true;
-    this.flag2 = true;
+    this.registerService.refresh(form)
   }
 
   exportexcel() {

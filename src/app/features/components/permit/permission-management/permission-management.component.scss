@@ -10,3 +10,30 @@
     width: 3vh;
     height: 3vh;
 }
+
+.buttonSearch {
+    @media screen and(max-width:960px) {
+        bottom: 2px
+    }
+
+    bottom: -10px;
+    background-color: #163c70;
+    color: white;
+}
+
+.buttonSearch:hover {
+    background-color: #ffae00;
+    color: black
+}
+
+.button {
+    @media screen and(max-width:960px) {
+        bottom: 2px
+    }
+
+    bottom: -10px
+}
+
+.reset:hover {
+    background-color: yellow;
+}

@@ -16,6 +16,9 @@ export class RegisterService {
     dataSource!: MatTableDataSource<Register>;
     userSelected: Register = {} as Register;
     themeClass = '';
+    typePermit: any = ['permesso', 'malattia', 'ferie']
+    color = 'yellow'
+
 
     constructor(private http: HttpClient) { }
 
@@ -44,7 +47,6 @@ export class RegisterService {
         var date = new Date(register.date);
         console.log(date)
         register.month = date.getMonth() + 1;
-
         this.http.post<Register>(`http://localhost:3000/register`, register).subscribe(res => {
             this.dataSource.data.push(res);
             this.getAll();
@@ -64,6 +66,7 @@ export class RegisterService {
     edit(form: NgForm) {
         this.http.patch<Register>(`http://localhost:3000/register/${this.registerSelected?.id}`, form)
             .subscribe(res => {
+                this.registerSelected.state = 'yellow'
                 const index = this.dataSource.data.findIndex(re => re.id === this.registerSelected?.id);
                 this.dataSource.data[index] = res;
                 this.getAll();

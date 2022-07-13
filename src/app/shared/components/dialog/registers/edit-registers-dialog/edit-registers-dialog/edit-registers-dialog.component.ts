@@ -16,24 +16,34 @@ import { RegisterService } from 'src/app/shared/model/register/service/register.
 
   <mat-form-field appearance="outline">
     <mat-label>Data</mat-label>
-    <input matInput type="date" required [ngModel]='registerServise.registerSelected?.date' name="date">
+    <input matInput type="date" required [ngModel]='registerService.registerSelected?.date' name="date">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Rientro</mat-label>
+    <input matInput type="date" required [ngModel]='registerService.registerSelected?.dateEnd' name="dateEnd">
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Inizio</mat-label>
-    <input matInput type="time" required [ngModel]='registerServise.registerSelected?.start' name="start">
+    <input matInput type="time" required [ngModel]='registerService.registerSelected?.start' name="start">
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Fine</mat-label>
-    <input matInput type="time" [ngModel]='registerServise.registerSelected?.end' name="end" >
+    <input matInput type="time" [ngModel]='registerService.registerSelected?.end' name="end" >
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Permesso</mat-label>
-    <input matInput type="text" [ngModel]='registerServise.registerSelected?.permit' name="permit"  placeholder="inserisci permesso">
-  </mat-form-field>
- 
+            <mat-label>Permesso</mat-label>
+            <mat-select required [ngModel]="registerService.registerSelected.permit" name="permit">
+                <mat-option *ngFor="let permit of registerService.typePermit" [value]="registerService.registerSelected?.permit">
+                  {{registerService.registerSelected.permit}}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+        <input type="hidden" [ngModel]="registerService.color" name="state">
+
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Annulla</button>
@@ -47,7 +57,7 @@ export class EditRegistersDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EditRegistersDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Register,
-    public registerServise: RegisterService) { }
+    public registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
@@ -57,7 +67,7 @@ export class EditRegistersDialogComponent implements OnInit {
   }
 
   edit(form: NgForm) {
-    this.registerServise.edit(form);
+    this.registerService.edit(form);
   }
 
 }

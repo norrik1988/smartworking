@@ -27,9 +27,7 @@ export class AuthService {
         }
         else if (localStorage.getItem('SessionUser')) {
             this.flag = true;
-
             return true;
-
         }
         this.flag = false;
         return false;

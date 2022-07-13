@@ -2,17 +2,17 @@
 <form #f="ngForm">
     <div mat-dialog-container>
         <mat-form-field appearance="outline">
-    <input matInput [matAutocomplete]=" auto" [(ngModel)]="registerService.userSelected"
-    (ngModelChange)="inputChange($event)" name="user" >
-<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-    <mat-option *ngFor="let user of filteredUsers" [value]="user">
-        <img class="example-option-img" aria-hidden height="25">
-        <span>{{user?.name}} </span> <span>{{user?.surname}}</span>
-    </mat-option>
-</mat-autocomplete>
-</mat-form-field>
+            <input matInput [matAutocomplete]=" auto" [(ngModel)]="registerService.userSelected"
+                (ngModelChange)="inputChange($event)" name="user">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let user of filteredUsers" [value]="user">
+                    <img class="example-option-img" aria-hidden height="25">
+                    <span>{{user?.name}} </span> <span>{{user?.surname}}</span>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
 
-    <input type="hidden" [ngModel]="color" name="state">
+        <input type="hidden" [ngModel]="registerService.color" name="state">
 
         <mat-form-field appearance="outline">
             <mat-label>Giorno</mat-label>
@@ -35,11 +35,11 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Permesso</mat-label>
-            <mat-select required ngModel  name="permit">
-                <mat-option *ngFor="let permit of typePermit"  [value]="permit">
-                  {{permit}}
+            <mat-select required ngModel name="permit">
+                <mat-option *ngFor="let permit of registerService.typePermit" [value]="permit">
+                    {{permit}}
                 </mat-option>
-              </mat-select>
+            </mat-select>
         </mat-form-field>
 
     </div>

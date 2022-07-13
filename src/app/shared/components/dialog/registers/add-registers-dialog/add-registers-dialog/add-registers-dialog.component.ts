@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Register } from 'src/app/shared/model/register/register';
 import { RegisterService } from 'src/app/shared/model/register/service/register.service';
-import {  UserService } from 'src/app/shared/model/user/service/user.service';
+import { UserService } from 'src/app/shared/model/user/service/user.service';
 import { User } from 'src/app/shared/model/user/user';
 
 @Component({
@@ -14,8 +14,7 @@ import { User } from 'src/app/shared/model/user/user';
 export class AddRegistersDialogComponent implements OnInit {
   timeoutInput: any;
   filteredUsers = new Array<User>();
-  color = 'yellow'
- typePermit : any = ['permesso' , 'malattia', 'ferie']
+
   constructor(
     public dialogRef: MatDialogRef<AddRegistersDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Register,

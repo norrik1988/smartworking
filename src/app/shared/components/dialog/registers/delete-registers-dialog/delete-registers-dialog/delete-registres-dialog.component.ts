@@ -7,8 +7,24 @@ import { RegisterService } from 'src/app/shared/model/register/service/register.
   template: `
      <h2 mat-dialog-title>Delete</h2>
 <mat-dialog-content class="mat-typography">
+
+<strong>Nome : </strong>
+    <span> {{registerService.registerSelected?.user?.name}}</span>
+
+    <br>
+
+    <strong>Cognome : </strong>
+    <span> {{registerService.registerSelected?.user?.surname}}</span>
+
+    <br>
+
 <strong>Giorno : </strong>
     <span> {{registerService.registerSelected?.date}}</span>
+
+    <br>
+
+    <strong>Rientro : </strong>
+    <span> {{registerService.registerSelected?.dateEnd}}</span>
 
     <br>
 

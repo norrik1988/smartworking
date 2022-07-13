@@ -415,7 +415,7 @@
         "role": "BE Developer",
         "id": 10
       },
-      "state": "green",
+      "state": "yellow",
       "date": "2022-07-07",
       "dateEnd": "2022-07-15",
       "start": "12:00",
@@ -433,12 +433,12 @@
         "role": "FE Developer",
         "id": 7
       },
-      "state": "red",
-      "date": "2022-07-20",
+      "state": "yellow",
+      "date": "2022-07-13",
       "dateEnd": "2022-07-15",
-      "start": "05:50",
-      "end": "05:22",
-      "permit": "malattia",
+      "start": "09:00",
+      "end": "09:50",
+      "permit": "permesso",
       "month": 7,
       "id": 5
     }

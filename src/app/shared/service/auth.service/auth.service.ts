@@ -9,14 +9,25 @@ export class AuthService {
 
     user: User[] = [];
     flag: boolean = false;
+    admin = false;
     constructor(private router: Router) { }
 
     getToken(): boolean {
-        return !!localStorage.getItem('SessionUser');
+        if (localStorage.getItem('SessionUser')) {
+            return !!localStorage.getItem('SessionUser');
+        } else {
+            return !!localStorage.getItem('SessionAdmin')
+        }
     }
     isLogged(): boolean {
-        if (localStorage.getItem('SessionUser')) {
+        if (localStorage.getItem('SessionAdmin')) {
             this.flag = true;
+            this.admin = true;
+            return true
+        }
+        else if (localStorage.getItem('SessionUser')) {
+            this.flag = true;
+
             return true;
 
         }

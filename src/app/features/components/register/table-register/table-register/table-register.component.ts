@@ -29,7 +29,13 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  test() { }
+  // test() {
+  //   if (this.registerService.register.state == 'yellow') {
+  //     console.log('in attesa')
+  //   } else if (this.registerService.register.state == 'red') {
+  //     console.log('Rifiutato')
+  //   }
+  // }
 
   ngOnInit(): void {
     this.registerService.getAll()

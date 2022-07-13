@@ -42,4 +42,26 @@
 .state {
     width: 3vh;
     height: 3vh;
+    border-radius: 2vh;
+}
+
+.confirmed {
+    background-color: green;
+    border-radius: 2vh;
+    width: 3vh;
+    height: 3vh;
+}
+
+.rifiuted {
+    background-color: red;
+    border-radius: 2vh;
+    width: 3vh;
+    height: 3vh;
+}
+
+.attend {
+    background-color: yellow;
+    border-radius: 2vh;
+    width: 3vh;
+    height: 3vh;
 }

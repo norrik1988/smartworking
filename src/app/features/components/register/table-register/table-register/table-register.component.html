@@ -1,10 +1,27 @@
 <div fxLayout="column">
 
-    <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row " fxLayoutAlign="end ">
+
+    <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row" fxLayoutAlign="space-between">
+        <div fxLayout="row" fxLayoutGap="5vh">
+            <div>
+                <div class="state confirmed"></div><strong>Confermato</strong>
+            </div>
+
+            <div>
+                <div class="state rifiuted"></div><strong>Rifiutato</strong>
+            </div>
+
+            <div>
+                <div class="state attend"></div><strong>In attesa</strong>
+            </div>
+
+        </div>
         <button mat-raised-button class="addBotton" (click)="openDialog()" title="Aggiungi">
             <mat-icon>add</mat-icon>
         </button>
     </div>
+
+    <br>
 
     <form #form="ngForm">
         <div fxFlexFill fxLayout="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column"
@@ -64,7 +81,7 @@
         <ng-container matColumnDef="stato">
             <th mat-header-cell *matHeaderCellDef> Stato </th>
             <td mat-cell *matCellDef="let element">
-                <div [style.background]="element.state" class="state" title="confermato"></div>
+                <div [style.background]="element.state" class="state"></div>
             </td>
         </ng-container>
 

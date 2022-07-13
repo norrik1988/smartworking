@@ -29,7 +29,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-
+  test() { }
 
   ngOnInit(): void {
     this.registerService.getAll()

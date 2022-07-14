@@ -1,7 +1,21 @@
 <div fxLayout="column">
 
+    <div fxLayout="row" fxLayoutGap="5vh">
+        <div>
+            <div class="state confirmed"></div><strong>Confermato</strong>
+        </div>
 
+        <div>
+            <div class="state rifiuted"></div><strong>Rifiutato</strong>
+        </div>
 
+        <div>
+            <div class="state attend"></div><strong>In attesa</strong>
+        </div>
+
+    </div>
+
+    <br>
 
     <form #form="ngForm">
         <div fxFlexFill fxLayout="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column"

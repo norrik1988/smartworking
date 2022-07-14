@@ -18,6 +18,8 @@ export class SignInComponent {
 
   ngOnInit(): void {
     localStorage.removeItem("SessionUser");
+    localStorage.removeItem("SessionAdmin");
+
   }
 
   goToDashboard(f: NgForm) {

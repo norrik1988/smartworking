@@ -21,15 +21,17 @@ export class AuthService {
     }
     isLogged(): boolean {
         if (localStorage.getItem('SessionAdmin')) {
-            this.flag = true;
+            this.flag = false;
             this.admin = true;
             return true
         }
         else if (localStorage.getItem('SessionUser')) {
             this.flag = true;
+            this.admin = false
             return true;
         }
         this.flag = false;
+        this.admin = false
         return false;
     }
 

@@ -76,8 +76,9 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   }
 
   openEdit(register: Register) {
+    this.registerService.editFlag = false;
     this.registerService.registerSelected = register;
-    const dialogRef = this.dialog.open(EditRegistersDialogComponent, {
+    const dialogRef = this.dialog.open(DetailRegistersDialogComponent, {
       width: '600px',
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -86,6 +87,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   }
 
   openDetail(register: Register) {
+    this.registerService.editFlag = true;
     this.registerService.registerSelected = register;
     const dialogRef = this.dialog.open(DetailRegistersDialogComponent, {
       width: '600px',

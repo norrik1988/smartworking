@@ -31,7 +31,7 @@
             <mat-select required [ngModel]="registerService.registerSelected.permit" name="permit">
                 <mat-option *ngFor="let permit of registerService.typePermit"
                     [value]="registerService.registerSelected?.permit">
-                    {{registerService.registerSelected.permit}}
+                    {{permit}}
                 </mat-option>
             </mat-select>
         </mat-form-field>

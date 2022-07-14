@@ -361,8 +361,8 @@
         "role": "FE Developer",
         "id": 9
       },
-      "state": "green",
-      "date": "2022-07-01",
+      "state": "yellow",
+      "date": "2022-07-08",
       "dateEnd": "2022-07-08",
       "start": "17:36",
       "end": "19:36",
@@ -379,7 +379,7 @@
         "role": "BE Developer",
         "id": 8
       },
-      "state": "red",
+      "state": "yellow",
       "date": "2022-04-07",
       "dateEnd": "2022-05-13",
       "start": "12:22",
@@ -397,7 +397,7 @@
         "role": "FE Developer",
         "id": 11
       },
-      "state": "green",
+      "state": "yellow",
       "date": "2022-08-01",
       "dateEnd": "2022-09-30",
       "start": "00:00",

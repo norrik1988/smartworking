@@ -18,6 +18,7 @@ export class RegisterService {
     themeClass = '';
     typePermit: any = ['permesso', 'malattia', 'ferie']
     color = 'yellow'
+    editFlag = true;
 
 
     constructor(private http: HttpClient) { }

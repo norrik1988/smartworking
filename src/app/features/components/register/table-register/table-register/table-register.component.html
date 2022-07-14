@@ -2,9 +2,14 @@
 
 
     <div fxFlexFill fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayout.md="row" fxLayoutAlign="space-between">
-        <div fxLayout="row" fxLayoutGap="5vh">
-            <div>
-                <div class="state confirmed"></div><strong>Confermato</strong>
+        <div fxLayout="row" fxLayoutGap="5px">
+
+            <span class="state confirmed"></span><strong>Confermato</strong>
+            <span class="state rejected"></span><strong>Rifiutato</strong>
+            <span class="state pending"></span><strong>In attesa</strong>
+
+            <!-- <div >
+                <span class="state confirmed"><strong>Confermato</strong></span>
             </div>
 
             <div>
@@ -13,7 +18,7 @@
 
             <div>
                 <div class="state attend"></div><strong>In attesa</strong>
-            </div>
+            </div> -->
 
         </div>
         <button mat-raised-button class="addBotton" (click)="openDialog()" title="Aggiungi">

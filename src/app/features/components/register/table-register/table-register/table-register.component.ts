@@ -59,7 +59,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddRegistersDialogComponent, {
-      width: '250px',
+      width: '600px',
     });
     this.userService.getUser()
     dialogRef.afterClosed().subscribe(result => {
@@ -78,7 +78,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   openEdit(register: Register) {
     this.registerService.registerSelected = register;
     const dialogRef = this.dialog.open(EditRegistersDialogComponent, {
-      width: '250px',
+      width: '600px',
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -88,7 +88,7 @@ export class TableRegisterComponent implements OnInit, AfterViewInit {
   openDetail(register: Register) {
     this.registerService.registerSelected = register;
     const dialogRef = this.dialog.open(DetailRegistersDialogComponent, {
-      width: '250px',
+      width: '600px',
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

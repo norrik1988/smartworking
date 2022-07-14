@@ -71,7 +71,7 @@
     <mat-sidenav-content>
         <div class="container">
             <router-outlet></router-outlet>
-            <div *ngIf="spinner.showSpinner">
+            <div *ngIf="spinner?.showSpinner">
                 <mat-progress-spinner id="loading" color="primary" value="50" mode="indeterminate">
                 </mat-progress-spinner>
             </div>

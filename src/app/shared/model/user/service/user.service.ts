@@ -18,8 +18,8 @@ export class UserService {
     users: User[] = [];
     user!: User;
     userSelected: User = {} as User;
-
     dataSource!: MatTableDataSource<User>;
+    userFlag = true;
 
     constructor(private http: HttpClient) { }
 
@@ -27,7 +27,7 @@ export class UserService {
         this.http.get<User[]>('http://localhost:3000/user').subscribe(res => {
             this.dataSource.data = res
             this.users = res
-           
+
         });
     }
 

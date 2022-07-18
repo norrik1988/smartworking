@@ -1,4 +1,5 @@
-<h2 mat-dialog-title align="center">Detail Register</h2>
+<h2 mat-dialog-title align="center" *ngIf="registerService.registerFlag">Detail Register</h2>
+<h2 mat-dialog-title align="center" *ngIf="!registerService.registerFlag">Edit Register</h2>
 <form #form="ngForm">
     <div mat-dialog-container fxFlexFill fxLayout="column" fxLayoutAlign="space-around center">
         <div fxLayout="row" fxLayoutGap="10px">
@@ -45,7 +46,7 @@
     </div>
     <div fxLayout="row" fxLayoutAlign="center center">
 
-        <mat-form-field appearance="outline" fxFlex="50%" *ngIf="registerService.registerFlag">
+        <mat-form-field appearance="outline" fxFlex="76%" *ngIf="registerService.registerFlag">
             <mat-label>Permesso</mat-label>
             <input matInput type="text" [readonly]=registerService.registerFlag
                 [ngModel]='registerService.registerSelected?.permit' name="permit">

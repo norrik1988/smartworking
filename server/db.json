@@ -161,15 +161,7 @@
       },
       {
         "id": 16,
-        "card_visibility": true,
-        "user": {
-          "name": "Daniele",
-          "surname": "Cibelli",
-          "tax_id_code": "asdasdasdasdasd",
-          "date": "1999-02-15",
-          "role": "FE Developer",
-          "id": 7
-        }
+        "card_visibility": true
       },
       {
         "id": 17,
@@ -387,7 +379,7 @@
         "role": "BE Developer",
         "id": 8
       },
-      "state": "yellow",
+      "state": "red",
       "date": "2022-04-07",
       "dateEnd": "2022-05-13",
       "start": "12:22",

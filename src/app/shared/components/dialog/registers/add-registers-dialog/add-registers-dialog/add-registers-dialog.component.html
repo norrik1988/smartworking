@@ -1,0 +1,57 @@
+<h2 mat-dialog-title align="center">Add</h2>
+<form #f="ngForm" >
+    <div mat-dialog-container fxFlexFill fxLayout="column" fxLayoutAlign="space-around center">
+    <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field appearance="outline">
+            <mat-label>User</mat-label>
+            <input matInput [matAutocomplete]=" auto" [(ngModel)]="registerService.userSelected"
+                (ngModelChange)="inputChange($event)" name="user">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let user of filteredUsers" [value]="user">
+                    <img class="example-option-img" aria-hidden height="25">
+                    <span>{{user?.name}} </span> <span>{{user?.surname}}</span>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <input type="hidden" [ngModel]="registerService.color" name="state">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Giorno</mat-label>
+            <input matInput type="date" required ngModel name="date">
+        </mat-form-field>
+    </div>
+    <div  fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field appearance="outline">
+            <mat-label>Rientro</mat-label>
+            <input matInput type="date" required ngModel name="dateEnd">
+        </mat-form-field>
+    
+
+        <mat-form-field appearance="outline">
+            <mat-label>Inizio</mat-label>
+            <input matInput type="time" required ngModel name="start">
+        </mat-form-field>
+    </div>
+    <div  fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field appearance="outline">
+            <mat-label>Fine</mat-label>
+            <input matInput type="time" ngModel name="end">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Permesso</mat-label>
+            <mat-select required ngModel name="permit">
+                <mat-option *ngFor="let permit of registerService.typePermit" [value]="permit">
+                    {{permit}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-button (click)="onNoClick()" color="warn">Annulla</button>
+        <button mat-button cdkFocusInitial (click)="add(f)" [mat-dialog-close]="data" [disabled]="f.invalid"
+            class="addBotton" color="primary">inserisci</button>
+    </div>
+</form>

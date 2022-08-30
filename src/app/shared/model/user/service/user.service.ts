@@ -5,7 +5,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { User } from '../user';
-
 @Injectable({
     providedIn: 'root'
 })
@@ -19,13 +18,17 @@ export class UserService {
     users: User[] = [];
     user!: User;
     userSelected: User = {} as User;
-
     dataSource!: MatTableDataSource<User>;
+    userFlag = true;
 
     constructor(private http: HttpClient) { }
 
     getAll() {
-        this.http.get<User[]>('http://localhost:3000/user').subscribe(res => this.dataSource.data = res);
+        this.http.get<User[]>('http://localhost:3000/user').subscribe(res => {
+            this.dataSource.data = res
+            this.users = res
+
+        });
     }
 
     getUser() {

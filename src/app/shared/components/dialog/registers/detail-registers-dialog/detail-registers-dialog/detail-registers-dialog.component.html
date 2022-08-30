@@ -1,0 +1,71 @@
+<h2 mat-dialog-title align="center" *ngIf="registerService.registerFlag">Detail Register</h2>
+<h2 mat-dialog-title align="center" *ngIf="!registerService.registerFlag">Edit Register</h2>
+<form #form="ngForm">
+    <div mat-dialog-container fxFlexFill fxLayout="column" fxLayoutAlign="space-around center">
+        <div fxLayout="row" fxLayoutGap="10px">
+
+            <mat-form-field appearance="outline" fxFlex="50%" *ngIf="registerService.registerFlag">
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" [readonly]=registerService.registerFlag
+                    [ngModel]='registerService.registerSelected?.user?.name' name="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex="50%" *ngIf="registerService.registerFlag">
+                <mat-label>Cognome</mat-label>
+                <input matInput type="text" [readonly]=registerService.registerFlag
+                    [ngModel]='registerService.registerSelected?.user?.surname' name="surname">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field appearance="outline" fxFlex="50%">
+                <mat-label>Data</mat-label>
+                <input matInput type="date" [readonly]=registerService.registerFlag
+                    [ngModel]='registerService.registerSelected?.date' name="date">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex="50%">
+                <mat-label>Rientro</mat-label>
+                <input matInput type="date" [readonly]=registerService.registerFlag
+                    [ngModel]='registerService.registerSelected?.dateEnd' name="dateEnd">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field appearance="outline" fxFlex="50%">
+                <mat-label>Inizio</mat-label>
+                <input matInput type="time" [readonly]=registerService.registerFlag
+                    [ngModel]='registerService.registerSelected?.start' name="start">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex="50%">
+                <mat-label>Fine</mat-label>
+                <input matInput type="time" [readonly]=registerService.registerFlag
+                    [ngModel]='registerService.registerSelected?.end' name="end">
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+
+        <mat-form-field appearance="outline" fxFlex="76%" *ngIf="registerService.registerFlag">
+            <mat-label>Permesso</mat-label>
+            <input matInput type="text" [readonly]=registerService.registerFlag
+                [ngModel]='registerService.registerSelected?.permit' name="permit">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex="76%" *ngIf="!registerService.registerFlag">
+            <mat-label>Permesso</mat-label>
+            <mat-select required [ngModel]="registerService.registerSelected.permit" name="permit">
+                <mat-option *ngFor="let permit of registerService.typePermit" [value]="permit">
+                    {{permit}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <input type="hidden" [ngModel]="registerService.color" name="state">
+    </div>
+    <div mat-dialog-actions align="end" *ngIf="!registerService.registerFlag">
+        <button mat-button (click)="onNoClick()" color="warn">Annulla</button>
+        <button mat-button cdkFocusInitial [mat-dialog-close]="data" type='submit' [disabled]="form.invalid"
+            class="addBotton" (click)="edit(form.value)" color="primary">Modifica</button>
+    </div>
+
+</form>

@@ -72,7 +72,6 @@ export class WorkSpaceService {
     }
     getWorkspace(): Observable<WorkSpace> {
         return this.http.get<WorkSpace>('http://localhost:3000/workspace');
-
     }
 
     test(id: number) {

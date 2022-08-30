@@ -9,6 +9,9 @@ import { SettingsModule } from "./components/settings/settings.module";
 import { UsersModule } from "./components/users/users.module";
 import { RegisterModule } from "./components/register/register.module";
 import { CalendarModule } from "./components/calendar/calendar.module";
+import { PermitModule } from "./components/permit/permit.module";
+import { ShowMapComponent } from './components/show-map/show-map.component';
+import { ShowMapModule } from './components/show-map/show-map.module';
 
 
 
@@ -23,10 +26,16 @@ import { CalendarModule } from "./components/calendar/calendar.module";
     UsersModule,
     LoginModule,
     RegisterModule,
-    CalendarModule
+    CalendarModule,
+    PermitModule,
+    ShowMapModule
   ],
   exports: [],
-  declarations: [],
+  declarations: [
+
+
+
+  ],
 
 })
 

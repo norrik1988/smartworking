@@ -7,7 +7,7 @@
         <input type="hidden" [(ngModel)]="workspaceService.id" name="id">
         <input type="hidden" [(ngModel)]="flag" name="card_visibility">
         <input matInput [matAutocomplete]=" auto" [(ngModel)]="workspaceService.userSelect"
-            (ngModelChange)="inputChange($event)" name="user" placeholder="{{workspaceService?.userSelect?.name}}">
+            (ngModelChange)="inputChange($event)" name="user" placeholder="{{workspaceService.userSelect?.name}}">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
             <mat-option *ngFor="let user of filteredUsers" [value]="user">
                 <img class="example-option-img" aria-hidden height="25">

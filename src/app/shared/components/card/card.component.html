@@ -1,22 +1,22 @@
-<mat-card class="example-box" cdkDragBoundary="{{customCls}}" cdkDrag cdkDragDisabled>
+<mat-card class="example-box" cdkDragBoundary="{{customCls}}" cdkDrag cdkDragDisabled fxLayoutAlign="center center">
     <form #f="ngForm">
-        <div fxLayout="column" fxFlexFill>
+        <div fxLayout="column">
 
-            <div fxLayoutAlign="space-between">
+            <div *ngIf="authService.admin" class="margin">
                 <button mat-icon-button>
                     <mat-icon class="icon" (click)="openEdit()">edit_note</mat-icon>
                 </button>
             </div>
-            
 
 
-            <div fxLayout="row" fxFlex="40%" fxLayoutAlign="center">
-                <div fxFlex="60%">
+
+            <div fxLayout="row" fxFlex fxLayoutAlign="center center">
+                <div>
                     <mat-icon class="icon">account_circle_full</mat-icon>
                 </div>
             </div>
 
-            <div fxFlex="30%" fxLayout="row" fxLayoutAlign="center">
+            <div fxFlex fxLayout="row" fxLayoutAlign="center center">
                 <mat-card-content>
                     <div *ngIf="!user">
                         <span>Free</span>

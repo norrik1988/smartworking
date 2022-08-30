@@ -1,19 +1,14 @@
-.addBotton {
-    background-color: #163c70;
-    color: white
+.check {
+    color: green;
 }
 
-.addBotton:hover {
-    background-color: #ffae00;
-    color: black
+.clear {
+    color: red;
 }
 
-.button {
-    @media screen and(max-width:960px) {
-        bottom: 2px
-    }
-
-    bottom: -10px
+.state {
+    width: 3vh;
+    height: 3vh;
 }
 
 .buttonSearch {
@@ -31,9 +26,13 @@
     color: black
 }
 
+.button {
+    @media screen and(max-width:960px) {
+        bottom: 2px
+    }
 
-
-
+    bottom: -10px
+}
 
 .reset:hover {
     background-color: yellow;

@@ -7,10 +7,11 @@ import { ProfileModule } from "./components/profile/profile.module";
 import { ProjectsModule } from "./components/projects/projects.module";
 import { SettingsModule } from "./components/settings/settings.module";
 import { UsersModule } from "./components/users/users.module";
-import { PermitComponent } from './components/permit/permit.component';
 import { RegisterModule } from "./components/register/register.module";
 import { CalendarModule } from "./components/calendar/calendar.module";
 import { PermitModule } from "./components/permit/permit.module";
+import { ShowMapComponent } from './components/show-map/show-map.component';
+import { ShowMapModule } from './components/show-map/show-map.module';
 
 
 
@@ -26,10 +27,13 @@ import { PermitModule } from "./components/permit/permit.module";
     LoginModule,
     RegisterModule,
     CalendarModule,
-    PermitModule
+    PermitModule,
+    ShowMapModule
   ],
   exports: [],
   declarations: [
+
+
 
   ],
 

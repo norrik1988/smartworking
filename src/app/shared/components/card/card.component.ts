@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../../model/user/service/user.service';
 import { User } from '../../model/user/user';
 import { WorkSpaceService } from '../../model/workspace/service/workspace.service';
+import { AuthService } from '../../service/auth.service/auth.service';
 import { EditDashboardDialogComponent } from '../dialog/dashboard/edit-dashboard-dialog/edit-dashboard-dialog.component';
 
 @Component({
@@ -19,7 +20,12 @@ export class CardComponent implements OnInit {
 
   @Input() idWorkStation!: number;
 
-  constructor(public dialog: MatDialog, public userService: UserService, public workspaceService: WorkSpaceService) { }
+  constructor(
+    public dialog: MatDialog,
+    public userService: UserService,
+    public workspaceService: WorkSpaceService,
+    public authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.workspaceService.getWorkspace();
@@ -61,6 +67,7 @@ export class CardComponent implements OnInit {
     this.userService.getUser();
     dialogRef.afterClosed().subscribe(() => {
     })
+
   }
 
   get_id_position(event: any) {

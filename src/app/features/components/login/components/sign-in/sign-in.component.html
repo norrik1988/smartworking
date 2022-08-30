@@ -13,13 +13,13 @@
       <button disabled mat-icon-button matSuffix>
         <mat-icon color="primary">email</mat-icon>
       </button>
-      <input matInput placeholder="pat@example.com" required ngModel #user="ngModel" name="user">
+      <input matInput placeholder="pat@example.com" required [(ngModel)]="user" name="user">
       <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Enter your password</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
+      <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
         <mat-icon color="primary">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

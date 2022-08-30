@@ -36,6 +36,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/components/permit/permit.module').then(m => m.PermitModule), canActivate: [AuthGuard]
   },
   {
+    path: 'show-map',
+    loadChildren: () => import('./features/components/show-map/show-map.module').then(m => m.ShowMapModule), canActivate: [AuthGuard]
+  },
+  {
     path: 'calendar',
     loadChildren: () => import('./features/components/calendar/calendar.module').then(m => m.CalendarModule), canActivate: [AuthGuard]
   },

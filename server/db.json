@@ -161,7 +161,15 @@
       },
       {
         "id": 16,
-        "card_visibility": true
+        "card_visibility": true,
+        "user": {
+          "name": "Daniele",
+          "surname": "Cibelli",
+          "tax_id_code": "asdasdasdasdasd",
+          "date": "1999-02-15",
+          "role": "FE Developer",
+          "id": 7
+        }
       },
       {
         "id": 17,

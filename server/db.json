@@ -39,6 +39,14 @@
       "date": "1998-01-04",
       "role": "FE Developer",
       "id": 11
+    },
+    {
+      "name": "vincenzo ",
+      "surname": "marino",
+      "tax_id_code": "dsdsds",
+      "date": "2023-06-14",
+      "role": "FE Developer",
+      "id": 12
     }
   ],
   "projects": [

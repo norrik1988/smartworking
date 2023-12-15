@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
 
   logOut(): void {
     localStorage.removeItem("SessionUser");
-    localStorage.removeItem("SessionAdmin");
+    localStorage.removeItem("Session");
     this.router.navigateByUrl('login/sign-in');
   }
 }

@@ -32,8 +32,8 @@ export class HomeComponent {
 
   ngOnInit() {
     this.workspaceService.getWorkspace().subscribe((res) => {
-      this.workspaceService.workspace = res;
-    })
+     this.workspaceService.workspace = res;
+     })
   }
 
 

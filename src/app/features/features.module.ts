@@ -10,7 +10,7 @@ import { UsersModule } from "./components/users/users.module";
 import { RegisterModule } from "./components/register/register.module";
 import { CalendarModule } from "./components/calendar/calendar.module";
 import { PermitModule } from "./components/permit/permit.module";
-import { ShowMapComponent } from './components/show-map/show-map.component';
+// import { ShowMapComponent } from './components/show-map/show-map.component';
 import { ShowMapModule } from './components/show-map/show-map.module';
 
 

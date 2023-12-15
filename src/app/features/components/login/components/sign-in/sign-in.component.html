@@ -1,6 +1,7 @@
 <div class="example-container" fxFlexFill fxLayoutAlign="center center">
 
-  <form #f="ngForm" fxLayout="column" fxFlexFill fxLayoutAlign="center center" fxLayoutGap="5px">
+  <form #f="ngForm" fxLayout="column" fxFlexFill fxLayoutAlign="center center" fxLayoutGap="5px"
+    (NgSubmit)="login(f)">
 
     <div id="fadeshow1">
       <picture>
@@ -13,13 +14,13 @@
       <button disabled mat-icon-button matSuffix>
         <mat-icon color="primary">email</mat-icon>
       </button>
-      <input matInput placeholder="pat@example.com" required [(ngModel)]="user" name="user">
-      <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      <input matInput placeholder="pat@example.com" required [(ngModel)]="email" name="email" >
+
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Enter your password</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password">
+      <input matInput [type]="hide ? 'password' : 'text'" required [(ngModel)]="password" name="password" >
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
         <mat-icon color="primary">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -28,7 +29,12 @@
 
     <a href="/forgot-psw">Password dimenticata?</a>
 
-    <button mat-raised-button color="primary" (click)="goToDashboard(f)">LOGIN</button>
+
+    <div *ngIf="getLoginError()" class="error-message">{{ getLoginError() }}</div>
+
+    <button mat-raised-button color="primary" (click)="login(f); f.reset();" [disabled]="f.invalid">LOGIN</button>
+    <!-- reset resetta il campo after click
+    disabled f invalid, non fa cliccare finchè il form è considerato invalido -->
 
   </form>
 

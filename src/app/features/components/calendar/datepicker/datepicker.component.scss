@@ -59,25 +59,25 @@ b {
   margin: 0 auto;
 }
 
-.green ::ng-deep .mat-checkbox-frame { 
-  border-color: green 
+.green ::ng-deep .mat-checkbox-frame {
+  border-color: green
 }
 
-.primary ::ng-deep .mat-checkbox-frame { 
+.primary ::ng-deep .mat-checkbox-frame {
   border-color: rgb(38, 38, 139)
 }
 
-.orangered ::ng-deep .mat-checkbox-frame { 
+.orangered ::ng-deep .mat-checkbox-frame {
   border-color: orangered
 }
 
 
 ::ng-deep .green.mat-checkbox-checked.mat-accent .mat-checkbox-background{
   background-color: green;
-  .green.mat-checkbox-frame { 
-    border-color: green; 
+  .green.mat-checkbox-frame {
+    border-color: green;
   }
- 
+
 }
 ::ng-deep .primary.mat-checkbox-checked.mat-accent .mat-checkbox-background{
   background-color:  rgb(38, 38, 139)

@@ -1,10 +1,12 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Register } from 'src/app/shared/model/register/register';
 import { RegisterService } from 'src/app/shared/model/register/service/register.service';
-import { UserService } from 'src/app/shared/model/user/service/user.service';
+import { UserService } from 'src/app/shared/model/user/service/user.service'
 import { User } from 'src/app/shared/model/user/user';
+
+
 
 @Component({
   selector: 'app-add-registers-dialog',

@@ -8,7 +8,7 @@ import { DeleteRegistersDialogComponent } from 'src/app/shared/components/dialog
 import { DetailRegistersDialogComponent } from 'src/app/shared/components/dialog/registers/detail-registers-dialog/detail-registers-dialog/detail-registers-dialog.component';
 import { Register } from 'src/app/shared/model/register/register';
 import { RegisterService } from 'src/app/shared/model/register/service/register.service';
-import { UserService } from 'src/app/shared/model/user/service/user.service';
+import { UserService } from 'src/app/shared/model/user/service/user.service'
 import * as XLSX from 'xlsx';
 
 @Component({

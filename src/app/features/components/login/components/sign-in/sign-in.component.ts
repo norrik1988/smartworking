@@ -1,43 +1,61 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/service/auth.service/auth.service';
+import { HttpClient } from '@angular/common/http';
+
+class Auth {
+  constructor(public email: string, public password: string) {}
+}
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
-
 export class SignInComponent {
-
-  user!: string;
+  email!: string;
   password!: string;
   hide: boolean = true;
   isLogged: boolean = false;
+  loginError: string | undefined;
 
-  constructor(
-    private router: Router,
-    public authService: AuthService
-  ) { }
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
-    localStorage.removeItem("SessionUser");
-    localStorage.removeItem("SessionAdmin");
+    localStorage.removeItem('SessionUser');
+    localStorage.removeItem('SessionAdmin');
   }
 
-  goToDashboard(f: NgForm) {
-    if (f.value.user === 'admin' && f.value.password === 'admin') {
-      localStorage.setItem('SessionAdmin', f.value.user)
-      this.authService.admin = true
-      this.router.navigateByUrl('home/dashboard');
-
-    } else {
-      localStorage.setItem("SessionUser", f.value.user);
-      this.authService.admin = false
-      this.router.navigateByUrl('home/dashboard');
-    }
-    this.isLogged = true;
+  getLoginError(): string | undefined {
+    return this.loginError;
   }
 
+  login(f: NgForm) {
+    console.log(f);
+
+    let auth = new Auth(f.value.email, f.value.password);
+
+    this.http.post('http://127.0.0.1:8000/api/account/login', auth).subscribe(
+      (data) => {
+        console.log(data);
+
+
+        localStorage.setItem('AuthenticatedEmail', auth.email);
+        localStorage.setItem('isAdmin', auth.password);
+        this.router.navigate(['/home/dashboard']);
+      },
+      (error) => {
+        console.error(error);
+        this.setLoginError("L'utente non è registrato");
+      }
+    );
+  }
+
+  private setLoginError(errorMessage: string) {
+    this.loginError = errorMessage;
+  }
+
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('AuthenticatedEmail') && !!localStorage.getItem('isAdmin');
+  }
 }

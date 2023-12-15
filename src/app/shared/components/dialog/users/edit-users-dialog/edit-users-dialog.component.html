@@ -4,30 +4,30 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Nome</mat-label>
-            <input matInput type="text" required [ngModel]='userService.userSelected?.name' name="name"
+            <input matInput type="text" required [ngModel]='userService.userSelected.name' name="name"
                 placeholder="inserisci nome">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Cognome</mat-label>
-            <input matInput type="text" required [ngModel]='userService.userSelected?.surname' name="surname"
+            <input matInput type="text" required [ngModel]='userService.userSelected.surname' name="surname"
                 placeholder="inserisci cognome">
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <!-- <mat-form-field appearance="outline">
             <mat-label>CF</mat-label>
-            <input matInput type="text" required [ngModel]='userService.userSelected?.tax_id_code' name="tax_id_code"
+            <input matInput type="text" [ngModel]='userService.userSelected?.tax_id_code' name="tax_id_code"
                 placeholder="inserisci codice fiscale">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Data di nascita</mat-label>
             <input matInput type="date" required [ngModel]='userService.userSelected?.date' name="date">
-        </mat-form-field>
+        </mat-form-field> -->
 
         <mat-form-field appearance="outline">
             <mat-label>Ruolo</mat-label>
-            <input matInput type="text" disabled required [ngModel]='userService.userSelected?.role' name="role">
+            <input matInput type="text" required [ngModel]='userService.userSelected.role' name="role">
         </mat-form-field>
 
     </div>

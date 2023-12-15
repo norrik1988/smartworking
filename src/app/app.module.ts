@@ -11,10 +11,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorInterceptor } from './shared/service/interceptor.service/interceptor.interceptor';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { SignInComponent } from './features/components/login/components/sign-in/sign-in.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 
   ],
   providers: [
+    SignInComponent,
     {
       provide:
         HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true

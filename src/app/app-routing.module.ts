@@ -8,8 +8,11 @@ const routes: Routes = [
     loadChildren: () => import('./features/components/login/login.module').then(m => m.LoginModule)
   },
   {
+
     path: 'home',
-    loadChildren: () => import('./features/components/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard]
+    loadChildren: () => import('./features/components/dashboard/dashboard.module').then((m) => m.DashboardModule),
+    canActivate: [AuthGuard], // Applica l'AuthGuard alla rotta 'home'
+
   },
   {
     path: 'profile',
